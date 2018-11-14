@@ -1,2 +1,3 @@
 # specifications-ITS-JSON
-JSON-Schema Specifications
+JSON schemas for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
+
