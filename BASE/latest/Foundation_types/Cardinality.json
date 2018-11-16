@@ -23,5 +23,16 @@
         "interval",
         "is_ordered",
         "is_unique"
-    ]
+    ],
+    "$functions": {
+        "is_bag": {
+            "description": "True if the semantics of this cardinality represent a bag, i.e. unordered, non-unique membership."
+        },
+        "is_list": {
+            "description": "True if the semantics of this cardinality represent a list, i.e. ordered, non-unique membership."
+        },
+        "is_set": {
+            "description": "True if the semantics of this cardinality represent a set, i.e. unordered, unique membership."
+        }
+    }
 }

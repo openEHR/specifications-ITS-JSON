@@ -10,19 +10,19 @@
             "description": "Identifiers used for the item in the originating system, e.g. filler and placer ids. ",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Data_types/all.json#DV_IDENTIFIER"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_IDENTIFIER"
             }
         },
         "feeder_system_item_ids": {
             "description": "Identifiers used for the item in the feeder system, where the feeder system is distinct from the originating system. ",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Data_types/all.json#DV_IDENTIFIER"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_IDENTIFIER"
             }
         },
         "original_content": {
             "description": "Optional inline inclusion of or reference to original content corresponding to the openEHR content at this node. Typically a URI reference to a document or message in a persistent store associated with the EHR. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Data_types/all.json#DV_ENCAPSULATED"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_ENCAPSULATED"
         },
         "originating_system_audit": {
             "description": "Any audit information for the information item from the originating system. ",

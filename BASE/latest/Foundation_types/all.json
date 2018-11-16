@@ -12,7 +12,24 @@
             "type": "object",
             "$inherits": [
                 "#Container"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "has_key": {
+                    "description": "Test for membership of a key."
+                },
+                "item": {
+                    "description": "Return item for key  a_key'."
+                }
+            }
         },
         "Hash<String, Hash<String, Hash<String, String>>>": {
             "id": "#Hash<String, Hash<String, Hash<String, String>>>",
@@ -21,7 +38,24 @@
             "type": "object",
             "$inherits": [
                 "#Hash"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "has_key": {
+                    "description": "Test for membership of a key."
+                },
+                "item": {
+                    "description": "Return item for key  a_key'."
+                }
+            }
         },
         "Hash<String, Hash<String, String>>": {
             "id": "#Hash<String, Hash<String, String>>",
@@ -31,7 +65,24 @@
             "type": "object",
             "$inherits": [
                 "#Hash"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "has_key": {
+                    "description": "Test for membership of a key."
+                },
+                "item": {
+                    "description": "Return item for key  a_key'."
+                }
+            }
         },
         "Hash<String, String>": {
             "id": "#Hash<String, String>",
@@ -40,14 +91,42 @@
             "type": "object",
             "$inherits": [
                 "#Hash"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "has_key": {
+                    "description": "Test for membership of a key."
+                },
+                "item": {
+                    "description": "Return item for key  a_key'."
+                }
+            }
         },
         "Container": {
             "id": "#Container",
             "title": "Container",
             "description": "Abstract ancestor of container types whose items are addressable in some way.",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "array"
+            "type": "array",
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                }
+            }
         },
         "List": {
             "id": "#List",
@@ -57,7 +136,32 @@
             "type": "array",
             "$inherits": [
                 "#Container"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "first": {
+                    "description": "Return first element."
+                },
+                "last": {
+                    "description": "Return last element."
+                }
+            },
+            "$invariants": {
+                "First_validity": {
+                    "description": "not is_empty implies first /= Void"
+                },
+                "Last_validity": {
+                    "description": "not is_empty implies last /= Void"
+                }
+            }
         },
         "Set": {
             "id": "#Set",
@@ -67,7 +171,18 @@
             "type": "array",
             "$inherits": [
                 "#Container"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                }
+            }
         },
         "Array": {
             "id": "#Array",
@@ -77,7 +192,18 @@
             "type": "array",
             "$inherits": [
                 "#Container"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                }
+            }
         },
         "Set<String>": {
             "id": "#Set<String>",
@@ -86,7 +212,18 @@
             "type": "array",
             "$inherits": [
                 "#Set"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                }
+            }
         },
         "List<String>": {
             "id": "#List<String>",
@@ -95,7 +232,32 @@
             "type": "array",
             "$inherits": [
                 "#List"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "first": {
+                    "description": "Return first element."
+                },
+                "last": {
+                    "description": "Return last element."
+                }
+            },
+            "$invariants": {
+                "First_validity": {
+                    "description": "not is_empty implies first /= Void"
+                },
+                "Last_validity": {
+                    "description": "not is_empty implies last /= Void"
+                }
+            }
         },
         "Hash<String, List<String>>": {
             "id": "#Hash<String, List<String>>",
@@ -104,7 +266,24 @@
             "type": "object",
             "$inherits": [
                 "#Hash"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value."
+                },
+                "count": {
+                    "description": "Number of items in container."
+                },
+                "is_empty": {
+                    "description": "True if container is empty."
+                },
+                "has_key": {
+                    "description": "Test for membership of a key."
+                },
+                "item": {
+                    "description": "Return item for key  a_key'."
+                }
+            }
         },
         "Hash<String, Any>": {
             "id": "#Hash<String, Any>",
@@ -119,7 +298,24 @@
             "type": "string",
             "$inherits": [
                 "#String"
-            ]
+            ],
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "infix +": {
+                    "description": "Concatenation operator - causes \u2018other\u2019 to be appended to this string."
+                },
+                "is_empty": {
+                    "description": "True if string is empty, i.e. equal to \"\"."
+                },
+                "is_integer": {
+                    "description": "True if string can be parsed as an integer."
+                },
+                "as_integer": {
+                    "description": "Return the integer corresponding to the integer value represented in this string."
+                }
+            }
         },
         "Comparable": {
             "id": "#Comparable",
@@ -136,7 +332,21 @@
             "$inherits": [
                 "#Ordered",
                 "#Numeric"
-            ]
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Integer": {
             "id": "#Integer",
@@ -146,7 +356,21 @@
             "type": "integer",
             "$inherits": [
                 "#Ordered_Numeric"
-            ]
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Double": {
             "id": "#Double",
@@ -155,14 +379,39 @@
             "type": "number",
             "$inherits": [
                 "#Ordered_Numeric"
-            ]
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Numeric": {
             "id": "#Numeric",
             "title": "Numeric",
             "description": "Abstract notional parent class of numeric types, which are types which have various arithmetic and comparison operators defined.",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "number"
+            "type": "number",
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules."
+                }
+            }
         },
         "Octet": {
             "id": "#Octet",
@@ -171,7 +420,12 @@
             "type": "integer",
             "$inherits": [
                 "#Ordered"
-            ]
+            ],
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Character": {
             "id": "#Character",
@@ -180,14 +434,62 @@
             "type": "string",
             "$inherits": [
                 "#Ordered"
-            ]
+            ],
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Boolean": {
             "id": "#Boolean",
             "title": "Boolean",
             "description": "Class representing minimal interface of standard Boolean type.",
             "$comments": "Defined in Foundation_types IM",
-            "type": "boolean"
+            "type": "boolean",
+            "$functions": {
+                "infix and": {
+                    "description": "Logical conjunction"
+                },
+                "infix and_then": {
+                    "description": "Boolean semi-strict conjunction with other"
+                },
+                "infix or": {
+                    "description": "Boolean disjunction with other."
+                },
+                "infix or_else": {
+                    "description": "Boolean semi-strict disjunction with `other'."
+                },
+                "infix xor": {
+                    "description": "Boolean exclusive or with `other'."
+                },
+                "infix implies": {
+                    "description": "Boolean implication of `other' (semi-strict)"
+                }
+            },
+            "$invariants": {
+                "Involutive_negation": {
+                    "description": "is_equal (not (not self))"
+                },
+                "Non_contradiction": {
+                    "description": "not (self and (not self))"
+                },
+                "Completeness": {
+                    "description": "self or else (not self)"
+                },
+                "Post_de_Morgan": {
+                    "description": "Result = not (not self and then not other)"
+                },
+                "Post_commutative": {
+                    "description": "Result = (other or Current)"
+                },
+                "Post_consistent_with_semi_strict": {
+                    "description": "Result implies (self or else other)"
+                },
+                "Post_definition": {
+                    "description": "Result = (not self or else other)"
+                }
+            }
         },
         "String": {
             "id": "#String",
@@ -197,7 +499,24 @@
             "type": "string",
             "$inherits": [
                 "#Ordered"
-            ]
+            ],
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "infix +": {
+                    "description": "Concatenation operator - causes \u2018other\u2019 to be appended to this string."
+                },
+                "is_empty": {
+                    "description": "True if string is empty, i.e. equal to \"\"."
+                },
+                "is_integer": {
+                    "description": "True if string can be parsed as an integer."
+                },
+                "as_integer": {
+                    "description": "Return the integer corresponding to the integer value represented in this string."
+                }
+            }
         },
         "Real": {
             "id": "#Real",
@@ -207,7 +526,24 @@
             "type": "number",
             "$inherits": [
                 "#Ordered_Numeric"
-            ]
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "floor": {
+                    "description": "Return the greatest integer no greater than the value of this object."
+                }
+            }
         },
         "Integer64": {
             "id": "#Integer64",
@@ -217,14 +553,33 @@
             "type": "integer",
             "$inherits": [
                 "#Ordered_Numeric"
-            ]
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Ordered": {
             "id": "#Ordered",
             "title": "Ordered",
             "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "object"
+            "type": "object",
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "TUPLE": {
             "id": "#TUPLE",
@@ -403,7 +758,21 @@
             "title": "Any",
             "description": "Abstract supertype. Usually maps to a type like Any or Object in an object-oriented technology. Defined here to provide value and reference equality semantics.",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "object"
+            "type": "object",
+            "$functions": {
+                "is_equal": {
+                    "description": "Value equality."
+                },
+                "infix =": {
+                    "description": "Reference equality."
+                },
+                "instance_of": {
+                    "description": "Create new instance of a type."
+                },
+                "type_of": {
+                    "description": "Type name of an object as a string. May include generic parameters, as in \"Interval<Time>\"."
+                }
+            }
         },
         "Iso8601_date_time": {
             "id": "#Iso8601_date_time",
@@ -422,7 +791,140 @@
             ],
             "$inherits": [
                 "#Iso8601_type"
-            ]
+            ],
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "is_partial": {
+                    "description": "True if this date time is partial, i.e. if seconds or more is missing."
+                },
+                "is_extended": {
+                    "description": "True if this date/time uses \u2018-\u2019, \u2018:\u2019 separators."
+                },
+                "year": {
+                    "description": "Year."
+                },
+                "month": {
+                    "description": "Month in year."
+                },
+                "day": {
+                    "description": "Day in month."
+                },
+                "hour": {
+                    "description": "Hour in day."
+                },
+                "minute": {
+                    "description": "Minute in hour."
+                },
+                "second": {
+                    "description": "Second in minute."
+                },
+                "fractional_second": {
+                    "description": "Fractional seconds."
+                },
+                "timezone": {
+                    "description": "Timezone; may be Void."
+                },
+                "month_unknown": {
+                    "description": "Indicates whether month in year is unknown."
+                },
+                "day_unknown": {
+                    "description": "Indicates whether day in month is unknown."
+                },
+                "minute_unknown": {
+                    "description": "Indicates whether minute in hour is known."
+                },
+                "second_unknown": {
+                    "description": "Indicates whether minute in hour is known."
+                },
+                "is_decimal_sign_comma": {
+                    "description": "True if this time has a decimal part indicated by \u2018,\u2019 (comma) rather than \u2018.\u2019 (period)."
+                },
+                "has_fractional_second": {
+                    "description": "True if the fractional_second part is signficant (i.e. even if = 0.0)."
+                },
+                "as_string": {
+                    "description": "Return the string value in extended format."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                },
+                "Year_valid": {
+                    "description": "valid_year (year)"
+                },
+                "Month_valid": {
+                    "description": "valid_month (month)"
+                },
+                "Day_valid": {
+                    "description": "valid_day(year, month, day)"
+                },
+                "Hour_valid": {
+                    "description": "valid_hour (hour, minute, second)"
+                },
+                "Minute_valid": {
+                    "description": "not minute_unknown implies valid_minute(minute)"
+                },
+                "Second_valid": {
+                    "description": "not second_unknown implies valid_second (second)"
+                },
+                "Fractional_second_valid": {
+                    "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
+                },
+                "Partial_validity_year": {
+                    "description": "not month_unknown"
+                },
+                "Partial_validity_month": {
+                    "description": "not month_unknown"
+                },
+                "Partial_validity_day": {
+                    "description": "not day_unknown"
+                },
+                "Partial_validity_hour": {
+                    "description": "not hour_unknown"
+                },
+                "Partial_validity_minute": {
+                    "description": "minute_unknown implies second_unknown"
+                },
+                "Pre": {
+                    "description": "not second_unknown"
+                }
+            }
         },
         "Iso8601_duration": {
             "id": "#Iso8601_duration",
@@ -441,7 +943,113 @@
             ],
             "$inherits": [
                 "#Iso8601_type"
-            ]
+            ],
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "is_partial": {
+                    "description": "Returns False."
+                },
+                "is_extended": {
+                    "description": "Returns True."
+                },
+                "seconds": {
+                    "description": "Number of seconds."
+                },
+                "fractional_seconds": {
+                    "description": "Fractional seconds."
+                },
+                "is_decimal_sign_comma": {
+                    "description": "True if this time has a decimal part indicated by ',' (comma) rather than '.' (period)."
+                },
+                "months": {
+                    "description": "Number of months."
+                },
+                "years": {
+                    "description": "Number of years of nominal 365-day length."
+                },
+                "weeks": {
+                    "description": "Number of 7 day weeks."
+                },
+                "to_seconds": {
+                    "description": "Total number of seconds equivalent (including fractional) of entire duration."
+                },
+                "minutes": {
+                    "description": "Number of 60 second minutes."
+                },
+                "hours": {
+                    "description": "Number of 60 minute hours."
+                },
+                "days": {
+                    "description": "Number of 24 hour days."
+                },
+                "as_string": {
+                    "description": "Return the duration string value."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                },
+                "Years_valid": {
+                    "description": "years >= 0"
+                },
+                "Months_valid": {
+                    "description": "months >= 0"
+                },
+                "Weeks_valid": {
+                    "description": "weeks >= 0"
+                },
+                "Days_valid": {
+                    "description": "days >= 0"
+                },
+                "Hours_valid": {
+                    "description": "hours >= 0"
+                },
+                "Minutes_valid": {
+                    "description": "minutes >= 0"
+                },
+                "Seconds_valid": {
+                    "description": "seconds >= 0"
+                },
+                "Fractional_second_valid": {
+                    "description": "fractional_second >= 0.0 and fractional_second < 1.0"
+                }
+            }
         },
         "Iso8601_time": {
             "id": "#Iso8601_time",
@@ -460,7 +1068,104 @@
             ],
             "$inherits": [
                 "#Iso8601_type"
-            ]
+            ],
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "is_partial": {
+                    "description": "True if this time is partial, i.e. if seconds or more is missing."
+                },
+                "is_extended": {
+                    "description": "True if this time uses \u2018-\u2019, \u2018:\u2019 separators."
+                },
+                "hour": {
+                    "description": "Hour in day, in 24-hour time."
+                },
+                "minute": {
+                    "description": "Minute in hour."
+                },
+                "second": {
+                    "description": "Second in minute."
+                },
+                "fractional_second": {
+                    "description": "Fractional seconds."
+                },
+                "timezone": {
+                    "description": "Timezone; may be Void."
+                },
+                "minute_unknown": {
+                    "description": "Indicates whether minute is unknown. If so, the time is of the form \u201chh\u201d."
+                },
+                "second_unknown": {
+                    "description": "Indicates whether second is unknown. If so and month is known, the time is of the form `\"hh:mm\"` or `\"hhmm\"`."
+                },
+                "is_decimal_sign_comma": {
+                    "description": "True if this time has a decimal part indicated by \u2018,\u2019 (comma) rather than \u2018.\u2019 (period)."
+                },
+                "has_fractional_second": {
+                    "description": "True if the fractional_second part is signficant (i.e. even if = 0.0)."
+                },
+                "as_string": {
+                    "description": "Return string value in extended format."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                },
+                "Hour_valid": {
+                    "description": "valid_hour(hour, minute, second)"
+                },
+                "Minute_valid": {
+                    "description": "not minute_unknown implies valid_minute (minute)"
+                },
+                "Second_valid": {
+                    "description": "not second_unknown implies valid_second (second)"
+                },
+                "Fractional_second_valid": {
+                    "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
+                },
+                "Partial_validity": {
+                    "description": "minute_unknown implies second_unknown"
+                },
+                "Pre": {
+                    "description": "not second_unknown"
+                }
+            }
         },
         "Iso8601_timezone": {
             "id": "#Iso8601_timezone",
@@ -479,7 +1184,86 @@
             ],
             "$inherits": [
                 "#Iso8601_type"
-            ]
+            ],
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "is_partial": {
+                    "description": "True if this time zone is partial, i.e. if minutes is missing."
+                },
+                "is_extended": {
+                    "description": "True if this time-zone uses \u2018:\u2019 separators."
+                },
+                "hour": {
+                    "description": "Hour part of timezone - in the range 00 - 13."
+                },
+                "minute": {
+                    "description": "Minute part of timezone. Generally 00 or 30."
+                },
+                "sign": {
+                    "description": "Direction of timezone expresssed as +1 or -1."
+                },
+                "minute_unknown": {
+                    "description": "Indicates whether minute part known."
+                },
+                "is_gmt": {
+                    "description": "True if timezone is UTC, i.e. +0000."
+                },
+                "as_string": {
+                    "description": "Return timezone string."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                },
+                "Min_hour_valid": {
+                    "description": "sign = -1 implies hour > 0 and hour <= Min_timezone_hour"
+                },
+                "Max_hour_valid": {
+                    "description": "sign = 1 implies hour > 0 and hour <= Max_timezone_hour"
+                },
+                "Minute_valid": {
+                    "description": "not minute_unknown implies valid_minute (minute)"
+                },
+                "Sign_valid": {
+                    "description": "sign = 1 or sign = -1"
+                }
+            }
         },
         "Iso8601_type": {
             "id": "#Iso8601_type",
@@ -499,7 +1283,56 @@
             "$inherits": [
                 "#Temporal",
                 "#Time_Definitions"
-            ]
+            ],
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "is_partial": {
+                    "description": "True if this date time is partial, i.e. if trailing end (right hand) value(s) is/are missing."
+                },
+                "is_extended": {
+                    "description": "True if this ISO8601 string is in the 'extended' form, i.e. uses \u2018-\u2019 and / or \u2018:\u2019 separators. This is the preferred format."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                }
+            }
         },
         "Iso8601_date": {
             "id": "#Iso8601_date",
@@ -518,7 +1351,92 @@
             ],
             "$inherits": [
                 "#Iso8601_type"
-            ]
+            ],
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                },
+                "is_partial": {
+                    "description": "True if this date is partial, i.e. if days or more is missing."
+                },
+                "is_extended": {
+                    "description": "True if this date uses `'-'` separators."
+                },
+                "year": {
+                    "description": "Year."
+                },
+                "month": {
+                    "description": "Month in year."
+                },
+                "day": {
+                    "description": "Day in month."
+                },
+                "timezone": {
+                    "description": "Timezone; may be Void."
+                },
+                "month_unknown": {
+                    "description": "Indicates whether month in year is unknown. If so, the date is of the form `\"YYYY\"`."
+                },
+                "day_unknown": {
+                    "description": "Indicates whether day in month is unknown. If so, and month is known, the date is of the form `\"YYYY-MM\"` or `\"YYYYMM\"`."
+                },
+                "as_string": {
+                    "description": "Return string value in extended format."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                },
+                "Year_valid": {
+                    "description": "valid_year (year)"
+                },
+                "Month_valid": {
+                    "description": "not month_unknown implies valid_month (month)"
+                },
+                "Day_valid": {
+                    "description": "not day_unknown implies valid_day (year, month, day)"
+                },
+                "Partial_validity": {
+                    "description": "month_unknown implies day_unknown"
+                },
+                "Pre": {
+                    "description": "not day_unknown"
+                }
+            }
         },
         "Interval<Iso8601_date>": {
             "id": "#Interval<Iso8601_date>",
@@ -561,7 +1479,47 @@
             "title": "Time_Definitions",
             "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using `+12:00`, not `-12:00`.",
             "$comments": "Defined in Foundation_types IM",
-            "type": "object"
+            "type": "object",
+            "$functions": {
+                "valid_year": {
+                    "description": null
+                },
+                "valid_month": {
+                    "description": null
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)"
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)"
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour."
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute ."
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 ."
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* `YYYY-MM-DD` (extended, preferred) or one of the partial forms `YYYY-MM` or `YYYY`\n* `YYYYMMDD` (compact) or a partial variant `YYYYMM`.\n\nWhere:\n\n* `YYYY` is the string form of any positive number in the range `0000` - `9999` (zero-filled to four digits)\n* `MM` is `01` - `12` (zero-filled to two digits)\n* `DD` is `01` - `31` (zero-filled to two digits)\n\nThe combinations of `YYYY`, `MM`, `DD` numbers must be correct with respect to the Gregorian calendar."
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* `hh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `hhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `hh:mm` (extended)\n** `hhmm` or `hh` (compact)\n\nwith an additional optional timezone indicator of:\n\n* `Z` or`\u00b1hh[:mm]` (extended)  `\u00b1hh[mm]` (compact)\n\nWhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `ss` is \"00\" - \"60\" (0-filled to two digits)\n* `[(,|.)s+]` is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n"
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* `YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|\u00b1hh[:mm]]` (extended)\n* `YYYYMMDDThhmmss[(,|.)s+][Z|\u00b1hh[mm]]` (compact)\n* or one of the partial forms:\n** `YYYY-MM-DDThh:mm` or `YYYY-MM-DDThh` (extended)\n** `YYYYMMDDThhmm` or `YYYYMMDDThh` (compact)"
+                },
+                "valid_iso8601_duration": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.\n\nNote: allowing the `W` designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration)."
+                }
+            },
+            "$invariants": {
+                "Post": {
+                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
+                }
+            }
         },
         "Temporal": {
             "id": "#Temporal",
@@ -571,7 +1529,12 @@
             "type": "object",
             "$inherits": [
                 "#Ordered"
-            ]
+            ],
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+                }
+            }
         },
         "Multiplicity_interval": {
             "id": "#Multiplicity_interval",
@@ -582,7 +1545,7 @@
             "properties": {
                 "lower": {
                     "description": "lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -602,7 +1565,7 @@
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 }
             },
             "required": [
@@ -613,7 +1576,50 @@
             ],
             "$inherits": [
                 "#Proper_interval"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+                },
+                "intersects": {
+                    "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+                },
+                "contains": {
+                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+                },
+                "is_equal": {
+                    "description": "True if current object's interval is semantically same as `other'."
+                },
+                "upper": {
+                    "description": null
+                },
+                "is_open": {
+                    "description": "True if this interval imposes no constraints, i.e. is set to 0..*"
+                },
+                "is_optional": {
+                    "description": "True if this interval expresses optionality, i.e. 0..1."
+                },
+                "is_mandatory": {
+                    "description": "True if this interval expresses mandation, i.e. 1..1."
+                },
+                "is_prohibited": {
+                    "description": "True if this interval is set to 0..0."
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": {
+                    "description": "lower_unbounded implies not lower_included"
+                },
+                "Upper_included_valid": {
+                    "description": "upper_unbounded implies not upper_included"
+                },
+                "Limits_consistent": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
+                },
+                "Limits_comparable": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+                }
+            }
         },
         "Proper_interval": {
             "id": "#Proper_interval",
@@ -624,7 +1630,7 @@
             "properties": {
                 "lower": {
                     "description": "lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -644,7 +1650,7 @@
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 }
             },
             "required": [
@@ -655,7 +1661,38 @@
             ],
             "$inherits": [
                 "#Interval"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+                },
+                "intersects": {
+                    "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+                },
+                "contains": {
+                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+                },
+                "is_equal": {
+                    "description": "True if current object's interval is semantically same as `other'."
+                },
+                "upper": {
+                    "description": null
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": {
+                    "description": "lower_unbounded implies not lower_included"
+                },
+                "Upper_included_valid": {
+                    "description": "upper_unbounded implies not upper_included"
+                },
+                "Limits_consistent": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
+                },
+                "Limits_comparable": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+                }
+            }
         },
         "Interval": {
             "id": "#Interval",
@@ -666,7 +1703,7 @@
             "properties": {
                 "lower": {
                     "description": "lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -690,7 +1727,38 @@
                 "upper_unbounded",
                 "lower_included",
                 "upper_included"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+                },
+                "intersects": {
+                    "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+                },
+                "contains": {
+                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+                },
+                "is_equal": {
+                    "description": "True if current object's interval is semantically same as `other'."
+                },
+                "upper": {
+                    "description": null
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": {
+                    "description": "lower_unbounded implies not lower_included"
+                },
+                "Upper_included_valid": {
+                    "description": "upper_unbounded implies not upper_included"
+                },
+                "Limits_consistent": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
+                },
+                "Limits_comparable": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+                }
+            }
         },
         "Point_interval": {
             "id": "#Point_interval",
@@ -701,7 +1769,7 @@
             "properties": {
                 "lower": {
                     "description": "lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -730,7 +1798,38 @@
             ],
             "$inherits": [
                 "#Interval"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+                },
+                "intersects": {
+                    "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+                },
+                "contains": {
+                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+                },
+                "is_equal": {
+                    "description": "True if current object's interval is semantically same as `other'."
+                },
+                "upper": {
+                    "description": null
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": {
+                    "description": "lower_unbounded implies not lower_included"
+                },
+                "Upper_included_valid": {
+                    "description": "upper_unbounded implies not upper_included"
+                },
+                "Limits_consistent": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
+                },
+                "Limits_comparable": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+                }
+            }
         },
         "Cardinality": {
             "id": "#Cardinality",
@@ -756,7 +1855,18 @@
                 "interval",
                 "is_ordered",
                 "is_unique"
-            ]
+            ],
+            "$functions": {
+                "is_bag": {
+                    "description": "True if the semantics of this cardinality represent a bag, i.e. unordered, non-unique membership."
+                },
+                "is_list": {
+                    "description": "True if the semantics of this cardinality represent a list, i.e. ordered, non-unique membership."
+                },
+                "is_set": {
+                    "description": "True if the semantics of this cardinality represent a set, i.e. unordered, unique membership."
+                }
+            }
         },
         "Interval<Real>": {
             "id": "#Interval<Real>",
@@ -766,7 +1876,7 @@
             "properties": {
                 "lower": {
                     "description": "lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -793,7 +1903,38 @@
             ],
             "$inherits": [
                 "#Interval"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+                },
+                "intersects": {
+                    "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+                },
+                "contains": {
+                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+                },
+                "is_equal": {
+                    "description": "True if current object's interval is semantically same as `other'."
+                },
+                "upper": {
+                    "description": null
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": {
+                    "description": "lower_unbounded implies not lower_included"
+                },
+                "Upper_included_valid": {
+                    "description": "upper_unbounded implies not upper_included"
+                },
+                "Limits_consistent": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
+                },
+                "Limits_comparable": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+                }
+            }
         },
         "Interval<Integer>": {
             "id": "#Interval<Integer>",
@@ -803,7 +1944,7 @@
             "properties": {
                 "lower": {
                     "description": "lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -830,7 +1971,38 @@
             ],
             "$inherits": [
                 "#Interval"
-            ]
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+                },
+                "intersects": {
+                    "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+                },
+                "contains": {
+                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+                },
+                "is_equal": {
+                    "description": "True if current object's interval is semantically same as `other'."
+                },
+                "upper": {
+                    "description": null
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": {
+                    "description": "lower_unbounded implies not lower_included"
+                },
+                "Upper_included_valid": {
+                    "description": "upper_unbounded implies not upper_included"
+                },
+                "Limits_consistent": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
+                },
+                "Limits_comparable": {
+                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+                }
+            }
         },
         "Terminology_code": {
             "id": "#Terminology_code",

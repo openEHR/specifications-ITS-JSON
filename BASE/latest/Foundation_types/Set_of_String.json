@@ -6,5 +6,16 @@
     "type": "array",
     "$inherits": [
         "all.json#Set"
-    ]
+    ],
+    "$functions": {
+        "has": {
+            "description": "Test for membership of a value."
+        },
+        "count": {
+            "description": "Number of items in container."
+        },
+        "is_empty": {
+            "description": "True if container is empty."
+        }
+    }
 }

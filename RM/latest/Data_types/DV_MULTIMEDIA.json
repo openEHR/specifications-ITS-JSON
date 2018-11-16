@@ -16,7 +16,7 @@
         },
         "alternate_text": {
             "description": "Text to display in lieu of multimedia display/replay.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "uri": {
             "description": "URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference. \n",
@@ -24,7 +24,7 @@
         },
         "data": {
             "description": "The actual data found at `_uri_`, if supplied inline.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Character"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Character"
         },
         "media_type": {
             "description": "Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set). \n",
@@ -36,7 +36,7 @@
         },
         "integrity_check": {
             "description": "Binary cryptographic integrity checksum.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Character"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Character"
         },
         "integrity_check_algorithm": {
             "description": "Type of integrity check, a coded value from the openEHR `Integrity check` code set. ",
@@ -48,7 +48,7 @@
         },
         "size": {
             "description": "Original size in bytes of unencoded encapsulated data. I.e. encodings such as base64, hexadecimal etc do not change the value of this attribute.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Integer"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Integer"
         }
     },
     "required": [
@@ -57,5 +57,45 @@
     ],
     "$inherits": [
         "all.json#DV_ENCAPSULATED"
-    ]
+    ],
+    "$functions": {
+        "is_external": {
+            "description": "Computed from the value of the `_uri_` attribute: True if  the data is stored externally to the record, as indicated by `_uri_`. A copy may also be stored internally, in which case `_is_expanded_` is also true."
+        },
+        "is_inline": {
+            "description": "Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself. "
+        },
+        "is_compressed": {
+            "description": "Computed from the value of the `_compression_algorithm_` attribute: True if  the  data is stored in compressed form. "
+        },
+        "has_integrity_check": {
+            "description": "Computed from the value of the `_integrity_check_algorithm_` attribute: True if an integrity check has been computed. "
+        }
+    },
+    "$invariants": {
+        "Size_valid": {
+            "description": "size >= 0"
+        },
+        "Language_valid": {
+            "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
+        },
+        "Charset_valid": {
+            "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
+        },
+        "Not_empty": {
+            "description": "is_inline or is_external"
+        },
+        "Media_type_valid": {
+            "description": "media_type /= Void and then code_set (Code_set_id_media_types).has_code (media_type)"
+        },
+        "Compression_algorithm_validity": {
+            "description": "compression_algorithm /= Void implies code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)"
+        },
+        "Integrity_check_validity": {
+            "description": "integrity_check /= Void implies integrity_check_algorithm /= Void"
+        },
+        "Integrity_check_algorithm_validity": {
+            "description": "integrity_check_algorithm /= Void implies code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)"
+        }
+    }
 }

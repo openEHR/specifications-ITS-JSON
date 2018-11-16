@@ -6,5 +6,22 @@
     "type": "string",
     "$inherits": [
         "all.json#String"
-    ]
+    ],
+    "$functions": {
+        "infix <": {
+            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+        },
+        "infix +": {
+            "description": "Concatenation operator - causes \u2018other\u2019 to be appended to this string."
+        },
+        "is_empty": {
+            "description": "True if string is empty, i.e. equal to \"\"."
+        },
+        "is_integer": {
+            "description": "True if string can be parsed as an integer."
+        },
+        "as_integer": {
+            "description": "Return the integer corresponding to the integer value represented in this string."
+        }
+    }
 }

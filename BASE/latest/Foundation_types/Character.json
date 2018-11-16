@@ -6,5 +6,10 @@
     "type": "string",
     "$inherits": [
         "all.json#Ordered"
-    ]
+    ],
+    "$functions": {
+        "infix <": {
+            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+        }
+    }
 }

@@ -16,5 +16,16 @@
     ],
     "$inherits": [
         "all.json#DV_TIME_SPECIFICATION"
-    ]
+    ],
+    "$functions": {
+        "calendar_alignment": {
+            "description": "Calendar alignment extracted from value."
+        },
+        "event_alignment": {
+            "description": "Event alignment extracted from value. "
+        },
+        "institution_specified": {
+            "description": "Extracted from value."
+        }
+    }
 }

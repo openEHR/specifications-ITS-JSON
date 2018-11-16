@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "Displayable rendition of the item, regardless of its underlying structure. For `DV_CODED_TEXT`, this is the rubric of the complete term as provided by the terminology service. No carriage returns, line feeds, or other non-printing characters permitted. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "hyperlink": {
             "description": "Optional link sitting behind a section of plain text or coded term item. ",
@@ -16,7 +16,7 @@
         },
         "formatting": {
             "description": "A format string of the form `\"name:value; name:value...\"` , e.g. `\"font-weight : bold; font-family : Arial; font-size : 12pt;\"`. \n\nValues taken from W3C CSS2 properties lists  back-ground and font . ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "mappings": {
             "description": "Terms from other terminologies most closely matching this term, typically used where the originator (e.g. pathology lab) of information uses a local terminology but also supplies one or more equivalents from well known terminologies (e.g. LOINC). \n",
@@ -39,5 +39,22 @@
     ],
     "$inherits": [
         "all.json#DATA_VALUE"
-    ]
+    ],
+    "$invariants": {
+        "Valid_value": {
+            "description": "not value.is_empty and then not (value.has(CR) or value.has(LF))"
+        },
+        "Language_valid": {
+            "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
+        },
+        "Encoding_valid": {
+            "description": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)"
+        },
+        "Mappings_valid": {
+            "description": "mappings /= void implies not mappings.is_empty"
+        },
+        "Formatting_valid": {
+            "description": "formatting /= void implies not formatting.is_empty"
+        }
+    }
 }

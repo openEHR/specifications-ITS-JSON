@@ -8,7 +8,7 @@
     "properties": {
         "documentation": {
             "description": "Documentary annotations in a multi-level keyed structure.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#Hash_of_String_Hash_of_String_Hash_of_String_String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Hash_of_String_Hash_of_String_Hash_of_String_String"
         }
     },
     "required": [

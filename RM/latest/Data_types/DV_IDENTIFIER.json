@@ -8,19 +8,19 @@
     "properties": {
         "issuer": {
             "description": "Optional authority which issues the kind of id used in the id field of this object. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "assigner": {
             "description": "Optional organisation that assigned the id to the item being identified.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "id": {
             "description": "The identifier value. Often structured, according to the definition of the issuing authority's rules. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "type": {
             "description": "Optional identifier type, such as  prescription , or  Social Security Number . One day a controlled vocabulary might be possible for this.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         }
     },
     "required": [
@@ -28,5 +28,19 @@
     ],
     "$inherits": [
         "all.json#DATA_VALUE"
-    ]
+    ],
+    "$invariants": {
+        "Issuer_valid": {
+            "description": "not issuer.is_empty"
+        },
+        "Assigner_valid": {
+            "description": "not assigner.is_empty"
+        },
+        "Id_valid": {
+            "description": "not id.is_empty"
+        },
+        "Type_valid": {
+            "description": "not type.is_empty"
+        }
+    }
 }

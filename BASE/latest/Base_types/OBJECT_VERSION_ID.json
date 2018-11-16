@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "The value of the id in the form defined below. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         }
     },
     "required": [
@@ -16,5 +16,33 @@
     ],
     "$inherits": [
         "all.json#UID_BASED_ID"
-    ]
+    ],
+    "$functions": {
+        "root": {
+            "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. "
+        },
+        "extension": {
+            "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String."
+        },
+        "has_extension": {
+            "description": "True if extension /= Void."
+        },
+        "object_id": {
+            "description": "Unique identifier for logical object of which this identifier identifies one version; normally the object_id will be the unique identifier of the version container containing the version referred to by this OBJECT_VERSION_ID instance. "
+        },
+        "version_tree_id": {
+            "description": "Tree identifier of this version with respect to other versions in the same version tree, as either 1 or 3 part dot-separated numbers, e.g.  1 ,  2.1.4 . "
+        },
+        "creating_system_id": {
+            "description": "Identifier of the system that created the Version corresponding to this Object version id."
+        },
+        "is_branch": {
+            "description": "True if this version identifier represents a branch."
+        }
+    },
+    "$invariants": {
+        "Has_extension_valid": {
+            "description": "extension.is_empty xor has_extension"
+        }
+    }
 }

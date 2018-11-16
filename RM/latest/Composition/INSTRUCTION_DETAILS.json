@@ -8,15 +8,15 @@
     "properties": {
         "instruction_id": {
             "description": "Reference to causing Instruction.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Base_types/all.json#LOCATABLE_REF"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#LOCATABLE_REF"
         },
         "activity_id": {
             "description": "Identifier of Activity within Instruction, in the form of its archetype path. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "wf_details": {
             "description": "Various workflow engine state details, potentially including such things as:\n\n* condition that fired to cause this Action to be done (with actual variables substituted); \n* list of notifications which actually occurred (with all variables substituted); \n* other workflow engine state. \n\nThis specification does not currently define the actual structure or semantics of this field. \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Data_structures/all.json#ITEM_STRUCTURE"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#ITEM_STRUCTURE"
         }
     },
     "required": [
@@ -24,6 +24,34 @@
         "activity_id"
     ],
     "$inherits": [
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Common/all.json#PATHABLE"
-    ]
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#PATHABLE"
+    ],
+    "$functions": {
+        "parent": {
+            "description": "Parent of this node in a compositional hierarchy. \n"
+        },
+        "item_at_path": {
+            "description": "The item at a path (relative to this item); only valid for unique paths, i.e. paths that resolve to a single item. "
+        },
+        "items_at_path": {
+            "description": "List of items corresponding to a non-unique path."
+        },
+        "path_exists": {
+            "description": "True if the path exists in the data with respect to the current item. "
+        },
+        "path_unique": {
+            "description": "True if the path corresponds to a single item in the data. "
+        },
+        "path_of_item": {
+            "description": "The path to an item relative to the root of this archetyped structure."
+        }
+    },
+    "$invariants": {
+        "Pre": {
+            "description": "path_exists (a_path)"
+        },
+        "Activity_path_valid": {
+            "description": "not activity_id.is_empty"
+        }
+    }
 }

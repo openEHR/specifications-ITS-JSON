@@ -8,23 +8,23 @@
     "properties": {
         "lower": {
             "description": "lower bound.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Common/all.json#T"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#T"
         },
         "lower_unbounded": {
             "description": "lower boundary open (i.e. = -infinity)",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Boolean"
         },
         "upper_unbounded": {
             "description": "upper boundary open (i.e. = +infinity)",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Boolean"
         },
         "lower_included": {
             "description": "lower boundary value included in range if not lower_unbounded.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Boolean"
         },
         "upper_included": {
             "description": "upper boundary value included in range if not upper_unbounded.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Boolean"
         }
     },
     "required": [
@@ -35,6 +35,37 @@
     ],
     "$inherits": [
         "all.json#DATA_VALUE",
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Interval"
-    ]
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Interval"
+    ],
+    "$functions": {
+        "has": {
+            "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"
+        },
+        "intersects": {
+            "description": "True if there is any overlap between intervals represented by Current and `other'. True if at least one limit of other is strictly inside the limits of this interval."
+        },
+        "contains": {
+            "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval."
+        },
+        "is_equal": {
+            "description": "True if current object's interval is semantically same as `other'."
+        },
+        "upper": {
+            "description": null
+        }
+    },
+    "$invariants": {
+        "Lower_included_valid": {
+            "description": "lower_unbounded implies not lower_included"
+        },
+        "Upper_included_valid": {
+            "description": "upper_unbounded implies not upper_included"
+        },
+        "Limits_consistent": {
+            "description": "(not upper_unbounded and not lower_unbounded) implies (lower.is_strictly_comparable_to(upper) and lower <= upper)"
+        },
+        "Limits_comparable": {
+            "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+        }
+    }
 }

@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "The value of the id in the form defined below. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         }
     },
     "required": [
@@ -16,5 +16,13 @@
     ],
     "$inherits": [
         "all.json#OBJECT_ID"
-    ]
+    ],
+    "$functions": {
+        "name": {
+            "description": "Return the terminology id (which includes the  version  in some cases). Distinct names correspond to distinct (i.e. non-compatible) terminologies. Thus the names  ICD10AM  and  ICD10  refer to distinct terminologies. "
+        },
+        "version_id": {
+            "description": "Version of this terminology, if versioning supported, else the empty string. "
+        }
+    }
 }

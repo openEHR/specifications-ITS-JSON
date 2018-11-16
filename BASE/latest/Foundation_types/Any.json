@@ -4,5 +4,19 @@
     "title": "Any",
     "description": "Abstract supertype. Usually maps to a type like Any or Object in an object-oriented technology. Defined here to provide value and reference equality semantics.",
     "$comments": "Defined in Foundation_types IM, abstract",
-    "type": "object"
+    "type": "object",
+    "$functions": {
+        "is_equal": {
+            "description": "Value equality."
+        },
+        "infix =": {
+            "description": "Reference equality."
+        },
+        "instance_of": {
+            "description": "Create new instance of a type."
+        },
+        "type_of": {
+            "description": "Type name of an object as a string. May include generic parameters, as in \"Interval<Time>\"."
+        }
+    }
 }

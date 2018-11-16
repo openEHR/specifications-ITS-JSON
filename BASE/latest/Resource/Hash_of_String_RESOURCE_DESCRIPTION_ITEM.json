@@ -5,6 +5,23 @@
     "$comments": "Defined in Resource IM, inherits from Hash",
     "type": "object",
     "$inherits": [
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#Hash"
-    ]
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Hash"
+    ],
+    "$functions": {
+        "has": {
+            "description": "Test for membership of a value."
+        },
+        "count": {
+            "description": "Number of items in container."
+        },
+        "is_empty": {
+            "description": "True if container is empty."
+        },
+        "has_key": {
+            "description": "Test for membership of a key."
+        },
+        "item": {
+            "description": "Return item for key  a_key'."
+        }
+    }
 }

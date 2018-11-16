@@ -8,7 +8,7 @@
     "properties": {
         "match": {
             "description": "The relative match of the target term with respect to the mapped text item. Result meanings: \n\n* `'>'`: the mapping is to a broader term e.g. orginal text =  arbovirus infection , target =  viral infection  \n* `'='`: the mapping is to a (supposedly) equivalent to the original item \n* `'<'`: the mapping is to a narrower term. e.g. original text =  diabetes , mapping =  diabetes mellitus . \n* `'?'`: the kind of mapping is unknown. \n\nThe first three values are taken from the ISO standards 2788 ( Guide to Establishment and development of monolingual thesauri) and 5964 (Guide to Establishment and development of multilingual thesauri). \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Character"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Character"
         },
         "purpose": {
             "description": "Purpose of the mapping e.g. 'automated data mining', 'billing', 'interoperability'.",
@@ -22,5 +22,33 @@
     "required": [
         "match",
         "target"
-    ]
+    ],
+    "$functions": {
+        "narrower": {
+            "description": "The mapping is to a narrower term."
+        },
+        "broader": {
+            "description": "The mapping is to a broader term."
+        },
+        "equivalent": {
+            "description": "The mapping is to an equivalent term."
+        },
+        "unknown": {
+            "description": "The kind of mapping is unknown."
+        },
+        "is_valid_match_code": {
+            "description": "True if match valid."
+        }
+    },
+    "$invariants": {
+        "Purpose_valid": {
+            "description": "purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)"
+        },
+        "Match_valid": {
+            "description": "is_valid_match_code (match)"
+        },
+        "Post": {
+            "description": "Result := c = \u2018>\u2019 or c = \u2018=\u2019 or c = \u2018<\u2019 or c = \u2018?\u2019"
+        }
+    }
 }

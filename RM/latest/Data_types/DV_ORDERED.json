@@ -24,6 +24,43 @@
     },
     "$inherits": [
         "all.json#DATA_VALUE",
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#Ordered"
-    ]
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Ordered"
+    ],
+    "$functions": {
+        "infix <": {
+            "description": null
+        },
+        "is_strictly_comparable_to": {
+            "description": "Test if two instances are strictly comparable."
+        },
+        "is_simple": {
+            "description": "True if this quantity has no reference ranges."
+        },
+        "is_normal": {
+            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n"
+        }
+    },
+    "$invariants": {
+        "Other_reference_ranges_validity": {
+            "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
+        },
+        "Is_simple_validity": {
+            "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
+        },
+        "Normal_status_validity": {
+            "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
+        },
+        "Normal_range_and_status_consistency": {
+            "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
+        },
+        "Pre": {
+            "description": "normal_range /= Void or normal_status /= Void"
+        },
+        "Post_range": {
+            "description": "normal_range /= Void implies Result = normal_range.has (self)"
+        },
+        "Post_status": {
+            "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
+        }
+    }
 }

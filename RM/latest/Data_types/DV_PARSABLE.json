@@ -16,11 +16,11 @@
         },
         "value": {
             "description": "The string, which may validly be empty in some syntaxes.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "formalism": {
             "description": "Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         }
     },
     "required": [
@@ -29,5 +29,24 @@
     ],
     "$inherits": [
         "all.json#DV_ENCAPSULATED"
-    ]
+    ],
+    "$functions": {
+        "size": {
+            "description": "Size in bytes of value."
+        }
+    },
+    "$invariants": {
+        "Size_valid": {
+            "description": "size >= 0"
+        },
+        "Language_valid": {
+            "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
+        },
+        "Charset_valid": {
+            "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
+        },
+        "Formalism_valid": {
+            "description": "not formalism.is_empty"
+        }
+    }
 }

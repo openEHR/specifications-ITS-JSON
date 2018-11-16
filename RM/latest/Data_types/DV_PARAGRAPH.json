@@ -20,5 +20,10 @@
     ],
     "$inherits": [
         "all.json#DATA_VALUE"
-    ]
+    ],
+    "$invariants": {
+        "Items_valid": {
+            "description": "not items.is_empty"
+        }
+    }
 }

@@ -8,27 +8,32 @@
     "properties": {
         "language": {
             "description": "Language of the translation.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Data_types/all.json#CODE_PHRASE"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#CODE_PHRASE"
         },
         "author": {
             "description": "Translator name and other demographic details.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#Hash_of_String_String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Hash_of_String_String"
         },
         "accreditaton": {
             "description": "Accreditation of translator, usually a national translator's registration or association membership id.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         },
         "other_details": {
             "description": "Any other meta-data.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#Hash_of_String_String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Hash_of_String_String"
         },
         "version_last_translated": {
             "description": "Version of this resource last time it was translated into the language represented by this `TRANSLATION_DETAILS` object.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
         }
     },
     "required": [
         "language",
         "author"
-    ]
+    ],
+    "$invariants": {
+        "Language_valid": {
+            "description": "code_set (Code_set_id_languages).has_code (language)"
+        }
+    }
 }

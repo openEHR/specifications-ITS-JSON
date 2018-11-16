@@ -17,5 +17,18 @@
     },
     "required": [
         "items"
-    ]
+    ],
+    "$functions": {
+        "most_recent_version": {
+            "description": "The version id of the most recent item, as a String."
+        },
+        "most_recent_version_time_committed": {
+            "description": "The commit date/time of the most recent item, as a String. "
+        }
+    },
+    "$invariants": {
+        "Post": {
+            "description": "Result.is_equal (items.last.audits.first. time_committed.value)"
+        }
+    }
 }
