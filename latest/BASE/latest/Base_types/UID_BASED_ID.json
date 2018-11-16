@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/UID_BASED_ID.json",
+    "title": "UID_BASED_ID",
+    "description": "Abstract model of UID-based identifiers consisting of a root part and an optional extension;\n\nlexical form: `root '::' extension`.",
+    "$comments": "Defined in Base_types IM, abstract, inherits from OBJECT_ID",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "The value of the id in the form defined below. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#String"
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "$inherits": [
+        "all.json#OBJECT_ID"
+    ]
+}

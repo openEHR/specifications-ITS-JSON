@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Resource/Hash_of_String_TRANSLATION_DETAILS.json",
+    "title": "Hash<String, TRANSLATION_DETAILS>",
+    "$comments": "Defined in Resource IM, inherits from Hash",
+    "type": "object",
+    "$inherits": [
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#Hash"
+    ]
+}

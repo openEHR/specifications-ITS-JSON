@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Support/TERMINOLOGY_SERVICE.json",
+    "title": "TERMINOLOGY_SERVICE",
+    "description": "Defines an object providing proxy access to a terminology service. ",
+    "$comments": "Defined in Support IM, inherits from OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS, OPENEHR_CODE_SET_IDENTIFIERS",
+    "type": "object",
+    "$inherits": [
+        "all.json#OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+        "all.json#OPENEHR_CODE_SET_IDENTIFIERS"
+    ]
+}

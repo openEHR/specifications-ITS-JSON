@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/INSTRUCTION_DETAILS.json",
+    "title": "INSTRUCTION_DETAILS",
+    "description": "Used to record details of the Instruction causing an Action. \n",
+    "$comments": "Defined in Composition IM, inherits from PATHABLE",
+    "type": "object",
+    "properties": {
+        "instruction_id": {
+            "description": "Reference to causing Instruction.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Base_types/all.json#LOCATABLE_REF"
+        },
+        "activity_id": {
+            "description": "Identifier of Activity within Instruction, in the form of its archetype path. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+        },
+        "wf_details": {
+            "description": "Various workflow engine state details, potentially including such things as:\n\n* condition that fired to cause this Action to be done (with actual variables substituted); \n* list of notifications which actually occurred (with all variables substituted); \n* other workflow engine state. \n\nThis specification does not currently define the actual structure or semantics of this field. \n",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Data_structures/all.json#ITEM_STRUCTURE"
+        }
+    },
+    "required": [
+        "instruction_id",
+        "activity_id"
+    ],
+    "$inherits": [
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Common/all.json#PATHABLE"
+    ]
+}

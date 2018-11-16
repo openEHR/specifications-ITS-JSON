@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Support/MEASUREMENT_SERVICE.json",
+    "title": "MEASUREMENT_SERVICE",
+    "description": "Defines an object providing proxy access to a measurement information service.",
+    "$comments": "Defined in Support IM",
+    "type": "object"
+}

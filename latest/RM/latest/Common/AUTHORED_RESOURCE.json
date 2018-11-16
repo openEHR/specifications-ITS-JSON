@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/AUTHORED_RESOURCE.json",
+    "title": "AUTHORED_RESOURCE",
+    "description": "Abstract idea of an online resource created by a human author. \n",
+    "$comments": "Defined in Common IM, abstract",
+    "type": "object",
+    "properties": {
+        "uid": {
+            "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Base_types/all.json#UUID"
+        },
+        "original_language": {
+            "description": "Language in which this resource was initially authored. Although there is no language primacy of resources overall, the language of original authoring is required to ensure natural language translations can preserve quality. Language is relevant in both the description and ontology sections. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Data_types/all.json#CODE_PHRASE"
+        },
+        "description": {
+            "description": "Description and lifecycle information of the resource.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#RESOURCE_DESCRIPTION"
+        },
+        "is_controlled": {
+            "description": "True if this resource is under any kind of change control (even file copying), in which case revision history is created. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/BASE/Foundation_types/all.json#Boolean"
+        },
+        "annotations": {
+            "description": "Annotations on individual items within the resource, keyed by path. The inner table takes the form of a Hash table of String values keyed by String tags.",
+            "$ref": "all.json#RESOURCE_ANNOTATIONS"
+        },
+        "translations": {
+            "description": "List of details for each natural translation made of this resource, keyed by language. For each translation listed here, there must be corresponding sections in all language-dependent parts of the resource. The original_language does not appear in this list.",
+            "type": "array",
+            "items": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#TRANSLATION_DETAILS"
+            }
+        },
+        "revision_history": {
+            "description": "The revision history of the resource. Only required if is_controlled = True (avoids large revision histories for informal or private editing situations). ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#REVISION_HISTORY"
+        }
+    },
+    "required": [
+        "original_language"
+    ]
+}

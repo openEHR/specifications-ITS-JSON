@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Support/all.json",
+    "title": "Support IM definitions",
+    "description": "The rm.support package describes the most basic concepts, required by all other packages, and is comprised of the Definitions, Identification, Terminology and Measurement packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data. The support package includes the special package assumed_types, describing what basic types are assumed by openEHR in external type systems; this package is a guide for integrating openEHR models proper into the type systems of implementation technologies.",
+    "definitions": {
+        "EXTERNAL_ENVIRONMENT_ACCESS": {
+            "id": "#EXTERNAL_ENVIRONMENT_ACCESS",
+            "title": "EXTERNAL_ENVIRONMENT_ACCESS",
+            "description": "A mixin class providing access to services in the external environment.",
+            "$comments": "Defined in Support IM, abstract, inherits from TERMINOLOGY_SERVICE, MEASUREMENT_SERVICE",
+            "type": "object",
+            "$inherits": [
+                "#TERMINOLOGY_SERVICE",
+                "#MEASUREMENT_SERVICE"
+            ]
+        },
+        "OPENEHR_DEFINITIONS": {
+            "id": "#OPENEHR_DEFINITIONS",
+            "title": "OPENEHR_DEFINITIONS",
+            "description": "Inheritance class to provide access to constants defined in other packages.",
+            "$comments": "Defined in Support IM",
+            "type": "object"
+        },
+        "BASIC_DEFINITIONS": {
+            "id": "#BASIC_DEFINITIONS",
+            "title": "BASIC_DEFINITIONS",
+            "description": "Defines globally used constant values.",
+            "$comments": "Defined in Support IM",
+            "type": "object"
+        },
+        "MEASUREMENT_SERVICE": {
+            "id": "#MEASUREMENT_SERVICE",
+            "title": "MEASUREMENT_SERVICE",
+            "description": "Defines an object providing proxy access to a measurement information service.",
+            "$comments": "Defined in Support IM",
+            "type": "object"
+        },
+        "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS": {
+            "id": "#OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+            "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+            "description": "List of identifiers for groups in the openEHR terminology. ",
+            "$comments": "Defined in Support IM",
+            "type": "object"
+        },
+        "OPENEHR_CODE_SET_IDENTIFIERS": {
+            "id": "#OPENEHR_CODE_SET_IDENTIFIERS",
+            "title": "OPENEHR_CODE_SET_IDENTIFIERS",
+            "description": "List of identifiers for code sets in the openEHR terminology. ",
+            "$comments": "Defined in Support IM",
+            "type": "object"
+        },
+        "TERMINOLOGY_SERVICE": {
+            "id": "#TERMINOLOGY_SERVICE",
+            "title": "TERMINOLOGY_SERVICE",
+            "description": "Defines an object providing proxy access to a terminology service. ",
+            "$comments": "Defined in Support IM, inherits from OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS, OPENEHR_CODE_SET_IDENTIFIERS",
+            "type": "object",
+            "$inherits": [
+                "#OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+                "#OPENEHR_CODE_SET_IDENTIFIERS"
+            ]
+        }
+    }
+}

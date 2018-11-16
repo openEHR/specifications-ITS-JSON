@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/Iso8601_date.json",
+    "title": "Iso8601_date",
+    "description": "Represents an ISO 8601 date, including partial and extended forms. Value may be:\n\n* `YYYY-MM-DD` (extended, preferred)\n* `YYYYMMDD` (compactd)\n* a partial invariant.\n\nSee `Time_definitions._valid_iso8601_date()_` for validity.",
+    "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
+    "type": "string",
+    "properties": {
+        "value": {
+            "description": "Representation of all descendants is a single String.",
+            "$ref": "all.json#String"
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "$inherits": [
+        "all.json#Iso8601_type"
+    ]
+}

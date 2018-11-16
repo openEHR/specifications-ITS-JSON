@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/DV_PARSABLE.json",
+    "title": "DV_PARSABLE",
+    "description": "Encapsulated data expressed as a parsable String. The internal model of the data item is not described in the openEHR model in common with other encapsulated types, but in this case, the form of the data is assumed to be plaintext, rather than compressed or other types of large binary data. ",
+    "$comments": "Defined in Data_types IM, inherits from DV_ENCAPSULATED",
+    "type": "object",
+    "properties": {
+        "charset": {
+            "description": "Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions. ",
+            "$ref": "all.json#CODE_PHRASE"
+        },
+        "language": {
+            "description": "Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set `languages`.",
+            "$ref": "all.json#CODE_PHRASE"
+        },
+        "value": {
+            "description": "The string, which may validly be empty in some syntaxes.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+        },
+        "formalism": {
+            "description": "Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+        }
+    },
+    "required": [
+        "value",
+        "formalism"
+    ],
+    "$inherits": [
+        "all.json#DV_ENCAPSULATED"
+    ]
+}

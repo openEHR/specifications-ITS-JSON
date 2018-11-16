@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/DV_URI.json",
+    "title": "DV_URI",
+    "description": "A reference to an object which conforms to the Universal Resource Identifier (URI) standard. See \"Universal Resource Identifiers in WWW\" by Tim Berners-Lee at http://www.ietf.org/rfc/rfc3986.txt. This  is  a  World-Wide  Web  RFC for  global identification  of resources. \nSee http://www.w3.org/Addressing for a starting point on URIs. \n",
+    "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "Value of URI as a String. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "$inherits": [
+        "all.json#DATA_VALUE"
+    ]
+}

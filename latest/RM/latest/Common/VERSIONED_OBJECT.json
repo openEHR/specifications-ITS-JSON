@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/VERSIONED_OBJECT.json",
+    "title": "VERSIONED_OBJECT",
+    "description": "Version control abstraction, defining semantics for versioning one complex object.",
+    "$comments": "Defined in Common IM",
+    "type": "object",
+    "properties": {
+        "uid": {
+            "description": "Unique identifier of this version container in the form of a UID with no extension. This id will be the same in all instances of the same container in a distributed environment, meaning that it can be understood as the uid of the  virtual version tree. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Base_types/all.json#HIER_OBJECT_ID"
+        },
+        "owner_id": {
+            "description": "Reference to object to which this version container belongs, e.g. the id of the containing EHR or other relevant owning entity. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Base_types/all.json#OBJECT_REF"
+        },
+        "time_created": {
+            "description": "Time of initial creation of this versioned object. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/RM/Data_types/all.json#DV_DATE_TIME"
+        }
+    },
+    "required": [
+        "uid",
+        "owner_id",
+        "time_created"
+    ]
+}

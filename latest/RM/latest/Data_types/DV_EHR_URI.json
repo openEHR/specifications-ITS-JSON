@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/DV_EHR_URI.json",
+    "title": "DV_EHR_URI",
+    "description": "A `DV_EHR_URI` is a `DV_URI` which has the scheme name 'ehr', and which can only reference items in EHRs. \n\nUsed to reference items in an EHR, which may be the same as the current EHR (containing this link), or another.",
+    "$comments": "Defined in Data_types IM, inherits from DV_URI",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "Value of URI as a String. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/BASE/Foundation_types/all.json#String"
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "$inherits": [
+        "all.json#DV_URI"
+    ]
+}

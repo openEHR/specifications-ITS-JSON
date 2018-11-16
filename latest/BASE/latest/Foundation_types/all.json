@@ -1,0 +1,886 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json",
+    "title": "Foundation_types IM definitions",
+    "description": "The openEHR Base types.",
+    "definitions": {
+        "Hash": {
+            "id": "#Hash",
+            "title": "Hash",
+            "description": "Type representing a keyed table of values. T is the value type, and U the type of the keys. ",
+            "$comments": "Defined in Foundation_types IM, inherits from Container",
+            "type": "object",
+            "$inherits": [
+                "#Container"
+            ]
+        },
+        "Hash<String, Hash<String, Hash<String, String>>>": {
+            "id": "#Hash<String, Hash<String, Hash<String, String>>>",
+            "title": "Hash<String, Hash<String, Hash<String, String>>>",
+            "$comments": "Defined in Foundation_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#Hash"
+            ]
+        },
+        "Hash<String, Hash<String, String>>": {
+            "id": "#Hash<String, Hash<String, String>>",
+            "title": "Hash<String, Hash<String, String>>",
+            "description": "Two-level hash map structure, typically used for two levels of keyed tables, e.g. with outer keys = language (\"en\", \"zh\" etc) and inner keys = some tag or id or path.",
+            "$comments": "Defined in Foundation_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#Hash"
+            ]
+        },
+        "Hash<String, String>": {
+            "id": "#Hash<String, String>",
+            "title": "Hash<String, String>",
+            "$comments": "Defined in Foundation_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#Hash"
+            ]
+        },
+        "Container": {
+            "id": "#Container",
+            "title": "Container",
+            "description": "Abstract ancestor of container types whose items are addressable in some way.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "type": "array"
+        },
+        "List": {
+            "id": "#List",
+            "title": "List",
+            "description": "Ordered container that may contain duplicates.",
+            "$comments": "Defined in Foundation_types IM, inherits from Container",
+            "type": "array",
+            "$inherits": [
+                "#Container"
+            ]
+        },
+        "Set": {
+            "id": "#Set",
+            "title": "Set",
+            "description": "Unordered container that may not contain duplicates.",
+            "$comments": "Defined in Foundation_types IM, inherits from Container",
+            "type": "array",
+            "$inherits": [
+                "#Container"
+            ]
+        },
+        "Array": {
+            "id": "#Array",
+            "title": "Array",
+            "description": "Container whose storage is assumed to be contiguous.",
+            "$comments": "Defined in Foundation_types IM, inherits from Container",
+            "type": "array",
+            "$inherits": [
+                "#Container"
+            ]
+        },
+        "Set<String>": {
+            "id": "#Set<String>",
+            "title": "Set<String>",
+            "$comments": "Defined in Foundation_types IM, inherits from Set",
+            "type": "array",
+            "$inherits": [
+                "#Set"
+            ]
+        },
+        "List<String>": {
+            "id": "#List<String>",
+            "title": "List<String>",
+            "$comments": "Defined in Foundation_types IM, inherits from List",
+            "type": "array",
+            "$inherits": [
+                "#List"
+            ]
+        },
+        "Hash<String, List<String>>": {
+            "id": "#Hash<String, List<String>>",
+            "title": "Hash<String, List<String>>",
+            "$comments": "Defined in Foundation_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#Hash"
+            ]
+        },
+        "Hash<String, Any>": {
+            "id": "#Hash<String, Any>",
+            "title": "Hash<String, Any>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Uri": {
+            "id": "#Uri",
+            "title": "Uri",
+            "$comments": "Defined in Foundation_types IM, inherits from String",
+            "type": "string",
+            "$inherits": [
+                "#String"
+            ]
+        },
+        "Comparable": {
+            "id": "#Comparable",
+            "title": "Comparable",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "type": "object"
+        },
+        "Ordered_Numeric": {
+            "id": "#Ordered_Numeric",
+            "title": "Ordered_Numeric",
+            "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
+            "$comments": "Defined in Foundation_types IM, abstract, inherits from Ordered, Numeric",
+            "type": "number",
+            "$inherits": [
+                "#Ordered",
+                "#Numeric"
+            ]
+        },
+        "Integer": {
+            "id": "#Integer",
+            "title": "Integer",
+            "description": "Class representing minimal interface of standard Integer type.",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered_Numeric",
+            "type": "integer",
+            "$inherits": [
+                "#Ordered_Numeric"
+            ]
+        },
+        "Double": {
+            "id": "#Double",
+            "title": "Double",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered_Numeric",
+            "type": "number",
+            "$inherits": [
+                "#Ordered_Numeric"
+            ]
+        },
+        "Numeric": {
+            "id": "#Numeric",
+            "title": "Numeric",
+            "description": "Abstract notional parent class of numeric types, which are types which have various arithmetic and comparison operators defined.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "type": "number"
+        },
+        "Octet": {
+            "id": "#Octet",
+            "title": "Octet",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered",
+            "type": "integer",
+            "$inherits": [
+                "#Ordered"
+            ]
+        },
+        "Character": {
+            "id": "#Character",
+            "title": "Character",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered",
+            "type": "string",
+            "$inherits": [
+                "#Ordered"
+            ]
+        },
+        "Boolean": {
+            "id": "#Boolean",
+            "title": "Boolean",
+            "description": "Class representing minimal interface of standard Boolean type.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "boolean"
+        },
+        "String": {
+            "id": "#String",
+            "title": "String",
+            "description": "Strings of characters, as used to represent textual data in any natural or formal language.",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered",
+            "type": "string",
+            "$inherits": [
+                "#Ordered"
+            ]
+        },
+        "Real": {
+            "id": "#Real",
+            "title": "Real",
+            "description": "Type used to represent decimal numbers. Corresponds to a single-precision floating point value in most languages.",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered_Numeric",
+            "type": "number",
+            "$inherits": [
+                "#Ordered_Numeric"
+            ]
+        },
+        "Integer64": {
+            "id": "#Integer64",
+            "title": "Integer64",
+            "description": "Class representing minimal interface of standard Integer64 type.",
+            "$comments": "Defined in Foundation_types IM, inherits from Ordered_Numeric",
+            "type": "integer",
+            "$inherits": [
+                "#Ordered_Numeric"
+            ]
+        },
+        "Ordered": {
+            "id": "#Ordered",
+            "title": "Ordered",
+            "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "type": "object"
+        },
+        "TUPLE": {
+            "id": "#TUPLE",
+            "title": "TUPLE",
+            "description": "Parent type of all TUPLE types.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "FUNCTION": {
+            "id": "#FUNCTION",
+            "title": "FUNCTION",
+            "description": "Type representing a function with a return type and 0 or more arguments represented as a TUPLE.",
+            "$comments": "Defined in Foundation_types IM, inherits from ROUTINE",
+            "type": "object",
+            "$inherits": [
+                "#ROUTINE"
+            ]
+        },
+        "TUPLE2<Boolean,Boolean>": {
+            "id": "#TUPLE2<Boolean,Boolean>",
+            "title": "TUPLE2<Boolean,Boolean>",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE2",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE2"
+            ]
+        },
+        "TUPLE1": {
+            "id": "#TUPLE1",
+            "title": "TUPLE1",
+            "description": "A Tuple type used, among other things, for representing a single typed argument within a Routine signature.",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE"
+            ]
+        },
+        "TUPLE2": {
+            "id": "#TUPLE2",
+            "title": "TUPLE2",
+            "description": "A Tuple type used, among other things, for representing two typed arguments within a Routine signature.",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE"
+            ]
+        },
+        "TUPLE2<Numeric,Numeric>": {
+            "id": "#TUPLE2<Numeric,Numeric>",
+            "title": "TUPLE2<Numeric,Numeric>",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE2",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE2"
+            ]
+        },
+        "TUPLE1<Boolean>": {
+            "id": "#TUPLE1<Boolean>",
+            "title": "TUPLE1<Boolean>",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE1",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE1"
+            ]
+        },
+        "FUNCTION<<Boolean,Boolean>,Boolean>": {
+            "id": "#FUNCTION<<Boolean,Boolean>,Boolean>",
+            "title": "FUNCTION<<Boolean,Boolean>,Boolean>",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "FUNCTION<<Boolean>,Boolean>": {
+            "id": "#FUNCTION<<Boolean>,Boolean>",
+            "title": "FUNCTION<<Boolean>,Boolean>",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "FUNCTION<<Numeric,Numeric>,Numeric>": {
+            "id": "#FUNCTION<<Numeric,Numeric>,Numeric>",
+            "title": "FUNCTION<<Numeric,Numeric>,Numeric>",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "FUNCTION<<Numeric>,Numeric>": {
+            "id": "#FUNCTION<<Numeric>,Numeric>",
+            "title": "FUNCTION<<Numeric>,Numeric>",
+            "description": "Represents a function with signature\n\n   func (v: Numeric): Numeric",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "TUPLE1<Numeric>": {
+            "id": "#TUPLE1<Numeric>",
+            "title": "TUPLE1<Numeric>",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE1",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE1"
+            ]
+        },
+        "ROUTINE": {
+            "id": "#ROUTINE",
+            "title": "ROUTINE",
+            "description": "Type representing a function with a return type and 0 or more arguments represented as a TUPLE.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "PROCEDURE": {
+            "id": "#PROCEDURE",
+            "title": "PROCEDURE",
+            "description": "Type representing a procedure with 0 or more arguments represented as a TUPLE.",
+            "$comments": "Defined in Foundation_types IM, inherits from ROUTINE",
+            "type": "object",
+            "$inherits": [
+                "#ROUTINE"
+            ]
+        },
+        "FUNCTION<<Any>,Boolean>": {
+            "id": "#FUNCTION<<Any>,Boolean>",
+            "title": "FUNCTION<<Any>,Boolean>",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "TUPLE1<Any>": {
+            "id": "#TUPLE1<Any>",
+            "title": "TUPLE1<Any>",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE1",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE1"
+            ]
+        },
+        "FUNCTION<TUPLE,Any>": {
+            "id": "#FUNCTION<TUPLE,Any>",
+            "title": "FUNCTION<TUPLE,Any>",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "FUNCTION<<String,String>,Boolean>": {
+            "id": "#FUNCTION<<String,String>,Boolean>",
+            "title": "FUNCTION<<String,String>,Boolean>",
+            "$comments": "Defined in Foundation_types IM, inherits from FUNCTION",
+            "type": "object",
+            "$inherits": [
+                "#FUNCTION"
+            ]
+        },
+        "TUPLE2<String,String>": {
+            "id": "#TUPLE2<String,String>",
+            "title": "TUPLE2<String,String>",
+            "$comments": "Defined in Foundation_types IM, inherits from TUPLE2",
+            "type": "object",
+            "$inherits": [
+                "#TUPLE2"
+            ]
+        },
+        "Any": {
+            "id": "#Any",
+            "title": "Any",
+            "description": "Abstract supertype. Usually maps to a type like Any or Object in an object-oriented technology. Defined here to provide value and reference equality semantics.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "type": "object"
+        },
+        "Iso8601_date_time": {
+            "id": "#Iso8601_date_time",
+            "title": "Iso8601_date_time",
+            "description": "Represents an ISO 8601 date/time, including partial and extended forms. Value may be:\n\n* `YYYY-MM-DDThh:mm:ss[,sss][Z | \u00b1hh[mm]]` (extended, preferred) or\n* `YYYYMMDDThhmmss[,sss][Z | \u00b1hh[mm]]` (compact)\n* or a partial variant.\n\nSee `_valid_iso8601_date_time()_` for validity.\n\nNote that this class includes 2 deviations from ISO 8601:2004:\n\n* for partial date/times, any part of the date/time up to the month may be missing, not just seconds and minutes as in the standard;\n* the time `24:00:00` is not allowed, since it would mean the date was really on the next day.",
+            "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
+            "type": "string",
+            "properties": {
+                "value": {
+                    "description": "Representation of all descendants is a single String.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "$inherits": [
+                "#Iso8601_type"
+            ]
+        },
+        "Iso8601_duration": {
+            "id": "#Iso8601_duration",
+            "title": "Iso8601_duration",
+            "description": "Represents an ISO 8601 duration, which may have multiple parts from years down to seconds. Value is in format:\n\n* `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`",
+            "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "Representation of all descendants is a single String.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "$inherits": [
+                "#Iso8601_type"
+            ]
+        },
+        "Iso8601_time": {
+            "id": "#Iso8601_time",
+            "title": "Iso8601_time",
+            "description": "Represents an ISO 8601 time, including partial and extended forms. Value may be:\n\n* `hh:mm:ss[,sss][Z|\u00b1hh[mm]]` (extended, preferred) or\n* `hhmmss[,sss][Z|\u00b1hh[mm]]` (compact)\n* or a partial invariant.\n\nSee `_valid_iso8601_time()_` for validity.\n\nNOTE: A small deviation to the ISO 8601:2004 standard in this class is that the time `24:00:00` is not allowed, for consistency with `Iso8601_date_time`.",
+            "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
+            "type": "string",
+            "properties": {
+                "value": {
+                    "description": "Representation of all descendants is a single String.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "$inherits": [
+                "#Iso8601_type"
+            ]
+        },
+        "Iso8601_timezone": {
+            "id": "#Iso8601_timezone",
+            "title": "Iso8601_timezone",
+            "description": "ISO8601 timezone string, in format:\n\n* `Z | \u00b1hh[mm]`\n\nwhere:\n\n* `hh` is \"00\" - \"23\" (0-filled to two digits)\n* `mm` is \"00\" - \"59\" (0-filled to two digits)\n* `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`\n",
+            "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "Representation of all descendants is a single String.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "$inherits": [
+                "#Iso8601_type"
+            ]
+        },
+        "Iso8601_type": {
+            "id": "#Iso8601_type",
+            "title": "Iso8601_type",
+            "description": "Abstract ancestor type of ISO 8601 types, defining interface for 'extended' and 'partial' concepts from ISO 8601.",
+            "$comments": "Defined in Foundation_types IM, abstract, inherits from Temporal, Time_Definitions",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "Representation of all descendants is a single String.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "$inherits": [
+                "#Temporal",
+                "#Time_Definitions"
+            ]
+        },
+        "Iso8601_date": {
+            "id": "#Iso8601_date",
+            "title": "Iso8601_date",
+            "description": "Represents an ISO 8601 date, including partial and extended forms. Value may be:\n\n* `YYYY-MM-DD` (extended, preferred)\n* `YYYYMMDD` (compactd)\n* a partial invariant.\n\nSee `Time_definitions._valid_iso8601_date()_` for validity.",
+            "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
+            "type": "string",
+            "properties": {
+                "value": {
+                    "description": "Representation of all descendants is a single String.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "$inherits": [
+                "#Iso8601_type"
+            ]
+        },
+        "Interval<Iso8601_date>": {
+            "id": "#Interval<Iso8601_date>",
+            "title": "Interval<Iso8601_date>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Proper_interval<Iso8601_date>": {
+            "id": "#Proper_interval<Iso8601_date>",
+            "title": "Proper_interval<Iso8601_date>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Point_interval<Iso8601_date>": {
+            "id": "#Point_interval<Iso8601_date>",
+            "title": "Point_interval<Iso8601_date>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Interval<Iso8601_time>": {
+            "id": "#Interval<Iso8601_time>",
+            "title": "Interval<Iso8601_time>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Interval<Iso8601_date_time>": {
+            "id": "#Interval<Iso8601_date_time>",
+            "title": "Interval<Iso8601_date_time>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Interval<Iso8601_duration>": {
+            "id": "#Interval<Iso8601_duration>",
+            "title": "Interval<Iso8601_duration>",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Time_Definitions": {
+            "id": "#Time_Definitions",
+            "title": "Time_Definitions",
+            "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using `+12:00`, not `-12:00`.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object"
+        },
+        "Temporal": {
+            "id": "#Temporal",
+            "title": "Temporal",
+            "description": "Abstract ancestor of time-related classes.",
+            "$comments": "Defined in Foundation_types IM, abstract, inherits from Ordered",
+            "type": "object",
+            "$inherits": [
+                "#Ordered"
+            ]
+        },
+        "Multiplicity_interval": {
+            "id": "#Multiplicity_interval",
+            "title": "Multiplicity_interval",
+            "description": "An Interval of Integer, used to represent multiplicity, cardinality and optionality in models. ",
+            "$comments": "Defined in Foundation_types IM, inherits from Proper_interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#Proper_interval"
+            ]
+        },
+        "Proper_interval": {
+            "id": "#Proper_interval",
+            "title": "Proper_interval",
+            "description": "Type representing a 'proper' Interval, i.e. any two-sided or one-sided interval.",
+            "$comments": "Defined in Foundation_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#Interval"
+            ]
+        },
+        "Interval": {
+            "id": "#Interval",
+            "title": "Interval",
+            "description": "Interval abstraction, featuring upper and lower limits that may be open or closed, included or not included.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ]
+        },
+        "Point_interval": {
+            "id": "#Point_interval",
+            "title": "Point_interval",
+            "description": "Type representing an Interval that happens to be a point value. Provides an efficient representation that is substitutable for Interval<T> where needed.",
+            "$comments": "Defined in Foundation_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#Boolean",
+                    "default": "true"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#Boolean",
+                    "default": "true"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#Interval"
+            ]
+        },
+        "Cardinality": {
+            "id": "#Cardinality",
+            "title": "Cardinality",
+            "description": "Express constraints on the cardinality of container objects which are the values of multiply-valued attributes, including uniqueness and ordering, providing the means to state that a container acts like a logical list, set or bag. The cardinality cannot contradict the cardinality of the corresponding attribute within the relevant reference model.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object",
+            "properties": {
+                "interval": {
+                    "description": "The interval of this cardinality. ",
+                    "$ref": "#Multiplicity_interval"
+                },
+                "is_ordered": {
+                    "description": "True if the members of the container attribute to which this cardinality refers are ordered. ",
+                    "$ref": "#Boolean"
+                },
+                "is_unique": {
+                    "description": "True if the members of the container attribute to which this cardinality refers are unique.",
+                    "$ref": "#Boolean"
+                }
+            },
+            "required": [
+                "interval",
+                "is_ordered",
+                "is_unique"
+            ]
+        },
+        "Interval<Real>": {
+            "id": "#Interval<Real>",
+            "title": "Interval<Real>",
+            "$comments": "Defined in Foundation_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#Interval"
+            ]
+        },
+        "Interval<Integer>": {
+            "id": "#Interval<Integer>",
+            "title": "Interval<Integer>",
+            "$comments": "Defined in Foundation_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/RM/Common/all.json#T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#Interval"
+            ]
+        },
+        "Terminology_code": {
+            "id": "#Terminology_code",
+            "title": "Terminology_code",
+            "description": "Logically primitive type representing a reference to a terminology concept, in the form of a terminology identifier, optional version, and a code or code string from the terminology.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object",
+            "properties": {
+                "terminology_id": {
+                    "description": "The archetype environment namespace identifier used to identify a terminology. Typically a value like `\"snomed_ct\"` that is mapped elsewhere to the full URI identifying the terminology.",
+                    "$ref": "#String"
+                },
+                "terminology_version": {
+                    "description": "Optional string value representing terminology version, typically a date or dotted numeric.",
+                    "$ref": "#String"
+                },
+                "code_string": {
+                    "description": "A terminology code or post-coordinated code expression, if supported by the terminology. The code may refer to a single term, a value set consisting of multiple terms, or some other entity representable within the terminology.",
+                    "$ref": "#String"
+                },
+                "uri": {
+                    "description": "The URI reference that may be used as a concrete key into a notional terminology service for queries that can obtain the term text, definition, and other associated elements.",
+                    "$ref": "#Uri"
+                }
+            },
+            "required": [
+                "terminology_id",
+                "code_string"
+            ]
+        },
+        "Terminology_term": {
+            "id": "#Terminology_term",
+            "title": "Terminology_term",
+            "description": "Leaf type representing a term from a terminology, which consists of the term text and the code, i.e. a concept reference.",
+            "$comments": "Defined in Foundation_types IM",
+            "type": "object",
+            "properties": {
+                "concept": {
+                    "description": "Refrence to the terminology concept formally representing this term.",
+                    "$ref": "#Terminology_code"
+                },
+                "text": {
+                    "description": "Text of term.",
+                    "$ref": "#String"
+                }
+            },
+            "required": [
+                "concept",
+                "text"
+            ]
+        }
+    }
+}
