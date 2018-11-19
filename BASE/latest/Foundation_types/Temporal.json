@@ -6,7 +6,7 @@
     "$comments": "Defined in Foundation_types IM, abstract, inherits from Ordered",
     "type": "object",
     "$inherits": [
-        "all.json#Ordered"
+        "all.json#/definitions/Ordered"
     ],
     "$functions": {
         "infix <": {

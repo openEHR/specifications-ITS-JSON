@@ -8,26 +8,26 @@
     "properties": {
         "normal_status": {
             "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
-            "$ref": "all.json#CODE_PHRASE"
+            "$ref": "all.json#/definitions/CODE_PHRASE"
         },
         "normal_range": {
             "description": "Optional normal range. ",
-            "$ref": "all.json#DV_INTERVAL"
+            "$ref": "all.json#/definitions/DV_INTERVAL"
         },
         "other_reference_ranges": {
             "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
             "type": "array",
             "items": {
-                "$ref": "all.json#REFERENCE_RANGE"
+                "$ref": "all.json#/definitions/REFERENCE_RANGE"
             }
         },
         "symbol": {
             "description": "Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  mild ,  moderate ,  severe , or even the same number series as the values, e.g.  1 ,  2 ,  3 . Codes come from archetype. ",
-            "$ref": "all.json#DV_CODED_TEXT"
+            "$ref": "all.json#/definitions/DV_CODED_TEXT"
         },
         "value": {
             "description": "Value in ordered enumeration of values. Any integer value can be used. \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Integer"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Integer"
         }
     },
     "required": [
@@ -35,7 +35,7 @@
         "value"
     ],
     "$inherits": [
-        "all.json#DV_ORDERED"
+        "all.json#/definitions/DV_ORDERED"
     ],
     "$functions": {
         "infix <": {

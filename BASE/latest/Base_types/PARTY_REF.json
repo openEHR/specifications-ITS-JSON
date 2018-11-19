@@ -8,15 +8,15 @@
     "properties": {
         "namespace": {
             "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n\n* local\n* unknown\n* [a-zA-Z][a-zA-Z0-9_-:/&+?]*\n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "type": {
             "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "id": {
             "description": "Globally unique id of an object, regardless of where it is stored.",
-            "$ref": "all.json#OBJECT_ID"
+            "$ref": "all.json#/definitions/OBJECT_ID"
         }
     },
     "required": [
@@ -25,7 +25,7 @@
         "id"
     ],
     "$inherits": [
-        "all.json#OBJECT_REF"
+        "all.json#/definitions/OBJECT_REF"
     ],
     "$invariants": {
         "Type_validity": {

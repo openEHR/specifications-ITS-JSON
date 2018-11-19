@@ -8,7 +8,7 @@
     "properties": {
         "external_ref": {
             "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#PARTY_REF"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
         }
     }
 }

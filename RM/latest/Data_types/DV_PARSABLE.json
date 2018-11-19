@@ -8,19 +8,19 @@
     "properties": {
         "charset": {
             "description": "Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions. ",
-            "$ref": "all.json#CODE_PHRASE"
+            "$ref": "all.json#/definitions/CODE_PHRASE"
         },
         "language": {
             "description": "Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set `languages`.",
-            "$ref": "all.json#CODE_PHRASE"
+            "$ref": "all.json#/definitions/CODE_PHRASE"
         },
         "value": {
             "description": "The string, which may validly be empty in some syntaxes.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "formalism": {
             "description": "Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [
@@ -28,7 +28,7 @@
         "formalism"
     ],
     "$inherits": [
-        "all.json#DV_ENCAPSULATED"
+        "all.json#/definitions/DV_ENCAPSULATED"
     ],
     "$functions": {
         "size": {

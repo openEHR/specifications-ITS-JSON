@@ -8,19 +8,19 @@
     "properties": {
         "time": {
             "description": "The time interval during which the participation took place, if it is used in an observational context (i.e. recording facts about the past); or the intended time interval of the participation when used in future contexts, such as EHR Instructions. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_INTERVAL_of_DV_DATE_TIME"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_INTERVAL_of_DV_DATE_TIME"
         },
         "function": {
             "description": "The function of the Party in this participation (note that a given party might participate in more than one way in a particular activity). This attribute should be coded, but cannot be limited to the HL7v3:ParticipationFunction vocabulary, since it is too limited and hospital-oriented. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
         },
         "mode": {
             "description": "The mode of the performer / activity interaction, e.g. present, by telephone, by email etc. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_CODED_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
         },
         "performer": {
             "description": "Uid of demographic entity within Extract who performed this participation.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [

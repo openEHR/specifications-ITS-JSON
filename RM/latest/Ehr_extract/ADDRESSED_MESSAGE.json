@@ -8,27 +8,27 @@
     "properties": {
         "sender": {
             "description": "Party sending the message.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "sender_reference": {
             "description": "Identification of message used by sender. This will be the same no matter how many times this message is sent to these recipients.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "addressees": {
             "description": "Intended recipients, in the form of internet addresses.",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
             },
             "minItems": 1
         },
         "urgency": {
             "description": "Urgency with which destination should deal with message:\n\n* -1 - low\n* 0 - normal\n* 1 - high",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Integer"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Integer"
         },
         "message": {
             "description": "The content of the message.",
-            "$ref": "all.json#MESSAGE"
+            "$ref": "all.json#/definitions/MESSAGE"
         }
     },
     "required": [

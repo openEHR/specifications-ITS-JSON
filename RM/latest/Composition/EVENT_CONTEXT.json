@@ -8,33 +8,33 @@
     "properties": {
         "start_time": {
             "description": "Start time of the clinical session or other kind of event during which a provider performs a service of any kind for the patient. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
         },
         "end_time": {
             "description": "Optional end time of the clinical session. \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
         },
         "location": {
             "description": "The actual location where the session occurred, e.g. 'microbiology lab 2', 'home', 'ward A3'  and so on.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "setting": {
             "description": "The setting in which the clinical session took place. Coded using the openEHR Terminology,  setting  group. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_CODED_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
         },
         "other_context": {
             "description": "Other optional context which will be archetyped.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#ITEM_STRUCTURE"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
         },
         "health_care_facility": {
             "description": "The health care facility under whose care the event took place. This is the most specific workgroup or delivery unit within a care delivery enterprise that has an official identifier in the health system, and can be used to ensure medico-legal accountability. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#PARTY_IDENTIFIED"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PARTY_IDENTIFIED"
         },
         "participations": {
             "description": "Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). ",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#PARTICIPATION"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PARTICIPATION"
             }
         }
     },
@@ -43,7 +43,7 @@
         "setting"
     ],
     "$inherits": [
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#PATHABLE"
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PATHABLE"
     ],
     "$functions": {
         "parent": {

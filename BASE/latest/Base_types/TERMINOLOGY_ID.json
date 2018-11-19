@@ -8,14 +8,14 @@
     "properties": {
         "value": {
             "description": "The value of the id in the form defined below. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [
         "value"
     ],
     "$inherits": [
-        "all.json#OBJECT_ID"
+        "all.json#/definitions/OBJECT_ID"
     ],
     "$functions": {
         "name": {

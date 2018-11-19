@@ -8,11 +8,11 @@
     "properties": {
         "value": {
             "description": "The state name. State names are determined by a state/event table defined in archetypes, and coded using openEHR Terminology or local archetype terms, as specified by the archetype. ",
-            "$ref": "all.json#DV_CODED_TEXT"
+            "$ref": "all.json#/definitions/DV_CODED_TEXT"
         },
         "is_terminal": {
             "description": "Indicates whether this state is a terminal state, such as  \"aborted\",  \"completed\" etc. from which no further transitions are possible.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         }
     },
     "required": [
@@ -20,6 +20,6 @@
         "is_terminal"
     ],
     "$inherits": [
-        "all.json#DATA_VALUE"
+        "all.json#/definitions/DATA_VALUE"
     ]
 }

@@ -8,11 +8,11 @@
     "properties": {
         "concept": {
             "description": "Refrence to the terminology concept formally representing this term.",
-            "$ref": "all.json#Terminology_code"
+            "$ref": "all.json#/definitions/Terminology_code"
         },
         "text": {
             "description": "Text of term.",
-            "$ref": "all.json#String"
+            "$ref": "all.json#/definitions/String"
         }
     },
     "required": [

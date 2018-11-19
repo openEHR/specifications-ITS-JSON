@@ -6,10 +6,10 @@
     "type": "object",
     "properties": {
         "request_id": {
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#OBJECT_REF"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/OBJECT_REF"
         },
         "reason": {
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
         }
     },
     "required": [

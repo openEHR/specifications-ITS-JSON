@@ -8,15 +8,15 @@
     "properties": {
         "charset": {
             "description": "Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions. ",
-            "$ref": "all.json#CODE_PHRASE"
+            "$ref": "all.json#/definitions/CODE_PHRASE"
         },
         "language": {
             "description": "Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set `languages`.",
-            "$ref": "all.json#CODE_PHRASE"
+            "$ref": "all.json#/definitions/CODE_PHRASE"
         }
     },
     "$inherits": [
-        "all.json#DATA_VALUE"
+        "all.json#/definitions/DATA_VALUE"
     ],
     "$invariants": {
         "Size_valid": {

@@ -10,7 +10,7 @@
             "description": "The items in this history in most-recent-last order. ",
             "type": "array",
             "items": {
-                "$ref": "all.json#REVISION_HISTORY_ITEM"
+                "$ref": "all.json#/definitions/REVISION_HISTORY_ITEM"
             },
             "minItems": 1
         }

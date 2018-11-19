@@ -8,15 +8,15 @@
     "properties": {
         "uid": {
             "description": "Unique identifier of this version container in the form of a UID with no extension. This id will be the same in all instances of the same container in a distributed environment, meaning that it can be understood as the uid of the  virtual version tree. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#HIER_OBJECT_ID"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
         },
         "owner_id": {
             "description": "Reference to object to which this version container belongs, e.g. the id of the containing EHR or other relevant owning entity. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#OBJECT_REF"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/OBJECT_REF"
         },
         "time_created": {
             "description": "Time of initial creation of this versioned object. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
         }
     },
     "required": [
@@ -25,7 +25,7 @@
         "time_created"
     ],
     "$inherits": [
-        "all.json#VERSIONED_OBJECT"
+        "all.json#/definitions/VERSIONED_OBJECT"
     ],
     "$functions": {
         "version_count": {

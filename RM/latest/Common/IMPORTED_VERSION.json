@@ -8,19 +8,19 @@
     "properties": {
         "contribution": {
             "description": "Contribution in which this version was added. ",
-            "$ref": "all.json#CONTRIBUTION"
+            "$ref": "all.json#/definitions/CONTRIBUTION"
         },
         "signature": {
             "description": "OpenPGP digital signature or digest of content committed in this Version. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "commit_audit": {
             "description": "Audit trail corresponding to the committal of this version to the `VERSIONED_OBJECT`.",
-            "$ref": "all.json#AUDIT_DETAILS"
+            "$ref": "all.json#/definitions/AUDIT_DETAILS"
         },
         "item": {
             "description": "The ORIGINAL_VERSION object that was imported. ",
-            "$ref": "all.json#ORIGINAL_VERSION"
+            "$ref": "all.json#/definitions/ORIGINAL_VERSION"
         }
     },
     "required": [
@@ -29,7 +29,7 @@
         "item"
     ],
     "$inherits": [
-        "all.json#VERSION"
+        "all.json#/definitions/VERSION"
     ],
     "$functions": {
         "uid": {

@@ -8,23 +8,23 @@
     "properties": {
         "system_id": {
             "description": "Identity of the system where the change was committed. Ideally this is a machine- and human-processable identifier, but it may not be. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "time_committed": {
             "description": "Time of committal of the item. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
         },
         "change_type": {
             "description": "Type of change. Coded using the openEHR Terminology  audit change type  group.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_CODED_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
         },
         "description": {
             "description": "Reason for committal. This may be used to qualify the value in the `_change_type_` field. For example, if the change affects only the EHR directory, this field might be used to indicate 'Folder \"episode 2018-02-16\" added' or similar.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
         },
         "committer": {
             "description": "Identity and optional reference into identity management service, of user who committed the item. ",
-            "$ref": "all.json#PARTY_PROXY"
+            "$ref": "all.json#/definitions/PARTY_PROXY"
         }
     },
     "required": [

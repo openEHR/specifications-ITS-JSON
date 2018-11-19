@@ -8,11 +8,11 @@
     "properties": {
         "meaning": {
             "description": "Term whose value indicates the meaning of this range, e.g.  normal,  critical,  therapeutic  etc.",
-            "$ref": "all.json#DV_TEXT"
+            "$ref": "all.json#/definitions/DV_TEXT"
         },
         "range": {
             "description": "The data range for this meaning, e.g. critical  etc.",
-            "$ref": "all.json#DV_INTERVAL"
+            "$ref": "all.json#/definitions/DV_INTERVAL"
         }
     },
     "required": [

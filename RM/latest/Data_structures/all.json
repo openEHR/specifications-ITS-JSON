@@ -5,7 +5,6 @@
     "description": "In most openEHR information models, generic data structures are used for expressing content whose particular structure will be defined by archetypes. The generic structures are as follows. \n  Single:   single items, used to contain any single value, such as a height or weight. \n  List:       linear lists of named items, such as many pathology test results. \n  Table:    tabular data, including unlimited and limited length tables with named and \n               ordered columns, and potentially named rows. \n  Tree:     tree-shaped data, which may be conceptually a list of lists, or other deep structure. \n  History: time-series structures, where each time-point can be an entire data structure \n               of any complexity, described by one of the above structure types. Point and interval \n               samples are supported. \n",
     "definitions": {
         "DATA_STRUCTURE": {
-            "id": "#DATA_STRUCTURE",
             "title": "DATA_STRUCTURE",
             "description": "Abstract parent class of all data structure types. Includes the `_as_hierarchy_` function which can generate the equivalent CEN EN13606 single hierarchy for each subtype's physical representation. For example, the physical representation of an `ITEM_LIST` is `List<ELEMENT>`; its implementation of `_as_hierarchy_` will generate a `CLUSTER` containing the set of `ELEMENT` nodes from the list. ",
             "$comments": "Defined in Data_structures IM, abstract, inherits from LOCATABLE",
@@ -13,30 +12,30 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 }
             },
             "required": [
@@ -44,7 +43,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LOCATABLE"
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
             "$functions": {
                 "parent": {
@@ -91,7 +90,6 @@
             }
         },
         "ITEM_STRUCTURE": {
-            "id": "#ITEM_STRUCTURE",
             "title": "ITEM_STRUCTURE",
             "description": "Abstract parent class of all spatial data types. ",
             "$comments": "Defined in Data_structures IM, abstract, inherits from DATA_STRUCTURE",
@@ -99,30 +97,30 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 }
             },
             "required": [
@@ -130,7 +128,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "#DATA_STRUCTURE"
+                "#/definitions/DATA_STRUCTURE"
             ],
             "$functions": {
                 "parent": {
@@ -177,7 +175,6 @@
             }
         },
         "ITEM_TREE": {
-            "id": "#ITEM_TREE",
             "title": "ITEM_TREE",
             "description": "Logical tree data structure. The tree may be empty. Used for representing data which are logically a tree such as audiology results, microbiology results, biochemistry results.",
             "$comments": "Defined in Data_structures IM, inherits from ITEM_STRUCTURE",
@@ -185,36 +182,36 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "items": {
                     "description": "The items comprising the ITEM_TREE. Can include 0 or more CLUSTERs and/or 0 or more individual ELEMENTs.",
                     "type": "array",
                     "items": {
-                        "$ref": "#ITEM"
+                        "$ref": "#/definitions/ITEM"
                     }
                 }
             },
@@ -223,7 +220,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "#ITEM_STRUCTURE"
+                "#/definitions/ITEM_STRUCTURE"
             ],
             "$functions": {
                 "parent": {
@@ -276,7 +273,6 @@
             }
         },
         "ITEM_SINGLE": {
-            "id": "#ITEM_SINGLE",
             "title": "ITEM_SINGLE",
             "description": "Logical single value data structure. Used to represent any data which is logically a single value, such as a person's height or weight.",
             "$comments": "Defined in Data_structures IM, inherits from ITEM_STRUCTURE",
@@ -284,33 +280,33 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "item": {
-                    "$ref": "#ELEMENT"
+                    "$ref": "#/definitions/ELEMENT"
                 }
             },
             "required": [
@@ -319,7 +315,7 @@
                 "item"
             ],
             "$inherits": [
-                "#ITEM_STRUCTURE"
+                "#/definitions/ITEM_STRUCTURE"
             ],
             "$functions": {
                 "parent": {
@@ -366,7 +362,6 @@
             }
         },
         "ITEM_TABLE": {
-            "id": "#ITEM_TABLE",
             "title": "ITEM_TABLE",
             "description": "Logical relational database style table data structure, in which columns are named and ordered with respect to each other. Implemented using Cluster-per-row encoding. Each row Cluster must have an identical number of Elements, each of which in turn must have identical names and value types in the corresponding positions in each row. \n\nSome columns may be designated  key' columns, containing key data for each row, in the manner of relational tables. This allows row-naming, where each row represents a body site, a blood antigen etc. All values in a column have the same data type. \n\nUsed for representing any data which is logically a table of values, such as blood pressure, most protocols, many blood tests etc. \n\nMisuse: Not to be used for time-based data, which should be represented with the temporal class `HISTORY`. The table may be empty. ",
             "$comments": "Defined in Data_structures IM, inherits from ITEM_STRUCTURE",
@@ -374,36 +369,36 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "rows": {
                     "description": "Physical representation of the table as a list of CLUSTERs, each containing the data of one row of the table. ",
                     "type": "array",
                     "items": {
-                        "$ref": "#CLUSTER"
+                        "$ref": "#/definitions/CLUSTER"
                     }
                 }
             },
@@ -412,7 +407,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "#ITEM_STRUCTURE"
+                "#/definitions/ITEM_STRUCTURE"
             ],
             "$functions": {
                 "parent": {
@@ -495,7 +490,6 @@
             }
         },
         "ITEM_LIST": {
-            "id": "#ITEM_LIST",
             "title": "ITEM_LIST",
             "description": "Logical list data structure, where each item has a value and can be referred to by a name and a positional index in the list. The list may be empty. Use Used to represent any data which is logically a list of values, such as blood pressure, most protocols, many blood tests etc. \n\nMisuse: Not to be used for time-based lists, which should be represented with the proper temporal class, i.e. `HISTORY`.",
             "$comments": "Defined in Data_structures IM, inherits from ITEM_STRUCTURE",
@@ -503,36 +497,36 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "items": {
                     "description": "Physical representation of the list. \n",
                     "type": "array",
                     "items": {
-                        "$ref": "#ELEMENT"
+                        "$ref": "#/definitions/ELEMENT"
                     }
                 }
             },
@@ -541,7 +535,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "#ITEM_STRUCTURE"
+                "#/definitions/ITEM_STRUCTURE"
             ],
             "$functions": {
                 "parent": {
@@ -603,7 +597,6 @@
             }
         },
         "ITEM": {
-            "id": "#ITEM",
             "title": "ITEM",
             "description": "The abstract parent of `CLUSTER` and `ELEMENT` representation classes. ",
             "$comments": "Defined in Data_structures IM, abstract, inherits from LOCATABLE",
@@ -611,30 +604,30 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 }
             },
             "required": [
@@ -642,7 +635,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LOCATABLE"
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
             "$functions": {
                 "parent": {
@@ -686,7 +679,6 @@
             }
         },
         "CLUSTER": {
-            "id": "#CLUSTER",
             "title": "CLUSTER",
             "description": "The grouping variant of `ITEM`, which may contain further instances of `ITEM`, in an ordered list. ",
             "$comments": "Defined in Data_structures IM, inherits from ITEM",
@@ -694,36 +686,36 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "items": {
                     "description": "Ordered list of items - CLUSTER or ELEMENT objects - under this CLUSTER. ",
                     "type": "array",
                     "items": {
-                        "$ref": "#ITEM"
+                        "$ref": "#/definitions/ITEM"
                     },
                     "minItems": 1
                 }
@@ -734,7 +726,7 @@
                 "items"
             ],
             "$inherits": [
-                "#ITEM"
+                "#/definitions/ITEM"
             ],
             "$functions": {
                 "parent": {
@@ -778,7 +770,6 @@
             }
         },
         "ELEMENT": {
-            "id": "#ELEMENT",
             "title": "ELEMENT",
             "description": "The leaf variant of `ITEM`, to which a `DATA_VALUE` instance is attached. ",
             "$comments": "Defined in Data_structures IM, inherits from ITEM",
@@ -786,38 +777,38 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "null_flavour": {
                     "description": "Flavour of null value, e.g. indeterminate, not asked etc.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_CODED_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
                 },
                 "value": {
                     "description": "Property representing leaf value object of ELEMENT. In real data, any concrete subtype of DATA_VALUE can be used.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DATA_VALUE"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DATA_VALUE"
                 }
             },
             "required": [
@@ -825,7 +816,7 @@
                 "archetype_node_id"
             ],
             "$inherits": [
-                "#ITEM"
+                "#/definitions/ITEM"
             ],
             "$functions": {
                 "parent": {
@@ -881,7 +872,6 @@
             }
         },
         "EVENT": {
-            "id": "#EVENT",
             "title": "EVENT",
             "description": "Defines the abstract notion of a single event in a series. This class is generic, allowing types to be generated which are locked to particular spatial types, such as `EVENT<ITEM_LIST>`. Subtypes express point or intveral data. ",
             "$comments": "Defined in Data_structures IM, abstract, inherits from LOCATABLE",
@@ -889,42 +879,42 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "time": {
                     "description": "Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
                 },
                 "state": {
                     "description": "Optional state data for this event.",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 },
                 "data": {
                     "description": "The data of this event. ",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 }
             },
             "required": [
@@ -934,7 +924,7 @@
                 "data"
             ],
             "$inherits": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LOCATABLE"
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
             "$functions": {
                 "parent": {
@@ -987,7 +977,6 @@
             }
         },
         "POINT_EVENT": {
-            "id": "#POINT_EVENT",
             "title": "POINT_EVENT",
             "description": "Defines a single point event in a series.",
             "$comments": "Defined in Data_structures IM, inherits from EVENT",
@@ -995,42 +984,42 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "time": {
                     "description": "Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
                 },
                 "state": {
                     "description": "Optional state data for this event.",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 },
                 "data": {
                     "description": "The data of this event. ",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 }
             },
             "required": [
@@ -1040,7 +1029,7 @@
                 "data"
             ],
             "$inherits": [
-                "#EVENT"
+                "#/definitions/EVENT"
             ],
             "$functions": {
                 "parent": {
@@ -1093,7 +1082,6 @@
             }
         },
         "INTERVAL_EVENT": {
-            "id": "#INTERVAL_EVENT",
             "title": "INTERVAL_EVENT",
             "description": "Defines a single interval event in a series. ",
             "$comments": "Defined in Data_structures IM, inherits from EVENT",
@@ -1101,54 +1089,54 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "time": {
                     "description": "Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
                 },
                 "state": {
                     "description": "Optional state data for this event.",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 },
                 "data": {
                     "description": "The data of this event. ",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 },
                 "width": {
                     "description": "Length of the interval during which the state was true. Void if an instantaneous event.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DURATION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DURATION"
                 },
                 "sample_count": {
                     "description": "Optional count of original samples to which this event corresponds.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Integer"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Integer"
                 },
                 "math_function": {
                     "description": "Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using openEHR Terminology group `event math function`.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_CODED_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
                 }
             },
             "required": [
@@ -1160,7 +1148,7 @@
                 "math_function"
             ],
             "$inherits": [
-                "#EVENT"
+                "#/definitions/EVENT"
             ],
             "$functions": {
                 "parent": {
@@ -1222,7 +1210,6 @@
             }
         },
         "HISTORY": {
-            "id": "#HISTORY",
             "title": "HISTORY",
             "description": "Root object of a linear history, i.e. time series structure. For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the `EVENT.|_offset_` must be a multiple of period for each Event. Missing events in a period History are however allowed. ",
             "$comments": "Defined in Data_structures IM, inherits from DATA_STRUCTURE",
@@ -1230,52 +1217,52 @@
             "properties": {
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_TEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
                 },
                 "archetype_node_id": {
                     "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "uid": {
                     "description": "Optional globally unique object identifier for root points of archetyped structures. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#UID_BASED_ID"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
                 },
                 "links": {
                     "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#LINK"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
                     }
                 },
                 "archetype_details": {
                     "description": "Details of archetyping used on this node.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#ARCHETYPED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
                 },
                 "feeder_audit": {
                     "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#FEEDER_AUDIT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "origin": {
                     "description": "Time origin of this event history. The first event is not necessarily at the origin point. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
                 },
                 "period": {
                     "description": "Period between samples in this segment if periodic.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DURATION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DURATION"
                 },
                 "duration": {
                     "description": "Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists. ",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DURATION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DURATION"
                 },
                 "summary": {
                     "description": "Optional summary data that aggregates, organizes, reduces and transforms the event series. This may be a text or image that presents a graphical presentation, or some data that assists with the interpretation of the data.",
-                    "$ref": "#ITEM_STRUCTURE"
+                    "$ref": "#/definitions/ITEM_STRUCTURE"
                 },
                 "events": {
                     "description": "The events in the series. ",
                     "type": "array",
                     "items": {
-                        "$ref": "#EVENT"
+                        "$ref": "#/definitions/EVENT"
                     }
                 }
             },
@@ -1285,7 +1272,7 @@
                 "origin"
             ],
             "$inherits": [
-                "#DATA_STRUCTURE"
+                "#/definitions/DATA_STRUCTURE"
             ],
             "$functions": {
                 "parent": {
@@ -1344,7 +1331,6 @@
             }
         },
         "HISTORY<ITEM_STRUCTURE>": {
-            "id": "#HISTORY<ITEM_STRUCTURE>",
             "title": "HISTORY<ITEM_STRUCTURE>",
             "$comments": "Defined in Data_structures IM",
             "type": "object"

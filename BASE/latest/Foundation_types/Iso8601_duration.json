@@ -8,14 +8,14 @@
     "properties": {
         "value": {
             "description": "Representation of all descendants is a single String.",
-            "$ref": "all.json#String"
+            "$ref": "all.json#/definitions/String"
         }
     },
     "required": [
         "value"
     ],
     "$inherits": [
-        "all.json#Iso8601_type"
+        "all.json#/definitions/Iso8601_type"
     ],
     "$functions": {
         "valid_year": {

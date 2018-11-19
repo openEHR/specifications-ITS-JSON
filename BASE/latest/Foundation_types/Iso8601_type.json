@@ -8,15 +8,15 @@
     "properties": {
         "value": {
             "description": "Representation of all descendants is a single String.",
-            "$ref": "all.json#String"
+            "$ref": "all.json#/definitions/String"
         }
     },
     "required": [
         "value"
     ],
     "$inherits": [
-        "all.json#Temporal",
-        "all.json#Time_Definitions"
+        "all.json#/definitions/Temporal",
+        "all.json#/definitions/Time_Definitions"
     ],
     "$functions": {
         "valid_year": {

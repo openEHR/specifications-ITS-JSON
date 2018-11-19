@@ -8,15 +8,15 @@
     "properties": {
         "interval": {
             "description": "The interval of this cardinality. ",
-            "$ref": "all.json#Multiplicity_interval"
+            "$ref": "all.json#/definitions/Multiplicity_interval"
         },
         "is_ordered": {
             "description": "True if the members of the container attribute to which this cardinality refers are ordered. ",
-            "$ref": "all.json#Boolean"
+            "$ref": "all.json#/definitions/Boolean"
         },
         "is_unique": {
             "description": "True if the members of the container attribute to which this cardinality refers are unique.",
-            "$ref": "all.json#Boolean"
+            "$ref": "all.json#/definitions/Boolean"
         }
     },
     "required": [

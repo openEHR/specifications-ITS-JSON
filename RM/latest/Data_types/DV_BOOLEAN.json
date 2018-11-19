@@ -8,13 +8,13 @@
     "properties": {
         "value": {
             "description": "Boolean value of this item. Actual values may be language or implementation dependent.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         }
     },
     "required": [
         "value"
     ],
     "$inherits": [
-        "all.json#DATA_VALUE"
+        "all.json#/definitions/DATA_VALUE"
     ]
 }

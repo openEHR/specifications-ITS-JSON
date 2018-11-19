@@ -10,7 +10,7 @@
             "description": "List of entity manifests uids of items included in the Extract; for openEHR data, these are uids identifying the version containers.",
             "type": "array",
             "items": {
-                "$ref": "all.json#EXTRACT_ENTITY_MANIFEST"
+                "$ref": "all.json#/definitions/EXTRACT_ENTITY_MANIFEST"
             },
             "minItems": 1
         }

@@ -8,27 +8,27 @@
     "properties": {
         "system_id": {
             "description": "Identifier of the system which handled the information item. \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "location": {
             "description": "Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the PARTY_IDENTIFIED object. ",
-            "$ref": "all.json#PARTY_IDENTIFIED"
+            "$ref": "all.json#/definitions/PARTY_IDENTIFIED"
         },
         "subject": {
             "description": "Identifiers for subject of the received information item. ",
-            "$ref": "all.json#PARTY_PROXY"
+            "$ref": "all.json#/definitions/PARTY_PROXY"
         },
         "provider": {
             "description": "Optional provider(s) who created, committed, forwarded or otherwise handled the item. ",
-            "$ref": "all.json#PARTY_IDENTIFIED"
+            "$ref": "all.json#/definitions/PARTY_IDENTIFIED"
         },
         "time": {
             "description": "Time of handling the item. For an originating system, this will be time of creation, for an intermediate feeder system, this will be a time of accession or other time of handling, where available.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#DV_DATE_TIME"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
         },
         "version_id": {
             "description": "Any identifier used in the system such as  \"interim\" ,  \"final\" , or numeric versions if available. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [

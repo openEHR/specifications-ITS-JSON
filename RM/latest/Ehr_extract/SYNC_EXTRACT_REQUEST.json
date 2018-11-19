@@ -8,13 +8,13 @@
     "properties": {
         "specification": {
             "description": "Details of specification of synchronisation request.",
-            "$ref": "all.json#SYNC_EXTRACT_SPEC"
+            "$ref": "all.json#/definitions/SYNC_EXTRACT_SPEC"
         }
     },
     "required": [
         "specification"
     ],
     "$inherits": [
-        "all.json#MESSAGE_CONTENT"
+        "all.json#/definitions/MESSAGE_CONTENT"
     ]
 }

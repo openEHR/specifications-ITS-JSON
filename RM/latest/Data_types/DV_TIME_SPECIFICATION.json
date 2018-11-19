@@ -8,14 +8,14 @@
     "properties": {
         "value": {
             "description": "The specification, in the HL7v3 syntax for `PIVL` or `EIVL` types.",
-            "$ref": "all.json#DV_PARSABLE"
+            "$ref": "all.json#/definitions/DV_PARSABLE"
         }
     },
     "required": [
         "value"
     ],
     "$inherits": [
-        "all.json#DATA_VALUE"
+        "all.json#/definitions/DATA_VALUE"
     ],
     "$functions": {
         "calendar_alignment": {

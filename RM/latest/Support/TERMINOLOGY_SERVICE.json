@@ -6,8 +6,8 @@
     "$comments": "Defined in Support IM, inherits from OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS, OPENEHR_CODE_SET_IDENTIFIERS",
     "type": "object",
     "$inherits": [
-        "all.json#OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
-        "all.json#OPENEHR_CODE_SET_IDENTIFIERS"
+        "all.json#/definitions/OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+        "all.json#/definitions/OPENEHR_CODE_SET_IDENTIFIERS"
     ],
     "$functions": {
         "valid_code_set_id": {

@@ -7,13 +7,13 @@
     "properties": {
         "specification": {
             "description": "Details of specification of this Extract.",
-            "$ref": "all.json#SYNC_EXTRACT_SPEC"
+            "$ref": "all.json#/definitions/SYNC_EXTRACT_SPEC"
         },
         "items": {
             "description": "Content, in the form of a serialised Contributions.",
             "type": "array",
             "items": {
-                "$ref": "all.json#X_CONTRIBUTION"
+                "$ref": "all.json#/definitions/X_CONTRIBUTION"
             }
         }
     },
@@ -21,6 +21,6 @@
         "specification"
     ],
     "$inherits": [
-        "all.json#MESSAGE_CONTENT"
+        "all.json#/definitions/MESSAGE_CONTENT"
     ]
 }

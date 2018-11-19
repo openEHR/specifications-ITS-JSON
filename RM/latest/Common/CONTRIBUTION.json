@@ -8,19 +8,19 @@
     "properties": {
         "uid": {
             "description": "Unique identifier for this Contribution. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#HIER_OBJECT_ID"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
         },
         "versions": {
             "description": "Set of references to Versions causing changes to this EHR. Each contribution contains a list of versions, which may include paths pointing to any number of versionable items, i.e. items of types such as `COMPOSITION` and `FOLDER`. ",
             "type": "array",
             "items": {
-                "$ref": "all.json#VERSION"
+                "$ref": "all.json#/definitions/VERSION"
             },
             "minItems": 1
         },
         "audit": {
             "description": "Audit trail corresponding to the committal of this Contribution. ",
-            "$ref": "all.json#AUDIT_DETAILS"
+            "$ref": "all.json#/definitions/AUDIT_DETAILS"
         }
     },
     "required": [
