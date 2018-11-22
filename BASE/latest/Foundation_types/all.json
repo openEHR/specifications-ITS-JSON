@@ -733,7 +733,7 @@
             "title": "Iso8601_date_time",
             "description": "Represents an ISO 8601 date/time, including partial and extended forms. Value may be:\n\n* `YYYY-MM-DDThh:mm:ss[,sss][Z | \u00b1hh[mm]]` (extended, preferred) or\n* `YYYYMMDDThhmmss[,sss][Z | \u00b1hh[mm]]` (compact)\n* or a partial variant.\n\nSee `_valid_iso8601_date_time()_` for validity.\n\nNote that this class includes 2 deviations from ISO 8601:2004:\n\n* for partial date/times, any part of the date/time up to the month may be missing, not just seconds and minutes as in the standard;\n* the time `24:00:00` is not allowed, since it would mean the date was really on the next day.",
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
-            "type": "string",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "Representation of all descendants is a single String.",
@@ -1008,7 +1008,7 @@
             "title": "Iso8601_time",
             "description": "Represents an ISO 8601 time, including partial and extended forms. Value may be:\n\n* `hh:mm:ss[,sss][Z|\u00b1hh[mm]]` (extended, preferred) or\n* `hhmmss[,sss][Z|\u00b1hh[mm]]` (compact)\n* or a partial invariant.\n\nSee `_valid_iso8601_time()_` for validity.\n\nNOTE: A small deviation to the ISO 8601:2004 standard in this class is that the time `24:00:00` is not allowed, for consistency with `Iso8601_date_time`.",
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
-            "type": "string",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "Representation of all descendants is a single String.",
@@ -1288,7 +1288,7 @@
             "title": "Iso8601_date",
             "description": "Represents an ISO 8601 date, including partial and extended forms. Value may be:\n\n* `YYYY-MM-DD` (extended, preferred)\n* `YYYYMMDD` (compactd)\n* a partial invariant.\n\nSee `Time_definitions._valid_iso8601_date()_` for validity.",
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
-            "type": "string",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "Representation of all descendants is a single String.",
