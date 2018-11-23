@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json",
     "title": "Ehr_extract IM definitions",
     "description": "The EHR Extract IM defines how an EHR extract is built from COMPOSITIONs, demographic, and access control information from the EHR. A number of Extract variations are supported, including  full openEHR , a simplified form for integration with CEN EN13606, and an openEHR/openEHR synchronisation Extract. \n",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "EXTRACT": {
             "title": "EXTRACT",
@@ -2284,5 +2285,7 @@
             "type": "object",
             "$abstract": true
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

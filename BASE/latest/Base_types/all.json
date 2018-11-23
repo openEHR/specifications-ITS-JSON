@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json",
     "title": "Base_types IM definitions",
+    "$comments": "Part of BASE component, Release-1.1.0 version.",
     "definitions": {
         "ARCHETYPE_ID": {
             "title": "ARCHETYPE_ID",
@@ -573,5 +574,7 @@
             "$comments": "Defined in Support IM",
             "type": "object"
         }
-    }
+    },
+    "$component": "BASE",
+    "$version": "Release-1.1.0"
 }

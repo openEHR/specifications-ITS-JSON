@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json",
     "title": "Common IM definitions",
     "description": "The common Reference Model comprises a number of packages containing abstract concepts and design patterns used in higher level openEHR models. Several concepts recur in higher level packages. The classes LOCATABLE and ARCHETYPED provide the link between information and archetype models. The classes ATTESTATION and PARTICIPATION are generic domain concepts that appear in various reference models. The change_control package defines a formal model of change management and versioning which applies to any service that needs to be able to supply previous states of its information, in particular the demographic and EHR services.",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "PATHABLE": {
             "title": "PATHABLE",
@@ -1932,5 +1933,7 @@
                 "copyright_valid": "copyright /= Void implies not copyright.is_empty"
             }
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

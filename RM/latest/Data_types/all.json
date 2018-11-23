@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json",
     "title": "Data_types IM definitions",
     "description": "A set of clearly defined data types underlies all other models, and provides a number of general and clinically specific types required for all kinds of health information. The following categories of data types are defined in the data types reference model. \n- Text: plain text, coded text, paragraphs. \n- Quantities: any ordered type including ordinal values (used for representing symbolic ordered \n  values such as  + ,  ++ ,  +++ ), measured quantities with values and units, and so on. \n- Date/times: date, time, date-time types, and partial date/time types. \n- Encapsulated data: multimedia, parsable content. \n- Basic types: boolean, state variable. \n",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "DATA_VALUE": {
             "title": "DATA_VALUE",
@@ -3922,5 +3923,7 @@
                 "Scheme_valid": "scheme.is_equal (Ehr_scheme)"
             }
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

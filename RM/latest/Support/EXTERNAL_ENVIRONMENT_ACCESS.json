@@ -82,7 +82,7 @@
                 "name"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                "$ref": "all.json#/definitions/TERMINOLOGY_ACCESS"
             }
         },
         "code_set": {
@@ -96,7 +96,7 @@
                 "name"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                "$ref": "all.json#/definitions/CODE_SET_ACCESS"
             }
         },
         "code_set_for_id": {
@@ -110,7 +110,7 @@
                 "id"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                "$ref": "all.json#/definitions/CODE_SET_ACCESS"
             }
         },
         "has_terminology": {

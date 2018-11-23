@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json",
     "title": "Composition IM definitions",
     "description": "The rm.composition package. The Composition is the primary  data container' in the openEHR EHR and is the root point of clinical content. Instances of the Composition class can be considered as self-standing data aggregations, or documents in a document-oriented system. The key information in a COMPOSITION is found in its content, context, and composer attributes. ",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "CONTENT_ITEM": {
             "title": "CONTENT_ITEM",
@@ -2381,5 +2382,7 @@
                 "location_valid": "location /= Void implies not location.is_empty"
             }
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

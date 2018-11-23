@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json",
     "title": "Data_structures IM definitions",
     "description": "In most openEHR information models, generic data structures are used for expressing content whose particular structure will be defined by archetypes. The generic structures are as follows. \n  Single:   single items, used to contain any single value, such as a height or weight. \n  List:       linear lists of named items, such as many pathology test results. \n  Table:    tabular data, including unlimited and limited length tables with named and \n               ordered columns, and potentially named rows. \n  Tree:     tree-shaped data, which may be conceptually a list of lists, or other deep structure. \n  History: time-series structures, where each time-point can be an entire data structure \n               of any complexity, described by one of the above structure types. Point and interval \n               samples are supported. \n",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "DATA_STRUCTURE": {
             "title": "DATA_STRUCTURE",
@@ -2265,5 +2266,7 @@
             "$comments": "Defined in Data_structures IM",
             "type": "object"
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

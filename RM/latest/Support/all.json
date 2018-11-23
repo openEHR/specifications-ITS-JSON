@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Support/all.json",
     "title": "Support IM definitions",
     "description": "The rm.support package describes the most basic concepts, required by all other packages, and is comprised of the Definitions, Identification, Terminology and Measurement packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data. The support package includes the special package assumed_types, describing what basic types are assumed by openEHR in external type systems; this package is a guide for integrating openEHR models proper into the type systems of implementation technologies.",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "CODE_SET_ACCESS": {
             "title": "CODE_SET_ACCESS",
@@ -215,7 +216,7 @@
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                        "$ref": "#/definitions/TERMINOLOGY_ACCESS"
                     }
                 },
                 "code_set": {
@@ -229,7 +230,7 @@
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                        "$ref": "#/definitions/CODE_SET_ACCESS"
                     }
                 },
                 "code_set_for_id": {
@@ -243,7 +244,7 @@
                         "id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                        "$ref": "#/definitions/CODE_SET_ACCESS"
                     }
                 },
                 "has_terminology": {
@@ -448,7 +449,7 @@
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                        "$ref": "#/definitions/TERMINOLOGY_ACCESS"
                     }
                 },
                 "code_set": {
@@ -462,7 +463,7 @@
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                        "$ref": "#/definitions/CODE_SET_ACCESS"
                     }
                 },
                 "code_set_for_id": {
@@ -476,7 +477,7 @@
                         "id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                        "$ref": "#/definitions/CODE_SET_ACCESS"
                     }
                 },
                 "has_terminology": {
@@ -536,5 +537,7 @@
                 "Pre": "valid_code_set_id (id)"
             }
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

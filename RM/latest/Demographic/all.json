@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json",
     "title": "Demographic IM definitions",
     "description": "The demographic model defines generic concepts of PARTY, ROLE and related details such as contact addresses. The archetype model defines the semantics of constraint on PARTYs, allowing archetypes for any type of person, organisation, role and role relationship to be described. This approach provides a flexible way of including the arbitrary demographic attributes allowed in the OMG HDTF PIDS standard. ",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "PARTY": {
             "title": "PARTY",
@@ -2479,5 +2480,7 @@
                 "Post": "Result = latest_trunk_version.lifecycle_state"
             }
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }

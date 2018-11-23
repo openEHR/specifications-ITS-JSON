@@ -3,6 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Integration/all.json",
     "title": "Integration IM definitions",
     "description": "The Integration model defines the class GENERIC_ENTRY, a subtype of ENTRY used to represent free-form legacy or external data as a tree. This Entry type has its own archetypes, known as  integration archetypes , which can be used in concert with clinical archetypes as the basis for a tool-based data integration system.",
+    "$comments": "Part of RM component, Release-1.0.4 version.",
     "definitions": {
         "GENERIC_ENTRY": {
             "title": "GENERIC_ENTRY",
@@ -150,5 +151,7 @@
                 "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         }
-    }
+    },
+    "$component": "RM",
+    "$version": "Release-1.0.4"
 }
