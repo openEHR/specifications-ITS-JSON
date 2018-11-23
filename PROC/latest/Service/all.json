@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Service/all.json",
     "title": "Service IM definitions",
-    "$comments": "Part of PROC component, Release-1.0.0 version.",
+    "$comments": "Part of PROC component, latest version.",
     "definitions": {
         "I_TASK_PLAN_DEFINITION": {
             "title": "I_TASK_PLAN_DEFINITION",
@@ -99,5 +99,5 @@
         }
     },
     "$component": "PROC",
-    "$version": "Release-1.0.0"
+    "$version": "latest"
 }

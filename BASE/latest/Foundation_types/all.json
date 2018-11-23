@@ -3,7 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json",
     "title": "Foundation_types IM definitions",
     "description": "The openEHR Base types.",
-    "$comments": "Part of BASE component, Release-1.1.0 version.",
+    "$comments": "Part of BASE component, latest version.",
     "definitions": {
         "Hash": {
             "title": "Hash",
@@ -3929,5 +3929,5 @@
         }
     },
     "$component": "BASE",
-    "$version": "Release-1.1.0"
+    "$version": "latest"
 }

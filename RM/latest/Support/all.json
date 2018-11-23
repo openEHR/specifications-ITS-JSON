@@ -3,7 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Support/all.json",
     "title": "Support IM definitions",
     "description": "The rm.support package describes the most basic concepts, required by all other packages, and is comprised of the Definitions, Identification, Terminology and Measurement packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data. The support package includes the special package assumed_types, describing what basic types are assumed by openEHR in external type systems; this package is a guide for integrating openEHR models proper into the type systems of implementation technologies.",
-    "$comments": "Part of RM component, Release-1.0.4 version.",
+    "$comments": "Part of RM component, latest version.",
     "definitions": {
         "CODE_SET_ACCESS": {
             "title": "CODE_SET_ACCESS",
@@ -539,5 +539,5 @@
         }
     },
     "$component": "RM",
-    "$version": "Release-1.0.4"
+    "$version": "latest"
 }

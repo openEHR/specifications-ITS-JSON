@@ -3,7 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Resource/all.json",
     "title": "Resource IM definitions",
     "description": "The rm.common.resource package defines the structure and semantics of the general notion of an online resource which has been created by a human author, and consequently for which natural language is a factor.",
-    "$comments": "Part of BASE component, Release-1.1.0 version.",
+    "$comments": "Part of BASE component, latest version.",
     "definitions": {
         "AUTHORED_RESOURCE": {
             "title": "AUTHORED_RESOURCE",
@@ -390,5 +390,5 @@
         }
     },
     "$component": "BASE",
-    "$version": "Release-1.1.0"
+    "$version": "latest"
 }

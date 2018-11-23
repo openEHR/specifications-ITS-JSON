@@ -3,7 +3,7 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json",
     "title": "Definition IM definitions",
     "description": "Details of actions to perform on receipt of callback event.",
-    "$comments": "Part of PROC component, Release-1.0.0 version.",
+    "$comments": "Part of PROC component, latest version.",
     "definitions": {
         "WORK_PLAN": {
             "title": "WORK_PLAN",
@@ -7125,5 +7125,5 @@
         }
     },
     "$component": "PROC",
-    "$version": "Release-1.0.0"
+    "$version": "latest"
 }
