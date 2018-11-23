@@ -4,5 +4,6 @@
     "title": "DATA_VALUE",
     "description": "Abstract parent of all `DV_` data value types.",
     "$comments": "Defined in Data_types IM, abstract",
-    "type": "object"
+    "type": "object",
+    "$abstract": true
 }

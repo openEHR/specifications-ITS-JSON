@@ -151,7 +151,8 @@
             },
             "required": [
                 "value"
-            ]
+            ],
+            "$abstract": true
         },
         "OBJECT_REF": {
             "title": "OBJECT_REF",
@@ -349,6 +350,7 @@
             "required": [
                 "value"
             ],
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/OBJECT_ID"
             ],
@@ -429,6 +431,7 @@
             "required": [
                 "value"
             ],
+            "$abstract": true,
             "$invariants": {
                 "Value_valid": {
                     "description": "not value.empty"

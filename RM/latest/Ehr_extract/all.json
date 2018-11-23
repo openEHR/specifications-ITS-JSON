@@ -362,6 +362,7 @@
                 "archetype_node_id",
                 "is_primary"
             ],
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/EXTRACT_ITEM"
             ],
@@ -683,6 +684,7 @@
                 "name",
                 "archetype_node_id"
             ],
+            "$abstract": true,
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
@@ -1709,7 +1711,8 @@
             "title": "MESSAGE_CONTENT",
             "description": "Abstract parent of message payload types.",
             "$comments": "Defined in Ehr_extract IM, abstract",
-            "type": "object"
+            "type": "object",
+            "$abstract": true
         }
     }
 }

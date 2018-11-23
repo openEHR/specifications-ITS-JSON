@@ -22,6 +22,7 @@
             }
         }
     },
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DATA_VALUE",
         "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"

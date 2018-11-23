@@ -41,6 +41,7 @@
     "required": [
         "original_language"
     ],
+    "$abstract": true,
     "$functions": {
         "current_revision": {
             "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . "

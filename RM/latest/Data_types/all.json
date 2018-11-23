@@ -8,7 +8,8 @@
             "title": "DATA_VALUE",
             "description": "Abstract parent of all `DV_` data value types.",
             "$comments": "Defined in Data_types IM, abstract",
-            "type": "object"
+            "type": "object",
+            "$abstract": true
         },
         "DV_BOOLEAN": {
             "title": "DV_BOOLEAN",
@@ -110,6 +111,7 @@
                     "$ref": "#/definitions/CODE_PHRASE"
                 }
             },
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_VALUE"
             ],
@@ -521,6 +523,7 @@
                     }
                 }
             },
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_VALUE",
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
@@ -692,6 +695,7 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
                 }
             },
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_ORDERED"
             ],
@@ -953,6 +957,7 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 }
             },
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_QUANTIFIED"
             ],
@@ -1306,6 +1311,7 @@
                     "$ref": "#/definitions/DV_AMOUNT"
                 }
             },
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_QUANTIFIED"
             ],
@@ -1619,6 +1625,7 @@
                     "$ref": "#/definitions/DV_DURATION"
                 }
             },
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_ABSOLUTE_QUANTITY"
             ],
@@ -2428,6 +2435,7 @@
             "required": [
                 "value"
             ],
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_VALUE"
             ],

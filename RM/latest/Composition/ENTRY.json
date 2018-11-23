@@ -68,6 +68,7 @@
         "encoding",
         "subject"
     ],
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/CONTENT_ITEM"
     ],

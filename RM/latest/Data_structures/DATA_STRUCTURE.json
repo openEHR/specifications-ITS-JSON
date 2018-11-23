@@ -38,6 +38,7 @@
         "name",
         "archetype_node_id"
     ],
+    "$abstract": true,
     "$inherits": [
         "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
     ],

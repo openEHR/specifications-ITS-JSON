@@ -15,6 +15,7 @@
             "$ref": "all.json#/definitions/CODE_PHRASE"
         }
     },
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DATA_VALUE"
     ],

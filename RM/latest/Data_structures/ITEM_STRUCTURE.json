@@ -38,6 +38,7 @@
         "name",
         "archetype_node_id"
     ],
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DATA_STRUCTURE"
     ],

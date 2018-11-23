@@ -86,6 +86,7 @@
         "archetype_node_id",
         "identities"
     ],
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/PARTY"
     ],

@@ -29,6 +29,7 @@
             "$ref": "all.json#/definitions/DV_AMOUNT"
         }
     },
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DV_QUANTIFIED"
     ],

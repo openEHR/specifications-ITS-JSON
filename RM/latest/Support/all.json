@@ -9,6 +9,7 @@
             "description": "A mixin class providing access to services in the external environment.",
             "$comments": "Defined in Support IM, abstract, inherits from TERMINOLOGY_SERVICE, MEASUREMENT_SERVICE",
             "type": "object",
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/TERMINOLOGY_SERVICE",
                 "#/definitions/MEASUREMENT_SERVICE"

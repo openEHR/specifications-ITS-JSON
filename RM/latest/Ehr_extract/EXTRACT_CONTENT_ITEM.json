@@ -55,6 +55,7 @@
         "archetype_node_id",
         "is_primary"
     ],
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/EXTRACT_ITEM"
     ],

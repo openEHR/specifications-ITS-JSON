@@ -33,6 +33,7 @@
         "lower_included",
         "upper_included"
     ],
+    "$abstract": true,
     "$functions": {
         "has": {
             "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))"

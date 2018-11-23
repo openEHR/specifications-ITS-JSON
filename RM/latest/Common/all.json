@@ -9,6 +9,7 @@
             "description": "The PATHABLE class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of LOCATABLE. The defining characteristics of PATHABLE objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.",
             "$comments": "Defined in Common IM, abstract",
             "type": "object",
+            "$abstract": true,
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n"
@@ -98,6 +99,7 @@
                 "name",
                 "archetype_node_id"
             ],
+            "$abstract": true,
             "$inherits": [
                 "#/definitions/PATHABLE"
             ],
@@ -401,6 +403,7 @@
                 "contribution",
                 "commit_audit"
             ],
+            "$abstract": true,
             "$functions": {
                 "uid": {
                     "description": "Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id, creating_system_id}` triple, where the `_object_id_` has the same value as the containing `VERSIONED_OBJECT _uid_`."
@@ -814,7 +817,8 @@
                     "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
                 }
-            }
+            },
+            "$abstract": true
         },
         "PARTY_IDENTIFIED": {
             "title": "PARTY_IDENTIFIED",
@@ -1192,6 +1196,7 @@
             "required": [
                 "original_language"
             ],
+            "$abstract": true,
             "$functions": {
                 "current_revision": {
                     "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . "

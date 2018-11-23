@@ -30,6 +30,7 @@
             "$ref": "all.json#/definitions/DV_DURATION"
         }
     },
+    "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DV_ABSOLUTE_QUANTITY"
     ],
