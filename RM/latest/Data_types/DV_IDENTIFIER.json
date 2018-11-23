@@ -30,17 +30,9 @@
         "all.json#/definitions/DATA_VALUE"
     ],
     "$invariants": {
-        "Issuer_valid": {
-            "description": "not issuer.is_empty"
-        },
-        "Assigner_valid": {
-            "description": "not assigner.is_empty"
-        },
-        "Id_valid": {
-            "description": "not id.is_empty"
-        },
-        "Type_valid": {
-            "description": "not type.is_empty"
-        }
+        "Issuer_valid": "not issuer.is_empty",
+        "Assigner_valid": "not assigner.is_empty",
+        "Id_valid": "not id.is_empty",
+        "Type_valid": "not type.is_empty"
     }
 }

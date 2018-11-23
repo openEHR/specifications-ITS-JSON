@@ -96,9 +96,7 @@
                 }
             },
             "$invariants": {
-                "Has_extension_valid": {
-                    "description": "extension.is_empty xor has_extension"
-                }
+                "Has_extension_valid": "extension.is_empty xor has_extension"
             }
         },
         "LOCATABLE_REF": {
@@ -220,9 +218,7 @@
                 }
             },
             "$invariants": {
-                "Has_extension_valid": {
-                    "description": "extension.is_empty xor has_extension"
-                }
+                "Has_extension_valid": "extension.is_empty xor has_extension"
             }
         },
         "PARTY_REF": {
@@ -253,9 +249,7 @@
                 "#/definitions/OBJECT_REF"
             ],
             "$invariants": {
-                "Type_validity": {
-                    "description": "type.is_equal(\u201cPERSON\u201d) or type.is_equal(\u201cORGANISATION\u201d) or type.is_equal(\u201cGROUP\u201d) or type.is_equal(\u201cAGENT\u201d)or type.is_equal(\u201cROLE\u201d) or type.is_equal(\u201cPARTY\u201d) or type.is_equal(\u201cACTOR\u201d)"
-                }
+                "Type_validity": "type.is_equal(\u201cPERSON\u201d) or type.is_equal(\u201cORGANISATION\u201d) or type.is_equal(\u201cGROUP\u201d) or type.is_equal(\u201cAGENT\u201d)or type.is_equal(\u201cROLE\u201d) or type.is_equal(\u201cPARTY\u201d) or type.is_equal(\u201cACTOR\u201d)"
             }
         },
         "TERMINOLOGY_ID": {
@@ -313,27 +307,13 @@
                 }
             },
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.is_empty"
-                },
-                "Trunk_version_valid": {
-                    "description": "trunk_version /= Void and then trunk_version.is_integer and then trunk_version.as_integer >= 1"
-                },
-                "Branch_number_valid": {
-                    "description": "branch_number /= Void implies branch_number.is_integer and then branch_number.as_integer >= 1"
-                },
-                "Branch_version_valid": {
-                    "description": "branch_version /= Void implies branch_version.is_integer and then branch_version.as_integer >= 1"
-                },
-                "Branch_validity": {
-                    "description": "(branch_number = Void and branch_version = Void ) xor (branch_number /= Void and branch_version /= Void )"
-                },
-                "Is_branch_validity": {
-                    "description": "is_branch xor branch_number = Void"
-                },
-                "Is_first_validity": {
-                    "description": "not is_first xor trunk_version.is_equal(\u201c1\u201d)"
-                }
+                "Value_valid": "not value.is_empty",
+                "Trunk_version_valid": "trunk_version /= Void and then trunk_version.is_integer and then trunk_version.as_integer >= 1",
+                "Branch_number_valid": "branch_number /= Void implies branch_number.is_integer and then branch_number.as_integer >= 1",
+                "Branch_version_valid": "branch_version /= Void implies branch_version.is_integer and then branch_version.as_integer >= 1",
+                "Branch_validity": "(branch_number = Void and branch_version = Void ) xor (branch_number /= Void and branch_version /= Void )",
+                "Is_branch_validity": "is_branch xor branch_number = Void",
+                "Is_first_validity": "not is_first xor trunk_version.is_equal(\u201c1\u201d)"
             }
         },
         "UID_BASED_ID": {
@@ -366,9 +346,7 @@
                 }
             },
             "$invariants": {
-                "Has_extension_valid": {
-                    "description": "extension.is_empty xor has_extension"
-                }
+                "Has_extension_valid": "extension.is_empty xor has_extension"
             }
         },
         "UUID": {
@@ -389,9 +367,7 @@
                 "#/definitions/UID"
             ],
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.empty"
-                }
+                "Value_valid": "not value.empty"
             }
         },
         "INTERNET_ID": {
@@ -412,9 +388,7 @@
                 "#/definitions/UID"
             ],
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.empty"
-                }
+                "Value_valid": "not value.empty"
             }
         },
         "UID": {
@@ -433,9 +407,7 @@
             ],
             "$abstract": true,
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.empty"
-                }
+                "Value_valid": "not value.empty"
             }
         },
         "ISO_OID": {
@@ -456,9 +428,7 @@
                 "#/definitions/UID"
             ],
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.empty"
-                }
+                "Value_valid": "not value.empty"
             }
         },
         "TEMPLATE_ID": {
@@ -507,9 +477,7 @@
                 "#/definitions/OBJECT_REF"
             ],
             "$invariants": {
-                "Type_validity": {
-                    "description": "type.is_equal (\u201cACCESS_GROUP\u201d)"
-                }
+                "Type_validity": "type.is_equal (\u201cACCESS_GROUP\u201d)"
             }
         },
         "OPENEHR_DEFINITIONS": {

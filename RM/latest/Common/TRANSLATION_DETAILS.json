@@ -32,8 +32,6 @@
         "author"
     ],
     "$invariants": {
-        "Language_valid": {
-            "description": "code_set (Code_set_id_languages).has_code (language)"
-        }
+        "Language_valid": "code_set (Code_set_id_languages).has_code (language)"
     }
 }

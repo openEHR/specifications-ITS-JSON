@@ -32,8 +32,6 @@
         }
     },
     "$invariants": {
-        "Value_valid": {
-            "description": "not value.is_empty"
-        }
+        "Value_valid": "not value.is_empty"
     }
 }

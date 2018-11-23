@@ -53,14 +53,8 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Current_state_valid": {
-            "description": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_instruction_states, current_state.defining_code)"
-        },
-        "Transition_valid": {
-            "description": "transition /= Void implies terminology (Terminology_id_openehr).\nhas_code_for_group_id (Group_id_instruction_transitions, transition.defining_code)"
-        }
+        "Pre": "path_exists (a_path)",
+        "Current_state_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_instruction_states, current_state.defining_code)",
+        "Transition_valid": "transition /= Void implies terminology (Terminology_id_openehr).\nhas_code_for_group_id (Group_id_instruction_transitions, transition.defining_code)"
     }
 }

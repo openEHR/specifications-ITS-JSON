@@ -109,21 +109,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Sequence_nr_valid": {
-                    "description": "sequence_nr >= 1"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Sequence_nr_valid": "sequence_nr >= 1"
             }
         },
         "EXTRACT_ACTION_REQUEST": {
@@ -204,18 +194,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "EXTRACT_CHAPTER": {
@@ -293,18 +275,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "EXTRACT_CONTENT_ITEM": {
@@ -393,21 +367,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Item_validity": {
-                    "description": "is_masked xor item /= Void"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Item_validity": "is_masked xor item /= Void"
             }
         },
         "EXTRACT_ENTITY_CHAPTER": {
@@ -490,18 +454,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "EXTRACT_ENTITY_MANIFEST": {
@@ -632,18 +588,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "EXTRACT_ITEM": {
@@ -715,18 +663,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "EXTRACT_MANIFEST": {
@@ -776,12 +716,8 @@
                 "performer"
             ],
             "$invariants": {
-                "Function_valid": {
-                    "description": "function /= Void and then function.generating_type.is_equal (\u201cDV_CODED_TEXT\u201d) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)"
-                },
-                "Mode_valid": {
-                    "description": "mode /= Void and terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)"
-                }
+                "Function_valid": "function /= Void and then function.generating_type.is_equal (\u201cDV_CODED_TEXT\u201d) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)",
+                "Mode_valid": "mode /= Void and terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)"
             }
         },
         "EXTRACT_REQUEST": {
@@ -862,18 +798,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "EXTRACT_SPEC": {
@@ -957,15 +885,9 @@
                 "update_method"
             ],
             "$invariants": {
-                "Overall_validity": {
-                    "description": "repeat_period /= Void or trigger_events /= Void"
-                },
-                "Trigger_events_validity": {
-                    "description": "trigger_events /= Void implies not trigger_events.is_empty"
-                },
-                "Send_changes_only_validity": {
-                    "description": "send_changes_only implies persist_in_server"
-                }
+                "Overall_validity": "repeat_period /= Void or trigger_events /= Void",
+                "Trigger_events_validity": "trigger_events /= Void implies not trigger_events.is_empty",
+                "Send_changes_only_validity": "send_changes_only implies persist_in_server"
             }
         },
         "EXTRACT_VERSION_SPEC": {
@@ -997,9 +919,7 @@
                 "include_data"
             ],
             "$invariants": {
-                "Includes_revision_history_valid": {
-                    "description": "not include_data implies include_revision_history"
-                }
+                "Includes_revision_history_valid": "not include_data implies include_revision_history"
             }
         },
         "OPENEHR_CONTENT_ITEM": {
@@ -1087,21 +1007,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Item_validity": {
-                    "description": "is_masked xor item /= Void"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Item_validity": "is_masked xor item /= Void"
             }
         },
         "X_VERSIONED_OBJECT": {
@@ -1524,21 +1434,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Item_validity": {
-                    "description": "is_masked xor item /= Void"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Item_validity": "is_masked xor item /= Void"
             }
         },
         "SYNC_EXTRACT_REQUEST": {

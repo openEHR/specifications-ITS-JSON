@@ -86,20 +86,10 @@
         "details"
     ],
     "$invariants": {
-        "Original_author_valid": {
-            "description": "not original_author.is_empty"
-        },
-        "Lifecycle_state_valid": {
-            "description": "not lifecycle_state.is_empty"
-        },
-        "Details_valid": {
-            "description": "not details.is_empty"
-        },
-        "Language_valid": {
-            "description": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))"
-        },
-        "Parent_resource_valid": {
-            "description": "parent_resource /= Void implies parent_resource.description = self"
-        }
+        "Original_author_valid": "not original_author.is_empty",
+        "Lifecycle_state_valid": "not lifecycle_state.is_empty",
+        "Details_valid": "not details.is_empty",
+        "Language_valid": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))",
+        "Parent_resource_valid": "parent_resource /= Void implies parent_resource.description = self"
     }
 }

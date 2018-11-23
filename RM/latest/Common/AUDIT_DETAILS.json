@@ -34,11 +34,7 @@
         "committer"
     ],
     "$invariants": {
-        "System_id_valid": {
-            "description": "not system_id.is_empty"
-        },
-        "Change_type_valid": {
-            "description": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)"
-        }
+        "System_id_valid": "not system_id.is_empty",
+        "Change_type_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)"
     }
 }

@@ -35,8 +35,6 @@
         "system_id"
     ],
     "$invariants": {
-        "System_id_valid": {
-            "description": "not system_id.is_empty"
-        }
+        "System_id_valid": "not system_id.is_empty"
     }
 }

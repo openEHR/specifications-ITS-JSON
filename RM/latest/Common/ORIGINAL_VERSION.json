@@ -85,26 +85,12 @@
         }
     },
     "$invariants": {
-        "Owner_id_valid": {
-            "description": "owner_id.value.is_equal (uid.object_id.value)"
-        },
-        "Preceding_version_uid_validity": {
-            "description": "uid.version_tree_id.is_first xor preceding_version_uid /= Void"
-        },
-        "Lifecycle_state_ valid": {
-            "description": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)"
-        },
-        "Post": {
-            "description": "Result.value.is_equal (uid.object_id.value)"
-        },
-        "Attestations_valid": {
-            "description": "attestations /= Void implies not attestations.is_empty"
-        },
-        "Is_merged_validity": {
-            "description": "other_input_version_ids = Void xor is_merged"
-        },
-        "Other_input_version_uids_valid": {
-            "description": "other_input_version_uids /= Void implies not other_input_version_uids.is_empty"
-        }
+        "Owner_id_valid": "owner_id.value.is_equal (uid.object_id.value)",
+        "Preceding_version_uid_validity": "uid.version_tree_id.is_first xor preceding_version_uid /= Void",
+        "Lifecycle_state_ valid": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)",
+        "Post": "Result.value.is_equal (uid.object_id.value)",
+        "Attestations_valid": "attestations /= Void implies not attestations.is_empty",
+        "Is_merged_validity": "other_input_version_ids = Void xor is_merged",
+        "Other_input_version_uids_valid": "other_input_version_uids /= Void implies not other_input_version_uids.is_empty"
     }
 }

@@ -41,8 +41,6 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result = fs >= 0.0 and fs < 1.0 ."
-        }
+        "Post": "Result = fs >= 0.0 and fs < 1.0 ."
     }
 }

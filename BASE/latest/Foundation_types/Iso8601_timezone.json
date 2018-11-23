@@ -80,20 +80,10 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result = fs >= 0.0 and fs < 1.0 ."
-        },
-        "Min_hour_valid": {
-            "description": "sign = -1 implies hour > 0 and hour <= Min_timezone_hour"
-        },
-        "Max_hour_valid": {
-            "description": "sign = 1 implies hour > 0 and hour <= Max_timezone_hour"
-        },
-        "Minute_valid": {
-            "description": "not minute_unknown implies valid_minute (minute)"
-        },
-        "Sign_valid": {
-            "description": "sign = 1 or sign = -1"
-        }
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Min_hour_valid": "sign = -1 implies hour > 0 and hour <= Min_timezone_hour",
+        "Max_hour_valid": "sign = 1 implies hour > 0 and hour <= Max_timezone_hour",
+        "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+        "Sign_valid": "sign = 1 or sign = -1"
     }
 }

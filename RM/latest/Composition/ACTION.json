@@ -128,35 +128,15 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Links_valid": {
-            "description": "links /= Void implies not links.is_empty"
-        },
-        "Archetyped_valid": {
-            "description": "is_archetype_root xor archetype_details = Void"
-        },
-        "Archetype_node_id_valid": {
-            "description": "not archetype_node_id.is_empty"
-        },
-        "Language_valid": {
-            "description": "code_set (Code_set_id_languages).has_code (language)"
-        },
-        "Encoding_valid": {
-            "description": "code_set (Code_set_id_character_sets).has_code (encoding)"
-        },
-        "Subject_validity": {
-            "description": "subject_is_self implies subject.generating_type = \u201cPARTY_SELF\u201d"
-        },
-        "Other_participations_valid": {
-            "description": "other_participations /= Void implies not other_participations.is_empty"
-        },
-        "Is_archetype_root": {
-            "description": "is_archetype_root"
-        },
-        "Post_condition": {
-            "description": "Result implies subject.generating_type = \u201cPARTY_SELF\u201d"
-        }
+        "Pre": "path_exists (a_path)",
+        "Links_valid": "links /= Void implies not links.is_empty",
+        "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+        "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+        "Language_valid": "code_set (Code_set_id_languages).has_code (language)",
+        "Encoding_valid": "code_set (Code_set_id_character_sets).has_code (encoding)",
+        "Subject_validity": "subject_is_self implies subject.generating_type = \u201cPARTY_SELF\u201d",
+        "Other_participations_valid": "other_participations /= Void implies not other_participations.is_empty",
+        "Is_archetype_root": "is_archetype_root",
+        "Post_condition": "Result implies subject.generating_type = \u201cPARTY_SELF\u201d"
     }
 }

@@ -7,7 +7,7 @@ Schema files are generated from directly openEHR latest UML models, implementing
 
 ### Additional JSON-Schema keywords
 A few other keywords are used to support openEHR metadata: 
-`$inherits`, `$functions`, `$invariants`, `$abstract`.
+`$abstract`, `$inherits`, `$functions`, `$invariants`.
 These does not have have to be supported by JSON validators, their purpose is just informational.   
 
 ### Acknowledgements

@@ -33,17 +33,9 @@
         "all.json#/definitions/PARTY_IDENTIFIED"
     ],
     "$invariants": {
-        "Basic_validity": {
-            "description": "name /= Void or identifiers /= Void or external_ref /= Void"
-        },
-        "Name_valid": {
-            "description": "name /= Void implies not name.is_empty"
-        },
-        "Identifiers_valid": {
-            "description": "identifiers /= Void implies not identifiers.is_empty"
-        },
-        "Relationship_valid": {
-            "description": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_subject_relationship, relationship.defining_code)"
-        }
+        "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
+        "Name_valid": "name /= Void implies not name.is_empty",
+        "Identifiers_valid": "identifiers /= Void implies not identifiers.is_empty",
+        "Relationship_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_subject_relationship, relationship.defining_code)"
     }
 }

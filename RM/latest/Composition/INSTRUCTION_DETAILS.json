@@ -47,11 +47,7 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Activity_path_valid": {
-            "description": "not activity_id.is_empty"
-        }
+        "Pre": "path_exists (a_path)",
+        "Activity_path_valid": "not activity_id.is_empty"
     }
 }

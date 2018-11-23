@@ -82,18 +82,10 @@
                 "#/definitions/DATA_VALUE"
             ],
             "$invariants": {
-                "Issuer_valid": {
-                    "description": "not issuer.is_empty"
-                },
-                "Assigner_valid": {
-                    "description": "not assigner.is_empty"
-                },
-                "Id_valid": {
-                    "description": "not id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "not type.is_empty"
-                }
+                "Issuer_valid": "not issuer.is_empty",
+                "Assigner_valid": "not assigner.is_empty",
+                "Id_valid": "not id.is_empty",
+                "Type_valid": "not type.is_empty"
             }
         },
         "DV_ENCAPSULATED": {
@@ -116,15 +108,9 @@
                 "#/definitions/DATA_VALUE"
             ],
             "$invariants": {
-                "Size_valid": {
-                    "description": "size >= 0"
-                },
-                "Language_valid": {
-                    "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Charset_valid": {
-                    "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
-                }
+                "Size_valid": "size >= 0",
+                "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+                "Charset_valid": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
             }
         },
         "DV_MULTIMEDIA": {
@@ -200,30 +186,14 @@
                 }
             },
             "$invariants": {
-                "Size_valid": {
-                    "description": "size >= 0"
-                },
-                "Language_valid": {
-                    "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Charset_valid": {
-                    "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
-                },
-                "Not_empty": {
-                    "description": "is_inline or is_external"
-                },
-                "Media_type_valid": {
-                    "description": "media_type /= Void and then code_set (Code_set_id_media_types).has_code (media_type)"
-                },
-                "Compression_algorithm_validity": {
-                    "description": "compression_algorithm /= Void implies code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)"
-                },
-                "Integrity_check_validity": {
-                    "description": "integrity_check /= Void implies integrity_check_algorithm /= Void"
-                },
-                "Integrity_check_algorithm_validity": {
-                    "description": "integrity_check_algorithm /= Void implies code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)"
-                }
+                "Size_valid": "size >= 0",
+                "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+                "Charset_valid": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)",
+                "Not_empty": "is_inline or is_external",
+                "Media_type_valid": "media_type /= Void and then code_set (Code_set_id_media_types).has_code (media_type)",
+                "Compression_algorithm_validity": "compression_algorithm /= Void implies code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)",
+                "Integrity_check_validity": "integrity_check /= Void implies integrity_check_algorithm /= Void",
+                "Integrity_check_algorithm_validity": "integrity_check_algorithm /= Void implies code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)"
             }
         },
         "DV_PARSABLE": {
@@ -262,18 +232,10 @@
                 }
             },
             "$invariants": {
-                "Size_valid": {
-                    "description": "size >= 0"
-                },
-                "Language_valid": {
-                    "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Charset_valid": {
-                    "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
-                },
-                "Formalism_valid": {
-                    "description": "not formalism.is_empty"
-                }
+                "Size_valid": "size >= 0",
+                "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+                "Charset_valid": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)",
+                "Formalism_valid": "not formalism.is_empty"
             }
         },
         "DV_PARAGRAPH": {
@@ -298,9 +260,7 @@
                 "#/definitions/DATA_VALUE"
             ],
             "$invariants": {
-                "Items_valid": {
-                    "description": "not items.is_empty"
-                }
+                "Items_valid": "not items.is_empty"
             }
         },
         "DV_TEXT": {
@@ -344,21 +304,11 @@
                 "#/definitions/DATA_VALUE"
             ],
             "$invariants": {
-                "Valid_value": {
-                    "description": "not value.is_empty and then not (value.has(CR) or value.has(LF))"
-                },
-                "Language_valid": {
-                    "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Encoding_valid": {
-                    "description": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)"
-                },
-                "Mappings_valid": {
-                    "description": "mappings /= void implies not mappings.is_empty"
-                },
-                "Formatting_valid": {
-                    "description": "formatting /= void implies not formatting.is_empty"
-                }
+                "Valid_value": "not value.is_empty and then not (value.has(CR) or value.has(LF))",
+                "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+                "Encoding_valid": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)",
+                "Mappings_valid": "mappings /= void implies not mappings.is_empty",
+                "Formatting_valid": "formatting /= void implies not formatting.is_empty"
             }
         },
         "DV_CODED_TEXT": {
@@ -407,21 +357,11 @@
                 "#/definitions/DV_TEXT"
             ],
             "$invariants": {
-                "Valid_value": {
-                    "description": "not value.is_empty and then not (value.has(CR) or value.has(LF))"
-                },
-                "Language_valid": {
-                    "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Encoding_valid": {
-                    "description": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)"
-                },
-                "Mappings_valid": {
-                    "description": "mappings /= void implies not mappings.is_empty"
-                },
-                "Formatting_valid": {
-                    "description": "formatting /= void implies not formatting.is_empty"
-                }
+                "Valid_value": "not value.is_empty and then not (value.has(CR) or value.has(LF))",
+                "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+                "Encoding_valid": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)",
+                "Mappings_valid": "mappings /= void implies not mappings.is_empty",
+                "Formatting_valid": "formatting /= void implies not formatting.is_empty"
             }
         },
         "TERM_MAPPING": {
@@ -465,15 +405,9 @@
                 }
             },
             "$invariants": {
-                "Purpose_valid": {
-                    "description": "purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)"
-                },
-                "Match_valid": {
-                    "description": "is_valid_match_code (match)"
-                },
-                "Post": {
-                    "description": "Result := c = \u2018>\u2019 or c = \u2018=\u2019 or c = \u2018<\u2019 or c = \u2018?\u2019"
-                }
+                "Purpose_valid": "purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)",
+                "Match_valid": "is_valid_match_code (match)",
+                "Post": "Result := c = \u2018>\u2019 or c = \u2018=\u2019 or c = \u2018<\u2019 or c = \u2018?\u2019"
             }
         },
         "CODE_PHRASE": {
@@ -496,9 +430,7 @@
                 "code_string"
             ],
             "$invariants": {
-                "Code_string_valid": {
-                    "description": "not code_string.is_empty"
-                }
+                "Code_string_valid": "not code_string.is_empty"
             }
         },
         "DV_ORDERED": {
@@ -543,27 +475,13 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
             }
         },
         "DV_INTERVAL": {
@@ -621,18 +539,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies (lower.is_strictly_comparable_to(upper) and lower <= upper)"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies (lower.is_strictly_comparable_to(upper) and lower <= upper)",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "REFERENCE_RANGE": {
@@ -660,9 +570,7 @@
                 }
             },
             "$invariants": {
-                "Range_is_simple": {
-                    "description": "(range.lower_unbounded or else range.lower.is_simple) and (range.upper_unbounded or else range.upper.is_simple)"
-                }
+                "Range_is_simple": "(range.lower_unbounded or else range.lower.is_simple) and (range.upper_unbounded or else range.upper.is_simple)"
             }
         },
         "DV_QUANTIFIED": {
@@ -723,33 +631,15 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
             }
         },
         "DV_PROPORTION": {
@@ -856,60 +746,24 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Accuracy_is_percent_validity": {
-                    "description": "accuracy = 0 implies not accuracy_is_percent"
-                },
-                "Accuracy_validity": {
-                    "description": "accuracy_is_percent implies valid_percentage (accuracy)"
-                },
-                "Type_validity": {
-                    "description": "valid_proportion_kind (type)"
-                },
-                "Precision_validity": {
-                    "description": "precision = 0 implies is_integral"
-                },
-                "Is_integral_validity": {
-                    "description": "is_integral implies (numerator.floor = numerator and denominator.floor = denominator)"
-                },
-                "Fraction_validity": {
-                    "description": "(type = pk_fraction or type = pk_integer_fraction) implies is_integral"
-                },
-                "Unitary_validity": {
-                    "description": "type = pk_unitary implies denominator = 1"
-                },
-                "Percent_validity": {
-                    "description": "type = pk_percent implies denominator = 100"
-                },
-                "Valid_denominator": {
-                    "description": "denominator /= 0.0"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Accuracy_is_percent_validity": "accuracy = 0 implies not accuracy_is_percent",
+                "Accuracy_validity": "accuracy_is_percent implies valid_percentage (accuracy)",
+                "Type_validity": "valid_proportion_kind (type)",
+                "Precision_validity": "precision = 0 implies is_integral",
+                "Is_integral_validity": "is_integral implies (numerator.floor = numerator and denominator.floor = denominator)",
+                "Fraction_validity": "(type = pk_fraction or type = pk_integer_fraction) implies is_integral",
+                "Unitary_validity": "type = pk_unitary implies denominator = 1",
+                "Percent_validity": "type = pk_percent implies denominator = 100",
+                "Valid_denominator": "denominator /= 0.0"
             }
         },
         "PROPORTION_KIND": {
@@ -1000,39 +854,17 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Accuracy_is_percent_validity": {
-                    "description": "accuracy = 0 implies not accuracy_is_percent"
-                },
-                "Accuracy_validity": {
-                    "description": "accuracy_is_percent implies valid_percentage (accuracy)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Accuracy_is_percent_validity": "accuracy = 0 implies not accuracy_is_percent",
+                "Accuracy_validity": "accuracy_is_percent implies valid_percentage (accuracy)"
             }
         },
         "DV_QUANTITY": {
@@ -1130,39 +962,17 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Accuracy_is_percent_validity": {
-                    "description": "accuracy = 0 implies not accuracy_is_percent"
-                },
-                "Accuracy_validity": {
-                    "description": "accuracy_is_percent implies valid_percentage (accuracy)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Accuracy_is_percent_validity": "accuracy = 0 implies not accuracy_is_percent",
+                "Accuracy_validity": "accuracy_is_percent implies valid_percentage (accuracy)"
             }
         },
         "DV_COUNT": {
@@ -1247,39 +1057,17 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Accuracy_is_percent_validity": {
-                    "description": "accuracy = 0 implies not accuracy_is_percent"
-                },
-                "Accuracy_validity": {
-                    "description": "accuracy_is_percent implies valid_percentage (accuracy)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Accuracy_is_percent_validity": "accuracy = 0 implies not accuracy_is_percent",
+                "Accuracy_validity": "accuracy_is_percent implies valid_percentage (accuracy)"
             }
         },
         "DV_ABSOLUTE_QUANTITY": {
@@ -1348,33 +1136,15 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
             }
         },
         "DV_DURATION": {
@@ -1533,66 +1303,26 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Years_valid": {
-                    "description": "years >= 0"
-                },
-                "Months_valid": {
-                    "description": "months >= 0"
-                },
-                "Weeks_valid": {
-                    "description": "weeks >= 0"
-                },
-                "Days_valid": {
-                    "description": "days >= 0"
-                },
-                "Hours_valid": {
-                    "description": "hours >= 0"
-                },
-                "Minutes_valid": {
-                    "description": "minutes >= 0"
-                },
-                "Seconds_valid": {
-                    "description": "seconds >= 0"
-                },
-                "Fractional_second_valid": {
-                    "description": "fractional_second >= 0.0 and fractional_second < 1.0"
-                },
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Accuracy_is_percent_validity": {
-                    "description": "accuracy = 0 implies not accuracy_is_percent"
-                },
-                "Accuracy_validity": {
-                    "description": "accuracy_is_percent implies valid_percentage (accuracy)"
-                },
-                "Value_valid": {
-                    "description": "valid_iso8601_duration (value)"
-                }
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Years_valid": "years >= 0",
+                "Months_valid": "months >= 0",
+                "Weeks_valid": "weeks >= 0",
+                "Days_valid": "days >= 0",
+                "Hours_valid": "hours >= 0",
+                "Minutes_valid": "minutes >= 0",
+                "Seconds_valid": "seconds >= 0",
+                "Fractional_second_valid": "fractional_second >= 0.0 and fractional_second < 1.0",
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Accuracy_is_percent_validity": "accuracy = 0 implies not accuracy_is_percent",
+                "Accuracy_validity": "accuracy_is_percent implies valid_percentage (accuracy)",
+                "Value_valid": "valid_iso8601_duration (value)"
             }
         },
         "DV_TEMPORAL": {
@@ -1662,33 +1392,15 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
             }
         },
         "DV_DATE": {
@@ -1825,48 +1537,20 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Year_valid": {
-                    "description": "valid_year (year)"
-                },
-                "Month_valid": {
-                    "description": "not month_unknown implies valid_month (month)"
-                },
-                "Day_valid": {
-                    "description": "not day_unknown implies valid_day (year, month, day)"
-                },
-                "Partial_validity": {
-                    "description": "month_unknown implies day_unknown"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Value_valid": {
-                    "description": "valid_iso8601_date(value)"
-                }
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Year_valid": "valid_year (year)",
+                "Month_valid": "not month_unknown implies valid_month (month)",
+                "Day_valid": "not day_unknown implies valid_day (year, month, day)",
+                "Partial_validity": "month_unknown implies day_unknown",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Value_valid": "valid_iso8601_date(value)"
             }
         },
         "DV_TIME": {
@@ -2015,51 +1699,21 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Hour_valid": {
-                    "description": "valid_hour(hour, minute, second)"
-                },
-                "Minute_valid": {
-                    "description": "not minute_unknown implies valid_minute (minute)"
-                },
-                "Second_valid": {
-                    "description": "not second_unknown implies valid_second (second)"
-                },
-                "Fractional_second_valid": {
-                    "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
-                },
-                "Partial_validity": {
-                    "description": "minute_unknown implies second_unknown"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Value_valid": {
-                    "description": "valid_iso8601_time (value)"
-                }
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Hour_valid": "valid_hour(hour, minute, second)",
+                "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+                "Second_valid": "not second_unknown implies valid_second (second)",
+                "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+                "Partial_validity": "minute_unknown implies second_unknown",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Value_valid": "valid_iso8601_time (value)"
             }
         },
         "DV_DATE_TIME": {
@@ -2223,72 +1877,28 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)"
-                },
-                "Year_valid": {
-                    "description": "valid_year (year)"
-                },
-                "Month_valid": {
-                    "description": "valid_month (month)"
-                },
-                "Day_valid": {
-                    "description": "valid_day(year, month, day)"
-                },
-                "Hour_valid": {
-                    "description": "valid_hour (hour, minute, second)"
-                },
-                "Minute_valid": {
-                    "description": "not minute_unknown implies valid_minute(minute)"
-                },
-                "Second_valid": {
-                    "description": "not second_unknown implies valid_second (second)"
-                },
-                "Fractional_second_valid": {
-                    "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
-                },
-                "Partial_validity_year": {
-                    "description": "not month_unknown"
-                },
-                "Partial_validity_month": {
-                    "description": "not month_unknown"
-                },
-                "Partial_validity_day": {
-                    "description": "not day_unknown"
-                },
-                "Partial_validity_hour": {
-                    "description": "not hour_unknown"
-                },
-                "Partial_validity_minute": {
-                    "description": "minute_unknown implies second_unknown"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Magnitude_status_valid": {
-                    "description": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)"
-                },
-                "Value_valid": {
-                    "description": "valid_iso8601_date_time (value)"
-                }
+                "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+                "Year_valid": "valid_year (year)",
+                "Month_valid": "valid_month (month)",
+                "Day_valid": "valid_day(year, month, day)",
+                "Hour_valid": "valid_hour (hour, minute, second)",
+                "Minute_valid": "not minute_unknown implies valid_minute(minute)",
+                "Second_valid": "not second_unknown implies valid_second (second)",
+                "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+                "Partial_validity_year": "not month_unknown",
+                "Partial_validity_month": "not month_unknown",
+                "Partial_validity_day": "not day_unknown",
+                "Partial_validity_hour": "not hour_unknown",
+                "Partial_validity_minute": "minute_unknown implies second_unknown",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+                "Value_valid": "valid_iso8601_date_time (value)"
             }
         },
         "DV_ORDINAL": {
@@ -2349,36 +1959,16 @@
                 }
             },
             "$invariants": {
-                "Other_reference_ranges_validity": {
-                    "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-                },
-                "Is_simple_validity": {
-                    "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-                },
-                "Normal_status_validity": {
-                    "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-                },
-                "Normal_range_and_status_consistency": {
-                    "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-                },
-                "Pre": {
-                    "description": "normal_range /= Void or normal_status /= Void"
-                },
-                "Post_range": {
-                    "description": "normal_range /= Void implies Result = normal_range.has (self)"
-                },
-                "Post_status": {
-                    "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-                },
-                "Limits_valid": {
-                    "description": "limits.meaning.is_equal (\u201climits\u201d)"
-                },
-                "Reference_range_valid": {
-                    "description": "other_reference_ranges.has (limits)"
-                },
-                "Post": {
-                    "description": "Result = value < other.value"
-                }
+                "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+                "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+                "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+                "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+                "Pre": "normal_range /= Void or normal_status /= Void",
+                "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+                "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+                "Limits_valid": "limits.meaning.is_equal (\u201climits\u201d)",
+                "Reference_range_valid": "other_reference_ranges.has (limits)",
+                "Post": "Result = value < other.value"
             }
         },
         "DV_INTERVAL<DV_DATE_TIME>": {
@@ -2483,9 +2073,7 @@
                 }
             },
             "$invariants": {
-                "Value_valid": {
-                    "description": "value.formalism.is_equal (\u201cHL7:PIVL\u201d) or value.formalism. is_equal (\u201cHL7:EIVL\u201d)"
-                }
+                "Value_valid": "value.formalism.is_equal (\u201cHL7:PIVL\u201d) or value.formalism. is_equal (\u201cHL7:EIVL\u201d)"
             }
         },
         "DV_GENERAL_TIME_SPECIFICATION": {
@@ -2549,9 +2137,7 @@
                 }
             },
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.is_empty"
-                }
+                "Value_valid": "not value.is_empty"
             }
         },
         "DV_EHR_URI": {
@@ -2586,12 +2172,8 @@
                 }
             },
             "$invariants": {
-                "Value_valid": {
-                    "description": "not value.is_empty"
-                },
-                "Scheme_valid": {
-                    "description": "scheme.is_equal (Ehr_scheme)"
-                }
+                "Value_valid": "not value.is_empty",
+                "Scheme_valid": "scheme.is_equal (Ehr_scheme)"
             }
         }
     }

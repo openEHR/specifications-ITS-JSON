@@ -32,11 +32,7 @@
         }
     },
     "$invariants": {
-        "Value_valid": {
-            "description": "not value.is_empty"
-        },
-        "Scheme_valid": {
-            "description": "scheme.is_equal (Ehr_scheme)"
-        }
+        "Value_valid": "not value.is_empty",
+        "Scheme_valid": "scheme.is_equal (Ehr_scheme)"
     }
 }

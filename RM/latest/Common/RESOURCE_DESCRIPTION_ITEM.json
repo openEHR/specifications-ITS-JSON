@@ -47,20 +47,10 @@
         "purpose"
     ],
     "$invariants": {
-        "Language_valid": {
-            "description": "code_set (Code_set_id_languages).has_code (language)"
-        },
-        "Purpose_valid": {
-            "description": "not purpose.is_empty"
-        },
-        "Use_valid": {
-            "description": "use /= Void implies not use.is_empty"
-        },
-        "misuse_valid": {
-            "description": "misuse /= Void implies not misuse.is_empty"
-        },
-        "copyright_valid": {
-            "description": "copyright /= Void implies not copyright.is_empty"
-        }
+        "Language_valid": "code_set (Code_set_id_languages).has_code (language)",
+        "Purpose_valid": "not purpose.is_empty",
+        "Use_valid": "use /= Void implies not use.is_empty",
+        "misuse_valid": "misuse /= Void implies not misuse.is_empty",
+        "copyright_valid": "copyright /= Void implies not copyright.is_empty"
     }
 }

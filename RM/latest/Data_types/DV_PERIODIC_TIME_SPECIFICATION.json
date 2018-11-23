@@ -32,8 +32,6 @@
         }
     },
     "$invariants": {
-        "Value_valid": {
-            "description": "value.formalism.is_equal (\u201cHL7:PIVL\u201d) or value.formalism. is_equal (\u201cHL7:EIVL\u201d)"
-        }
+        "Value_valid": "value.formalism.is_equal (\u201cHL7:PIVL\u201d) or value.formalism. is_equal (\u201cHL7:EIVL\u201d)"
     }
 }

@@ -24,8 +24,6 @@
         "audits"
     ],
     "$invariants": {
-        "Audit_valid": {
-            "description": "not audits.is_empty"
-        }
+        "Audit_valid": "not audits.is_empty"
     }
 }

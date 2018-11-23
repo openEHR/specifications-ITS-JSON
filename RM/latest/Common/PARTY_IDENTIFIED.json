@@ -26,14 +26,8 @@
         "all.json#/definitions/PARTY_PROXY"
     ],
     "$invariants": {
-        "Basic_validity": {
-            "description": "name /= Void or identifiers /= Void or external_ref /= Void"
-        },
-        "Name_valid": {
-            "description": "name /= Void implies not name.is_empty"
-        },
-        "Identifiers_valid": {
-            "description": "identifiers /= Void implies not identifiers.is_empty"
-        }
+        "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
+        "Name_valid": "name /= Void implies not name.is_empty",
+        "Identifiers_valid": "identifiers /= Void implies not identifiers.is_empty"
     }
 }

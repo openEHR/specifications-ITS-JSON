@@ -107,47 +107,19 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result = fs >= 0.0 and fs < 1.0 ."
-        },
-        "Year_valid": {
-            "description": "valid_year (year)"
-        },
-        "Month_valid": {
-            "description": "valid_month (month)"
-        },
-        "Day_valid": {
-            "description": "valid_day(year, month, day)"
-        },
-        "Hour_valid": {
-            "description": "valid_hour (hour, minute, second)"
-        },
-        "Minute_valid": {
-            "description": "not minute_unknown implies valid_minute(minute)"
-        },
-        "Second_valid": {
-            "description": "not second_unknown implies valid_second (second)"
-        },
-        "Fractional_second_valid": {
-            "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
-        },
-        "Partial_validity_year": {
-            "description": "not month_unknown"
-        },
-        "Partial_validity_month": {
-            "description": "not month_unknown"
-        },
-        "Partial_validity_day": {
-            "description": "not day_unknown"
-        },
-        "Partial_validity_hour": {
-            "description": "not hour_unknown"
-        },
-        "Partial_validity_minute": {
-            "description": "minute_unknown implies second_unknown"
-        },
-        "Pre": {
-            "description": "not second_unknown"
-        }
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Year_valid": "valid_year (year)",
+        "Month_valid": "valid_month (month)",
+        "Day_valid": "valid_day(year, month, day)",
+        "Hour_valid": "valid_hour (hour, minute, second)",
+        "Minute_valid": "not minute_unknown implies valid_minute(minute)",
+        "Second_valid": "not second_unknown implies valid_second (second)",
+        "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+        "Partial_validity_year": "not month_unknown",
+        "Partial_validity_month": "not month_unknown",
+        "Partial_validity_day": "not day_unknown",
+        "Partial_validity_hour": "not hour_unknown",
+        "Partial_validity_minute": "minute_unknown implies second_unknown",
+        "Pre": "not second_unknown"
     }
 }

@@ -36,17 +36,9 @@
         }
     },
     "$invariants": {
-        "Size_valid": {
-            "description": "size >= 0"
-        },
-        "Language_valid": {
-            "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-        },
-        "Charset_valid": {
-            "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
-        },
-        "Formalism_valid": {
-            "description": "not formalism.is_empty"
-        }
+        "Size_valid": "size >= 0",
+        "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+        "Charset_valid": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)",
+        "Formalism_valid": "not formalism.is_empty"
     }
 }

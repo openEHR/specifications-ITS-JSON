@@ -28,11 +28,7 @@
         "performer"
     ],
     "$invariants": {
-        "Function_valid": {
-            "description": "function /= Void and then function.generating_type.is_equal (\u201cDV_CODED_TEXT\u201d) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)"
-        },
-        "Mode_valid": {
-            "description": "mode /= Void and terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)"
-        }
+        "Function_valid": "function /= Void and then function.generating_type.is_equal (\u201cDV_CODED_TEXT\u201d) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)",
+        "Mode_valid": "mode /= Void and terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)"
     }
 }

@@ -57,21 +57,11 @@
                 "time_created"
             ],
             "$invariants": {
-                "Contributions_valid": {
-                    "description": "contributions.for_all (c | c.type.is_equal(\u201cCONTRIBUTION\u201d))"
-                },
-                "Ehr_access_valid": {
-                    "description": "ehr_access.type.is_equal (\u201cVERSIONED_EHR_ACCESS\u201d)"
-                },
-                "Ehr_status_valid": {
-                    "description": "ehr_status.type.is_equal(\u201cVERSIONED_EHR_STATUS\u201d)"
-                },
-                "Compositions_valid": {
-                    "description": "compositions.for_all (c | c.type.is_equal (\u201cVERSIONED_COMPOSITION\u201d))"
-                },
-                "Directory_valid": {
-                    "description": "directory /= Void implies directory.type.is_equal (\u201cVERSIONED_FOLDER\u201d)"
-                }
+                "Contributions_valid": "contributions.for_all (c | c.type.is_equal(\u201cCONTRIBUTION\u201d))",
+                "Ehr_access_valid": "ehr_access.type.is_equal (\u201cVERSIONED_EHR_ACCESS\u201d)",
+                "Ehr_status_valid": "ehr_status.type.is_equal(\u201cVERSIONED_EHR_STATUS\u201d)",
+                "Compositions_valid": "compositions.for_all (c | c.type.is_equal (\u201cVERSIONED_COMPOSITION\u201d))",
+                "Directory_valid": "directory /= Void implies directory.type.is_equal (\u201cVERSIONED_FOLDER\u201d)"
             }
         },
         "VERSIONED_EHR_ACCESS": {
@@ -152,27 +142,13 @@
                 }
             },
             "$invariants": {
-                "Version_count_valid": {
-                    "description": "version_count >= 0"
-                },
-                "All_version_ids_valid": {
-                    "description": "all_version_ids.count = version_count"
-                },
-                "All_versions_valid": {
-                    "description": "all_versions.count = version_count"
-                },
-                "Latest_version_valid": {
-                    "description": "version_count > 0 implies latest_version /= Void"
-                },
-                "Uid_validity": {
-                    "description": "extension.is_empty"
-                },
-                "Pre": {
-                    "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-                },
-                "Post": {
-                    "description": "Result = latest_trunk_version.lifecycle_state"
-                }
+                "Version_count_valid": "version_count >= 0",
+                "All_version_ids_valid": "all_version_ids.count = version_count",
+                "All_versions_valid": "all_versions.count = version_count",
+                "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+                "Uid_validity": "extension.is_empty",
+                "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+                "Post": "Result = latest_trunk_version.lifecycle_state"
             }
         },
         "VERSIONED_EHR_STATUS": {
@@ -253,27 +229,13 @@
                 }
             },
             "$invariants": {
-                "Version_count_valid": {
-                    "description": "version_count >= 0"
-                },
-                "All_version_ids_valid": {
-                    "description": "all_version_ids.count = version_count"
-                },
-                "All_versions_valid": {
-                    "description": "all_versions.count = version_count"
-                },
-                "Latest_version_valid": {
-                    "description": "version_count > 0 implies latest_version /= Void"
-                },
-                "Uid_validity": {
-                    "description": "extension.is_empty"
-                },
-                "Pre": {
-                    "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-                },
-                "Post": {
-                    "description": "Result = latest_trunk_version.lifecycle_state"
-                }
+                "Version_count_valid": "version_count >= 0",
+                "All_version_ids_valid": "all_version_ids.count = version_count",
+                "All_versions_valid": "all_versions.count = version_count",
+                "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+                "Uid_validity": "extension.is_empty",
+                "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+                "Post": "Result = latest_trunk_version.lifecycle_state"
             }
         },
         "VERSIONED_COMPOSITION": {
@@ -357,33 +319,15 @@
                 }
             },
             "$invariants": {
-                "Version_count_valid": {
-                    "description": "version_count >= 0"
-                },
-                "All_version_ids_valid": {
-                    "description": "all_version_ids.count = version_count"
-                },
-                "All_versions_valid": {
-                    "description": "all_versions.count = version_count"
-                },
-                "Latest_version_valid": {
-                    "description": "version_count > 0 implies latest_version /= Void"
-                },
-                "Uid_validity": {
-                    "description": "extension.is_empty"
-                },
-                "Pre": {
-                    "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-                },
-                "Post": {
-                    "description": "Result = latest_trunk_version.lifecycle_state"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "all_versions.for_all (v | v.archetype_node_id.is_equal (all_versions.first.archetype_node_id))"
-                },
-                "Persistent_validity": {
-                    "description": "all_versions.for_all (v | v.is_persistent = all_versions.first.data.is_persistent)"
-                }
+                "Version_count_valid": "version_count >= 0",
+                "All_version_ids_valid": "all_version_ids.count = version_count",
+                "All_versions_valid": "all_versions.count = version_count",
+                "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+                "Uid_validity": "extension.is_empty",
+                "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+                "Post": "Result = latest_trunk_version.lifecycle_state",
+                "Archetype_node_id_valid": "all_versions.for_all (v | v.archetype_node_id.is_equal (all_versions.first.archetype_node_id))",
+                "Persistent_validity": "all_versions.for_all (v | v.is_persistent = all_versions.first.data.is_persistent)"
             }
         },
         "EHR_ACCESS": {
@@ -461,24 +405,12 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Scheme_valid": {
-                    "description": "not scheme.is_empty"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Scheme_valid": "not scheme.is_empty",
+                "Is_archetype_root": "is_archetype_root"
             }
         },
         "EHR_STATUS": {
@@ -568,21 +500,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Is_archetype_root": "is_archetype_root"
             }
         }
     }

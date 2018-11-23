@@ -26,26 +26,12 @@
         }
     },
     "$invariants": {
-        "Involutive_negation": {
-            "description": "is_equal (not (not self))"
-        },
-        "Non_contradiction": {
-            "description": "not (self and (not self))"
-        },
-        "Completeness": {
-            "description": "self or else (not self)"
-        },
-        "Post_de_Morgan": {
-            "description": "Result = not (not self and then not other)"
-        },
-        "Post_commutative": {
-            "description": "Result = (other or Current)"
-        },
-        "Post_consistent_with_semi_strict": {
-            "description": "Result implies (self or else other)"
-        },
-        "Post_definition": {
-            "description": "Result = (not self or else other)"
-        }
+        "Involutive_negation": "is_equal (not (not self))",
+        "Non_contradiction": "not (self and (not self))",
+        "Completeness": "self or else (not self)",
+        "Post_de_Morgan": "Result = not (not self and then not other)",
+        "Post_commutative": "Result = (other or Current)",
+        "Post_consistent_with_semi_strict": "Result implies (self or else other)",
+        "Post_definition": "Result = (not self or else other)"
     }
 }

@@ -92,26 +92,12 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result = fs >= 0.0 and fs < 1.0 ."
-        },
-        "Hour_valid": {
-            "description": "valid_hour(hour, minute, second)"
-        },
-        "Minute_valid": {
-            "description": "not minute_unknown implies valid_minute (minute)"
-        },
-        "Second_valid": {
-            "description": "not second_unknown implies valid_second (second)"
-        },
-        "Fractional_second_valid": {
-            "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
-        },
-        "Partial_validity": {
-            "description": "minute_unknown implies second_unknown"
-        },
-        "Pre": {
-            "description": "not second_unknown"
-        }
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Hour_valid": "valid_hour(hour, minute, second)",
+        "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+        "Second_valid": "not second_unknown implies valid_second (second)",
+        "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+        "Partial_validity": "minute_unknown implies second_unknown",
+        "Pre": "not second_unknown"
     }
 }

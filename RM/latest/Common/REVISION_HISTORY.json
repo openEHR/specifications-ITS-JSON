@@ -27,8 +27,6 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result.is_equal (items.last.audits.first. time_committed.value)"
-        }
+        "Post": "Result.is_equal (items.last.audits.first. time_committed.value)"
     }
 }

@@ -95,32 +95,14 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result = fs >= 0.0 and fs < 1.0 ."
-        },
-        "Years_valid": {
-            "description": "years >= 0"
-        },
-        "Months_valid": {
-            "description": "months >= 0"
-        },
-        "Weeks_valid": {
-            "description": "weeks >= 0"
-        },
-        "Days_valid": {
-            "description": "days >= 0"
-        },
-        "Hours_valid": {
-            "description": "hours >= 0"
-        },
-        "Minutes_valid": {
-            "description": "minutes >= 0"
-        },
-        "Seconds_valid": {
-            "description": "seconds >= 0"
-        },
-        "Fractional_second_valid": {
-            "description": "fractional_second >= 0.0 and fractional_second < 1.0"
-        }
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Years_valid": "years >= 0",
+        "Months_valid": "months >= 0",
+        "Weeks_valid": "weeks >= 0",
+        "Days_valid": "days >= 0",
+        "Hours_valid": "hours >= 0",
+        "Minutes_valid": "minutes >= 0",
+        "Seconds_valid": "seconds >= 0",
+        "Fractional_second_valid": "fractional_second >= 0.0 and fractional_second < 1.0"
     }
 }

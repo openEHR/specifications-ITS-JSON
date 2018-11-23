@@ -20,8 +20,6 @@
         "code_string"
     ],
     "$invariants": {
-        "Code_string_valid": {
-            "description": "not code_string.is_empty"
-        }
+        "Code_string_valid": "not code_string.is_empty"
     }
 }

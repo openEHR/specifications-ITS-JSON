@@ -110,36 +110,16 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root"
             }
         },
         "CONTACT": {
@@ -226,21 +206,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Purpose_valid": {
-                    "description": "purpose = name"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Purpose_valid": "purpose = name"
             }
         },
         "ADDRESS": {
@@ -319,21 +289,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name"
             }
         },
         "PARTY_IDENTITY": {
@@ -412,21 +372,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Purpose_valid": {
-                    "description": "purpose = name"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Purpose_valid": "purpose = name"
             }
         },
         "ROLE": {
@@ -550,39 +500,17 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                },
-                "Capabilities_valid": {
-                    "description": "capabilities /= Void implies not capabilities.empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root",
+                "Capabilities_valid": "capabilities /= Void implies not capabilities.empty"
             }
         },
         "ACTOR": {
@@ -705,42 +633,18 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                },
-                "Roles_valid": {
-                    "description": "roles /= Void implies not roles.is_empty"
-                },
-                "Legal_identity_exists": {
-                    "description": "has_legal_identity"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root",
+                "Roles_valid": "roles /= Void implies not roles.is_empty",
+                "Legal_identity_exists": "has_legal_identity"
             }
         },
         "CAPABILITY": {
@@ -820,18 +724,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "AGENT": {
@@ -953,42 +849,18 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                },
-                "Roles_valid": {
-                    "description": "roles /= Void implies not roles.is_empty"
-                },
-                "Legal_identity_exists": {
-                    "description": "has_legal_identity"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root",
+                "Roles_valid": "roles /= Void implies not roles.is_empty",
+                "Legal_identity_exists": "has_legal_identity"
             }
         },
         "ORGANISATION": {
@@ -1110,42 +982,18 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                },
-                "Roles_valid": {
-                    "description": "roles /= Void implies not roles.is_empty"
-                },
-                "Legal_identity_exists": {
-                    "description": "has_legal_identity"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root",
+                "Roles_valid": "roles /= Void implies not roles.is_empty",
+                "Legal_identity_exists": "has_legal_identity"
             }
         },
         "GROUP": {
@@ -1267,42 +1115,18 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                },
-                "Roles_valid": {
-                    "description": "roles /= Void implies not roles.is_empty"
-                },
-                "Legal_identity_exists": {
-                    "description": "has_legal_identity"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root",
+                "Roles_valid": "roles /= Void implies not roles.is_empty",
+                "Legal_identity_exists": "has_legal_identity"
             }
         },
         "PERSON": {
@@ -1424,42 +1248,18 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Type_valid": {
-                    "description": "type = name"
-                },
-                "Identities_valid": {
-                    "description": "not identities.is_empty"
-                },
-                "Contacts_valid": {
-                    "description": "contacts /= Void implies not contacts.is_empty"
-                },
-                "Relationships_validity": {
-                    "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-                },
-                "Reverse_relationships_validity": {
-                    "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-                },
-                "Is_archetype_root": {
-                    "description": "is_archetype_root"
-                },
-                "Roles_valid": {
-                    "description": "roles /= Void implies not roles.is_empty"
-                },
-                "Legal_identity_exists": {
-                    "description": "has_legal_identity"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Type_valid": "type = name",
+                "Identities_valid": "not identities.is_empty",
+                "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+                "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+                "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+                "Is_archetype_root": "is_archetype_root",
+                "Roles_valid": "roles /= Void implies not roles.is_empty",
+                "Legal_identity_exists": "has_legal_identity"
             }
         },
         "PARTY_RELATIONSHIP": {
@@ -1551,27 +1351,13 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Source_valid": {
-                    "description": "source /= Void and then source.relationships.has (self)"
-                },
-                "Target_valid": {
-                    "description": "target /= Void and then not target.reverse_relationships.has (self)"
-                },
-                "Type_validity": {
-                    "description": "type = name"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Source_valid": "source /= Void and then source.relationships.has (self)",
+                "Target_valid": "target /= Void and then not target.reverse_relationships.has (self)",
+                "Type_validity": "type = name"
             }
         },
         "VERSIONED_PARTY": {
@@ -1652,27 +1438,13 @@
                 }
             },
             "$invariants": {
-                "Version_count_valid": {
-                    "description": "version_count >= 0"
-                },
-                "All_version_ids_valid": {
-                    "description": "all_version_ids.count = version_count"
-                },
-                "All_versions_valid": {
-                    "description": "all_versions.count = version_count"
-                },
-                "Latest_version_valid": {
-                    "description": "version_count > 0 implies latest_version /= Void"
-                },
-                "Uid_validity": {
-                    "description": "extension.is_empty"
-                },
-                "Pre": {
-                    "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-                },
-                "Post": {
-                    "description": "Result = latest_trunk_version.lifecycle_state"
-                }
+                "Version_count_valid": "version_count >= 0",
+                "All_version_ids_valid": "all_version_ids.count = version_count",
+                "All_versions_valid": "all_versions.count = version_count",
+                "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+                "Uid_validity": "extension.is_empty",
+                "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+                "Post": "Result = latest_trunk_version.lifecycle_state"
             }
         }
     }

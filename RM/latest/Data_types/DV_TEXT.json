@@ -41,20 +41,10 @@
         "all.json#/definitions/DATA_VALUE"
     ],
     "$invariants": {
-        "Valid_value": {
-            "description": "not value.is_empty and then not (value.has(CR) or value.has(LF))"
-        },
-        "Language_valid": {
-            "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-        },
-        "Encoding_valid": {
-            "description": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)"
-        },
-        "Mappings_valid": {
-            "description": "mappings /= void implies not mappings.is_empty"
-        },
-        "Formatting_valid": {
-            "description": "formatting /= void implies not formatting.is_empty"
-        }
+        "Valid_value": "not value.is_empty and then not (value.has(CR) or value.has(LF))",
+        "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+        "Encoding_valid": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)",
+        "Mappings_valid": "mappings /= void implies not mappings.is_empty",
+        "Formatting_valid": "formatting /= void implies not formatting.is_empty"
     }
 }

@@ -49,8 +49,6 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "valid_code_set_id (id)"
-        }
+        "Pre": "valid_code_set_id (id)"
     }
 }

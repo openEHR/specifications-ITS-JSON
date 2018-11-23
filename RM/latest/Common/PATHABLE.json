@@ -27,8 +27,6 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        }
+        "Pre": "path_exists (a_path)"
     }
 }

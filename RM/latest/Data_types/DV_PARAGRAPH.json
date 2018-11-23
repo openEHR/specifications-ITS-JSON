@@ -22,8 +22,6 @@
         "all.json#/definitions/DATA_VALUE"
     ],
     "$invariants": {
-        "Items_valid": {
-            "description": "not items.is_empty"
-        }
+        "Items_valid": "not items.is_empty"
     }
 }

@@ -24,11 +24,7 @@
         "rm_version"
     ],
     "$invariants": {
-        "rm_version_valid": {
-            "description": "not rm_version.is_empty"
-        },
-        "Rm_version_valid": {
-            "description": "not rm_version.is_empty"
-        }
+        "rm_version_valid": "not rm_version.is_empty",
+        "Rm_version_valid": "not rm_version.is_empty"
     }
 }

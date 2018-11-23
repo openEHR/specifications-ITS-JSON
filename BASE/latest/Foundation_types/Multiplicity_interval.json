@@ -70,17 +70,9 @@
         }
     },
     "$invariants": {
-        "Lower_included_valid": {
-            "description": "lower_unbounded implies not lower_included"
-        },
-        "Upper_included_valid": {
-            "description": "upper_unbounded implies not upper_included"
-        },
-        "Limits_consistent": {
-            "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-        },
-        "Limits_comparable": {
-            "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-        }
+        "Lower_included_valid": "lower_unbounded implies not lower_included",
+        "Upper_included_valid": "upper_unbounded implies not upper_included",
+        "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+        "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
     }
 }

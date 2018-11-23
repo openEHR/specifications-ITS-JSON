@@ -55,27 +55,13 @@
                 }
             },
             "$invariants": {
-                "Original_language_valid": {
-                    "description": "code_set (Code_set_id_languages).has_code (original_language.as_string)"
-                },
-                "Current_revision_valid": {
-                    "description": "(current_revision /= Void and not is_controlled) implies current_revision.is_equal (\u201c(uncontrolled)\u201d)"
-                },
-                "Translations_valid": {
-                    "description": "translations /= Void implies (not translations.is_empty and not translations.has (orginal_language.code_string))"
-                },
-                "Description_valid": {
-                    "description": "translations /= Void implies (description.details.for_all (d |\ntranslations.has_key (d.language.code_string)))"
-                },
-                "Languages_available_valid": {
-                    "description": "languages_available.has (original_language)"
-                },
-                "Revision_history_valid": {
-                    "description": "is_controlled xor revision_history = Void"
-                },
-                "Post": {
-                    "description": "Result = revision_history.most_recent_version"
-                }
+                "Original_language_valid": "code_set (Code_set_id_languages).has_code (original_language.as_string)",
+                "Current_revision_valid": "(current_revision /= Void and not is_controlled) implies current_revision.is_equal (\u201c(uncontrolled)\u201d)",
+                "Translations_valid": "translations /= Void implies (not translations.is_empty and not translations.has (orginal_language.code_string))",
+                "Description_valid": "translations /= Void implies (description.details.for_all (d |\ntranslations.has_key (d.language.code_string)))",
+                "Languages_available_valid": "languages_available.has (original_language)",
+                "Revision_history_valid": "is_controlled xor revision_history = Void",
+                "Post": "Result = revision_history.most_recent_version"
             }
         },
         "RESOURCE_DESCRIPTION": {
@@ -164,21 +150,11 @@
                 "details"
             ],
             "$invariants": {
-                "Original_author_valid": {
-                    "description": "not original_author.is_empty"
-                },
-                "Lifecycle_state_valid": {
-                    "description": "not lifecycle_state.is_empty"
-                },
-                "Details_valid": {
-                    "description": "not details.is_empty"
-                },
-                "Language_valid": {
-                    "description": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))"
-                },
-                "Parent_resource_valid": {
-                    "description": "parent_resource /= Void implies parent_resource.description = self"
-                }
+                "Original_author_valid": "not original_author.is_empty",
+                "Lifecycle_state_valid": "not lifecycle_state.is_empty",
+                "Details_valid": "not details.is_empty",
+                "Language_valid": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))",
+                "Parent_resource_valid": "parent_resource /= Void implies parent_resource.description = self"
             }
         },
         "TRANSLATION_DETAILS": {
@@ -213,9 +189,7 @@
                 "author"
             ],
             "$invariants": {
-                "Language_valid": {
-                    "description": "code_set (Code_set_id_languages).has_code (language)"
-                }
+                "Language_valid": "code_set (Code_set_id_languages).has_code (language)"
             }
         },
         "RESOURCE_DESCRIPTION_ITEM": {
@@ -265,21 +239,11 @@
                 "purpose"
             ],
             "$invariants": {
-                "Language_valid": {
-                    "description": "code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Purpose_valid": {
-                    "description": "not purpose.is_empty"
-                },
-                "Use_valid": {
-                    "description": "use /= Void implies not use.is_empty"
-                },
-                "misuse_valid": {
-                    "description": "misuse /= Void implies not misuse.is_empty"
-                },
-                "copyright_valid": {
-                    "description": "copyright /= Void implies not copyright.is_empty"
-                }
+                "Language_valid": "code_set (Code_set_id_languages).has_code (language)",
+                "Purpose_valid": "not purpose.is_empty",
+                "Use_valid": "use /= Void implies not use.is_empty",
+                "misuse_valid": "misuse /= Void implies not misuse.is_empty",
+                "copyright_valid": "copyright /= Void implies not copyright.is_empty"
             }
         },
         "RESOURCE_ANNOTATIONS": {

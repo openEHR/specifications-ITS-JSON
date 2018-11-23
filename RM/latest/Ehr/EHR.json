@@ -53,20 +53,10 @@
         "time_created"
     ],
     "$invariants": {
-        "Contributions_valid": {
-            "description": "contributions.for_all (c | c.type.is_equal(\u201cCONTRIBUTION\u201d))"
-        },
-        "Ehr_access_valid": {
-            "description": "ehr_access.type.is_equal (\u201cVERSIONED_EHR_ACCESS\u201d)"
-        },
-        "Ehr_status_valid": {
-            "description": "ehr_status.type.is_equal(\u201cVERSIONED_EHR_STATUS\u201d)"
-        },
-        "Compositions_valid": {
-            "description": "compositions.for_all (c | c.type.is_equal (\u201cVERSIONED_COMPOSITION\u201d))"
-        },
-        "Directory_valid": {
-            "description": "directory /= Void implies directory.type.is_equal (\u201cVERSIONED_FOLDER\u201d)"
-        }
+        "Contributions_valid": "contributions.for_all (c | c.type.is_equal(\u201cCONTRIBUTION\u201d))",
+        "Ehr_access_valid": "ehr_access.type.is_equal (\u201cVERSIONED_EHR_ACCESS\u201d)",
+        "Ehr_status_valid": "ehr_status.type.is_equal(\u201cVERSIONED_EHR_STATUS\u201d)",
+        "Compositions_valid": "compositions.for_all (c | c.type.is_equal (\u201cVERSIONED_COMPOSITION\u201d))",
+        "Directory_valid": "directory /= Void implies directory.type.is_equal (\u201cVERSIONED_FOLDER\u201d)"
     }
 }

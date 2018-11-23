@@ -41,14 +41,8 @@
         }
     },
     "$invariants": {
-        "Purpose_valid": {
-            "description": "purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)"
-        },
-        "Match_valid": {
-            "description": "is_valid_match_code (match)"
-        },
-        "Post": {
-            "description": "Result := c = \u2018>\u2019 or c = \u2018=\u2019 or c = \u2018<\u2019 or c = \u2018?\u2019"
-        }
+        "Purpose_valid": "purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)",
+        "Match_valid": "is_valid_match_code (match)",
+        "Post": "Result := c = \u2018>\u2019 or c = \u2018=\u2019 or c = \u2018<\u2019 or c = \u2018?\u2019"
     }
 }

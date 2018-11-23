@@ -78,26 +78,12 @@
         }
     },
     "$invariants": {
-        "Version_count_valid": {
-            "description": "version_count >= 0"
-        },
-        "All_version_ids_valid": {
-            "description": "all_version_ids.count = version_count"
-        },
-        "All_versions_valid": {
-            "description": "all_versions.count = version_count"
-        },
-        "Latest_version_valid": {
-            "description": "version_count > 0 implies latest_version /= Void"
-        },
-        "Uid_validity": {
-            "description": "extension.is_empty"
-        },
-        "Pre": {
-            "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-        },
-        "Post": {
-            "description": "Result = latest_trunk_version.lifecycle_state"
-        }
+        "Version_count_valid": "version_count >= 0",
+        "All_version_ids_valid": "all_version_ids.count = version_count",
+        "All_versions_valid": "all_versions.count = version_count",
+        "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+        "Uid_validity": "extension.is_empty",
+        "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+        "Post": "Result = latest_trunk_version.lifecycle_state"
     }
 }

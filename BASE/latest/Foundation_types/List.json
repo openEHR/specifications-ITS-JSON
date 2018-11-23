@@ -26,11 +26,7 @@
         }
     },
     "$invariants": {
-        "First_validity": {
-            "description": "not is_empty implies first /= Void"
-        },
-        "Last_validity": {
-            "description": "not is_empty implies last /= Void"
-        }
+        "First_validity": "not is_empty implies first /= Void",
+        "Last_validity": "not is_empty implies last /= Void"
     }
 }

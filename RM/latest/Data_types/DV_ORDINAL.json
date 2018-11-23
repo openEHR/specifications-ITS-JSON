@@ -58,35 +58,15 @@
         }
     },
     "$invariants": {
-        "Other_reference_ranges_validity": {
-            "description": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty"
-        },
-        "Is_simple_validity": {
-            "description": "(normal_range = Void and other_reference_ranges = Void) implies is_simple"
-        },
-        "Normal_status_validity": {
-            "description": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)"
-        },
-        "Normal_range_and_status_consistency": {
-            "description": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))"
-        },
-        "Pre": {
-            "description": "normal_range /= Void or normal_status /= Void"
-        },
-        "Post_range": {
-            "description": "normal_range /= Void implies Result = normal_range.has (self)"
-        },
-        "Post_status": {
-            "description": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)"
-        },
-        "Limits_valid": {
-            "description": "limits.meaning.is_equal (\u201climits\u201d)"
-        },
-        "Reference_range_valid": {
-            "description": "other_reference_ranges.has (limits)"
-        },
-        "Post": {
-            "description": "Result = value < other.value"
-        }
+        "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+        "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+        "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+        "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+        "Pre": "normal_range /= Void or normal_status /= Void",
+        "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+        "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+        "Limits_valid": "limits.meaning.is_equal (\u201climits\u201d)",
+        "Reference_range_valid": "other_reference_ranges.has (limits)",
+        "Post": "Result = value < other.value"
     }
 }

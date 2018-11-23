@@ -150,12 +150,8 @@
                 }
             },
             "$invariants": {
-                "First_validity": {
-                    "description": "not is_empty implies first /= Void"
-                },
-                "Last_validity": {
-                    "description": "not is_empty implies last /= Void"
-                }
+                "First_validity": "not is_empty implies first /= Void",
+                "Last_validity": "not is_empty implies last /= Void"
             }
         },
         "Set": {
@@ -242,12 +238,8 @@
                 }
             },
             "$invariants": {
-                "First_validity": {
-                    "description": "not is_empty implies first /= Void"
-                },
-                "Last_validity": {
-                    "description": "not is_empty implies last /= Void"
-                }
+                "First_validity": "not is_empty implies first /= Void",
+                "Last_validity": "not is_empty implies last /= Void"
             }
         },
         "Hash<String, List<String>>": {
@@ -451,27 +443,13 @@
                 }
             },
             "$invariants": {
-                "Involutive_negation": {
-                    "description": "is_equal (not (not self))"
-                },
-                "Non_contradiction": {
-                    "description": "not (self and (not self))"
-                },
-                "Completeness": {
-                    "description": "self or else (not self)"
-                },
-                "Post_de_Morgan": {
-                    "description": "Result = not (not self and then not other)"
-                },
-                "Post_commutative": {
-                    "description": "Result = (other or Current)"
-                },
-                "Post_consistent_with_semi_strict": {
-                    "description": "Result implies (self or else other)"
-                },
-                "Post_definition": {
-                    "description": "Result = (not self or else other)"
-                }
+                "Involutive_negation": "is_equal (not (not self))",
+                "Non_contradiction": "not (self and (not self))",
+                "Completeness": "self or else (not self)",
+                "Post_de_Morgan": "Result = not (not self and then not other)",
+                "Post_commutative": "Result = (other or Current)",
+                "Post_consistent_with_semi_strict": "Result implies (self or else other)",
+                "Post_definition": "Result = (not self or else other)"
             }
         },
         "String": {
@@ -689,48 +667,20 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                },
-                "Year_valid": {
-                    "description": "valid_year (year)"
-                },
-                "Month_valid": {
-                    "description": "valid_month (month)"
-                },
-                "Day_valid": {
-                    "description": "valid_day(year, month, day)"
-                },
-                "Hour_valid": {
-                    "description": "valid_hour (hour, minute, second)"
-                },
-                "Minute_valid": {
-                    "description": "not minute_unknown implies valid_minute(minute)"
-                },
-                "Second_valid": {
-                    "description": "not second_unknown implies valid_second (second)"
-                },
-                "Fractional_second_valid": {
-                    "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
-                },
-                "Partial_validity_year": {
-                    "description": "not month_unknown"
-                },
-                "Partial_validity_month": {
-                    "description": "not month_unknown"
-                },
-                "Partial_validity_day": {
-                    "description": "not day_unknown"
-                },
-                "Partial_validity_hour": {
-                    "description": "not hour_unknown"
-                },
-                "Partial_validity_minute": {
-                    "description": "minute_unknown implies second_unknown"
-                },
-                "Pre": {
-                    "description": "not second_unknown"
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Year_valid": "valid_year (year)",
+                "Month_valid": "valid_month (month)",
+                "Day_valid": "valid_day(year, month, day)",
+                "Hour_valid": "valid_hour (hour, minute, second)",
+                "Minute_valid": "not minute_unknown implies valid_minute(minute)",
+                "Second_valid": "not second_unknown implies valid_second (second)",
+                "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+                "Partial_validity_year": "not month_unknown",
+                "Partial_validity_month": "not month_unknown",
+                "Partial_validity_day": "not day_unknown",
+                "Partial_validity_hour": "not hour_unknown",
+                "Partial_validity_minute": "minute_unknown implies second_unknown",
+                "Pre": "not second_unknown"
             }
         },
         "Iso8601_duration": {
@@ -828,33 +778,15 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                },
-                "Years_valid": {
-                    "description": "years >= 0"
-                },
-                "Months_valid": {
-                    "description": "months >= 0"
-                },
-                "Weeks_valid": {
-                    "description": "weeks >= 0"
-                },
-                "Days_valid": {
-                    "description": "days >= 0"
-                },
-                "Hours_valid": {
-                    "description": "hours >= 0"
-                },
-                "Minutes_valid": {
-                    "description": "minutes >= 0"
-                },
-                "Seconds_valid": {
-                    "description": "seconds >= 0"
-                },
-                "Fractional_second_valid": {
-                    "description": "fractional_second >= 0.0 and fractional_second < 1.0"
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Years_valid": "years >= 0",
+                "Months_valid": "months >= 0",
+                "Weeks_valid": "weeks >= 0",
+                "Days_valid": "days >= 0",
+                "Hours_valid": "hours >= 0",
+                "Minutes_valid": "minutes >= 0",
+                "Seconds_valid": "seconds >= 0",
+                "Fractional_second_valid": "fractional_second >= 0.0 and fractional_second < 1.0"
             }
         },
         "Iso8601_time": {
@@ -949,27 +881,13 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                },
-                "Hour_valid": {
-                    "description": "valid_hour(hour, minute, second)"
-                },
-                "Minute_valid": {
-                    "description": "not minute_unknown implies valid_minute (minute)"
-                },
-                "Second_valid": {
-                    "description": "not second_unknown implies valid_second (second)"
-                },
-                "Fractional_second_valid": {
-                    "description": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))"
-                },
-                "Partial_validity": {
-                    "description": "minute_unknown implies second_unknown"
-                },
-                "Pre": {
-                    "description": "not second_unknown"
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Hour_valid": "valid_hour(hour, minute, second)",
+                "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+                "Second_valid": "not second_unknown implies valid_second (second)",
+                "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+                "Partial_validity": "minute_unknown implies second_unknown",
+                "Pre": "not second_unknown"
             }
         },
         "Iso8601_timezone": {
@@ -1052,21 +970,11 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                },
-                "Min_hour_valid": {
-                    "description": "sign = -1 implies hour > 0 and hour <= Min_timezone_hour"
-                },
-                "Max_hour_valid": {
-                    "description": "sign = 1 implies hour > 0 and hour <= Max_timezone_hour"
-                },
-                "Minute_valid": {
-                    "description": "not minute_unknown implies valid_minute (minute)"
-                },
-                "Sign_valid": {
-                    "description": "sign = 1 or sign = -1"
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Min_hour_valid": "sign = -1 implies hour > 0 and hour <= Min_timezone_hour",
+                "Max_hour_valid": "sign = 1 implies hour > 0 and hour <= Max_timezone_hour",
+                "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+                "Sign_valid": "sign = 1 or sign = -1"
             }
         },
         "Iso8601_type": {
@@ -1133,9 +1041,7 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 ."
             }
         },
         "Iso8601_date": {
@@ -1221,24 +1127,12 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                },
-                "Year_valid": {
-                    "description": "valid_year (year)"
-                },
-                "Month_valid": {
-                    "description": "not month_unknown implies valid_month (month)"
-                },
-                "Day_valid": {
-                    "description": "not day_unknown implies valid_day (year, month, day)"
-                },
-                "Partial_validity": {
-                    "description": "month_unknown implies day_unknown"
-                },
-                "Pre": {
-                    "description": "not day_unknown"
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Year_valid": "valid_year (year)",
+                "Month_valid": "not month_unknown implies valid_month (month)",
+                "Day_valid": "not day_unknown implies valid_day (year, month, day)",
+                "Partial_validity": "month_unknown implies day_unknown",
+                "Pre": "not day_unknown"
             }
         },
         "Interval<Iso8601_date>": {
@@ -1312,9 +1206,7 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result = fs >= 0.0 and fs < 1.0 ."
-                }
+                "Post": "Result = fs >= 0.0 and fs < 1.0 ."
             }
         },
         "Temporal": {
@@ -1402,18 +1294,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "Proper_interval": {
@@ -1474,18 +1358,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "Interval": {
@@ -1540,18 +1416,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "Point_interval": {
@@ -1612,18 +1480,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "Cardinality": {
@@ -1715,18 +1575,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "Interval<Integer>": {
@@ -1782,18 +1634,10 @@
                 }
             },
             "$invariants": {
-                "Lower_included_valid": {
-                    "description": "lower_unbounded implies not lower_included"
-                },
-                "Upper_included_valid": {
-                    "description": "upper_unbounded implies not upper_included"
-                },
-                "Limits_consistent": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower <= upper"
-                },
-                "Limits_comparable": {
-                    "description": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
-                }
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
             }
         },
         "Terminology_code": {

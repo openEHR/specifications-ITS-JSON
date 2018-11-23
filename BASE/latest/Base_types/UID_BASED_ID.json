@@ -30,8 +30,6 @@
         }
     },
     "$invariants": {
-        "Has_extension_valid": {
-            "description": "extension.is_empty xor has_extension"
-        }
+        "Has_extension_valid": "extension.is_empty xor has_extension"
     }
 }

@@ -120,41 +120,17 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Links_valid": {
-            "description": "links /= Void implies not links.is_empty"
-        },
-        "Archetyped_valid": {
-            "description": "is_archetype_root xor archetype_details = Void"
-        },
-        "Archetype_node_id_valid": {
-            "description": "not archetype_node_id.is_empty"
-        },
-        "Type_valid": {
-            "description": "type = name"
-        },
-        "Identities_valid": {
-            "description": "not identities.is_empty"
-        },
-        "Contacts_valid": {
-            "description": "contacts /= Void implies not contacts.is_empty"
-        },
-        "Relationships_validity": {
-            "description": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)"
-        },
-        "Reverse_relationships_validity": {
-            "description": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))"
-        },
-        "Is_archetype_root": {
-            "description": "is_archetype_root"
-        },
-        "Roles_valid": {
-            "description": "roles /= Void implies not roles.is_empty"
-        },
-        "Legal_identity_exists": {
-            "description": "has_legal_identity"
-        }
+        "Pre": "path_exists (a_path)",
+        "Links_valid": "links /= Void implies not links.is_empty",
+        "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+        "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+        "Type_valid": "type = name",
+        "Identities_valid": "not identities.is_empty",
+        "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
+        "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
+        "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
+        "Is_archetype_root": "is_archetype_root",
+        "Roles_valid": "roles /= Void implies not roles.is_empty",
+        "Legal_identity_exists": "has_legal_identity"
     }
 }

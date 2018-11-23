@@ -98,26 +98,12 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Links_valid": {
-            "description": "links /= Void implies not links.is_empty"
-        },
-        "Archetyped_valid": {
-            "description": "is_archetype_root xor archetype_details = Void"
-        },
-        "Archetype_node_id_valid": {
-            "description": "not archetype_node_id.is_empty"
-        },
-        "Events_valid": {
-            "description": "(events /= Void and then not events.is_empty) or summary /= Void"
-        },
-        "Periodic_validity": {
-            "description": "is_periodic xor period = Void"
-        },
-        "Period_consistency": {
-            "description": "is_periodic implies events.for_all (e: EVENT | e.offset. to_seconds.mod(period.to_seconds) = 0)"
-        }
+        "Pre": "path_exists (a_path)",
+        "Links_valid": "links /= Void implies not links.is_empty",
+        "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+        "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+        "Events_valid": "(events /= Void and then not events.is_empty) or summary /= Void",
+        "Periodic_validity": "is_periodic xor period = Void",
+        "Period_consistency": "is_periodic implies events.for_all (e: EVENT | e.offset. to_seconds.mod(period.to_seconds) = 0)"
     }
 }

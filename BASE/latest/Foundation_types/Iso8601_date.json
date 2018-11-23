@@ -83,23 +83,11 @@
         }
     },
     "$invariants": {
-        "Post": {
-            "description": "Result = fs >= 0.0 and fs < 1.0 ."
-        },
-        "Year_valid": {
-            "description": "valid_year (year)"
-        },
-        "Month_valid": {
-            "description": "not month_unknown implies valid_month (month)"
-        },
-        "Day_valid": {
-            "description": "not day_unknown implies valid_day (year, month, day)"
-        },
-        "Partial_validity": {
-            "description": "month_unknown implies day_unknown"
-        },
-        "Pre": {
-            "description": "not day_unknown"
-        }
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Year_valid": "valid_year (year)",
+        "Month_valid": "not month_unknown implies valid_month (month)",
+        "Day_valid": "not day_unknown implies valid_day (year, month, day)",
+        "Partial_validity": "month_unknown implies day_unknown",
+        "Pre": "not day_unknown"
     }
 }

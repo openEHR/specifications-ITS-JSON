@@ -87,20 +87,10 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Links_valid": {
-            "description": "links /= Void implies not links.is_empty"
-        },
-        "Archetyped_valid": {
-            "description": "is_archetype_root xor archetype_details = Void"
-        },
-        "Archetype_node_id_valid": {
-            "description": "not archetype_node_id.is_empty"
-        },
-        "Is_archetype_root": {
-            "description": "is_archetype_root"
-        }
+        "Pre": "path_exists (a_path)",
+        "Links_valid": "links /= Void implies not links.is_empty",
+        "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+        "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+        "Is_archetype_root": "is_archetype_root"
     }
 }

@@ -79,26 +79,12 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Links_valid": {
-            "description": "links /= Void implies not links.is_empty"
-        },
-        "Archetyped_valid": {
-            "description": "is_archetype_root xor archetype_details = Void"
-        },
-        "Archetype_node_id_valid": {
-            "description": "not archetype_node_id.is_empty"
-        },
-        "Is_null_valid": {
-            "description": "is_null = (value = Void)"
-        },
-        "Null_flavour_indicated": {
-            "description": "is_null xor null_flavour = Void"
-        },
-        "Null_flavour_valid": {
-            "description": "is_null implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_null_flavour, null_flavour.defining_code)"
-        }
+        "Pre": "path_exists (a_path)",
+        "Links_valid": "links /= Void implies not links.is_empty",
+        "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+        "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+        "Is_null_valid": "is_null = (value = Void)",
+        "Null_flavour_indicated": "is_null xor null_flavour = Void",
+        "Null_flavour_valid": "is_null implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_null_flavour, null_flavour.defining_code)"
     }
 }

@@ -66,17 +66,9 @@
         }
     },
     "$invariants": {
-        "Pre": {
-            "description": "path_exists (a_path)"
-        },
-        "Setting_valid": {
-            "description": "Terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_setting, setting.defining_code)"
-        },
-        "Participations_validity": {
-            "description": "participations /= Void implies not participations.is_empty"
-        },
-        "location_valid": {
-            "description": "location /= Void implies not location.is_empty"
-        }
+        "Pre": "path_exists (a_path)",
+        "Setting_valid": "Terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_setting, setting.defining_code)",
+        "Participations_validity": "participations /= Void implies not participations.is_empty",
+        "location_valid": "location /= Void implies not location.is_empty"
     }
 }

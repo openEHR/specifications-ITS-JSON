@@ -73,29 +73,13 @@
         }
     },
     "$invariants": {
-        "Size_valid": {
-            "description": "size >= 0"
-        },
-        "Language_valid": {
-            "description": "language /= Void implies code_set (Code_set_id_languages).has_code (language)"
-        },
-        "Charset_valid": {
-            "description": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)"
-        },
-        "Not_empty": {
-            "description": "is_inline or is_external"
-        },
-        "Media_type_valid": {
-            "description": "media_type /= Void and then code_set (Code_set_id_media_types).has_code (media_type)"
-        },
-        "Compression_algorithm_validity": {
-            "description": "compression_algorithm /= Void implies code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)"
-        },
-        "Integrity_check_validity": {
-            "description": "integrity_check /= Void implies integrity_check_algorithm /= Void"
-        },
-        "Integrity_check_algorithm_validity": {
-            "description": "integrity_check_algorithm /= Void implies code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)"
-        }
+        "Size_valid": "size >= 0",
+        "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
+        "Charset_valid": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)",
+        "Not_empty": "is_inline or is_external",
+        "Media_type_valid": "media_type /= Void and then code_set (Code_set_id_media_types).has_code (media_type)",
+        "Compression_algorithm_validity": "compression_algorithm /= Void implies code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)",
+        "Integrity_check_validity": "integrity_check /= Void implies integrity_check_algorithm /= Void",
+        "Integrity_check_algorithm_validity": "integrity_check_algorithm /= Void implies code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)"
     }
 }

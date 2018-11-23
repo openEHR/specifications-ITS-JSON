@@ -31,9 +31,7 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                }
+                "Pre": "path_exists (a_path)"
             }
         },
         "LINK": {
@@ -130,18 +128,10 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
         "ARCHETYPED": {
@@ -168,12 +158,8 @@
                 "rm_version"
             ],
             "$invariants": {
-                "rm_version_valid": {
-                    "description": "not rm_version.is_empty"
-                },
-                "Rm_version_valid": {
-                    "description": "not rm_version.is_empty"
-                }
+                "rm_version_valid": "not rm_version.is_empty",
+                "Rm_version_valid": "not rm_version.is_empty"
             }
         },
         "FEEDER_AUDIT": {
@@ -248,9 +234,7 @@
                 "system_id"
             ],
             "$invariants": {
-                "System_id_valid": {
-                    "description": "not system_id.is_empty"
-                }
+                "System_id_valid": "not system_id.is_empty"
             }
         },
         "VERSIONED_OBJECT": {
@@ -328,27 +312,13 @@
                 }
             },
             "$invariants": {
-                "Version_count_valid": {
-                    "description": "version_count >= 0"
-                },
-                "All_version_ids_valid": {
-                    "description": "all_version_ids.count = version_count"
-                },
-                "All_versions_valid": {
-                    "description": "all_versions.count = version_count"
-                },
-                "Latest_version_valid": {
-                    "description": "version_count > 0 implies latest_version /= Void"
-                },
-                "Uid_validity": {
-                    "description": "extension.is_empty"
-                },
-                "Pre": {
-                    "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-                },
-                "Post": {
-                    "description": "Result = latest_trunk_version.lifecycle_state"
-                }
+                "Version_count_valid": "version_count >= 0",
+                "All_version_ids_valid": "all_version_ids.count = version_count",
+                "All_versions_valid": "all_versions.count = version_count",
+                "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+                "Uid_validity": "extension.is_empty",
+                "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+                "Post": "Result = latest_trunk_version.lifecycle_state"
             }
         },
         "CONTRIBUTION": {
@@ -428,18 +398,10 @@
                 }
             },
             "$invariants": {
-                "Owner_id_valid": {
-                    "description": "owner_id.value.is_equal (uid.object_id.value)"
-                },
-                "Preceding_version_uid_validity": {
-                    "description": "uid.version_tree_id.is_first xor preceding_version_uid /= Void"
-                },
-                "Lifecycle_state_ valid": {
-                    "description": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)"
-                },
-                "Post": {
-                    "description": "Result.value.is_equal (uid.object_id.value)"
-                }
+                "Owner_id_valid": "owner_id.value.is_equal (uid.object_id.value)",
+                "Preceding_version_uid_validity": "uid.version_tree_id.is_first xor preceding_version_uid /= Void",
+                "Lifecycle_state_ valid": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)",
+                "Post": "Result.value.is_equal (uid.object_id.value)"
             }
         },
         "IMPORTED_VERSION": {
@@ -497,18 +459,10 @@
                 }
             },
             "$invariants": {
-                "Owner_id_valid": {
-                    "description": "owner_id.value.is_equal (uid.object_id.value)"
-                },
-                "Preceding_version_uid_validity": {
-                    "description": "uid.version_tree_id.is_first xor preceding_version_uid /= Void"
-                },
-                "Lifecycle_state_ valid": {
-                    "description": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)"
-                },
-                "Post": {
-                    "description": "Result = item.preceding_version_uid"
-                }
+                "Owner_id_valid": "owner_id.value.is_equal (uid.object_id.value)",
+                "Preceding_version_uid_validity": "uid.version_tree_id.is_first xor preceding_version_uid /= Void",
+                "Lifecycle_state_ valid": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)",
+                "Post": "Result = item.preceding_version_uid"
             }
         },
         "ORIGINAL_VERSION": {
@@ -596,27 +550,13 @@
                 }
             },
             "$invariants": {
-                "Owner_id_valid": {
-                    "description": "owner_id.value.is_equal (uid.object_id.value)"
-                },
-                "Preceding_version_uid_validity": {
-                    "description": "uid.version_tree_id.is_first xor preceding_version_uid /= Void"
-                },
-                "Lifecycle_state_ valid": {
-                    "description": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)"
-                },
-                "Post": {
-                    "description": "Result.value.is_equal (uid.object_id.value)"
-                },
-                "Attestations_valid": {
-                    "description": "attestations /= Void implies not attestations.is_empty"
-                },
-                "Is_merged_validity": {
-                    "description": "other_input_version_ids = Void xor is_merged"
-                },
-                "Other_input_version_uids_valid": {
-                    "description": "other_input_version_uids /= Void implies not other_input_version_uids.is_empty"
-                }
+                "Owner_id_valid": "owner_id.value.is_equal (uid.object_id.value)",
+                "Preceding_version_uid_validity": "uid.version_tree_id.is_first xor preceding_version_uid /= Void",
+                "Lifecycle_state_ valid": "lifecycle_state /= Void and then terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)",
+                "Post": "Result.value.is_equal (uid.object_id.value)",
+                "Attestations_valid": "attestations /= Void implies not attestations.is_empty",
+                "Is_merged_validity": "other_input_version_ids = Void xor is_merged",
+                "Other_input_version_uids_valid": "other_input_version_uids /= Void implies not other_input_version_uids.is_empty"
             }
         },
         "T": {
@@ -648,9 +588,7 @@
                 "audits"
             ],
             "$invariants": {
-                "Audit_valid": {
-                    "description": "not audits.is_empty"
-                }
+                "Audit_valid": "not audits.is_empty"
             }
         },
         "AUDIT_DETAILS": {
@@ -687,12 +625,8 @@
                 "committer"
             ],
             "$invariants": {
-                "System_id_valid": {
-                    "description": "not system_id.is_empty"
-                },
-                "Change_type_valid": {
-                    "description": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)"
-                }
+                "System_id_valid": "not system_id.is_empty",
+                "Change_type_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)"
             }
         },
         "ATTESTATION": {
@@ -757,18 +691,10 @@
                 "#/definitions/AUDIT_DETAILS"
             ],
             "$invariants": {
-                "System_id_valid": {
-                    "description": "not system_id.is_empty"
-                },
-                "Change_type_valid": {
-                    "description": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)"
-                },
-                "Items_valid": {
-                    "description": "items /= Void implies not items.is_empty"
-                },
-                "Reason_valid": {
-                    "description": "(reason.generating_type.is_equal (\u201cDV_CODED_TEXT\u201d) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))"
-                }
+                "System_id_valid": "not system_id.is_empty",
+                "Change_type_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)",
+                "Items_valid": "items /= Void implies not items.is_empty",
+                "Reason_valid": "(reason.generating_type.is_equal (\u201cDV_CODED_TEXT\u201d) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))"
             }
         },
         "PARTICIPATION": {
@@ -799,12 +725,8 @@
                 "performer"
             ],
             "$invariants": {
-                "Function_valid": {
-                    "description": "function.generating_type.is_equal (\"DV_CODED_TEXT\") implies\nterminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)"
-                },
-                "Mode_valid": {
-                    "description": "mode /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)"
-                }
+                "Function_valid": "function.generating_type.is_equal (\"DV_CODED_TEXT\") implies\nterminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)",
+                "Mode_valid": "mode /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)"
             }
         },
         "PARTY_PROXY": {
@@ -846,15 +768,9 @@
                 "#/definitions/PARTY_PROXY"
             ],
             "$invariants": {
-                "Basic_validity": {
-                    "description": "name /= Void or identifiers /= Void or external_ref /= Void"
-                },
-                "Name_valid": {
-                    "description": "name /= Void implies not name.is_empty"
-                },
-                "Identifiers_valid": {
-                    "description": "identifiers /= Void implies not identifiers.is_empty"
-                }
+                "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
+                "Name_valid": "name /= Void implies not name.is_empty",
+                "Identifiers_valid": "identifiers /= Void implies not identifiers.is_empty"
             }
         },
         "PARTY_SELF": {
@@ -905,18 +821,10 @@
                 "#/definitions/PARTY_IDENTIFIED"
             ],
             "$invariants": {
-                "Basic_validity": {
-                    "description": "name /= Void or identifiers /= Void or external_ref /= Void"
-                },
-                "Name_valid": {
-                    "description": "name /= Void implies not name.is_empty"
-                },
-                "Identifiers_valid": {
-                    "description": "identifiers /= Void implies not identifiers.is_empty"
-                },
-                "Relationship_valid": {
-                    "description": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_subject_relationship, relationship.defining_code)"
-                }
+                "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
+                "Name_valid": "name /= Void implies not name.is_empty",
+                "Identifiers_valid": "identifiers /= Void implies not identifiers.is_empty",
+                "Relationship_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_subject_relationship, relationship.defining_code)"
             }
         },
         "REVISION_HISTORY": {
@@ -946,9 +854,7 @@
                 }
             },
             "$invariants": {
-                "Post": {
-                    "description": "Result.is_equal (items.last.audits.first. time_committed.value)"
-                }
+                "Post": "Result.is_equal (items.last.audits.first. time_committed.value)"
             }
         },
         "VERSIONED_FOLDER": {
@@ -1029,27 +935,13 @@
                 }
             },
             "$invariants": {
-                "Version_count_valid": {
-                    "description": "version_count >= 0"
-                },
-                "All_version_ids_valid": {
-                    "description": "all_version_ids.count = version_count"
-                },
-                "All_versions_valid": {
-                    "description": "all_versions.count = version_count"
-                },
-                "Latest_version_valid": {
-                    "description": "version_count > 0 implies latest_version /= Void"
-                },
-                "Uid_validity": {
-                    "description": "extension.is_empty"
-                },
-                "Pre": {
-                    "description": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)"
-                },
-                "Post": {
-                    "description": "Result = latest_trunk_version.lifecycle_state"
-                }
+                "Version_count_valid": "version_count >= 0",
+                "All_version_ids_valid": "all_version_ids.count = version_count",
+                "All_versions_valid": "all_versions.count = version_count",
+                "Latest_version_valid": "version_count > 0 implies latest_version /= Void",
+                "Uid_validity": "extension.is_empty",
+                "Pre": "has_version_id(a_ver_id)\nand is_original_version(a_ver_id)",
+                "Post": "Result = latest_trunk_version.lifecycle_state"
             }
         },
         "FOLDER": {
@@ -1138,21 +1030,11 @@
                 }
             },
             "$invariants": {
-                "Pre": {
-                    "description": "path_exists (a_path)"
-                },
-                "Links_valid": {
-                    "description": "links /= Void implies not links.is_empty"
-                },
-                "Archetyped_valid": {
-                    "description": "is_archetype_root xor archetype_details = Void"
-                },
-                "Archetype_node_id_valid": {
-                    "description": "not archetype_node_id.is_empty"
-                },
-                "Folders_valid": {
-                    "description": "not folders.is_empty"
-                }
+                "Pre": "path_exists (a_path)",
+                "Links_valid": "links /= Void implies not links.is_empty",
+                "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+                "Archetype_node_id_valid": "not archetype_node_id.is_empty",
+                "Folders_valid": "not folders.is_empty"
             }
         },
         "AUTHORED_RESOURCE": {
@@ -1206,27 +1088,13 @@
                 }
             },
             "$invariants": {
-                "Original_language_valid": {
-                    "description": "code_set (Code_set_id_languages).has_code (original_language.as_string)"
-                },
-                "Current_revision_valid": {
-                    "description": "(current_revision /= Void and not is_controlled) implies current_revision.is_equal (\u201c(uncontrolled)\u201d)"
-                },
-                "Translations_valid": {
-                    "description": "translations /= Void implies (not translations.is_empty and not translations.has (orginal_language.code_string))"
-                },
-                "Description_valid": {
-                    "description": "translations /= Void implies (description.details.for_all (d |\ntranslations.has_key (d.language.code_string)))"
-                },
-                "Languages_available_valid": {
-                    "description": "languages_available.has (original_language)"
-                },
-                "Revision_history_valid": {
-                    "description": "is_controlled xor revision_history = Void"
-                },
-                "Post": {
-                    "description": "Result = revision_history.most_recent_version"
-                }
+                "Original_language_valid": "code_set (Code_set_id_languages).has_code (original_language.as_string)",
+                "Current_revision_valid": "(current_revision /= Void and not is_controlled) implies current_revision.is_equal (\u201c(uncontrolled)\u201d)",
+                "Translations_valid": "translations /= Void implies (not translations.is_empty and not translations.has (orginal_language.code_string))",
+                "Description_valid": "translations /= Void implies (description.details.for_all (d |\ntranslations.has_key (d.language.code_string)))",
+                "Languages_available_valid": "languages_available.has (original_language)",
+                "Revision_history_valid": "is_controlled xor revision_history = Void",
+                "Post": "Result = revision_history.most_recent_version"
             }
         },
         "RESOURCE_DESCRIPTION": {
@@ -1315,21 +1183,11 @@
                 "details"
             ],
             "$invariants": {
-                "Original_author_valid": {
-                    "description": "not original_author.is_empty"
-                },
-                "Lifecycle_state_valid": {
-                    "description": "not lifecycle_state.is_empty"
-                },
-                "Details_valid": {
-                    "description": "not details.is_empty"
-                },
-                "Language_valid": {
-                    "description": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))"
-                },
-                "Parent_resource_valid": {
-                    "description": "parent_resource /= Void implies parent_resource.description = self"
-                }
+                "Original_author_valid": "not original_author.is_empty",
+                "Lifecycle_state_valid": "not lifecycle_state.is_empty",
+                "Details_valid": "not details.is_empty",
+                "Language_valid": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))",
+                "Parent_resource_valid": "parent_resource /= Void implies parent_resource.description = self"
             }
         },
         "TRANSLATION_DETAILS": {
@@ -1364,9 +1222,7 @@
                 "author"
             ],
             "$invariants": {
-                "Language_valid": {
-                    "description": "code_set (Code_set_id_languages).has_code (language)"
-                }
+                "Language_valid": "code_set (Code_set_id_languages).has_code (language)"
             }
         },
         "RESOURCE_DESCRIPTION_ITEM": {
@@ -1416,21 +1272,11 @@
                 "purpose"
             ],
             "$invariants": {
-                "Language_valid": {
-                    "description": "code_set (Code_set_id_languages).has_code (language)"
-                },
-                "Purpose_valid": {
-                    "description": "not purpose.is_empty"
-                },
-                "Use_valid": {
-                    "description": "use /= Void implies not use.is_empty"
-                },
-                "misuse_valid": {
-                    "description": "misuse /= Void implies not misuse.is_empty"
-                },
-                "copyright_valid": {
-                    "description": "copyright /= Void implies not copyright.is_empty"
-                }
+                "Language_valid": "code_set (Code_set_id_languages).has_code (language)",
+                "Purpose_valid": "not purpose.is_empty",
+                "Use_valid": "use /= Void implies not use.is_empty",
+                "misuse_valid": "misuse /= Void implies not misuse.is_empty",
+                "copyright_valid": "copyright /= Void implies not copyright.is_empty"
             }
         }
     }

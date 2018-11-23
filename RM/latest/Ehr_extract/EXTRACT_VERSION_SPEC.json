@@ -29,8 +29,6 @@
         "include_data"
     ],
     "$invariants": {
-        "Includes_revision_history_valid": {
-            "description": "not include_data implies include_revision_history"
-        }
+        "Includes_revision_history_valid": "not include_data implies include_revision_history"
     }
 }

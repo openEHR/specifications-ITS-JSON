@@ -16,8 +16,6 @@
     ],
     "$abstract": true,
     "$invariants": {
-        "Value_valid": {
-            "description": "not value.empty"
-        }
+        "Value_valid": "not value.empty"
     }
 }
