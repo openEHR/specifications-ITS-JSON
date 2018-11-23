@@ -9,7 +9,7 @@ The schema format is experimental and is is based on https://json-schema.org/spe
 ### Additional JSON-Schema keywords
 A few other keywords are used to support openEHR metadata: 
 `$abstract`, `$inherits`, `$functions`, `$invariants`, `$version`, `$component`.
-These does not have have to be supported by JSON validators, their purpose is just informational.   
+These don't have to be supported by JSON validators, their purpose is only informational.   
 
 ### Acknowledgements
 JSON Schema files were initially authored by https://www.code24.nl[Code24]. 
