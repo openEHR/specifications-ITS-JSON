@@ -12,21 +12,23 @@
         },
         "lower_unbounded": {
             "description": "lower boundary open (i.e. = -infinity)",
-            "$ref": "all.json#/definitions/Boolean"
+            "$ref": "all.json#/definitions/Boolean",
+            "default": false
         },
         "upper_unbounded": {
             "description": "upper boundary open (i.e. = +infinity)",
-            "$ref": "all.json#/definitions/Boolean"
+            "$ref": "all.json#/definitions/Boolean",
+            "default": false
         },
         "lower_included": {
             "description": "lower boundary value included in range if not lower_unbounded.",
             "$ref": "all.json#/definitions/Boolean",
-            "default": "true"
+            "default": true
         },
         "upper_included": {
             "description": "upper boundary value included in range if not upper_unbounded.",
             "$ref": "all.json#/definitions/Boolean",
-            "default": "true"
+            "default": true
         }
     },
     "required": [
