@@ -4,7 +4,7 @@ JSON schemas for use with openEHR systems and tools. See https://www.openehr.org
 
 ### IM Version
 Schema files are generated directly from openEHR latest UML models of most relevant openEHR components.
-The schema format is experimental and is is based on https://json-schema.org/specification.html[draft-07 of JSON-Schema specifications].
+These schemas are experimental and its format is based on https://json-schema.org/specification.html[draft-07 of JSON-Schema specifications].
 
 ### Additional JSON-Schema keywords
 A few other keywords are used to support openEHR metadata: 
