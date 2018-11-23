@@ -7,7 +7,18 @@
     "type": "object",
     "$functions": {
         "valid_proportion_kind": {
-            "description": "True if n is one of the defined types. "
+            "description": "True if n is one of the defined types. ",
+            "parameters": {
+                "nq": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "nq"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     }
 }

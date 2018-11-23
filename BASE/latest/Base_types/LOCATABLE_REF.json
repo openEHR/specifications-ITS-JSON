@@ -33,7 +33,10 @@
     ],
     "$functions": {
         "as_uri": {
-            "description": "A URI form of the reference, created by concatenating the following: `ehr://  + id.value +  /  + path`."
+            "description": "A URI form of the reference, created by concatenating the following: `ehr://  + id.value +  /  + path`.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
         }
     }
 }

@@ -61,46 +61,143 @@
     ],
     "$functions": {
         "infix <": {
-            "description": null
+            "parameters": {
+                "other": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_strictly_comparable_to": {
-            "description": "Test if two instances are strictly comparable."
+            "description": "Test if two instances are strictly comparable.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_simple": {
-            "description": "True if this quantity has no reference ranges."
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_normal": {
-            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n"
+            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "valid_magnitude_status": {
-            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. "
+            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "magnitude": {
-            "description": "Effective magnitude represented by ratio."
+            "description": "Effective magnitude represented by ratio.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Real"
+            }
         },
         "accuracy_unknown": {
-            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable."
+            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "valid_percentage": {
-            "description": "Test whether a number is a valid percentage, i.e. between 0 and 100. "
+            "description": "Test whether a number is a valid percentage, i.e. between 0 and 100. ",
+            "parameters": {
+                "number": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered_Numeric"
+                }
+            },
+            "required_parameters": [
+                "number"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "infix =": {
-            "description": "Assignment operator"
+            "description": "Assignment operator",
+            "parameters": {
+                "source": {
+                    "$ref": "all.json#/definitions/DV_PROPORTION"
+                }
+            },
+            "required_parameters": [
+                "source"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/DV_PROPORTION"
+            }
         },
         "infix +": {
-            "description": "Sum of this quantity and another whose formal type must be the difference type of this quantity. The value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* both operand accuracies are unknown_accuracy_value.\n\nIf the accuracy value is a percentage in one operand and not in the other, the form in the result is that of the larger operand."
+            "description": "Sum of this quantity and another whose formal type must be the difference type of this quantity. The value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* both operand accuracies are unknown_accuracy_value.\n\nIf the accuracy value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/DV_AMOUNT"
+            }
         },
         "infix -": {
-            "description": "Negated version of current object, such as used for representing a difference, e.g. a weight loss.\n\nThe value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* unknown, if either or both operand accuracies are unknown.\n\nIf the accuracy value is a percentage in one operand and not in the other, the form in the result is that of the larger operand."
+            "description": "Negated version of current object, such as used for representing a difference, e.g. a weight loss.\n\nThe value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* unknown, if either or both operand accuracies are unknown.\n\nIf the accuracy value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/DV_AMOUNT"
+            }
         },
         "prefix -": {
-            "description": "Negated version of current object, such as used for representing a difference, e.g. a weight loss."
+            "description": "Negated version of current object, such as used for representing a difference, e.g. a weight loss.",
+            "return": {
+                "$ref": "all.json#/definitions/DV_AMOUNT"
+            }
         },
         "valid_proportion_kind": {
-            "description": "True if n is one of the defined types. "
+            "description": "True if n is one of the defined types. ",
+            "parameters": {
+                "nq": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "nq"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_integral": {
-            "description": "True if the numerator and denominator values are integers, i.e. if the precision is 0."
+            "description": "True if the numerator and denominator values are integers, i.e. if the precision is 0.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {

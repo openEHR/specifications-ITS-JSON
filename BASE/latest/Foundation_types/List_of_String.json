@@ -9,19 +9,42 @@
     ],
     "$functions": {
         "has": {
-            "description": "Test for membership of a value."
+            "description": "Test for membership of a value.",
+            "parameters": {
+                "v": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                }
+            },
+            "required_parameters": [
+                "v"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "count": {
-            "description": "Number of items in container."
+            "description": "Number of items in container.",
+            "return": {
+                "$ref": "all.json#/definitions/Integer"
+            }
         },
         "is_empty": {
-            "description": "True if container is empty."
+            "description": "True if container is empty.",
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "first": {
-            "description": "Return first element."
+            "description": "Return first element.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+            }
         },
         "last": {
-            "description": "Return last element."
+            "description": "Return last element.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+            }
         }
     },
     "$invariants": {

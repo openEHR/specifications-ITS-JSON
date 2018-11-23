@@ -19,13 +19,22 @@
     ],
     "$functions": {
         "calendar_alignment": {
-            "description": "Calendar alignment extracted from value."
+            "description": "Calendar alignment extracted from value.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
         },
         "event_alignment": {
-            "description": "Event alignment extracted from value. "
+            "description": "Event alignment extracted from value. ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
         },
         "institution_specified": {
-            "description": "Extracted from value."
+            "description": "Extracted from value.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     }
 }

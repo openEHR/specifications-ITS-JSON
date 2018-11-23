@@ -22,25 +22,46 @@
             ],
             "$functions": {
                 "qualified_rm_entity": {
-                    "description": "Globally qualified reference model entity, e.g.  openehr-composition-OBSERVATION."
+                    "description": "Globally qualified reference model entity, e.g.  openehr-composition-OBSERVATION.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "domain_concept": {
-                    "description": "Name of the concept represented by this archetype, including specialisation, e.g. \n Biochemistry_result-cholesterol . "
+                    "description": "Name of the concept represented by this archetype, including specialisation, e.g. \n Biochemistry_result-cholesterol . ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "rm_originator": {
-                    "description": "Organisation originating the reference model on which this archetype is based, e.g. \n openehr ,  cen ,  hl7 . "
+                    "description": "Organisation originating the reference model on which this archetype is based, e.g. \n openehr ,  cen ,  hl7 . ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "rm_name": {
-                    "description": "Name of the reference model, e.g. rim,  ehr_rm,  en13606 . "
+                    "description": "Name of the reference model, e.g. rim,  ehr_rm,  en13606 . ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "rm_entity": {
-                    "description": "Name of the ontological level within the reference model to which this archetype is targeted, e.g. for openEHR,  folder ,  composition ,  section ,  entry ."
+                    "description": "Name of the ontological level within the reference model to which this archetype is targeted, e.g. for openEHR,  folder ,  composition ,  section ,  entry .",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "specialisation": {
-                    "description": "Name of specialisation of concept, if this archetype is a specialisation of another archetype, e.g.  cholesterol ."
+                    "description": "Name of specialisation of concept, if this archetype is a specialisation of another archetype, e.g.  cholesterol .",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "version_id": {
-                    "description": "Version of this archetype. \n"
+                    "description": "Version of this archetype. \n",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 }
             }
         },
@@ -86,13 +107,22 @@
             ],
             "$functions": {
                 "root": {
-                    "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. "
+                    "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",
+                    "return": {
+                        "$ref": "#/definitions/UID"
+                    }
                 },
                 "extension": {
-                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String."
+                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "has_extension": {
-                    "description": "True if extension /= Void."
+                    "description": "True if extension /= Void.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    }
                 }
             },
             "$invariants": {
@@ -132,7 +162,10 @@
             ],
             "$functions": {
                 "as_uri": {
-                    "description": "A URI form of the reference, created by concatenating the following: `ehr://  + id.value +  /  + path`."
+                    "description": "A URI form of the reference, created by concatenating the following: `ehr://  + id.value +  /  + path`.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 }
             }
         },
@@ -196,25 +229,46 @@
             ],
             "$functions": {
                 "root": {
-                    "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. "
+                    "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",
+                    "return": {
+                        "$ref": "#/definitions/UID"
+                    }
                 },
                 "extension": {
-                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String."
+                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "has_extension": {
-                    "description": "True if extension /= Void."
+                    "description": "True if extension /= Void.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    }
                 },
                 "object_id": {
-                    "description": "Unique identifier for logical object of which this identifier identifies one version; normally the object_id will be the unique identifier of the version container containing the version referred to by this OBJECT_VERSION_ID instance. "
+                    "description": "Unique identifier for logical object of which this identifier identifies one version; normally the object_id will be the unique identifier of the version container containing the version referred to by this OBJECT_VERSION_ID instance. ",
+                    "return": {
+                        "$ref": "#/definitions/UID"
+                    }
                 },
                 "version_tree_id": {
-                    "description": "Tree identifier of this version with respect to other versions in the same version tree, as either 1 or 3 part dot-separated numbers, e.g.  1 ,  2.1.4 . "
+                    "description": "Tree identifier of this version with respect to other versions in the same version tree, as either 1 or 3 part dot-separated numbers, e.g.  1 ,  2.1.4 . ",
+                    "return": {
+                        "$ref": "#/definitions/VERSION_TREE_ID"
+                    }
                 },
                 "creating_system_id": {
-                    "description": "Identifier of the system that created the Version corresponding to this Object version id."
+                    "description": "Identifier of the system that created the Version corresponding to this Object version id.",
+                    "return": {
+                        "$ref": "#/definitions/UID"
+                    }
                 },
                 "is_branch": {
-                    "description": "True if this version identifier represents a branch."
+                    "description": "True if this version identifier represents a branch.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    }
                 }
             },
             "$invariants": {
@@ -271,10 +325,16 @@
             ],
             "$functions": {
                 "name": {
-                    "description": "Return the terminology id (which includes the  version  in some cases). Distinct names correspond to distinct (i.e. non-compatible) terminologies. Thus the names  ICD10AM  and  ICD10  refer to distinct terminologies. "
+                    "description": "Return the terminology id (which includes the  version  in some cases). Distinct names correspond to distinct (i.e. non-compatible) terminologies. Thus the names  ICD10AM  and  ICD10  refer to distinct terminologies. ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "version_id": {
-                    "description": "Version of this terminology, if versioning supported, else the empty string. "
+                    "description": "Version of this terminology, if versioning supported, else the empty string. ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 }
             }
         },
@@ -294,16 +354,28 @@
             ],
             "$functions": {
                 "trunk_version": {
-                    "description": "Trunk version number; numbering starts at 1. "
+                    "description": "Trunk version number; numbering starts at 1. ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "is_branch": {
-                    "description": "True if this version identifier represents a branch, i.e. has branch_number and branch_version parts."
+                    "description": "True if this version identifier represents a branch, i.e. has branch_number and branch_version parts.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    }
                 },
                 "branch_number": {
-                    "description": "Number of branch from the trunk point; numbering starts at 1. "
+                    "description": "Number of branch from the trunk point; numbering starts at 1. ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "branch_version": {
-                    "description": "Version of the branch; numbering starts at 1. "
+                    "description": "Version of the branch; numbering starts at 1. ",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 }
             },
             "$invariants": {
@@ -336,13 +408,22 @@
             ],
             "$functions": {
                 "root": {
-                    "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. "
+                    "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",
+                    "return": {
+                        "$ref": "#/definitions/UID"
+                    }
                 },
                 "extension": {
-                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String."
+                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    }
                 },
                 "has_extension": {
-                    "description": "True if extension /= Void."
+                    "description": "True if extension /= Void.",
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    }
                 }
             },
             "$invariants": {

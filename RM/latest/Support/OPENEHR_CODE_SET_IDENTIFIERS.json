@@ -7,7 +7,18 @@
     "type": "object",
     "$functions": {
         "valid_code_set_id": {
-            "description": "Validity function to test if an identifier is in the set defined by this class."
+            "description": "Validity function to test if an identifier is in the set defined by this class.",
+            "parameters": {
+                "an_id": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "an_id"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     }
 }

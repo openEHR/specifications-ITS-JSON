@@ -7,22 +7,88 @@
     "type": "boolean",
     "$functions": {
         "infix and": {
-            "description": "Logical conjunction"
+            "description": "Logical conjunction",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Boolean"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "infix and_then": {
-            "description": "Boolean semi-strict conjunction with other"
+            "description": "Boolean semi-strict conjunction with other",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Boolean"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "infix or": {
-            "description": "Boolean disjunction with other."
+            "description": "Boolean disjunction with other.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Boolean"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "infix or_else": {
-            "description": "Boolean semi-strict disjunction with `other'."
+            "description": "Boolean semi-strict disjunction with `other'.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Boolean"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "infix xor": {
-            "description": "Boolean exclusive or with `other'."
+            "description": "Boolean exclusive or with `other'.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Boolean"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         },
         "infix implies": {
-            "description": "Boolean implication of `other' (semi-strict)"
+            "description": "Boolean implication of `other' (semi-strict)",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Boolean"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {

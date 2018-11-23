@@ -11,7 +11,18 @@
     ],
     "$functions": {
         "infix <": {
-            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability."
+            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/Boolean"
+            }
         }
     }
 }

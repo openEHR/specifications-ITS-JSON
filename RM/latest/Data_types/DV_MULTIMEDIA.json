@@ -60,16 +60,28 @@
     ],
     "$functions": {
         "is_external": {
-            "description": "Computed from the value of the `_uri_` attribute: True if  the data is stored externally to the record, as indicated by `_uri_`. A copy may also be stored internally, in which case `_is_expanded_` is also true."
+            "description": "Computed from the value of the `_uri_` attribute: True if  the data is stored externally to the record, as indicated by `_uri_`. A copy may also be stored internally, in which case `_is_expanded_` is also true.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_inline": {
-            "description": "Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself. "
+            "description": "Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself. ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_compressed": {
-            "description": "Computed from the value of the `_compression_algorithm_` attribute: True if  the  data is stored in compressed form. "
+            "description": "Computed from the value of the `_compression_algorithm_` attribute: True if  the  data is stored in compressed form. ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "has_integrity_check": {
-            "description": "Computed from the value of the `_integrity_check_algorithm_` attribute: True if an integrity check has been computed. "
+            "description": "Computed from the value of the `_integrity_check_algorithm_` attribute: True if an integrity check has been computed. ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {

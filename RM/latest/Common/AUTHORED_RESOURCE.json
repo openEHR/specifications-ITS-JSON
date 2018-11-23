@@ -16,7 +16,7 @@
         },
         "description": {
             "description": "Description and lifecycle information of the resource.",
-            "$ref": "all.json#/definitions/RESOURCE_DESCRIPTION"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/RESOURCE_DESCRIPTION"
         },
         "is_controlled": {
             "description": "True if this resource is under any kind of change control (even file copying), in which case revision history is created. ",
@@ -24,18 +24,18 @@
         },
         "annotations": {
             "description": "Annotations on individual items within the resource, keyed by path. The inner table takes the form of a Hash table of String values keyed by String tags.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Resource/all.json#/definitions/RESOURCE_ANNOTATIONS"
+            "$ref": "all.json#/definitions/RESOURCE_ANNOTATIONS"
         },
         "translations": {
             "description": "List of details for each natural translation made of this resource, keyed by language. For each translation listed here, there must be corresponding sections in all language-dependent parts of the resource. The original_language does not appear in this list.",
             "type": "array",
             "items": {
-                "$ref": "all.json#/definitions/TRANSLATION_DETAILS"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/TRANSLATION_DETAILS"
             }
         },
         "revision_history": {
             "description": "The revision history of the resource. Only required if is_controlled = True (avoids large revision histories for informal or private editing situations). ",
-            "$ref": "all.json#/definitions/REVISION_HISTORY"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/REVISION_HISTORY"
         }
     },
     "required": [
@@ -44,10 +44,20 @@
     "$abstract": true,
     "$functions": {
         "current_revision": {
-            "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . "
+            "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
         },
         "languages_available": {
-            "description": "Total list of languages available in this resource, derived from original_language and translations. \n"
+            "description": "Total list of languages available in this resource, derived from original_language and translations. \n",
+            "return": {
+                "type": "array",
+                "items": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                },
+                "minItems": 1
+            }
         }
     },
     "$invariants": {

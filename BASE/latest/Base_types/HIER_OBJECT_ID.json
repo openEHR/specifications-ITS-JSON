@@ -19,13 +19,22 @@
     ],
     "$functions": {
         "root": {
-            "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. "
+            "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",
+            "return": {
+                "$ref": "all.json#/definitions/UID"
+            }
         },
         "extension": {
-            "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String."
+            "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
         },
         "has_extension": {
-            "description": "True if extension /= Void."
+            "description": "True if extension /= Void.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {

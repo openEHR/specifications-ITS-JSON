@@ -21,7 +21,18 @@
     ],
     "$functions": {
         "is_in_range": {
-            "description": "Indicates if the value  val' is inside the range.\n"
+            "description": "Indicates if the value  val' is inside the range.\n",
+            "parameters": {
+                "v": {
+                    "$ref": "all.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "v"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {

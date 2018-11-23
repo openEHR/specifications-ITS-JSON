@@ -29,16 +29,43 @@
     ],
     "$functions": {
         "infix <": {
-            "description": null
+            "parameters": {
+                "other": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_strictly_comparable_to": {
-            "description": "Test if two instances are strictly comparable."
+            "description": "Test if two instances are strictly comparable.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_simple": {
-            "description": "True if this quantity has no reference ranges."
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_normal": {
-            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n"
+            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {

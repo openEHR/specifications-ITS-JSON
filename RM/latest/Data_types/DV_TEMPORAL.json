@@ -36,34 +36,102 @@
     ],
     "$functions": {
         "infix <": {
-            "description": null
+            "parameters": {
+                "other": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_strictly_comparable_to": {
-            "description": "Test if two instances are strictly comparable."
+            "description": "Test if two instances are strictly comparable.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_simple": {
-            "description": "True if this quantity has no reference ranges."
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_normal": {
-            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n"
+            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "valid_magnitude_status": {
-            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. "
+            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "magnitude": {
-            "description": null
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered_Numeric"
+            }
         },
         "accuracy_unknown": {
-            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable."
+            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "diff": {
-            "description": "Difference of two quantities."
+            "description": "Difference of two quantities.",
+            "parameters": {
+                "other": {
+                    "$ref": "all.json#/definitions/DV_TEMPORAL"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/DV_DURATION"
+            }
         },
         "add": {
-            "description": "Addition of a differential amount to this quantity. \n\nThe value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* unknown, if either or both operand accuracies are unknown."
+            "description": "Addition of a differential amount to this quantity. \n\nThe value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* unknown, if either or both operand accuracies are unknown.",
+            "parameters": {
+                "a_diff": {
+                    "$ref": "all.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "a_diff"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/DV_ABSOLUTE_QUANTITY"
+            }
         },
         "subtract": {
-            "description": "Result of subtracting a differential amount from this quantity.\n\nThe value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* unknown, if either or both operand accuracies are unknown."
+            "description": "Result of subtracting a differential amount from this quantity.\n\nThe value of accuracy in the result is either:\n\n* the sum of the accuracies of the operands, if both present, or;\n* unknown, if either or both operand accuracies are unknown.",
+            "parameters": {
+                "a_diif": {
+                    "$ref": "all.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "a_diif"
+            ],
+            "return": {
+                "$ref": "all.json#/definitions/DV_ABSOLUTE_QUANTITY"
+            }
         }
     },
     "$invariants": {

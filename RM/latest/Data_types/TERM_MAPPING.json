@@ -25,19 +25,42 @@
     ],
     "$functions": {
         "narrower": {
-            "description": "The mapping is to a narrower term."
+            "description": "The mapping is to a narrower term.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "broader": {
-            "description": "The mapping is to a broader term."
+            "description": "The mapping is to a broader term.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "equivalent": {
-            "description": "The mapping is to an equivalent term."
+            "description": "The mapping is to an equivalent term.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "unknown": {
-            "description": "The kind of mapping is unknown."
+            "description": "The kind of mapping is unknown.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         },
         "is_valid_match_code": {
-            "description": "True if match valid."
+            "description": "True if match valid.",
+            "parameters": {
+                "c": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Character"
+                }
+            },
+            "required_parameters": [
+                "c"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
         }
     },
     "$invariants": {
