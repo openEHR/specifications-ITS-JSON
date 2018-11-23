@@ -189,7 +189,8 @@
                 "Contacts_valid": "contacts /= Void implies not contacts.is_empty",
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
-                "Is_archetype_root": "is_archetype_root"
+                "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void"
             }
         },
         "CONTACT": {
@@ -860,6 +861,7 @@
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
                 "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void",
                 "Capabilities_valid": "capabilities /= Void implies not capabilities.empty"
             }
         },
@@ -1063,6 +1065,7 @@
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
                 "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void",
                 "Roles_valid": "roles /= Void implies not roles.is_empty",
                 "Legal_identity_exists": "has_legal_identity"
             }
@@ -1416,6 +1419,7 @@
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
                 "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void",
                 "Roles_valid": "roles /= Void implies not roles.is_empty",
                 "Legal_identity_exists": "has_legal_identity"
             }
@@ -1619,6 +1623,7 @@
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
                 "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void",
                 "Roles_valid": "roles /= Void implies not roles.is_empty",
                 "Legal_identity_exists": "has_legal_identity"
             }
@@ -1822,6 +1827,7 @@
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
                 "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void",
                 "Roles_valid": "roles /= Void implies not roles.is_empty",
                 "Legal_identity_exists": "has_legal_identity"
             }
@@ -2025,6 +2031,7 @@
                 "Relationships_validity": "relationships /= Void implies (not relationships.is_empty and then relationships.for_all (r | r.source = self)",
                 "Reverse_relationships_validity": "reverse_relationships /= Void implies (not reverse_relationships.empty and then reverse_relationships.for_all (item | repository (\"demographics\").all_party_relationships.has_object (item) and then repository(\"demographics\").all_party_relationships.object (item).target = self))",
                 "Is_archetype_root": "is_archetype_root",
+                "Uid_mandatory": "uid /= Void",
                 "Roles_valid": "roles /= Void implies not roles.is_empty",
                 "Legal_identity_exists": "has_legal_identity"
             }

@@ -24,7 +24,10 @@
         },
         "data": {
             "description": "The actual data found at `_uri_`, if supplied inline.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Character"
+            "type": "array",
+            "items": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Character"
+            }
         },
         "media_type": {
             "description": "Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set). \n",

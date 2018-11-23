@@ -7,23 +7,27 @@
     "type": "object",
     "properties": {
         "lower": {
-            "description": "lower bound.",
+            "description": "Lower bound.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+        },
+        "upper": {
+            "description": "Upper bound.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
         },
         "lower_unbounded": {
-            "description": "lower boundary open (i.e. = -infinity)",
+            "description": "`lower` boundary open (i.e. = -infinity).",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         },
         "upper_unbounded": {
-            "description": "upper boundary open (i.e. = +infinity)",
+            "description": "`upper` boundary open (i.e. = +infinity).",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         },
         "lower_included": {
-            "description": "lower boundary value included in range if not lower_unbounded.",
+            "description": "`lower` boundary value included in range if not `lower_unbounded`.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         },
         "upper_included": {
-            "description": "upper boundary value included in range if not upper_unbounded.",
+            "description": "`upper` boundary value included in range if not `upper_unbounded`.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         }
     },
@@ -39,7 +43,7 @@
     ],
     "$functions": {
         "has": {
-            "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+            "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
             "parameters": {
                 "e": {
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
@@ -67,7 +71,7 @@
             }
         },
         "contains": {
-            "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval.",
+            "description": "True if current interval properly contains `other`? True if all points of `other` are inside the current interval.",
             "parameters": {
                 "other": {
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Interval"
@@ -81,7 +85,7 @@
             }
         },
         "is_equal": {
-            "description": "True if current object's interval is semantically same as `other'.",
+            "description": "True if current object's interval is semantically same as `other`.",
             "parameters": {
                 "other": {
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
@@ -92,11 +96,6 @@
             ],
             "return": {
                 "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "upper": {
-            "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
             }
         }
     },

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/VERSIONED_COMPOSITION.json",
     "title": "VERSIONED_COMPOSITION",
-    "description": "Version-controlled composition abstraction, defined by inheriting VERSIONED_OBJECT<COMPOSITION>. ",
+    "description": "Version-controlled composition abstraction, defined by inheriting `VERSIONED_OBJECT<COMPOSITION>`. ",
     "$comments": "Defined in Ehr IM, inherits from VERSIONED_OBJECT",
     "type": "object",
     "properties": {

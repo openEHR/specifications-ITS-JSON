@@ -15,18 +15,18 @@
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
         },
         "contributions": {
-            "description": "List of contributions causing changes to this EHR. Each contribution contains a list of versions, which may include references to any number of VERSION instances, i.e. items of type VERSIONED_COMPOSITION and VERSIONED_FOLDER. ",
+            "description": "List of contributions causing changes to this EHR. Each contribution contains a list of versions, which may include references to any number of `VERSION` instances, i.e. items of type `VERSIONED_COMPOSITION` and `VERSIONED_FOLDER`. ",
             "type": "array",
             "items": {
                 "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/CONTRIBUTION"
             }
         },
         "ehr_status": {
-            "description": "Reference to EHR_STATUS object for this EHR.",
+            "description": "Reference to `EHR_STATUS` object for this EHR.",
             "$ref": "all.json#/definitions/VERSIONED_EHR_STATUS"
         },
         "ehr_access": {
-            "description": "Reference to EHR_ACCESS object for this EHR.",
+            "description": "Reference to `EHR_ACCESS` object for this EHR.",
             "$ref": "all.json#/definitions/VERSIONED_EHR_ACCESS"
         },
         "compositions": {

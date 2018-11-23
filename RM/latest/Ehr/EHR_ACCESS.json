@@ -34,7 +34,7 @@
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
         },
         "settings": {
-            "description": "Access control settings for the EHR. Instance is a subtype of the type ACCESS_CONTROL_SETTINGS, allowing for the use of different access control schemes. ",
+            "description": "Access control settings for the EHR. Instance is a subtype of the type `ACCESS_CONTROL_SETTINGS`, allowing for the use of different access control schemes. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Security/all.json#/definitions/ACCESS_CONTROL_SETTINGS"
         }
     },

@@ -19,18 +19,18 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
                 },
                 "contributions": {
-                    "description": "List of contributions causing changes to this EHR. Each contribution contains a list of versions, which may include references to any number of VERSION instances, i.e. items of type VERSIONED_COMPOSITION and VERSIONED_FOLDER. ",
+                    "description": "List of contributions causing changes to this EHR. Each contribution contains a list of versions, which may include references to any number of `VERSION` instances, i.e. items of type `VERSIONED_COMPOSITION` and `VERSIONED_FOLDER`. ",
                     "type": "array",
                     "items": {
                         "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/CONTRIBUTION"
                     }
                 },
                 "ehr_status": {
-                    "description": "Reference to EHR_STATUS object for this EHR.",
+                    "description": "Reference to `EHR_STATUS` object for this EHR.",
                     "$ref": "#/definitions/VERSIONED_EHR_STATUS"
                 },
                 "ehr_access": {
-                    "description": "Reference to EHR_ACCESS object for this EHR.",
+                    "description": "Reference to `EHR_ACCESS` object for this EHR.",
                     "$ref": "#/definitions/VERSIONED_EHR_ACCESS"
                 },
                 "compositions": {
@@ -616,7 +616,7 @@
         },
         "VERSIONED_COMPOSITION": {
             "title": "VERSIONED_COMPOSITION",
-            "description": "Version-controlled composition abstraction, defined by inheriting VERSIONED_OBJECT<COMPOSITION>. ",
+            "description": "Version-controlled composition abstraction, defined by inheriting `VERSIONED_OBJECT<COMPOSITION>`. ",
             "$comments": "Defined in Ehr IM, inherits from VERSIONED_OBJECT",
             "type": "object",
             "properties": {
@@ -931,7 +931,7 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "settings": {
-                    "description": "Access control settings for the EHR. Instance is a subtype of the type ACCESS_CONTROL_SETTINGS, allowing for the use of different access control schemes. ",
+                    "description": "Access control settings for the EHR. Instance is a subtype of the type `ACCESS_CONTROL_SETTINGS`, allowing for the use of different access control schemes. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Security/all.json#/definitions/ACCESS_CONTROL_SETTINGS"
                 }
             },
@@ -1084,7 +1084,7 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "subject": {
-                    "description": "The subject of this EHR. The external_ref attribute can be used to contain a direct reference to the subject in a demographic or identity service. Alternatively, the association between patients and their records may be done elsewhere for security reasons. ",
+                    "description": "The subject of this EHR. The `_external_ref_` attribute can be used to contain a direct reference to the subject in a demographic or identity service. Alternatively, the association between patients and their records may be done elsewhere for security reasons. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PARTY_SELF"
                 },
                 "is_queryable": {
@@ -1092,11 +1092,11 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "is_modifiable": {
-                    "description": "True if this EHR is allowed to be written to. Note that the EHR_STATUS object is special and can always be written to.",
+                    "description": "True if this EHR is allowed to be written to. Note that the `EHR_STATUS` object is special and can always be written to.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "other_details": {
-                    "description": "Any other details of the EHR summary object, in the form of an archetyped Item_structure.",
+                    "description": "Any other details of the EHR summary object, in the form of an archetyped `ITEM_STRUCTURE`.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
                 }
             },

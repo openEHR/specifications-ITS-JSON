@@ -34,7 +34,7 @@
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
         },
         "subject": {
-            "description": "The subject of this EHR. The external_ref attribute can be used to contain a direct reference to the subject in a demographic or identity service. Alternatively, the association between patients and their records may be done elsewhere for security reasons. ",
+            "description": "The subject of this EHR. The `_external_ref_` attribute can be used to contain a direct reference to the subject in a demographic or identity service. Alternatively, the association between patients and their records may be done elsewhere for security reasons. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PARTY_SELF"
         },
         "is_queryable": {
@@ -42,11 +42,11 @@
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         },
         "is_modifiable": {
-            "description": "True if this EHR is allowed to be written to. Note that the EHR_STATUS object is special and can always be written to.",
+            "description": "True if this EHR is allowed to be written to. Note that the `EHR_STATUS` object is special and can always be written to.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         },
         "other_details": {
-            "description": "Any other details of the EHR summary object, in the form of an archetyped Item_structure.",
+            "description": "Any other details of the EHR summary object, in the form of an archetyped `ITEM_STRUCTURE`.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
         }
     },

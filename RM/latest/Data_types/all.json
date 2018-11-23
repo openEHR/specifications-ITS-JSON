@@ -137,7 +137,10 @@
                 },
                 "data": {
                     "description": "The actual data found at `_uri_`, if supplied inline.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Character"
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Character"
+                    }
                 },
                 "media_type": {
                     "description": "Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set). \n",
@@ -556,23 +559,27 @@
             "type": "object",
             "properties": {
                 "lower": {
-                    "description": "lower bound.",
+                    "description": "Lower bound.",
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                },
+                "upper": {
+                    "description": "Upper bound.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
                 },
                 "lower_unbounded": {
-                    "description": "lower boundary open (i.e. = -infinity)",
+                    "description": "`lower` boundary open (i.e. = -infinity).",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "upper_unbounded": {
-                    "description": "upper boundary open (i.e. = +infinity)",
+                    "description": "`upper` boundary open (i.e. = +infinity).",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "lower_included": {
-                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "description": "`lower` boundary value included in range if not `lower_unbounded`.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "upper_included": {
-                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "description": "`upper` boundary value included in range if not `upper_unbounded`.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 }
             },
@@ -588,7 +595,7 @@
             ],
             "$functions": {
                 "has": {
-                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+                    "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
@@ -616,7 +623,7 @@
                     }
                 },
                 "contains": {
-                    "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval.",
+                    "description": "True if current interval properly contains `other`? True if all points of `other` are inside the current interval.",
                     "parameters": {
                         "other": {
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Interval"
@@ -630,7 +637,7 @@
                     }
                 },
                 "is_equal": {
-                    "description": "True if current object's interval is semantically same as `other'.",
+                    "description": "True if current object's interval is semantically same as `other`.",
                     "parameters": {
                         "other": {
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
@@ -641,11 +648,6 @@
                     ],
                     "return": {
                         "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
-                    }
-                },
-                "upper": {
-                    "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
                     }
                 }
             },
@@ -3827,12 +3829,12 @@
         },
         "DV_URI": {
             "title": "DV_URI",
-            "description": "A reference to an object which conforms to the Universal Resource Identifier (URI) standard. See \"Universal Resource Identifiers in WWW\" by Tim Berners-Lee at http://www.ietf.org/rfc/rfc3986.txt. This  is  a  World-Wide  Web  RFC for  global identification  of resources. \nSee http://www.w3.org/Addressing for a starting point on URIs. \n",
+            "description": "A reference to an object which structurally conforms to the Universal Resource Identifier (URI) RFC-3986 standard. The reference is contained in the `_value_` attribute, which is a `String`. So-called 'plain-text URIs' that contain RFC-3986 forbidden characters such as spaces etc, are allowed on the basis that they need to be RFC-3986 encoded prior to use in e.g. REST APIs or other contexts relying on machine-level conformance.",
             "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "Value of URI as a String. ",
+                    "description": "Value of URI as a String. 'Plain-text' URIs are allowed, enabling better readability, but must be RFC-3986 encoded in use.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
@@ -3844,13 +3846,13 @@
             ],
             "$functions": {
                 "scheme": {
-                    "description": "A distributed information \"space\" in which  information objects  exist. The scheme simultaneously specifies an information space and a mechanism for accessing objects in  that  space.  For  example  if  scheme  = \"ftp\", it identifies the information space in which  all  ftpable objects  exist,  and also the application - ftp - which can be used to access them. Values may include: \"ftp\", \"telnet\", \"mailto\", \"gopher\" and  many others. Refer to WWW URI RFC for a full list. New information spaces can be accommodated  within  the URI specification. \n",
+                    "description": "A distributed information 'space' in which  information objects  exist. The scheme simultaneously specifies an information space and a mechanism for accessing objects in  that  space.  For  example  if  scheme  = \"ftp\", it identifies the information space in which  all  ftp-able objects  exist,  and also the application - ftp - which can be used to access them. Values may include: \"ftp\", \"telnet\", \"mailto\", etc. Refer to RFC-3986 for a full list. \n",
                     "return": {
                         "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "path": {
-                    "description": "A string whose format is  a  function  of  the  scheme. Identifies   the   location  in  <scheme>-space  of  an information entity. Typical values include hierarchical directory  paths  for  any  machine.  For example, with scheme = \"ftp\", path might be /pub/images/image_01. The strings \".\" and \"..\" are reserved for use in the path. Paths may include internet/intranet location identifiers of the form: sub_domain...domain, e.g. \"info.cern.ch\" ",
+                    "description": "A string whose format is  a  function  of  the  scheme. Identifies   the   location  in  <scheme>-space  of  an information entity. Typical values include hierarchical directory  paths  for  any  machine.  For example, with scheme = \"ftp\", path might be `\"/pub/images/image_01\"`. The strings \".\" and \"..\" are reserved for use in the path. Paths may include internet/intranet location identifiers of the form: `sub_domain...domain`, e.g. `\"info.cern.ch\"`. ",
                     "return": {
                         "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }
@@ -3879,7 +3881,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "Value of URI as a String. ",
+                    "description": "Value of URI as a String. 'Plain-text' URIs are allowed, enabling better readability, but must be RFC-3986 encoded in use.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
@@ -3891,13 +3893,13 @@
             ],
             "$functions": {
                 "scheme": {
-                    "description": "A distributed information \"space\" in which  information objects  exist. The scheme simultaneously specifies an information space and a mechanism for accessing objects in  that  space.  For  example  if  scheme  = \"ftp\", it identifies the information space in which  all  ftpable objects  exist,  and also the application - ftp - which can be used to access them. Values may include: \"ftp\", \"telnet\", \"mailto\", \"gopher\" and  many others. Refer to WWW URI RFC for a full list. New information spaces can be accommodated  within  the URI specification. \n",
+                    "description": "A distributed information 'space' in which  information objects  exist. The scheme simultaneously specifies an information space and a mechanism for accessing objects in  that  space.  For  example  if  scheme  = \"ftp\", it identifies the information space in which  all  ftp-able objects  exist,  and also the application - ftp - which can be used to access them. Values may include: \"ftp\", \"telnet\", \"mailto\", etc. Refer to RFC-3986 for a full list. \n",
                     "return": {
                         "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "path": {
-                    "description": "A string whose format is  a  function  of  the  scheme. Identifies   the   location  in  <scheme>-space  of  an information entity. Typical values include hierarchical directory  paths  for  any  machine.  For example, with scheme = \"ftp\", path might be /pub/images/image_01. The strings \".\" and \"..\" are reserved for use in the path. Paths may include internet/intranet location identifiers of the form: sub_domain...domain, e.g. \"info.cern.ch\" ",
+                    "description": "A string whose format is  a  function  of  the  scheme. Identifies   the   location  in  <scheme>-space  of  an information entity. Typical values include hierarchical directory  paths  for  any  machine.  For example, with scheme = \"ftp\", path might be `\"/pub/images/image_01\"`. The strings \".\" and \"..\" are reserved for use in the path. Paths may include internet/intranet location identifiers of the form: `sub_domain...domain`, e.g. `\"info.cern.ch\"`. ",
                     "return": {
                         "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }

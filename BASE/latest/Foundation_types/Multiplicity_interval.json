@@ -7,28 +7,28 @@
     "type": "object",
     "properties": {
         "lower": {
-            "description": "lower bound.",
+            "description": "Lower bound.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
-        },
-        "lower_unbounded": {
-            "description": "lower boundary open (i.e. = -infinity)",
-            "$ref": "all.json#/definitions/Boolean"
-        },
-        "upper_unbounded": {
-            "description": "upper boundary open (i.e. = +infinity)",
-            "$ref": "all.json#/definitions/Boolean"
-        },
-        "lower_included": {
-            "description": "lower boundary value included in range if not lower_unbounded.",
-            "$ref": "all.json#/definitions/Boolean"
-        },
-        "upper_included": {
-            "description": "upper boundary value included in range if not upper_unbounded.",
-            "$ref": "all.json#/definitions/Boolean"
         },
         "upper": {
             "description": "Upper bound.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+        },
+        "lower_unbounded": {
+            "description": "`lower` boundary open (i.e. = -infinity).",
+            "$ref": "all.json#/definitions/Boolean"
+        },
+        "upper_unbounded": {
+            "description": "`upper` boundary open (i.e. = +infinity).",
+            "$ref": "all.json#/definitions/Boolean"
+        },
+        "lower_included": {
+            "description": "`lower` boundary value included in range if not `lower_unbounded`.",
+            "$ref": "all.json#/definitions/Boolean"
+        },
+        "upper_included": {
+            "description": "`upper` boundary value included in range if not `upper_unbounded`.",
+            "$ref": "all.json#/definitions/Boolean"
         }
     },
     "required": [
@@ -42,7 +42,7 @@
     ],
     "$functions": {
         "has": {
-            "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+            "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
             "parameters": {
                 "e": {
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
@@ -70,7 +70,7 @@
             }
         },
         "contains": {
-            "description": "True if current interval properly contains `other'? True if all points of `other' are inside the current interval.",
+            "description": "True if current interval properly contains `other`? True if all points of `other` are inside the current interval.",
             "parameters": {
                 "other": {
                     "$ref": "all.json#/definitions/Interval"
@@ -84,7 +84,7 @@
             }
         },
         "is_equal": {
-            "description": "True if current object's interval is semantically same as `other'.",
+            "description": "True if current object's interval is semantically same as `other`.",
             "parameters": {
                 "other": {
                     "$ref": "all.json#/definitions/Any"
@@ -97,31 +97,26 @@
                 "$ref": "all.json#/definitions/Boolean"
             }
         },
-        "upper": {
-            "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
-            }
-        },
         "is_open": {
-            "description": "True if this interval imposes no constraints, i.e. is set to 0..*",
+            "description": "True if this interval imposes no constraints, i.e. is set to `0..*`.",
             "return": {
                 "$ref": "all.json#/definitions/Boolean"
             }
         },
         "is_optional": {
-            "description": "True if this interval expresses optionality, i.e. 0..1.",
+            "description": "True if this interval expresses optionality, i.e. `0..1`.",
             "return": {
                 "$ref": "all.json#/definitions/Boolean"
             }
         },
         "is_mandatory": {
-            "description": "True if this interval expresses mandation, i.e. 1..1.",
+            "description": "True if this interval expresses mandation, i.e. `1..1`.",
             "return": {
                 "$ref": "all.json#/definitions/Boolean"
             }
         },
         "is_prohibited": {
-            "description": "True if this interval is set to 0..0.",
+            "description": "True if this interval is set to `0..0`.",
             "return": {
                 "$ref": "all.json#/definitions/Boolean"
             }
@@ -131,6 +126,7 @@
         "Lower_included_valid": "lower_unbounded implies not lower_included",
         "Upper_included_valid": "upper_unbounded implies not upper_included",
         "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
-        "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+        "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)",
+        "Inv_not_point": "lower /= upper"
     }
 }
