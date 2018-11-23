@@ -31,7 +31,7 @@
         },
         "parent_resource": {
             "description": "Reference to owning resource. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/AUTHORED_RESOURCE",
+            "$ref": "all.json#/definitions/AUTHORED_RESOURCE",
             "default": "0..1"
         },
         "custodian_namespace": {
@@ -74,7 +74,7 @@
             "description": "Details of all parts of resource description that are natural language-dependent, keyed by language code. ",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/RESOURCE_DESCRIPTION_ITEM"
+                "$ref": "all.json#/definitions/RESOURCE_DESCRIPTION_ITEM"
             },
             "minItems": 1
         }

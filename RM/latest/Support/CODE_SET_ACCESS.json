@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Support/CODE_SET_ACCESS.json",
+    "title": "CODE_SET_ACCESS",
+    "description": "Defines an object providing proxy access to a code_set.",
+    "$comments": "Defined in Support IM",
+    "type": "object",
+    "$functions": {
+        "id": {
+            "description": "External identifier of this code set.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
+        },
+        "all_codes": {
+            "description": "Return all codes known in this code set.",
+            "return": {
+                "type": "array",
+                "items": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
+                }
+            }
+        },
+        "has_lang": {
+            "description": "True if code set knows about 'a_lang' .",
+            "parameters": {
+                "a_lang": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "a_lang"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
+        },
+        "has_code": {
+            "description": "True if code set knows about  'a_code'.",
+            "parameters": {
+                "a_code": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "a_code"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
+        }
+    }
+}
