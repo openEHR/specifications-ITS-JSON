@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/PLAN_DATA_CONTEXT.json",
+    "title": "PLAN_DATA_CONTEXT",
+    "description": "Container for all variable definitions used in the Task Plan.",
+    "$comments": "Defined in Definition IM",
+    "type": "object",
+    "properties": {
+        "variables": {
+            "description": "List of all variables tracked by this Plan.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/CONTEXT_VARIABLE"
+            }
+        },
+        "expressions": {
+            "description": "List of all expressions used in the Plan, based on tracked variables.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/CONTEXT_EXPRESSION"
+            }
+        },
+        "constants": {
+            "description": "List of all constants used in the Plan.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/CONTEXT_CONSTANT"
+            }
+        }
+    }
+}

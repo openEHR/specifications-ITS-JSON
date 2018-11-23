@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/CONTEXT_VARIABLE.json",
+    "title": "CONTEXT_VARIABLE",
+    "description": "Any kind of symbolic variable that can be used within Expressions in the Task Plan, including in pre-conditions and decision pathways.",
+    "$comments": "Defined in Definition IM, abstract, inherits from CONTEXT_VALUE",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of variable, as used in precondition and decision expressions.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+        },
+        "type": {
+            "description": "Type of this variable.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+        }
+    },
+    "required": [
+        "name",
+        "type"
+    ],
+    "$abstract": true,
+    "$inherits": [
+        "all.json#/definitions/CONTEXT_VALUE"
+    ]
+}

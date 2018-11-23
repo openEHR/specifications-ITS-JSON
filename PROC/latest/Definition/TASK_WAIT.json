@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/TASK_WAIT.json",
+    "title": "TASK_WAIT",
+    "description": "Object representing time of a Task to be performed in terms of a related event. The `_start_window_` is used to add an 'acceptable delay' time within which the Task should be started with respect to the intended start time. The `_timeout_` attribute can be used for non-deterministic Events.\n\n* clock time: event = `TIMELINE_MOMENT`, `CALENDAR_EVENT`;\n* notification-based: event = `MANUAL_NOTIFICATION`, `CALLBACK_NOTIFICATION` or `SYSTEM_NOTIFICATION`;\n* task-linked: event = `TASK_TRANSITION`, e.g. 1hr after previous Task done;\n* state-linked: event = `STATE_TRIGGER`, e.g. 'when systolic BP > 165';\n* any event with added delay: `DELAY_EVENT`.",
+    "$comments": "Defined in Definition IM",
+    "type": "object",
+    "properties": {
+        "events": {
+            "description": "One or more events that define the intended point in time. If there are more than one, the implied logical relation is OR, i.e. any event occurring causes the wait state to complete.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/PLAN_EVENT"
+            }
+        },
+        "event_relation": {
+            "description": "Temporal relation to the event of the point or period in time being defined by this Timing Spec."
+        },
+        "start_window": {
+            "description": "Time window after an initial time during which the action should start. Allows for approximate times to be used operationally.",
+            "$ref": "all.json#/definitions/REMINDER"
+        },
+        "timeout": {
+            "description": "Timeout handler to use if no other Event is received within a certain time.",
+            "$ref": "all.json#/definitions/TIMER_WAIT"
+        }
+    }
+}

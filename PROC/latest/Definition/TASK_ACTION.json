@@ -1,0 +1,159 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/TASK_ACTION.json",
+    "title": "TASK_ACTION",
+    "description": "Abstract parent of Task Action types, which define the specifics of the work of a Task. All Task Actions may have subject preconditions (i.e. preconditions on the state of the subject) that must be met or overridden before proceeding; costing information; and one or more review data sets to display in the application environment.\n\nPerformable Actions have further properties.",
+    "$comments": "Defined in Definition IM, abstract, inherits from LOCATABLE",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
+        },
+        "archetype_node_id": {
+            "description": "Design-time archetype id of this node taken from its generating archetype; used to build archetype paths. Always in the form of an  at  code, e.g.  at0005 . This value enables a \"standardised\" name for this node to be generated, by referring to the generating archetype local ontology. \n\nAt an archetype root point, the value of this attribute is always the stringified form of the archetype_id found in the archetype_details object. \n",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+        },
+        "uid": {
+            "description": "Optional globally unique object identifier for root points of archetyped structures. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UID_BASED_ID"
+        },
+        "links": {
+            "description": "Links to other archetyped structures (data whose root object inherits from ARCHETYPED, such as ENTRY, SECTION and so on). Links may be to structures in other compositions. ",
+            "type": "array",
+            "items": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LINK"
+            }
+        },
+        "archetype_details": {
+            "description": "Details of archetyping used on this node.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/ARCHETYPED"
+        },
+        "feeder_audit": {
+            "description": "Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/FEEDER_AUDIT"
+        },
+        "instruction_activity": {
+            "description": "Optional reference back to the `ACTIVITY` of an `INSTRUCTION` that generated this `TASK`.\n\nTODO: may be movable to `PERFORMABLE_ACTION`.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/ACTIVITY"
+        },
+        "subject_preconditions": {
+            "description": "Condition which must be met for the Task Action to be available to perform in a runtime execution context.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/SUBJECT_PRECONDITION"
+            }
+        },
+        "costing_data": {
+            "description": "Costing data related to this Task item.",
+            "$ref": "all.json#/definitions/TASK_COSTING"
+        }
+    },
+    "required": [
+        "name",
+        "archetype_node_id"
+    ],
+    "$abstract": true,
+    "$inherits": [
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
+    ],
+    "$functions": {
+        "parent": {
+            "description": "Parent of this node in a compositional hierarchy. \n",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PATHABLE"
+            }
+        },
+        "item_at_path": {
+            "description": "The item at a path (relative to this item); only valid for unique paths, i.e. paths that resolve to a single item. ",
+            "parameters": {
+                "a_path": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "a_path"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+            }
+        },
+        "items_at_path": {
+            "description": "List of items corresponding to a non-unique path.",
+            "parameters": {
+                "a_path": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "a_path"
+            ],
+            "return": {
+                "type": "array",
+                "items": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                }
+            }
+        },
+        "path_exists": {
+            "description": "True if the path exists in the data with respect to the current item. ",
+            "parameters": {
+                "a_path": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "a_path"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
+        },
+        "path_unique": {
+            "description": "True if the path corresponds to a single item in the data. ",
+            "parameters": {
+                "a_path": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "a_path"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
+        },
+        "path_of_item": {
+            "description": "The path to an item relative to the root of this archetyped structure.",
+            "parameters": {
+                "a_loc": {
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/PATHABLE"
+                }
+            },
+            "required_parameters": [
+                "a_loc"
+            ],
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+            }
+        },
+        "concept": {
+            "description": "Clinical concept of the archetype as a whole (= derived from the archetype_node_id' of the root node) ",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
+            }
+        },
+        "is_archetype_root": {
+            "description": "True if this node is the root of an archetyped structure.",
+            "return": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Pre": "path_exists (a_path)",
+        "Links_valid": "links /= Void implies not links.is_empty",
+        "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
+        "Archetype_node_id_valid": "not archetype_node_id.is_empty"
+    }
+}

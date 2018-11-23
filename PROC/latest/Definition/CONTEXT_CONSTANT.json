@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/CONTEXT_CONSTANT.json",
+    "title": "CONTEXT_CONSTANT",
+    "description": "Definition of a symbolic constant value that can be used in Context Expressions.",
+    "$comments": "Defined in Definition IM, inherits from CONTEXT_VALUE",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of variable, as used in precondition and decision expressions.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
+        },
+        "type": {
+            "description": "Type of this variable.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+        },
+        "value": {
+            "description": "Value of the constant.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
+        }
+    },
+    "required": [
+        "name",
+        "type",
+        "value"
+    ],
+    "$inherits": [
+        "all.json#/definitions/CONTEXT_VALUE"
+    ]
+}

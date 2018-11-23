@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Materialised/M_EVENT_GROUP.json",
+    "title": "M_EVENT_GROUP",
+    "description": "Materialised run-time homologue of DECISION_PATH_GROUP from a Task Plan definition.",
+    "$comments": "Defined in Materialised IM, inherits from M_PLAN_ITEM",
+    "type": "object",
+    "properties": {
+        "definition": {
+            "description": "Reference to corresponding DECISION_PATH_GROUP instance in Task Plan definition.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/EVENT_GROUP"
+        }
+    },
+    "required": [
+        "definition"
+    ],
+    "$inherits": [
+        "all.json#/definitions/M_PLAN_ITEM"
+    ],
+    "$functions": {
+        "lifecycle_state": {
+            "description": "Effective lifecycle state, computed from the states of members of the group.",
+            "return": []
+        }
+    }
+}
