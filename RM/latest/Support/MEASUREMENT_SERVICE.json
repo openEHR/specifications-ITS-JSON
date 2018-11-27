@@ -4,7 +4,6 @@
     "title": "MEASUREMENT_SERVICE",
     "description": "Defines an object providing proxy access to a measurement information service.",
     "$comments": "Defined in Support IM",
-    "type": "object",
     "$functions": {
         "is_valid_units_string": {
             "description": "True if the units string  units' is a valid string according to the HL7 UCUM specification.",

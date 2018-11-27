@@ -284,7 +284,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -309,7 +309,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -321,12 +323,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/V"
+                    }
                 }
             }
         },
@@ -342,7 +348,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -367,7 +373,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -379,12 +387,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/V"
+                    }
                 }
             }
         }

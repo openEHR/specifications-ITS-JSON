@@ -9,7 +9,6 @@
             "title": "CODE_SET_ACCESS",
             "description": "Defines an object providing proxy access to a code_set.",
             "$comments": "Defined in Support IM",
-            "type": "object",
             "$functions": {
                 "id": {
                     "description": "External identifier of this code set.",
@@ -60,7 +59,6 @@
             "title": "TERMINOLOGY_ACCESS",
             "description": "Defines an object providing proxy access to a terminology. ",
             "$comments": "Defined in Support IM",
-            "type": "object",
             "$functions": {
                 "id": {
                     "description": "Identification of this Terminology.",
@@ -307,20 +305,17 @@
         "OPENEHR_DEFINITIONS": {
             "title": "OPENEHR_DEFINITIONS",
             "description": "Inheritance class to provide access to constants defined in other packages.",
-            "$comments": "Defined in Support IM",
-            "type": "object"
+            "$comments": "Defined in Support IM"
         },
         "BASIC_DEFINITIONS": {
             "title": "BASIC_DEFINITIONS",
             "description": "Defines globally used constant values.",
-            "$comments": "Defined in Support IM",
-            "type": "object"
+            "$comments": "Defined in Support IM"
         },
         "MEASUREMENT_SERVICE": {
             "title": "MEASUREMENT_SERVICE",
             "description": "Defines an object providing proxy access to a measurement information service.",
             "$comments": "Defined in Support IM",
-            "type": "object",
             "$functions": {
                 "is_valid_units_string": {
                     "description": "True if the units string  units' is a valid string according to the HL7 UCUM specification.",
@@ -360,7 +355,6 @@
             "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
             "description": "List of identifiers for groups in the openEHR terminology. ",
             "$comments": "Defined in Support IM",
-            "type": "object",
             "$functions": {
                 "valid_terminology_group_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class. ",
@@ -382,7 +376,6 @@
             "title": "OPENEHR_CODE_SET_IDENTIFIERS",
             "description": "List of identifiers for code sets in the openEHR terminology. ",
             "$comments": "Defined in Support IM",
-            "type": "object",
             "$functions": {
                 "valid_code_set_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class.",

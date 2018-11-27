@@ -4,7 +4,6 @@
     "title": "PROPORTION_KIND",
     "description": "Class of enumeration constants defining types of proportion for the `DV_PROPORTION` class. ",
     "$comments": "Defined in Data_types IM",
-    "type": "object",
     "$functions": {
         "valid_proportion_kind": {
             "description": "True if n is one of the defined types. ",

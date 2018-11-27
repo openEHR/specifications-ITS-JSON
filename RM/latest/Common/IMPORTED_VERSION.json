@@ -47,7 +47,7 @@
         "data": {
             "description": "Original content of this Version. \n",
             "return": {
-                "$ref": "all.json#/definitions/T"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
             }
         },
         "lifecycle_state": {

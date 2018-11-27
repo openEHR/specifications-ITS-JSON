@@ -9,7 +9,6 @@
             "title": "DATA_VALUE",
             "description": "Abstract parent of all `DV_` data value types.",
             "$comments": "Defined in Data_types IM, abstract",
-            "type": "object",
             "$abstract": true
         },
         "DV_BOOLEAN": {
@@ -561,11 +560,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "`lower` boundary open (i.e. = -infinity).",
@@ -599,7 +598,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -1027,7 +1026,6 @@
             "title": "PROPORTION_KIND",
             "description": "Class of enumeration constants defining types of proportion for the `DV_PROPORTION` class. ",
             "$comments": "Defined in Data_types IM",
-            "type": "object",
             "$functions": {
                 "valid_proportion_kind": {
                     "description": "True if n is one of the defined types. ",
@@ -3666,43 +3664,35 @@
         },
         "DV_INTERVAL<DV_DATE_TIME>": {
             "title": "DV_INTERVAL<DV_DATE_TIME>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "DV_INTERVAL<DV_DATE>": {
             "title": "DV_INTERVAL<DV_DATE>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "DV_INTERVAL<DV_QUANTITY>": {
             "title": "DV_INTERVAL<DV_QUANTITY>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "DV_INTERVAL<DV_COUNT>": {
             "title": "DV_INTERVAL<DV_COUNT>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "DV_INTERVAL<DV_PROPORTION>": {
             "title": "DV_INTERVAL<DV_PROPORTION>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "REFERENCE_RANGE<DV_QUANTITY>": {
             "title": "REFERENCE_RANGE<DV_QUANTITY>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "REFERENCE_RANGE<DV_COUNT>": {
             "title": "REFERENCE_RANGE<DV_COUNT>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "REFERENCE_RANGE<DV_PROPORTION>": {
             "title": "REFERENCE_RANGE<DV_PROPORTION>",
-            "$comments": "Defined in Data_types IM",
-            "type": "object"
+            "$comments": "Defined in Data_types IM"
         },
         "DV_TIME_SPECIFICATION": {
             "title": "DV_TIME_SPECIFICATION",

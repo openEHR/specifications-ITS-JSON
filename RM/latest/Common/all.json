@@ -9,7 +9,6 @@
             "title": "PATHABLE",
             "description": "The PATHABLE class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of LOCATABLE. The defining characteristics of PATHABLE objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.",
             "$comments": "Defined in Common IM, abstract",
-            "type": "object",
             "$abstract": true,
             "$functions": {
                 "parent": {
@@ -530,7 +529,7 @@
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
                         },
                         "a_data": {
-                            "$ref": "#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         },
                         "signing_key": {
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -565,7 +564,7 @@
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
                         },
                         "a_data": {
-                            "$ref": "#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         },
                         "an_other_input_uids": {
                             "type": "array",
@@ -707,7 +706,7 @@
                 "data": {
                     "description": "The data of this Version.",
                     "return": {
-                        "$ref": "#/definitions/T"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                     }
                 },
                 "lifecycle_state": {
@@ -789,7 +788,7 @@
                 "data": {
                     "description": "Original content of this Version. \n",
                     "return": {
-                        "$ref": "#/definitions/T"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                     }
                 },
                 "lifecycle_state": {
@@ -870,7 +869,7 @@
                 },
                 "data": {
                     "description": "Data content of this Version.",
-                    "$ref": "#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 }
             },
             "required": [
@@ -898,7 +897,7 @@
                 "data": {
                     "description": "The data of this Version.",
                     "return": {
-                        "$ref": "#/definitions/T"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                     }
                 },
                 "lifecycle_state": {
@@ -941,11 +940,6 @@
                 "Is_merged_validity": "other_input_version_ids = Void xor is_merged",
                 "Other_input_version_uids_valid": "other_input_version_uids /= Void implies not other_input_version_uids.is_empty"
             }
-        },
-        "T": {
-            "title": "T",
-            "$comments": "Defined in Common IM",
-            "type": "object"
         },
         "REVISION_HISTORY_ITEM": {
             "title": "REVISION_HISTORY_ITEM",
@@ -1413,7 +1407,7 @@
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
                         },
                         "a_data": {
-                            "$ref": "#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         },
                         "signing_key": {
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -1448,7 +1442,7 @@
                             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
                         },
                         "a_data": {
-                            "$ref": "#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         },
                         "an_other_input_uids": {
                             "type": "array",

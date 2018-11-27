@@ -4,7 +4,6 @@
     "title": "TERMINOLOGY_ACCESS",
     "description": "Defines an object providing proxy access to a terminology. ",
     "$comments": "Defined in Support IM",
-    "type": "object",
     "$functions": {
         "id": {
             "description": "Identification of this Terminology.",

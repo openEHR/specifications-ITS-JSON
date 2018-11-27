@@ -4,6 +4,5 @@
     "title": "ACCESS_CONTROL_SETTINGS",
     "description": "Access Control Settings for the EHR and components. Intended to support multiple access control schemes. Currently implementation dependent.",
     "$comments": "Defined in Security IM, abstract",
-    "type": "object",
     "$abstract": true
 }

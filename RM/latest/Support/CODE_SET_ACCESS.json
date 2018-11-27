@@ -4,7 +4,6 @@
     "title": "CODE_SET_ACCESS",
     "description": "Defines an object providing proxy access to a code_set.",
     "$comments": "Defined in Support IM",
-    "type": "object",
     "$functions": {
         "id": {
             "description": "External identifier of this code set.",

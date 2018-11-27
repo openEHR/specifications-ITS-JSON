@@ -2263,8 +2263,7 @@
         },
         "HISTORY<ITEM_STRUCTURE>": {
             "title": "HISTORY<ITEM_STRUCTURE>",
-            "$comments": "Defined in Data_structures IM",
-            "type": "object"
+            "$comments": "Defined in Data_structures IM"
         }
     },
     "$component": "RM",

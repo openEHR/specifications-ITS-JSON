@@ -18,7 +18,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -43,7 +43,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -55,12 +57,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "#/definitions/V"
+                    }
                 }
             }
         },
@@ -76,7 +82,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -101,7 +107,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -113,12 +121,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "#/definitions/V"
+                    }
                 }
             }
         },
@@ -135,7 +147,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -160,7 +172,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -172,12 +186,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "#/definitions/V"
+                    }
                 }
             }
         },
@@ -193,7 +211,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -218,7 +236,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -230,12 +250,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "#/definitions/V"
+                    }
                 }
             }
         },
@@ -250,7 +274,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -287,7 +311,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -312,13 +336,13 @@
                 "first": {
                     "description": "Return first element.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                        "$ref": "#/definitions/T"
                     }
                 },
                 "last": {
                     "description": "Return last element.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                        "$ref": "#/definitions/T"
                     }
                 }
             },
@@ -340,7 +364,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -377,7 +401,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -413,7 +437,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -449,7 +473,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -474,13 +498,13 @@
                 "first": {
                     "description": "Return first element.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                        "$ref": "#/definitions/T"
                     }
                 },
                 "last": {
                     "description": "Return last element.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                        "$ref": "#/definitions/T"
                     }
                 }
             },
@@ -501,7 +525,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -526,7 +550,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -538,12 +564,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "#/definitions/V"
+                    }
                 }
             }
         },
@@ -611,7 +641,6 @@
         "Comparable": {
             "title": "Comparable",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "object",
             "$abstract": true
         },
         "Ordered_Numeric": {
@@ -1217,7 +1246,6 @@
             "title": "Ordered",
             "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "object",
             "$abstract": true,
             "$functions": {
                 "infix <": {
@@ -1240,7 +1268,6 @@
             "title": "Any",
             "description": "Abstract supertype. Usually maps to a type like Any or Object in an object-oriented technology. Defined here to provide value and reference equality semantics.",
             "$comments": "Defined in Foundation_types IM, abstract",
-            "type": "object",
             "$abstract": true,
             "$functions": {
                 "is_equal": {
@@ -3186,11 +3213,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "`lower` boundary open (i.e. = -infinity).",
@@ -3223,7 +3250,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -3316,11 +3343,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "`lower` boundary open (i.e. = -infinity).",
@@ -3353,7 +3380,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -3422,11 +3449,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "`lower` boundary open (i.e. = -infinity).",
@@ -3456,7 +3483,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -3524,11 +3551,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "lower boundary open (i.e. = -infinity)",
@@ -3565,7 +3592,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -3678,11 +3705,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "`lower` boundary open (i.e. = -infinity).",
@@ -3715,7 +3742,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -3782,11 +3809,11 @@
             "properties": {
                 "lower": {
                     "description": "Lower bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "upper": {
                     "description": "Upper bound.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "#/definitions/T"
                 },
                 "lower_unbounded": {
                     "description": "`lower` boundary open (i.e. = -infinity).",
@@ -3819,7 +3846,7 @@
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
                     "parameters": {
                         "e": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -3926,6 +3953,24 @@
                 "concept",
                 "text"
             ]
+        },
+        "T": {
+            "title": "T",
+            "description": "Type used by generic parameters.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "$abstract": true
+        },
+        "K": {
+            "title": "K",
+            "description": "Type used by generic parameters.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "$abstract": true
+        },
+        "V": {
+            "title": "V",
+            "description": "Type used by generic parameters.",
+            "$comments": "Defined in Foundation_types IM, abstract",
+            "$abstract": true
         }
     },
     "$component": "BASE",

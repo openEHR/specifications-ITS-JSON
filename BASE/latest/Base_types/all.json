@@ -565,14 +565,12 @@
         "OPENEHR_DEFINITIONS": {
             "title": "OPENEHR_DEFINITIONS",
             "description": "Inheritance class to provide access to constants defined in other packages.",
-            "$comments": "Defined in Support IM",
-            "type": "object"
+            "$comments": "Defined in Support IM"
         },
         "BASIC_DEFINITIONS": {
             "title": "BASIC_DEFINITIONS",
             "description": "Defines globally used constant values.",
-            "$comments": "Defined in Support IM",
-            "type": "object"
+            "$comments": "Defined in Support IM"
         }
     },
     "$component": "BASE",

@@ -4,6 +4,5 @@
     "title": "MESSAGE_CONTENT",
     "description": "Abstract parent of message payload types.",
     "$comments": "Defined in Ehr_extract IM, abstract",
-    "type": "object",
     "$abstract": true
 }

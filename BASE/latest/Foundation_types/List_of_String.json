@@ -12,7 +12,7 @@
             "description": "Test for membership of a value.",
             "parameters": {
                 "v": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "all.json#/definitions/T"
                 }
             },
             "required_parameters": [
@@ -37,13 +37,13 @@
         "first": {
             "description": "Return first element.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                "$ref": "all.json#/definitions/T"
             }
         },
         "last": {
             "description": "Return last element.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                "$ref": "all.json#/definitions/T"
             }
         }
     },
