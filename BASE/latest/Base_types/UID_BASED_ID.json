@@ -18,6 +18,10 @@
     "$inherits": [
         "all.json#/definitions/OBJECT_ID"
     ],
+    "$children": [
+        "all.json#/definitions/HIER_OBJECT_ID",
+        "all.json#/definitions/OBJECT_VERSION_ID"
+    ],
     "$functions": {
         "root": {
             "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",

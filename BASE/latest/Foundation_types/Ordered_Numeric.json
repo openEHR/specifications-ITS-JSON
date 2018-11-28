@@ -10,6 +10,12 @@
         "all.json#/definitions/Ordered",
         "all.json#/definitions/Numeric"
     ],
+    "$children": [
+        "all.json#/definitions/Integer",
+        "all.json#/definitions/Double",
+        "all.json#/definitions/Real",
+        "all.json#/definitions/Integer64"
+    ],
     "$functions": {
         "infix *": {
             "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",

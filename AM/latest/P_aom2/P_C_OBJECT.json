@@ -30,6 +30,11 @@
     "$inherits": [
         "all.json#/definitions/P_ARCHETYPE_CONSTRAINT"
     ],
+    "$children": [
+        "all.json#/definitions/P_C_DEFINED_OBJECT",
+        "all.json#/definitions/P_C_COMPLEX_OBJECT_PROXY",
+        "all.json#/definitions/P_ARCHETYPE_SLOT"
+    ],
     "$functions": {
         "specialisation_depth": {
             "return": {

@@ -8,6 +8,23 @@
     "$inherits": [
         "all.json#/definitions/Container"
     ],
+    "$children": [
+        "all.json#/definitions/Hash_of_String_Hash_of_String_Hash_of_String_String",
+        "all.json#/definitions/Hash_of_String_Hash_of_String_String",
+        "all.json#/definitions/Hash_of_String_String",
+        "all.json#/definitions/Hash_of_String_List_of_String",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Resource/all.json#/definitions/Hash_of_String_TRANSLATION_DETAILS",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Resource/all.json#/definitions/Hash_of_String_RESOURCE_DESCRIPTION_ITEM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/Hash_of_String_VALUE_SET",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_ARCHETYPE_TERM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Uri",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_Uri",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_PROPERTY_MAPPING",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
+    ],
     "$functions": {
         "has": {
             "description": "Test for membership of a value.",

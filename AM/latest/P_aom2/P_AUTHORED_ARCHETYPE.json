@@ -97,6 +97,10 @@
         "all.json#/definitions/P_AUTHORED_RESOURCE",
         "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/AUTHORED_RESOURCE"
     ],
+    "$children": [
+        "all.json#/definitions/P_TEMPLATE",
+        "all.json#/definitions/P_OPERATIONAL_TEMPLATE"
+    ],
     "$functions": {
         "current_revision": {
             "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . ",

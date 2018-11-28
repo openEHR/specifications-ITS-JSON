@@ -5,6 +5,14 @@
     "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
     "$comments": "Defined in Foundation_types IM, abstract",
     "$abstract": true,
+    "$children": [
+        "all.json#/definitions/Ordered_Numeric",
+        "all.json#/definitions/Octet",
+        "all.json#/definitions/Character",
+        "all.json#/definitions/String",
+        "all.json#/definitions/Temporal",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_ORDERED"
+    ],
     "$functions": {
         "infix <": {
             "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",

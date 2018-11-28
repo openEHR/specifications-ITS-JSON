@@ -14,5 +14,9 @@
     "required": [
         "target"
     ],
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/SUB_PLAN",
+        "all.json#/definitions/HAND_OFF"
+    ]
 }

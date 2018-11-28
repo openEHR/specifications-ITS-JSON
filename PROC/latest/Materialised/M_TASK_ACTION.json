@@ -12,5 +12,9 @@
     },
     "required": [
         "definition"
+    ],
+    "$children": [
+        "all.json#/definitions/M_DISPATCHABLE_ACTION",
+        "all.json#/definitions/M_PERFORMABLE_ACTION"
     ]
 }

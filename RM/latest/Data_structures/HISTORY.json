@@ -65,6 +65,9 @@
     "$inherits": [
         "all.json#/definitions/DATA_STRUCTURE"
     ],
+    "$children": [
+        "all.json#/definitions/HISTORY_of_ITEM_STRUCTURE"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

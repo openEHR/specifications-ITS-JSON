@@ -38,6 +38,10 @@
         "terminology"
     ],
     "$abstract": true,
+    "$children": [
+        "all.json#/definitions/AUTHORED_ARCHETYPE",
+        "all.json#/definitions/TEMPLATE_OVERLAY"
+    ],
     "$functions": {
         "concept_code": {
             "description": "The concept code of the root object of the archetype, also standing for the concept of the archetype as a whole.",

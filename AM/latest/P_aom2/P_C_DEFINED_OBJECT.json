@@ -37,6 +37,10 @@
     "$inherits": [
         "all.json#/definitions/P_C_OBJECT"
     ],
+    "$children": [
+        "all.json#/definitions/P_C_PRIMITIVE_OBJECT",
+        "all.json#/definitions/P_C_COMPLEX_OBJECT"
+    ],
     "$functions": {
         "specialisation_depth": {
             "return": {

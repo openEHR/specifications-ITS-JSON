@@ -24,5 +24,8 @@
     ],
     "$inherits": [
         "all.json#/definitions/EXTERNAL_VARIABLE"
+    ],
+    "$children": [
+        "all.json#/definitions/CONTINUOUS_EVENT_VARIABLE"
     ]
 }

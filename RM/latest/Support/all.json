@@ -316,6 +316,9 @@
             "title": "MEASUREMENT_SERVICE",
             "description": "Defines an object providing proxy access to a measurement information service.",
             "$comments": "Defined in Support IM",
+            "$children": [
+                "#/definitions/EXTERNAL_ENVIRONMENT_ACCESS"
+            ],
             "$functions": {
                 "is_valid_units_string": {
                     "description": "True if the units string  units' is a valid string according to the HL7 UCUM specification.",
@@ -355,6 +358,9 @@
             "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
             "description": "List of identifiers for groups in the openEHR terminology. ",
             "$comments": "Defined in Support IM",
+            "$children": [
+                "#/definitions/TERMINOLOGY_SERVICE"
+            ],
             "$functions": {
                 "valid_terminology_group_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class. ",
@@ -376,6 +382,9 @@
             "title": "OPENEHR_CODE_SET_IDENTIFIERS",
             "description": "List of identifiers for code sets in the openEHR terminology. ",
             "$comments": "Defined in Support IM",
+            "$children": [
+                "#/definitions/TERMINOLOGY_SERVICE"
+            ],
             "$functions": {
                 "valid_code_set_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class.",
@@ -401,6 +410,9 @@
             "$inherits": [
                 "#/definitions/OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
                 "#/definitions/OPENEHR_CODE_SET_IDENTIFIERS"
+            ],
+            "$children": [
+                "#/definitions/EXTERNAL_ENVIRONMENT_ACCESS"
             ],
             "$functions": {
                 "valid_code_set_id": {

@@ -18,5 +18,9 @@
     "required": [
         "time"
     ],
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/TASK_PLAN_EVENT_RECORD",
+        "all.json#/definitions/TASK_EVENT_RECORD"
+    ]
 }

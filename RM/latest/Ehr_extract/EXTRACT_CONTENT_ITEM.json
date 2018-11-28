@@ -59,6 +59,10 @@
     "$inherits": [
         "all.json#/definitions/EXTRACT_ITEM"
     ],
+    "$children": [
+        "all.json#/definitions/OPENEHR_CONTENT_ITEM",
+        "all.json#/definitions/GENERIC_CONTENT_ITEM"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

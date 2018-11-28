@@ -24,6 +24,13 @@
         "owner_id",
         "time_created"
     ],
+    "$children": [
+        "all.json#/definitions/VERSIONED_FOLDER",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/VERSIONED_EHR_ACCESS",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/VERSIONED_EHR_STATUS",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/VERSIONED_COMPOSITION",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/VERSIONED_PARTY"
+    ],
     "$functions": {
         "version_count": {
             "description": "Return the total number of versions in this object.",

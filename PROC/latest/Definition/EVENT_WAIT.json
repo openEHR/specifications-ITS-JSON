@@ -20,5 +20,9 @@
     },
     "required": [
         "event"
+    ],
+    "$children": [
+        "all.json#/definitions/TIMER_WAIT",
+        "all.json#/definitions/CALLBACK_WAIT"
     ]
 }

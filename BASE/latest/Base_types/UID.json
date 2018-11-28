@@ -15,6 +15,11 @@
         "value"
     ],
     "$abstract": true,
+    "$children": [
+        "all.json#/definitions/UUID",
+        "all.json#/definitions/INTERNET_ID",
+        "all.json#/definitions/ISO_OID"
+    ],
     "$invariants": {
         "Value_valid": "not value.empty"
     }

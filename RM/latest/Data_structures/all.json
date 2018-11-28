@@ -47,6 +47,10 @@
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
+            "$children": [
+                "#/definitions/ITEM_STRUCTURE",
+                "#/definitions/HISTORY"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -194,6 +198,12 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_STRUCTURE"
+            ],
+            "$children": [
+                "#/definitions/ITEM_TREE",
+                "#/definitions/ITEM_SINGLE",
+                "#/definitions/ITEM_TABLE",
+                "#/definitions/ITEM_LIST"
             ],
             "$functions": {
                 "parent": {
@@ -1161,6 +1171,10 @@
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
+            "$children": [
+                "#/definitions/CLUSTER",
+                "#/definitions/ELEMENT"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -1624,6 +1638,10 @@
             "$abstract": true,
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
+            ],
+            "$children": [
+                "#/definitions/POINT_EVENT",
+                "#/definitions/INTERVAL_EVENT"
             ],
             "$functions": {
                 "parent": {
@@ -2145,6 +2163,9 @@
             ],
             "$inherits": [
                 "#/definitions/DATA_STRUCTURE"
+            ],
+            "$children": [
+                "#/definitions/HISTORY_of_ITEM_STRUCTURE"
             ],
             "$functions": {
                 "parent": {

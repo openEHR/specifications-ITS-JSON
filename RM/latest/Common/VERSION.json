@@ -24,6 +24,10 @@
         "commit_audit"
     ],
     "$abstract": true,
+    "$children": [
+        "all.json#/definitions/IMPORTED_VERSION",
+        "all.json#/definitions/ORIGINAL_VERSION"
+    ],
     "$functions": {
         "uid": {
             "description": "Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id, creating_system_id}` triple, where the `_object_id_` has the same value as the containing `VERSIONED_OBJECT _uid_`.",

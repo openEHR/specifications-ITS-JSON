@@ -86,6 +86,10 @@
     "$inherits": [
         "all.json#/definitions/PLAN_ITEM"
     ],
+    "$children": [
+        "all.json#/definitions/CHOICE_GROUP",
+        "all.json#/definitions/CHOICE_BRANCH"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

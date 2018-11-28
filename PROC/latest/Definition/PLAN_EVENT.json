@@ -45,6 +45,17 @@
     "$inherits": [
         "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
     ],
+    "$children": [
+        "all.json#/definitions/MANUAL_NOTIFICATION",
+        "all.json#/definitions/TIMER_EVENT",
+        "all.json#/definitions/CALLBACK_NOTIFICATION",
+        "all.json#/definitions/STATE_TRIGGER",
+        "all.json#/definitions/TASK_TRANSITION",
+        "all.json#/definitions/TIMELINE_MOMENT",
+        "all.json#/definitions/CALENDAR_EVENT",
+        "all.json#/definitions/DELAY_EVENT",
+        "all.json#/definitions/SYSTEM_NOTIFICATION"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

@@ -44,7 +44,11 @@
             "required": [
                 "time"
             ],
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/TASK_PLAN_EVENT_RECORD",
+                "#/definitions/TASK_EVENT_RECORD"
+            ]
         },
         "TASK_NOTIFICATION_RECORD": {
             "title": "TASK_NOTIFICATION_RECORD",

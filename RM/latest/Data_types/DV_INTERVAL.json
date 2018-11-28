@@ -41,6 +41,13 @@
         "all.json#/definitions/DATA_VALUE",
         "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Interval"
     ],
+    "$children": [
+        "all.json#/definitions/DV_INTERVAL_of_DV_DATE_TIME",
+        "all.json#/definitions/DV_INTERVAL_of_DV_DATE",
+        "all.json#/definitions/DV_INTERVAL_of_DV_QUANTITY",
+        "all.json#/definitions/DV_INTERVAL_of_DV_COUNT",
+        "all.json#/definitions/DV_INTERVAL_of_DV_PROPORTION"
+    ],
     "$functions": {
         "has": {
             "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",

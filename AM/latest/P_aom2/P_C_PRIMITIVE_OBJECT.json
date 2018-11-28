@@ -50,6 +50,12 @@
     "$inherits": [
         "all.json#/definitions/P_C_DEFINED_OBJECT"
     ],
+    "$children": [
+        "all.json#/definitions/P_C_BOOLEAN",
+        "all.json#/definitions/P_C_STRING",
+        "all.json#/definitions/P_C_ORDERED",
+        "all.json#/definitions/P_C_TERMINOLOGY_CODE"
+    ],
     "$functions": {
         "specialisation_depth": {
             "return": {

@@ -34,6 +34,11 @@
     "$inherits": [
         "all.json#/definitions/DV_ABSOLUTE_QUANTITY"
     ],
+    "$children": [
+        "all.json#/definitions/DV_DATE",
+        "all.json#/definitions/DV_TIME",
+        "all.json#/definitions/DV_DATE_TIME"
+    ],
     "$functions": {
         "infix <": {
             "parameters": {

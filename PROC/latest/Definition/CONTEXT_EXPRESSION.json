@@ -26,5 +26,8 @@
     ],
     "$inherits": [
         "all.json#/definitions/CONTEXT_VALUE"
+    ],
+    "$children": [
+        "all.json#/definitions/BOOLEAN_CONTEXT_EXPRESSION"
     ]
 }

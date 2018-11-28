@@ -33,6 +33,9 @@
     "$inherits": [
         "all.json#/definitions/DV_QUANTIFIED"
     ],
+    "$children": [
+        "all.json#/definitions/DV_TEMPORAL"
+    ],
     "$functions": {
         "infix <": {
             "parameters": {

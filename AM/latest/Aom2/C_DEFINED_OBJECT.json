@@ -46,6 +46,10 @@
     "$inherits": [
         "all.json#/definitions/C_OBJECT"
     ],
+    "$children": [
+        "all.json#/definitions/C_PRIMITIVE_OBJECT",
+        "all.json#/definitions/C_COMPLEX_OBJECT"
+    ],
     "$functions": {
         "codes_conformant": {
             "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",

@@ -4,5 +4,9 @@
     "title": "MESSAGE_CONTENT",
     "description": "Abstract parent of message payload types.",
     "$comments": "Defined in Ehr_extract IM, abstract",
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/SYNC_EXTRACT_REQUEST",
+        "all.json#/definitions/SYNC_EXTRACT"
+    ]
 }

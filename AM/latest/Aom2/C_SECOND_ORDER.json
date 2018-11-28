@@ -15,6 +15,10 @@
         }
     },
     "$abstract": true,
+    "$children": [
+        "all.json#/definitions/C_ATTRIBUTE_TUPLE",
+        "all.json#/definitions/C_PRIMITIVE_TUPLE"
+    ],
     "$functions": {
         "c_conforms_to": {
             "description": "True if constraints represented by this node, ignoring any sub-parts, are narrower or the same as other. Typically used during validation of specialised archetype nodes.",

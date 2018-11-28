@@ -65,6 +65,12 @@
     "$inherits": [
         "all.json#/definitions/C_ORDERED"
     ],
+    "$children": [
+        "all.json#/definitions/C_TIME",
+        "all.json#/definitions/C_DATE",
+        "all.json#/definitions/C_DATE_TIME",
+        "all.json#/definitions/C_DURATION"
+    ],
     "$functions": {
         "codes_conformant": {
             "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",

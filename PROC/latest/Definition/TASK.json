@@ -70,6 +70,10 @@
     "$inherits": [
         "all.json#/definitions/PLAN_ITEM"
     ],
+    "$children": [
+        "all.json#/definitions/DISPATCHABLE_TASK",
+        "all.json#/definitions/PERFORMABLE_TASK"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

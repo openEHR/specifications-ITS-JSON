@@ -22,5 +22,9 @@
     "$abstract": true,
     "$inherits": [
         "all.json#/definitions/CONTEXT_VALUE"
+    ],
+    "$children": [
+        "all.json#/definitions/LOCAL_VARIABLE",
+        "all.json#/definitions/EXTERNAL_VARIABLE"
     ]
 }

@@ -87,6 +87,10 @@
     "$inherits": [
         "all.json#/definitions/CHOICE_BRANCH"
     ],
+    "$children": [
+        "all.json#/definitions/EVENT_BRANCH",
+        "all.json#/definitions/ADHOC_BRANCH"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

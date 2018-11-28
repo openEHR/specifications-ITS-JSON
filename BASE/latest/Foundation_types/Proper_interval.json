@@ -40,6 +40,10 @@
     "$inherits": [
         "all.json#/definitions/Interval"
     ],
+    "$children": [
+        "all.json#/definitions/Proper_interval_of_Iso8601_date",
+        "all.json#/definitions/Multiplicity_interval"
+    ],
     "$functions": {
         "has": {
             "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",

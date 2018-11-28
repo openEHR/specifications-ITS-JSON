@@ -10,6 +10,12 @@
             "description": "The PATHABLE class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of LOCATABLE. The defining characteristics of PATHABLE objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.",
             "$comments": "Defined in Common IM, abstract",
             "$abstract": true,
+            "$children": [
+                "#/definitions/LOCATABLE",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/ISM_TRANSITION",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/INSTRUCTION_DETAILS",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/EVENT_CONTEXT"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -161,6 +167,31 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/PATHABLE"
+            ],
+            "$children": [
+                "#/definitions/FOLDER",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/DATA_STRUCTURE",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/ITEM",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/EVENT",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/EHR_ACCESS",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/EHR_STATUS",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_ACTION_REQUEST",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_CHAPTER",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_ITEM",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_REQUEST",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/PARTY",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/CONTACT",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/ADDRESS",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/PARTY_IDENTITY",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/CAPABILITY",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/PARTY_RELATIONSHIP",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/CONTENT_ITEM",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/ACTIVITY",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/COMPOSITION",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/TASK_ACTION",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/PLAN_EVENT"
             ],
             "$functions": {
                 "parent": {
@@ -388,6 +419,13 @@
                 "uid",
                 "owner_id",
                 "time_created"
+            ],
+            "$children": [
+                "#/definitions/VERSIONED_FOLDER",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/VERSIONED_EHR_ACCESS",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/VERSIONED_EHR_STATUS",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/VERSIONED_COMPOSITION",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/VERSIONED_PARTY"
             ],
             "$functions": {
                 "version_count": {
@@ -690,6 +728,10 @@
                 "commit_audit"
             ],
             "$abstract": true,
+            "$children": [
+                "#/definitions/IMPORTED_VERSION",
+                "#/definitions/ORIGINAL_VERSION"
+            ],
             "$functions": {
                 "uid": {
                     "description": "Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id, creating_system_id}` triple, where the `_object_id_` has the same value as the containing `VERSIONED_OBJECT _uid_`.",
@@ -1001,6 +1043,9 @@
                 "change_type",
                 "committer"
             ],
+            "$children": [
+                "#/definitions/ATTESTATION"
+            ],
             "$invariants": {
                 "System_id_valid": "not system_id.is_empty",
                 "Change_type_valid": "terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)"
@@ -1117,7 +1162,11 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
                 }
             },
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/PARTY_IDENTIFIED",
+                "#/definitions/PARTY_SELF"
+            ]
         },
         "PARTY_IDENTIFIED": {
             "title": "PARTY_IDENTIFIED",
@@ -1143,6 +1192,9 @@
             },
             "$inherits": [
                 "#/definitions/PARTY_PROXY"
+            ],
+            "$children": [
+                "#/definitions/PARTY_RELATED"
             ],
             "$invariants": {
                 "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
@@ -1717,6 +1769,11 @@
                 "original_language"
             ],
             "$abstract": true,
+            "$children": [
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/AUTHORED_ARCHETYPE",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/P_aom2/all.json#/definitions/P_AUTHORED_ARCHETYPE",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
+            ],
             "$functions": {
                 "current_revision": {
                     "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . ",

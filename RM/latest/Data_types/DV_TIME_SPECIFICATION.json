@@ -18,6 +18,10 @@
     "$inherits": [
         "all.json#/definitions/DATA_VALUE"
     ],
+    "$children": [
+        "all.json#/definitions/DV_PERIODIC_TIME_SPECIFICATION",
+        "all.json#/definitions/DV_GENERAL_TIME_SPECIFICATION"
+    ],
     "$functions": {
         "calendar_alignment": {
             "description": "Indicates what prototypical point in the calendar the specification is aligned to, e.g.  5th of the month . Empty if not aligned. Extracted from the  value' attribute.",

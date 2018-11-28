@@ -544,6 +544,11 @@
             "$inherits": [
                 "#/definitions/TASK_ACTION"
             ],
+            "$children": [
+                "#/definitions/HAND_OFF",
+                "#/definitions/EXTERNAL_REQUEST",
+                "#/definitions/SYSTEM_REQUEST"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -875,6 +880,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/PLAN_ITEM"
+            ],
+            "$children": [
+                "#/definitions/DISPATCHABLE_TASK",
+                "#/definitions/PERFORMABLE_TASK"
             ],
             "$functions": {
                 "parent": {
@@ -1539,6 +1548,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/CONTEXT_VALUE"
+            ],
+            "$children": [
+                "#/definitions/LOCAL_VARIABLE",
+                "#/definitions/EXTERNAL_VARIABLE"
             ]
         },
         "TASK_GROUP": {
@@ -1626,6 +1639,10 @@
             ],
             "$inherits": [
                 "#/definitions/PLAN_ITEM"
+            ],
+            "$children": [
+                "#/definitions/CHOICE_GROUP",
+                "#/definitions/CHOICE_BRANCH"
             ],
             "$functions": {
                 "parent": {
@@ -1741,7 +1758,11 @@
             "required": [
                 "target"
             ],
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/SUB_PLAN",
+                "#/definitions/HAND_OFF"
+            ]
         },
         "TASK_WAIT": {
             "title": "TASK_WAIT",
@@ -1853,6 +1874,10 @@
             "$abstract": true,
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
+            ],
+            "$children": [
+                "#/definitions/TASK",
+                "#/definitions/TASK_GROUP"
             ],
             "$functions": {
                 "parent": {
@@ -2424,6 +2449,9 @@
             ],
             "$inherits": [
                 "#/definitions/EVENT_WAIT"
+            ],
+            "$children": [
+                "#/definitions/REMINDER"
             ]
         },
         "EVENT_VARIABLE": {
@@ -2450,6 +2478,9 @@
             ],
             "$inherits": [
                 "#/definitions/EXTERNAL_VARIABLE"
+            ],
+            "$children": [
+                "#/definitions/CONTINUOUS_EVENT_VARIABLE"
             ]
         },
         "STATE_VARIABLE": {
@@ -2538,6 +2569,10 @@
             "$abstract": true,
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
+            ],
+            "$children": [
+                "#/definitions/DISPATCHABLE_ACTION",
+                "#/definitions/PERFORMABLE_ACTION"
             ],
             "$functions": {
                 "parent": {
@@ -2710,6 +2745,10 @@
             "$inherits": [
                 "#/definitions/TASK_ACTION"
             ],
+            "$children": [
+                "#/definitions/SUB_PLAN",
+                "#/definitions/DEFINED_ACTION"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -2854,6 +2893,17 @@
             "$abstract": true,
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
+            ],
+            "$children": [
+                "#/definitions/MANUAL_NOTIFICATION",
+                "#/definitions/TIMER_EVENT",
+                "#/definitions/CALLBACK_NOTIFICATION",
+                "#/definitions/STATE_TRIGGER",
+                "#/definitions/TASK_TRANSITION",
+                "#/definitions/TIMELINE_MOMENT",
+                "#/definitions/CALENDAR_EVENT",
+                "#/definitions/DELAY_EVENT",
+                "#/definitions/SYSTEM_NOTIFICATION"
             ],
             "$functions": {
                 "parent": {
@@ -4322,6 +4372,9 @@
             ],
             "$inherits": [
                 "#/definitions/CONTEXT_VALUE"
+            ],
+            "$children": [
+                "#/definitions/BOOLEAN_CONTEXT_EXPRESSION"
             ]
         },
         "TIMELINE_MOMENT": {
@@ -4877,7 +4930,12 @@
                 "name",
                 "type"
             ],
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/CONTEXT_VARIABLE",
+                "#/definitions/CONTEXT_EXPRESSION",
+                "#/definitions/CONTEXT_CONSTANT"
+            ]
         },
         "BOOLEAN_CONTEXT_EXPRESSION": {
             "title": "BOOLEAN_CONTEXT_EXPRESSION",
@@ -5116,6 +5174,10 @@
             },
             "required": [
                 "event"
+            ],
+            "$children": [
+                "#/definitions/TIMER_WAIT",
+                "#/definitions/CALLBACK_WAIT"
             ]
         },
         "CALLBACK_WAIT": {
@@ -5614,6 +5676,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/CONTEXT_VARIABLE"
+            ],
+            "$children": [
+                "#/definitions/EVENT_VARIABLE",
+                "#/definitions/STATE_VARIABLE"
             ]
         },
         "DISPATCHABLE_TASK": {
@@ -6061,6 +6127,11 @@
             "$inherits": [
                 "#/definitions/TASK_GROUP"
             ],
+            "$children": [
+                "#/definitions/DECISION_GROUP",
+                "#/definitions/CONDITION_GROUP",
+                "#/definitions/BLOCKING_GROUP"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -6247,6 +6318,11 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/TASK_GROUP"
+            ],
+            "$children": [
+                "#/definitions/DECISION_BRANCH",
+                "#/definitions/CONDITION_BRANCH",
+                "#/definitions/BLOCKING_BRANCH"
             ],
             "$functions": {
                 "parent": {
@@ -6824,6 +6900,10 @@
             "$inherits": [
                 "#/definitions/CHOICE_GROUP"
             ],
+            "$children": [
+                "#/definitions/EVENT_GROUP",
+                "#/definitions/ADHOC_GROUP"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -7010,6 +7090,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/CHOICE_BRANCH"
+            ],
+            "$children": [
+                "#/definitions/EVENT_BRANCH",
+                "#/definitions/ADHOC_BRANCH"
             ],
             "$functions": {
                 "parent": {

@@ -9,7 +9,19 @@
             "title": "DATA_VALUE",
             "description": "Abstract parent of all `DV_` data value types.",
             "$comments": "Defined in Data_types IM, abstract",
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/DV_BOOLEAN",
+                "#/definitions/DV_STATE",
+                "#/definitions/DV_IDENTIFIER",
+                "#/definitions/DV_ENCAPSULATED",
+                "#/definitions/DV_PARAGRAPH",
+                "#/definitions/DV_TEXT",
+                "#/definitions/DV_ORDERED",
+                "#/definitions/DV_INTERVAL",
+                "#/definitions/DV_TIME_SPECIFICATION",
+                "#/definitions/DV_URI"
+            ]
         },
         "DV_BOOLEAN": {
             "title": "DV_BOOLEAN",
@@ -106,6 +118,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_VALUE"
+            ],
+            "$children": [
+                "#/definitions/DV_MULTIMEDIA",
+                "#/definitions/DV_PARSABLE"
             ],
             "$invariants": {
                 "Size_valid": "size >= 0",
@@ -321,6 +337,9 @@
             "$inherits": [
                 "#/definitions/DATA_VALUE"
             ],
+            "$children": [
+                "#/definitions/DV_CODED_TEXT"
+            ],
             "$invariants": {
                 "Valid_value": "not value.is_empty and then not (value.has(CR) or value.has(LF))",
                 "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
@@ -501,6 +520,10 @@
                 "#/definitions/DATA_VALUE",
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
             ],
+            "$children": [
+                "#/definitions/DV_QUANTIFIED",
+                "#/definitions/DV_ORDINAL"
+            ],
             "$functions": {
                 "infix <": {
                     "parameters": {
@@ -593,6 +616,13 @@
                 "#/definitions/DATA_VALUE",
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Interval"
             ],
+            "$children": [
+                "#/definitions/DV_INTERVAL_of_DV_DATE_TIME",
+                "#/definitions/DV_INTERVAL_of_DV_DATE",
+                "#/definitions/DV_INTERVAL_of_DV_QUANTITY",
+                "#/definitions/DV_INTERVAL_of_DV_COUNT",
+                "#/definitions/DV_INTERVAL_of_DV_PROPORTION"
+            ],
             "$functions": {
                 "has": {
                     "description": "True if `(lower_unbounded or lower_included and v >= lower) or v > lower and (upper_unbounded or upper_included and v <= upper or v < upper)`.",
@@ -677,6 +707,11 @@
                 "meaning",
                 "range"
             ],
+            "$children": [
+                "#/definitions/REFERENCE_RANGE_of_DV_QUANTITY",
+                "#/definitions/REFERENCE_RANGE_of_DV_COUNT",
+                "#/definitions/REFERENCE_RANGE_of_DV_PROPORTION"
+            ],
             "$functions": {
                 "is_in_range": {
                     "description": "Indicates if the value  val' is inside the range.\n",
@@ -730,6 +765,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_ORDERED"
+            ],
+            "$children": [
+                "#/definitions/DV_AMOUNT",
+                "#/definitions/DV_ABSOLUTE_QUANTITY"
             ],
             "$functions": {
                 "infix <": {
@@ -1026,6 +1065,9 @@
             "title": "PROPORTION_KIND",
             "description": "Class of enumeration constants defining types of proportion for the `DV_PROPORTION` class. ",
             "$comments": "Defined in Data_types IM",
+            "$children": [
+                "#/definitions/DV_PROPORTION"
+            ],
             "$functions": {
                 "valid_proportion_kind": {
                     "description": "True if n is one of the defined types. ",
@@ -1080,6 +1122,12 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_QUANTIFIED"
+            ],
+            "$children": [
+                "#/definitions/DV_PROPORTION",
+                "#/definitions/DV_QUANTITY",
+                "#/definitions/DV_COUNT",
+                "#/definitions/DV_DURATION"
             ],
             "$functions": {
                 "infix <": {
@@ -1614,6 +1662,9 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_QUANTIFIED"
+            ],
+            "$children": [
+                "#/definitions/DV_TEMPORAL"
             ],
             "$functions": {
                 "infix <": {
@@ -2193,6 +2244,11 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_ABSOLUTE_QUANTITY"
+            ],
+            "$children": [
+                "#/definitions/DV_DATE",
+                "#/definitions/DV_TIME",
+                "#/definitions/DV_DATE_TIME"
             ],
             "$functions": {
                 "infix <": {
@@ -4323,6 +4379,10 @@
             "$inherits": [
                 "#/definitions/DATA_VALUE"
             ],
+            "$children": [
+                "#/definitions/DV_PERIODIC_TIME_SPECIFICATION",
+                "#/definitions/DV_GENERAL_TIME_SPECIFICATION"
+            ],
             "$functions": {
                 "calendar_alignment": {
                     "description": "Indicates what prototypical point in the calendar the specification is aligned to, e.g.  5th of the month . Empty if not aligned. Extracted from the  value' attribute.",
@@ -4445,6 +4505,9 @@
             ],
             "$inherits": [
                 "#/definitions/DATA_VALUE"
+            ],
+            "$children": [
+                "#/definitions/DV_EHR_URI"
             ],
             "$functions": {
                 "scheme": {

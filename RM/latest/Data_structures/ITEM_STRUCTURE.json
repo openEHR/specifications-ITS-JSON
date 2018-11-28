@@ -42,6 +42,12 @@
     "$inherits": [
         "all.json#/definitions/DATA_STRUCTURE"
     ],
+    "$children": [
+        "all.json#/definitions/ITEM_TREE",
+        "all.json#/definitions/ITEM_SINGLE",
+        "all.json#/definitions/ITEM_TABLE",
+        "all.json#/definitions/ITEM_LIST"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

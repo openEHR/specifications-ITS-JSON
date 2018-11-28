@@ -81,6 +81,10 @@
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
+            "$children": [
+                "#/definitions/ROLE",
+                "#/definitions/ACTOR"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -955,6 +959,12 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/PARTY"
+            ],
+            "$children": [
+                "#/definitions/AGENT",
+                "#/definitions/ORGANISATION",
+                "#/definitions/GROUP",
+                "#/definitions/PERSON"
             ],
             "$functions": {
                 "parent": {

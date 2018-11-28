@@ -42,6 +42,11 @@
         "original_language"
     ],
     "$abstract": true,
+    "$children": [
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/Aom2/all.json#/definitions/AUTHORED_ARCHETYPE",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/AM/latest/P_aom2/all.json#/definitions/P_AUTHORED_ARCHETYPE",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
+    ],
     "$functions": {
         "current_revision": {
             "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . ",

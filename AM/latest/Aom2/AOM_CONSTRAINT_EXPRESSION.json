@@ -16,5 +16,8 @@
     ],
     "$inherits": [
         null
+    ],
+    "$children": [
+        "all.json#/definitions/ARCHETYPE_ID_CONSTRAINT"
     ]
 }

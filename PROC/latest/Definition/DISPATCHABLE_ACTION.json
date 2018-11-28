@@ -57,6 +57,11 @@
     "$inherits": [
         "all.json#/definitions/TASK_ACTION"
     ],
+    "$children": [
+        "all.json#/definitions/HAND_OFF",
+        "all.json#/definitions/EXTERNAL_REQUEST",
+        "all.json#/definitions/SYSTEM_REQUEST"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

@@ -34,6 +34,10 @@
     "$inherits": [
         "all.json#/definitions/DV_ORDERED"
     ],
+    "$children": [
+        "all.json#/definitions/DV_AMOUNT",
+        "all.json#/definitions/DV_ABSOLUTE_QUANTITY"
+    ],
     "$functions": {
         "infix <": {
             "parameters": {

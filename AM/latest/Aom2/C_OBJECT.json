@@ -42,6 +42,11 @@
     "$inherits": [
         "all.json#/definitions/ARCHETYPE_CONSTRAINT"
     ],
+    "$children": [
+        "all.json#/definitions/C_DEFINED_OBJECT",
+        "all.json#/definitions/C_COMPLEX_OBJECT_PROXY",
+        "all.json#/definitions/ARCHETYPE_SLOT"
+    ],
     "$functions": {
         "codes_conformant": {
             "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",

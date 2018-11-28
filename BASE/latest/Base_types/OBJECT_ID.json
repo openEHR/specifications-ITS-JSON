@@ -14,5 +14,12 @@
     "required": [
         "value"
     ],
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/ARCHETYPE_ID",
+        "all.json#/definitions/GENERIC_ID",
+        "all.json#/definitions/TERMINOLOGY_ID",
+        "all.json#/definitions/UID_BASED_ID",
+        "all.json#/definitions/TEMPLATE_ID"
+    ]
 }

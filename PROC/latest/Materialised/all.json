@@ -18,7 +18,13 @@
             "required": [
                 "definition"
             ],
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/M_TASK_GROUP",
+                "#/definitions/M_TASK",
+                "#/definitions/M_EVENT_GROUP",
+                "#/definitions/M_CONDITION_GROUP"
+            ]
         },
         "M_TASK_GROUP": {
             "title": "M_TASK_GROUP",
@@ -247,6 +253,10 @@
             },
             "required": [
                 "definition"
+            ],
+            "$children": [
+                "#/definitions/M_DISPATCHABLE_ACTION",
+                "#/definitions/M_PERFORMABLE_ACTION"
             ]
         },
         "M_DISPATCHABLE_ACTION": {

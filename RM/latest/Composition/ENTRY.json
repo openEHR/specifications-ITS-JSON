@@ -72,6 +72,10 @@
     "$inherits": [
         "all.json#/definitions/CONTENT_ITEM"
     ],
+    "$children": [
+        "all.json#/definitions/ADMIN_ENTRY",
+        "all.json#/definitions/CARE_ENTRY"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

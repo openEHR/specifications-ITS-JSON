@@ -87,6 +87,11 @@
     "$inherits": [
         "all.json#/definitions/TASK_GROUP"
     ],
+    "$children": [
+        "all.json#/definitions/DECISION_BRANCH",
+        "all.json#/definitions/CONDITION_BRANCH",
+        "all.json#/definitions/BLOCKING_BRANCH"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

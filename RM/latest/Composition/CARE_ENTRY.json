@@ -80,6 +80,12 @@
     "$inherits": [
         "all.json#/definitions/ENTRY"
     ],
+    "$children": [
+        "all.json#/definitions/OBSERVATION",
+        "all.json#/definitions/EVALUATION",
+        "all.json#/definitions/ACTION",
+        "all.json#/definitions/INSTRUCTION"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

@@ -19,6 +19,10 @@
     "$inherits": [
         "all.json#/definitions/DATA_VALUE"
     ],
+    "$children": [
+        "all.json#/definitions/DV_MULTIMEDIA",
+        "all.json#/definitions/DV_PARSABLE"
+    ],
     "$invariants": {
         "Size_valid": "size >= 0",
         "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",

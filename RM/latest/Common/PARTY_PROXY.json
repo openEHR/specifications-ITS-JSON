@@ -11,5 +11,9 @@
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
         }
     },
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/PARTY_IDENTIFIED",
+        "all.json#/definitions/PARTY_SELF"
+    ]
 }

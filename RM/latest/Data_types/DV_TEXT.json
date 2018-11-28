@@ -40,6 +40,9 @@
     "$inherits": [
         "all.json#/definitions/DATA_VALUE"
     ],
+    "$children": [
+        "all.json#/definitions/DV_CODED_TEXT"
+    ],
     "$invariants": {
         "Valid_value": "not value.is_empty and then not (value.has(CR) or value.has(LF))",
         "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",

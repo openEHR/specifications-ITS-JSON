@@ -23,5 +23,8 @@
         "id",
         "members"
     ],
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/VALUE_SET"
+    ]
 }

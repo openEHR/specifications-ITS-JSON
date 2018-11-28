@@ -47,6 +47,13 @@
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
+            "$children": [
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Integration/all.json#/definitions/GENERIC_ENTRY",
+                "#/definitions/SECTION",
+                "#/definitions/ENTRY",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/WORK_PLAN",
+                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/TASK_PLAN"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -563,6 +570,12 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/ENTRY"
+            ],
+            "$children": [
+                "#/definitions/OBSERVATION",
+                "#/definitions/EVALUATION",
+                "#/definitions/ACTION",
+                "#/definitions/INSTRUCTION"
             ],
             "$functions": {
                 "parent": {
@@ -1739,6 +1752,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/CONTENT_ITEM"
+            ],
+            "$children": [
+                "#/definitions/ADMIN_ENTRY",
+                "#/definitions/CARE_ENTRY"
             ],
             "$functions": {
                 "parent": {

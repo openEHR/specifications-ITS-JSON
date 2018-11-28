@@ -4,6 +4,9 @@
     "title": "OPENEHR_CODE_SET_IDENTIFIERS",
     "description": "List of identifiers for code sets in the openEHR terminology. ",
     "$comments": "Defined in Support IM",
+    "$children": [
+        "all.json#/definitions/TERMINOLOGY_SERVICE"
+    ],
     "$functions": {
         "valid_code_set_id": {
             "description": "Validity function to test if an identifier is in the set defined by this class.",

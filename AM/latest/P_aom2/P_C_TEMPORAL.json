@@ -58,6 +58,12 @@
     "$inherits": [
         "all.json#/definitions/P_C_ORDERED"
     ],
+    "$children": [
+        "all.json#/definitions/P_C_TEMPORAL_of_Iso8601_date",
+        "all.json#/definitions/P_C_TEMPORAL_of_Iso8601_date_time",
+        "all.json#/definitions/P_C_TEMPORAL_of_Iso8601_time",
+        "all.json#/definitions/P_C_TEMPORAL_of_Iso8601_duration"
+    ],
     "$functions": {
         "specialisation_depth": {
             "return": {

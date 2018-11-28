@@ -18,6 +18,10 @@
     "$inherits": [
         "all.json#/definitions/ADL_CODE_DEFINITIONS"
     ],
+    "$children": [
+        "all.json#/definitions/C_OBJECT",
+        "all.json#/definitions/C_ATTRIBUTE"
+    ],
     "$functions": {
         "codes_conformant": {
             "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",

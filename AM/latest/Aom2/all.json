@@ -43,6 +43,10 @@
                 "terminology"
             ],
             "$abstract": true,
+            "$children": [
+                "#/definitions/AUTHORED_ARCHETYPE",
+                "#/definitions/TEMPLATE_OVERLAY"
+            ],
             "$functions": {
                 "concept_code": {
                     "description": "The concept code of the root object of the archetype, also standing for the concept of the archetype as a whole.",
@@ -192,6 +196,10 @@
             "$inherits": [
                 "#/definitions/ARCHETYPE",
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/AUTHORED_RESOURCE"
+            ],
+            "$children": [
+                "#/definitions/TEMPLATE",
+                "#/definitions/OPERATIONAL_TEMPLATE"
             ],
             "$functions": {
                 "current_revision": {
@@ -927,6 +935,10 @@
             "$inherits": [
                 "#/definitions/ADL_CODE_DEFINITIONS"
             ],
+            "$children": [
+                "#/definitions/C_OBJECT",
+                "#/definitions/C_ATTRIBUTE"
+            ],
             "$functions": {
                 "codes_conformant": {
                     "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",
@@ -1156,6 +1168,11 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/ARCHETYPE_CONSTRAINT"
+            ],
+            "$children": [
+                "#/definitions/C_DEFINED_OBJECT",
+                "#/definitions/C_COMPLEX_OBJECT_PROXY",
+                "#/definitions/ARCHETYPE_SLOT"
             ],
             "$functions": {
                 "codes_conformant": {
@@ -1688,6 +1705,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/C_OBJECT"
+            ],
+            "$children": [
+                "#/definitions/C_PRIMITIVE_OBJECT",
+                "#/definitions/C_COMPLEX_OBJECT"
             ],
             "$functions": {
                 "codes_conformant": {
@@ -2582,6 +2603,12 @@
             "$inherits": [
                 "#/definitions/C_DEFINED_OBJECT"
             ],
+            "$children": [
+                "#/definitions/C_BOOLEAN",
+                "#/definitions/C_STRING",
+                "#/definitions/C_ORDERED",
+                "#/definitions/C_TERMINOLOGY_CODE"
+            ],
             "$functions": {
                 "codes_conformant": {
                     "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",
@@ -3032,6 +3059,10 @@
                 }
             },
             "$abstract": true,
+            "$children": [
+                "#/definitions/C_ATTRIBUTE_TUPLE",
+                "#/definitions/C_PRIMITIVE_TUPLE"
+            ],
             "$functions": {
                 "c_conforms_to": {
                     "description": "True if constraints represented by this node, ignoring any sub-parts, are narrower or the same as other. Typically used during validation of specialised archetype nodes.",
@@ -3450,6 +3481,9 @@
             "$inherits": [
                 "#/definitions/C_DEFINED_OBJECT"
             ],
+            "$children": [
+                "#/definitions/C_ARCHETYPE_ROOT"
+            ],
             "$functions": {
                 "codes_conformant": {
                     "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",
@@ -3762,7 +3796,10 @@
                 "id",
                 "members"
             ],
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/VALUE_SET"
+            ]
         },
         "VALUE_SET": {
             "title": "VALUE_SET",
@@ -5838,6 +5875,11 @@
             "$inherits": [
                 "#/definitions/C_PRIMITIVE_OBJECT"
             ],
+            "$children": [
+                "#/definitions/C_INTEGER",
+                "#/definitions/C_REAL",
+                "#/definitions/C_TEMPORAL"
+            ],
             "$functions": {
                 "codes_conformant": {
                     "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",
@@ -6587,6 +6629,12 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/C_ORDERED"
+            ],
+            "$children": [
+                "#/definitions/C_TIME",
+                "#/definitions/C_DATE",
+                "#/definitions/C_DATE_TIME",
+                "#/definitions/C_DURATION"
             ],
             "$functions": {
                 "codes_conformant": {
@@ -8605,6 +8653,9 @@
             "title": "ADL_CODE_DEFINITIONS",
             "description": "Definitions relating to the internal code system of archetypes.",
             "$comments": "Defined in Aom2 IM",
+            "$children": [
+                "#/definitions/ARCHETYPE_CONSTRAINT"
+            ],
             "$functions": {
                 "codes_conformant": {
                     "description": "True if a_child_code conforms to a_parent_code in the sense of specialisation, i.e. is a_child_code the same as or more specialised than a_parent_code.",
@@ -8733,6 +8784,9 @@
             ],
             "$inherits": [
                 null
+            ],
+            "$children": [
+                "#/definitions/ARCHETYPE_ID_CONSTRAINT"
             ]
         },
         "ARCHETYPE_ID_CONSTRAINT": {

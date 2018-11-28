@@ -38,6 +38,12 @@
     "$inherits": [
         "all.json#/definitions/DV_QUANTIFIED"
     ],
+    "$children": [
+        "all.json#/definitions/DV_PROPORTION",
+        "all.json#/definitions/DV_QUANTITY",
+        "all.json#/definitions/DV_COUNT",
+        "all.json#/definitions/DV_DURATION"
+    ],
     "$functions": {
         "infix <": {
             "parameters": {

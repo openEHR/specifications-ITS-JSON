@@ -27,6 +27,10 @@
         "all.json#/definitions/DATA_VALUE",
         "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
     ],
+    "$children": [
+        "all.json#/definitions/DV_QUANTIFIED",
+        "all.json#/definitions/DV_ORDINAL"
+    ],
     "$functions": {
         "infix <": {
             "parameters": {

@@ -53,6 +53,11 @@
     "$inherits": [
         "all.json#/definitions/P_C_PRIMITIVE_OBJECT"
     ],
+    "$children": [
+        "all.json#/definitions/P_C_TEMPORAL",
+        "all.json#/definitions/P_C_ORDERED_of_Integer",
+        "all.json#/definitions/P_C_ORDERED_of_Real"
+    ],
     "$functions": {
         "specialisation_depth": {
             "return": {

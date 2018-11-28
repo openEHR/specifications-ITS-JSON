@@ -25,6 +25,9 @@
     "$inherits": [
         "all.json#/definitions/PARTY_PROXY"
     ],
+    "$children": [
+        "all.json#/definitions/PARTY_RELATED"
+    ],
     "$invariants": {
         "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
         "Name_valid": "name /= Void implies not name.is_empty",

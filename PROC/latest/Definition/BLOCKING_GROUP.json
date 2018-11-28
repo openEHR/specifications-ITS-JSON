@@ -95,6 +95,10 @@
     "$inherits": [
         "all.json#/definitions/CHOICE_GROUP"
     ],
+    "$children": [
+        "all.json#/definitions/EVENT_GROUP",
+        "all.json#/definitions/ADHOC_GROUP"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

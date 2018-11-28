@@ -90,6 +90,12 @@
     "$inherits": [
         "all.json#/definitions/PARTY"
     ],
+    "$children": [
+        "all.json#/definitions/AGENT",
+        "all.json#/definitions/ORGANISATION",
+        "all.json#/definitions/GROUP",
+        "all.json#/definitions/PERSON"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

@@ -25,5 +25,9 @@
     "$abstract": true,
     "$inherits": [
         "all.json#/definitions/CONTEXT_VARIABLE"
+    ],
+    "$children": [
+        "all.json#/definitions/EVENT_VARIABLE",
+        "all.json#/definitions/STATE_VARIABLE"
     ]
 }

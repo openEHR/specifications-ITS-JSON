@@ -19,5 +19,10 @@
         "name",
         "type"
     ],
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/CONTEXT_VARIABLE",
+        "all.json#/definitions/CONTEXT_EXPRESSION",
+        "all.json#/definitions/CONTEXT_CONSTANT"
+    ]
 }

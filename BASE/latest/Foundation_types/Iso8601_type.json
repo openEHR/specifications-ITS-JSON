@@ -19,6 +19,13 @@
         "all.json#/definitions/Temporal",
         "all.json#/definitions/Time_Definitions"
     ],
+    "$children": [
+        "all.json#/definitions/Iso8601_date_time",
+        "all.json#/definitions/Iso8601_duration",
+        "all.json#/definitions/Iso8601_time",
+        "all.json#/definitions/Iso8601_timezone",
+        "all.json#/definitions/Iso8601_date"
+    ],
     "$functions": {
         "valid_year": {
             "parameters": {

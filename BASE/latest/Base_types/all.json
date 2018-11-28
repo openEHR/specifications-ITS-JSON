@@ -184,7 +184,14 @@
             "required": [
                 "value"
             ],
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/ARCHETYPE_ID",
+                "#/definitions/GENERIC_ID",
+                "#/definitions/TERMINOLOGY_ID",
+                "#/definitions/UID_BASED_ID",
+                "#/definitions/TEMPLATE_ID"
+            ]
         },
         "OBJECT_REF": {
             "title": "OBJECT_REF",
@@ -209,6 +216,11 @@
                 "namespace",
                 "type",
                 "id"
+            ],
+            "$children": [
+                "#/definitions/LOCATABLE_REF",
+                "#/definitions/PARTY_REF",
+                "#/definitions/ACCESS_GROUP_REF"
             ]
         },
         "OBJECT_VERSION_ID": {
@@ -407,6 +419,10 @@
             "$inherits": [
                 "#/definitions/OBJECT_ID"
             ],
+            "$children": [
+                "#/definitions/HIER_OBJECT_ID",
+                "#/definitions/OBJECT_VERSION_ID"
+            ],
             "$functions": {
                 "root": {
                     "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",
@@ -488,6 +504,11 @@
                 "value"
             ],
             "$abstract": true,
+            "$children": [
+                "#/definitions/UUID",
+                "#/definitions/INTERNET_ID",
+                "#/definitions/ISO_OID"
+            ],
             "$invariants": {
                 "Value_valid": "not value.empty"
             }

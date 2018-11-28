@@ -42,6 +42,31 @@
     "$inherits": [
         "all.json#/definitions/PATHABLE"
     ],
+    "$children": [
+        "all.json#/definitions/FOLDER",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/DATA_STRUCTURE",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/ITEM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_structures/all.json#/definitions/EVENT",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/EHR_ACCESS",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr/all.json#/definitions/EHR_STATUS",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_ACTION_REQUEST",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_CHAPTER",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_ITEM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Ehr_extract/all.json#/definitions/EXTRACT_REQUEST",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/PARTY",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/CONTACT",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/ADDRESS",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/PARTY_IDENTITY",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/CAPABILITY",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Demographic/all.json#/definitions/PARTY_RELATIONSHIP",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/CONTENT_ITEM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/ACTIVITY",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Composition/all.json#/definitions/COMPOSITION",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/TASK_ACTION",
+        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/PLAN_EVENT"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

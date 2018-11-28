@@ -19,6 +19,11 @@
         "meaning",
         "range"
     ],
+    "$children": [
+        "all.json#/definitions/REFERENCE_RANGE_of_DV_QUANTITY",
+        "all.json#/definitions/REFERENCE_RANGE_of_DV_COUNT",
+        "all.json#/definitions/REFERENCE_RANGE_of_DV_PROPORTION"
+    ],
     "$functions": {
         "is_in_range": {
             "description": "Indicates if the value  val' is inside the range.\n",

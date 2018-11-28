@@ -24,5 +24,8 @@
     ],
     "$inherits": [
         "all.json#/definitions/EVENT_WAIT"
+    ],
+    "$children": [
+        "all.json#/definitions/REMINDER"
     ]
 }

@@ -14,5 +14,11 @@
     "required": [
         "definition"
     ],
-    "$abstract": true
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/M_TASK_GROUP",
+        "all.json#/definitions/M_TASK",
+        "all.json#/definitions/M_EVENT_GROUP",
+        "all.json#/definitions/M_CONDITION_GROUP"
+    ]
 }

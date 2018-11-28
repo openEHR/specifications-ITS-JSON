@@ -383,6 +383,9 @@
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
             ],
+            "$children": [
+                "#/definitions/EXTRACT_ENTITY_CHAPTER"
+            ],
             "$functions": {
                 "parent": {
                     "description": "Parent of this node in a compositional hierarchy. \n",
@@ -541,6 +544,10 @@
             "$abstract": true,
             "$inherits": [
                 "#/definitions/EXTRACT_ITEM"
+            ],
+            "$children": [
+                "#/definitions/OPENEHR_CONTENT_ITEM",
+                "#/definitions/GENERIC_CONTENT_ITEM"
             ],
             "$functions": {
                 "parent": {
@@ -1038,6 +1045,10 @@
             "$abstract": true,
             "$inherits": [
                 "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/LOCATABLE"
+            ],
+            "$children": [
+                "#/definitions/EXTRACT_CONTENT_ITEM",
+                "#/definitions/EXTRACT_FOLDER"
             ],
             "$functions": {
                 "parent": {
@@ -1662,6 +1673,13 @@
                 "time_created",
                 "total_version_count",
                 "extract_version_count"
+            ],
+            "$children": [
+                "#/definitions/X_VERSIONED_EHR_ACCESS",
+                "#/definitions/X_VERSIONED_EHR_STATUS",
+                "#/definitions/X_VERSIONED_COMPOSITION",
+                "#/definitions/X_VERSIONED_FOLDER",
+                "#/definitions/X_VERSIONED_PARTY"
             ]
         },
         "X_VERSIONED_EHR_ACCESS": {
@@ -2282,7 +2300,11 @@
             "title": "MESSAGE_CONTENT",
             "description": "Abstract parent of message payload types.",
             "$comments": "Defined in Ehr_extract IM, abstract",
-            "$abstract": true
+            "$abstract": true,
+            "$children": [
+                "#/definitions/SYNC_EXTRACT_REQUEST",
+                "#/definitions/SYNC_EXTRACT"
+            ]
         }
     },
     "$component": "RM",

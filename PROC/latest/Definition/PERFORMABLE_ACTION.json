@@ -71,6 +71,10 @@
     "$inherits": [
         "all.json#/definitions/TASK_ACTION"
     ],
+    "$children": [
+        "all.json#/definitions/SUB_PLAN",
+        "all.json#/definitions/DEFINED_ACTION"
+    ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",

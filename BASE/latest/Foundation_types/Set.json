@@ -8,6 +8,9 @@
     "$inherits": [
         "all.json#/definitions/Container"
     ],
+    "$children": [
+        "all.json#/definitions/Set_of_String"
+    ],
     "$functions": {
         "has": {
             "description": "Test for membership of a value.",
