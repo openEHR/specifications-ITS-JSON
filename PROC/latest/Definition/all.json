@@ -863,8 +863,7 @@
                     }
                 },
                 "action": {
-                    "description": "Task Action definition.",
-                    "$ref": "#/definitions/TA"
+                    "description": "Task Action definition."
                 }
             },
             "required": [
@@ -1530,7 +1529,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 }
             },
             "required": [
@@ -2181,8 +2180,7 @@
         "TASK_COSTING": {
             "title": "TASK_COSTING",
             "description": "Costing information for a Task.\n\n[.tbd]\nTODO: to be developed.",
-            "$comments": "Defined in Definition IM",
-            "type": "object"
+            "$comments": "Defined in Definition IM"
         },
         "EVENT_ACTION": {
             "title": "EVENT_ACTION",
@@ -2440,7 +2438,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "populating_request": {
                     "description": "Optional specification of a system request that would populate a context variable."
@@ -2466,7 +2464,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "populating_request": {
                     "description": "Optional specification of a system request that would populate a context variable."
@@ -3989,16 +3987,10 @@
                 "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
         },
-        "TA": {
-            "title": "TA",
-            "$comments": "Defined in Definition IM",
-            "type": "object"
-        },
         "EXECUTION_RULE": {
             "title": "EXECUTION_RULE",
             "description": "Rule controlling execution in addition to basic sequential / parallel setting.\n\nTODO: define detail.",
-            "$comments": "Defined in Definition IM",
-            "type": "object"
+            "$comments": "Defined in Definition IM"
         },
         "STATE_TRIGGER": {
             "title": "STATE_TRIGGER",
@@ -4316,7 +4308,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "expression": {
                     "description": "Expression, in openEHR Expression syntax.",
@@ -4878,7 +4870,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 }
             },
             "required": [
@@ -4898,8 +4890,7 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 },
                 "type": {
-                    "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "description": "Type of this variable."
                 },
                 "expression": {
                     "description": "Expression, in openEHR Expression syntax.",
@@ -5314,8 +5305,7 @@
         "CALENDAR_ENTRY": {
             "title": "CALENDAR_ENTRY",
             "description": "A single calendar entry.",
-            "$comments": "Defined in Definition IM",
-            "type": "object"
+            "$comments": "Defined in Definition IM"
         },
         "SYSTEM_NOTIFICATION": {
             "title": "SYSTEM_NOTIFICATION",
@@ -5512,7 +5502,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "populating_request": {
                     "description": "Optional specification of a system request that would populate a context variable."
@@ -5560,7 +5550,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "value": {
                     "description": "Value of the constant.",
@@ -5588,7 +5578,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 }
             },
             "required": [
@@ -5611,7 +5601,7 @@
                 },
                 "type": {
                     "description": "Type of this variable.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                 },
                 "populating_request": {
                     "description": "Optional specification of a system request that would populate a context variable."
@@ -5683,8 +5673,7 @@
                     }
                 },
                 "action": {
-                    "description": "Task Action definition.",
-                    "$ref": "#/definitions/TA"
+                    "description": "Task Action definition."
                 },
                 "wait": {
                     "description": "Flag indicating whether to wait or continue in the current Plan after the dispatch notification has been achieved. Wait = True corresponds to a context switch (block and wait) while wait = False indicates a context fork.",
@@ -5862,8 +5851,7 @@
                     }
                 },
                 "action": {
-                    "description": "Task Action definition.",
-                    "$ref": "#/definitions/TA"
+                    "description": "Task Action definition."
                 },
                 "capture_dataset": {
                     "description": "Associated data-set template and/or form via which data to be captured during this Task will actually be entered.",

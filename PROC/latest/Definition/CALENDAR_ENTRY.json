@@ -3,6 +3,5 @@
     "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/CALENDAR_ENTRY.json",
     "title": "CALENDAR_ENTRY",
     "description": "A single calendar entry.",
-    "$comments": "Defined in Definition IM",
-    "type": "object"
+    "$comments": "Defined in Definition IM"
 }

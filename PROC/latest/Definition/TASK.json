@@ -57,8 +57,7 @@
             }
         },
         "action": {
-            "description": "Task Action definition.",
-            "$ref": "all.json#/definitions/TA"
+            "description": "Task Action definition."
         }
     },
     "required": [

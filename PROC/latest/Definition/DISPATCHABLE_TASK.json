@@ -57,8 +57,7 @@
             }
         },
         "action": {
-            "description": "Task Action definition.",
-            "$ref": "all.json#/definitions/TA"
+            "description": "Task Action definition."
         },
         "wait": {
             "description": "Flag indicating whether to wait or continue in the current Plan after the dispatch notification has been achieved. Wait = True corresponds to a context switch (block and wait) while wait = False indicates a context fork.",

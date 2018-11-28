@@ -11,8 +11,7 @@
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "type": {
-            "description": "Type of this variable.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+            "description": "Type of this variable."
         },
         "expression": {
             "description": "Expression, in openEHR Expression syntax.",

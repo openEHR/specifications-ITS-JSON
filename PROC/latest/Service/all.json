@@ -8,7 +8,6 @@
             "title": "I_TASK_PLAN_DEFINITION",
             "description": "Task planning API for definition Task Plan level.",
             "$comments": "Defined in Service IM",
-            "type": "object",
             "$functions": {
                 "create_work_plan": [],
                 "create_task_plan": [],
@@ -22,7 +21,6 @@
             "title": "I_TASK_PLAN_MATERIALISED",
             "description": "Task planning API for materialised Task Plan level.",
             "$comments": "Defined in Service IM",
-            "type": "object",
             "$functions": {
                 "materialise": [],
                 "activate": [],
@@ -33,7 +31,6 @@
             "title": "I_WORK_PLAN_MATERIALISED",
             "description": "Task planning API that converts transactional calls to correct Task Planning materialised structures at Task Plan level.",
             "$comments": "Defined in Service IM",
-            "type": "object",
             "$functions": {
                 "plans": {
                     "description": "List of Task Plan ids for this Work Plan.",
@@ -67,7 +64,6 @@
             "title": "I_WORK_PLAN_DEFINITION",
             "description": "Task planning API that converts transactional calls to correct Task Planning information structures at Work Plan level.",
             "$comments": "Defined in Service IM",
-            "type": "object",
             "$functions": {
                 "plans": {
                     "description": "List of Task Plan ids for this Work Plan.",

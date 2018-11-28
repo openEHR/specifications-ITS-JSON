@@ -4,6 +4,5 @@
     "title": "P_ARCHETYPE_CONSTRAINT",
     "description": "Archetype equivalent to LOCATABLE class in openEHR Common reference model. Defines common constraints for any inheritor of LOCATABLE in any reference model. ",
     "$comments": "Defined in P_aom2 IM, abstract",
-    "type": "object",
     "$abstract": true
 }

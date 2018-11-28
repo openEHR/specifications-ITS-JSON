@@ -4,7 +4,6 @@
     "title": "I_WORK_PLAN_DEFINITION",
     "description": "Task planning API that converts transactional calls to correct Task Planning information structures at Work Plan level.",
     "$comments": "Defined in Service IM",
-    "type": "object",
     "$functions": {
         "plans": {
             "description": "List of Task Plan ids for this Work Plan.",

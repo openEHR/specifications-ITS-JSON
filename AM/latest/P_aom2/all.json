@@ -8,7 +8,6 @@
             "title": "P_ARCHETYPE_CONSTRAINT",
             "description": "Archetype equivalent to LOCATABLE class in openEHR Common reference model. Defines common constraints for any inheritor of LOCATABLE in any reference model. ",
             "$comments": "Defined in P_aom2 IM, abstract",
-            "type": "object",
             "$abstract": true
         },
         "P_C_OBJECT": {
@@ -539,14 +538,12 @@
         "P_C_INTEGER": {
             "title": "P_C_INTEGER",
             "description": "Constraint on instances of Integer.",
-            "$comments": "Defined in P_aom2 IM",
-            "type": "object"
+            "$comments": "Defined in P_aom2 IM"
         },
         "P_C_REAL": {
             "title": "P_C_REAL",
             "description": "Constraint on instances of Real.",
-            "$comments": "Defined in P_aom2 IM",
-            "type": "object"
+            "$comments": "Defined in P_aom2 IM"
         },
         "P_C_TEMPORAL<Iso8601_date>": {
             "title": "P_C_TEMPORAL<Iso8601_date>",
@@ -1117,25 +1114,21 @@
         "P_C_TIME": {
             "title": "P_C_TIME",
             "description": "ISO 8601-compatible constraint on instances of Time in the form either of a set of validity values, or else date ranges based on the C_ORDERED list constraint. There is no validity flag for \u2018hour\u2019, since it must always be by definition mandatory in order to have a sensible time at all. Syntax expressions of instances of this class include \u201cHH:??:xx\u201d (time with optional minutes and seconds not allowed).",
-            "$comments": "Defined in P_aom2 IM",
-            "type": "object"
+            "$comments": "Defined in P_aom2 IM"
         },
         "P_C_DATE": {
             "title": "P_C_DATE",
             "description": "ISO 8601-compatible constraint on instances of Date in the form either of a set of validity values, or else date ranges based on the C_ORDERED list constraint. There is no validity flag for \u2018year\u2019, since it must always be by definition mandatory in order to have a sensible date at all. Syntax expressions of instances of this class include \u201cYYYY-??-??\u201d (date with optional month and day).",
-            "$comments": "Defined in P_aom2 IM",
-            "type": "object"
+            "$comments": "Defined in P_aom2 IM"
         },
         "P_C_DATE_TIME": {
             "title": "P_C_DATE_TIME",
             "description": "ISO 8601-compatible constraint on instances of Date_Time. There is no validity flag for \u2018year\u2019, since it must always be by definition mandatory in order to have a sensible date/time at all. Syntax expressions of instances of this class include \u201cYYYY-MM-DDT??:??:??\u201d (date/time with optional time) and \u201cYYYY-MMDDTHH:MM:xx\u201d (date/time, seconds not allowed).",
-            "$comments": "Defined in P_aom2 IM",
-            "type": "object"
+            "$comments": "Defined in P_aom2 IM"
         },
         "P_C_DURATION": {
             "title": "P_C_DURATION",
-            "$comments": "Defined in P_aom2 IM",
-            "type": "object"
+            "$comments": "Defined in P_aom2 IM"
         },
         "P_ARCHETYPE": {
             "title": "P_ARCHETYPE",
@@ -1618,7 +1611,7 @@
                     "description": "Test for membership of a value.",
                     "parameters": {
                         "v": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Common/all.json#/definitions/T"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
                         }
                     },
                     "required_parameters": [
@@ -1643,7 +1636,9 @@
                 "has_key": {
                     "description": "Test for membership of a key.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
@@ -1655,12 +1650,16 @@
                 "item": {
                     "description": "Return item for key  a_key'.",
                     "parameters": {
-                        "a_key": []
+                        "a_key": {
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/K"
+                        }
                     },
                     "required_parameters": [
                         "a_key"
                     ],
-                    "return": []
+                    "return": {
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/V"
+                    }
                 }
             }
         },

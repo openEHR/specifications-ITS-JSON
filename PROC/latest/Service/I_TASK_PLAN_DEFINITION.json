@@ -4,7 +4,6 @@
     "title": "I_TASK_PLAN_DEFINITION",
     "description": "Task planning API for definition Task Plan level.",
     "$comments": "Defined in Service IM",
-    "type": "object",
     "$functions": {
         "create_work_plan": [],
         "create_task_plan": [],

@@ -4,7 +4,6 @@
     "title": "I_WORK_PLAN_MATERIALISED",
     "description": "Task planning API that converts transactional calls to correct Task Planning materialised structures at Task Plan level.",
     "$comments": "Defined in Service IM",
-    "type": "object",
     "$functions": {
         "plans": {
             "description": "List of Task Plan ids for this Work Plan.",

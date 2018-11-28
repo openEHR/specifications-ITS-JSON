@@ -4,7 +4,6 @@
     "title": "I_TASK_PLAN_MATERIALISED",
     "description": "Task planning API for materialised Task Plan level.",
     "$comments": "Defined in Service IM",
-    "type": "object",
     "$functions": {
         "materialise": [],
         "activate": [],

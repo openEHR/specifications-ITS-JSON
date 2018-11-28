@@ -7,11 +7,11 @@
     "properties": {
         "lower": {
             "description": "Lower bound.",
-            "$ref": "all.json#/definitions/T"
+            "$ref": "all.json#/definitions/Real"
         },
         "upper": {
             "description": "Upper bound.",
-            "$ref": "all.json#/definitions/T"
+            "$ref": "all.json#/definitions/Real"
         },
         "lower_unbounded": {
             "description": "`lower` boundary open (i.e. = -infinity).",

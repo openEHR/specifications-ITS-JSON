@@ -8,11 +8,11 @@
     "properties": {
         "lower": {
             "description": "Lower bound.",
-            "$ref": "all.json#/definitions/T"
+            "$ref": "all.json#/definitions/Integer"
         },
         "upper": {
             "description": "Upper bound.",
-            "$ref": "all.json#/definitions/T"
+            "$ref": "all.json#/definitions/Integer"
         },
         "lower_unbounded": {
             "description": "`lower` boundary open (i.e. = -infinity).",

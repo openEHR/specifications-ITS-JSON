@@ -57,8 +57,7 @@
             }
         },
         "action": {
-            "description": "Task Action definition.",
-            "$ref": "all.json#/definitions/TA"
+            "description": "Task Action definition."
         },
         "capture_dataset": {
             "description": "Associated data-set template and/or form via which data to be captured during this Task will actually be entered.",

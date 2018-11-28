@@ -229,13 +229,11 @@
         },
         "M_CONTEXT_VARIABLE": {
             "title": "M_CONTEXT_VARIABLE",
-            "$comments": "Defined in Materialised IM",
-            "type": "object"
+            "$comments": "Defined in Materialised IM"
         },
         "M_RESOURCE_ALLOCATION": {
             "title": "M_RESOURCE_ALLOCATION",
-            "$comments": "Defined in Materialised IM",
-            "type": "object"
+            "$comments": "Defined in Materialised IM"
         },
         "M_TASK_ACTION": {
             "title": "M_TASK_ACTION",
@@ -330,13 +328,11 @@
         },
         "M_TIMELINE": {
             "title": "M_TIMELINE",
-            "$comments": "Defined in Materialised IM",
-            "type": "object"
+            "$comments": "Defined in Materialised IM"
         },
         "M_CALENDAR": {
             "title": "M_CALENDAR",
-            "$comments": "Defined in Materialised IM",
-            "type": "object"
+            "$comments": "Defined in Materialised IM"
         }
     },
     "$component": "PROC",
