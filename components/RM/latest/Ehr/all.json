@@ -12,7 +12,7 @@
             "type": "object",
             "properties": {
                 "system_id": {
-                    "description": "The id of the EHR repository on which this EHR was created. \n",
+                    "description": "The identifier of the logical EHR management system in which this EHR was created. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
                 },
                 "ehr_id": {

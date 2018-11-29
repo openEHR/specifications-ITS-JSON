@@ -7,11 +7,11 @@
     "type": "object",
     "properties": {
         "system_id": {
-            "description": "Identifier of the system which handled the information item. \n",
+            "description": "Identifier of the system which handled the information item. This is the IT system owned by the organisation legally responsible for handling the data, and at which the data were previously created or passed by an earlier system.\n",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "location": {
-            "description": "Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the PARTY_IDENTIFIED object. ",
+            "description": "Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the `PARTY_IDENTIFIED` object. ",
             "$ref": "all.json#/definitions/PARTY_IDENTIFIED"
         },
         "subject": {

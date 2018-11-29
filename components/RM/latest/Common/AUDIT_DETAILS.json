@@ -13,7 +13,7 @@
             ]
         },
         "system_id": {
-            "description": "Identity of the system where the change was committed. Ideally this is a machine- and human-processable identifier, but it may not be. ",
+            "description": "Identifier of the logical EHR system where the change was committed. This is almost always owned by the organisation legally responsible for the EHR, and is distinct from any application, or any hosting infrastructure.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "time_committed": {
