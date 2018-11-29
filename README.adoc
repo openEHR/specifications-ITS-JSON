@@ -2,15 +2,38 @@
 
 JSON schemas for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
 
-### IM Version
-Schema files are generated directly from openEHR latest UML models of most relevant openEHR components.
-These schemas are experimental and its format is based on https://json-schema.org/specification.html[draft-07 of JSON-Schema specifications].
+**_NOTE_** These schemas are in development and subject to change.
+
+### Releases and IM Versions
+All schema are generated directly from current specifications of the most relevant openEHR UML models and components.
+The repository is structured as follows:
+----
+/examples				# JSON examples
+/components
+	/BASE				# schemas for BASE component
+		/Release-1.1.0 	# schemas for Release-1.1.0 of BASE
+		...
+		/latest			# schemas for working version of BASE
+	/AM 				# schemas for AM component
+		/Release-2.0.0 	# schemas for Release-2.0.0 of AM
+		...
+		/latest			# schemas for working version of LANG
+	/RM				    # schemas for RM component
+		/Release-1.0.4 	# schemas for Release-1.0.4 of RM
+		...
+		/latest			# schemas for working version of RM
+	/PROC				# schemas for PROC component
+		/Release-1.0.0 	# schemas for Release-1.0.0 of PROC
+		/...etc
+		/latest			# schemas for working version of PROC
+----
 
 ### Additional JSON-Schema keywords
+Schema format is based on https://json-schema.org/specification.html[draft-07 of JSON-Schema specifications].
 A few other keywords are used to support openEHR metadata: 
-`$abstract`, `$inherits`, `$functions`, `$invariants`, `$version`, `$component`.
-These don't have to be supported by JSON validators, their purpose is only informational.   
+`$abstract`, `$inherits`, `$children`, `$functions`, `$invariants`, `$version` and `$component`.
+These keywords don't have to be supported by JSON-Schema validators, their purpose is only informational.   
 
 ### Acknowledgements
-JSON Schema files were initially authored by https://www.code24.nl[Code24]. 
+JSON schema were initially authored by https://www.code24.nl[Code24]. 
 
