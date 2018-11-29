@@ -6,6 +6,13 @@
     "$comments": "Defined in P_aom2 IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "P_AUTHORED_ARCHETYPE",
+                "P_TEMPLATE",
+                "P_OPERATIONAL_TEMPLATE"
+            ]
+        },
         "original_language": {
             "description": "Language in which this resource was initially authored. Although there is no language primacy of resources overall, the language of original authoring is required to ensure natural language translations can preserve quality. Language is relevant in both the description and ontology sections. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -35,6 +42,7 @@
         }
     },
     "required": [
+        "_type",
         "original_language"
     ],
     "$abstract": true,

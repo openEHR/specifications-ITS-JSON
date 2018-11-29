@@ -4,6 +4,13 @@
     "title": "MEASUREMENT_SERVICE",
     "description": "Defines an object providing proxy access to a measurement information service.",
     "$comments": "Defined in Support IM",
+    "properties": {
+        "_type": {
+            "enum": [
+                "MEASUREMENT_SERVICE"
+            ]
+        }
+    },
     "$children": [
         "all.json#/definitions/EXTERNAL_ENVIRONMENT_ACCESS"
     ],

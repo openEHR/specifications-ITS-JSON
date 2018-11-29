@@ -11,6 +11,14 @@
             "$comments": "Defined in Aom2 IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "AUTHORED_ARCHETYPE",
+                        "TEMPLATE_OVERLAY",
+                        "TEMPLATE",
+                        "OPERATIONAL_TEMPLATE"
+                    ]
+                },
                 "parent_archetype_id": {
                     "description": "Archetype reference of the specialisation par-ent of this archetype, if applicable. May take the form of an archetype interface identifier, i.e. the identifier up to the major version only, or can be deeper.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -37,6 +45,7 @@
                 }
             },
             "required": [
+                "_type",
                 "archetype_id",
                 "is_differential",
                 "definition",
@@ -107,6 +116,13 @@
             "$comments": "Defined in Aom2 IM, inherits from ARCHETYPE, AUTHORED_RESOURCE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "AUTHORED_ARCHETYPE",
+                        "TEMPLATE",
+                        "OPERATIONAL_TEMPLATE"
+                    ]
+                },
                 "uid": {
                     "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UUID"
@@ -923,6 +939,24 @@
             "$comments": "Defined in Aom2 IM, abstract, inherits from ADL_CODE_DEFINITIONS",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_ATTRIBUTE",
+                        "C_COMPLEX_OBJECT_PROXY",
+                        "ARCHETYPE_SLOT",
+                        "C_COMPLEX_OBJECT",
+                        "C_BOOLEAN",
+                        "C_STRING",
+                        "C_TERMINOLOGY_CODE",
+                        "C_INTEGER",
+                        "C_REAL",
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION",
+                        "C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -931,6 +965,9 @@
                     "$ref": "#/definitions/C_SECOND_ORDER"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/ADL_CODE_DEFINITIONS"
@@ -1133,6 +1170,23 @@
             "$comments": "Defined in Aom2 IM, abstract, inherits from ARCHETYPE_CONSTRAINT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_COMPLEX_OBJECT_PROXY",
+                        "ARCHETYPE_SLOT",
+                        "C_COMPLEX_OBJECT",
+                        "C_BOOLEAN",
+                        "C_STRING",
+                        "C_TERMINOLOGY_CODE",
+                        "C_INTEGER",
+                        "C_REAL",
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION",
+                        "C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -1162,6 +1216,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id"
             ],
@@ -1666,6 +1721,21 @@
             "$comments": "Defined in Aom2 IM, abstract, inherits from C_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_COMPLEX_OBJECT",
+                        "C_BOOLEAN",
+                        "C_STRING",
+                        "C_TERMINOLOGY_CODE",
+                        "C_INTEGER",
+                        "C_REAL",
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION",
+                        "C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -1699,6 +1769,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id"
             ],
@@ -2550,6 +2621,19 @@
             "$comments": "Defined in Aom2 IM, abstract, inherits from C_DEFINED_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_BOOLEAN",
+                        "C_STRING",
+                        "C_TERMINOLOGY_CODE",
+                        "C_INTEGER",
+                        "C_REAL",
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -2595,6 +2679,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id",
                 "constraint"
@@ -3050,6 +3135,12 @@
             "$comments": "Defined in Aom2 IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_ATTRIBUTE_TUPLE",
+                        "C_PRIMITIVE_TUPLE"
+                    ]
+                },
                 "members": {
                     "description": "Members of this second order constrainer. Normally redefined in descendants.",
                     "type": "array",
@@ -3058,6 +3149,9 @@
                     }
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/C_ATTRIBUTE_TUPLE",
@@ -3428,6 +3522,12 @@
             "$comments": "Defined in Aom2 IM, inherits from C_DEFINED_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_COMPLEX_OBJECT",
+                        "C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -3779,6 +3879,11 @@
             "$comments": "Defined in Aom2 IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "VALUE_SET"
+                    ]
+                },
                 "id": {
                     "description": "Code of source term of this relation.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -3793,6 +3898,7 @@
                 }
             },
             "required": [
+                "_type",
                 "id",
                 "members"
             ],
@@ -5820,6 +5926,16 @@
             "$comments": "Defined in Aom2 IM, abstract, inherits from C_PRIMITIVE_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_INTEGER",
+                        "C_REAL",
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -5868,6 +5984,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id"
             ],
@@ -6571,6 +6688,14 @@
             "$comments": "Defined in Aom2 IM, abstract, inherits from C_ORDERED",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION"
+                    ]
+                },
                 "parent": {
                     "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
                     "$ref": "#/definitions/ARCHETYPE_CONSTRAINT"
@@ -6623,6 +6748,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id"
             ],
@@ -8653,6 +8779,27 @@
             "title": "ADL_CODE_DEFINITIONS",
             "description": "Definitions relating to the internal code system of archetypes.",
             "$comments": "Defined in Aom2 IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ADL_CODE_DEFINITIONS",
+                        "C_ATTRIBUTE",
+                        "C_COMPLEX_OBJECT_PROXY",
+                        "ARCHETYPE_SLOT",
+                        "C_COMPLEX_OBJECT",
+                        "C_BOOLEAN",
+                        "C_STRING",
+                        "C_TERMINOLOGY_CODE",
+                        "C_INTEGER",
+                        "C_REAL",
+                        "C_TIME",
+                        "C_DATE",
+                        "C_DATE_TIME",
+                        "C_DURATION",
+                        "C_ARCHETYPE_ROOT"
+                    ]
+                }
+            },
             "$children": [
                 "#/definitions/ARCHETYPE_CONSTRAINT"
             ],
@@ -8774,6 +8921,12 @@
             "$comments": "Defined in Aom2 IM, inherits from EL_CONSTRAINT_EXPRESSION",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "AOM_CONSTRAINT_EXPRESSION",
+                        "ARCHETYPE_ID_CONSTRAINT"
+                    ]
+                },
                 "constraint": {
                     "description": "Right hand side of the constraint expression, in the form of a defined AOM object constraint.",
                     "$ref": "#/definitions/C_DEFINED_OBJECT"

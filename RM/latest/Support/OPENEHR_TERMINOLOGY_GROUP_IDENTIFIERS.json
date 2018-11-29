@@ -4,6 +4,14 @@
     "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
     "description": "List of identifiers for groups in the openEHR terminology. ",
     "$comments": "Defined in Support IM",
+    "properties": {
+        "_type": {
+            "enum": [
+                "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+                "TERMINOLOGY_SERVICE"
+            ]
+        }
+    },
     "$children": [
         "all.json#/definitions/TERMINOLOGY_SERVICE"
     ],

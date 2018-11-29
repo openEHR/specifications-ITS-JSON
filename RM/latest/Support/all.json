@@ -316,6 +316,13 @@
             "title": "MEASUREMENT_SERVICE",
             "description": "Defines an object providing proxy access to a measurement information service.",
             "$comments": "Defined in Support IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "MEASUREMENT_SERVICE"
+                    ]
+                }
+            },
             "$children": [
                 "#/definitions/EXTERNAL_ENVIRONMENT_ACCESS"
             ],
@@ -358,6 +365,14 @@
             "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
             "description": "List of identifiers for groups in the openEHR terminology. ",
             "$comments": "Defined in Support IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+                        "TERMINOLOGY_SERVICE"
+                    ]
+                }
+            },
             "$children": [
                 "#/definitions/TERMINOLOGY_SERVICE"
             ],
@@ -382,6 +397,14 @@
             "title": "OPENEHR_CODE_SET_IDENTIFIERS",
             "description": "List of identifiers for code sets in the openEHR terminology. ",
             "$comments": "Defined in Support IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "OPENEHR_CODE_SET_IDENTIFIERS",
+                        "TERMINOLOGY_SERVICE"
+                    ]
+                }
+            },
             "$children": [
                 "#/definitions/TERMINOLOGY_SERVICE"
             ],
@@ -407,6 +430,13 @@
             "description": "Defines an object providing proxy access to a terminology service. ",
             "$comments": "Defined in Support IM, inherits from OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS, OPENEHR_CODE_SET_IDENTIFIERS",
             "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "TERMINOLOGY_SERVICE"
+                    ]
+                }
+            },
             "$inherits": [
                 "#/definitions/OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
                 "#/definitions/OPENEHR_CODE_SET_IDENTIFIERS"

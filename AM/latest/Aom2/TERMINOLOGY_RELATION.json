@@ -6,6 +6,11 @@
     "$comments": "Defined in Aom2 IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "VALUE_SET"
+            ]
+        },
         "id": {
             "description": "Code of source term of this relation.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -20,6 +25,7 @@
         }
     },
     "required": [
+        "_type",
         "id",
         "members"
     ],

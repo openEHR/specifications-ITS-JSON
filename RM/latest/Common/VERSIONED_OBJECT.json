@@ -6,6 +6,16 @@
     "$comments": "Defined in Common IM",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "VERSIONED_OBJECT",
+                "VERSIONED_FOLDER",
+                "VERSIONED_EHR_ACCESS",
+                "VERSIONED_EHR_STATUS",
+                "VERSIONED_COMPOSITION",
+                "VERSIONED_PARTY"
+            ]
+        },
         "uid": {
             "description": "Unique identifier of this version container in the form of a UID with no extension. This id will be the same in all instances of the same container in a distributed environment, meaning that it can be understood as the uid of the  virtual version tree. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"

@@ -6,6 +6,19 @@
     "$comments": "Defined in Definition IM, abstract, inherits from LOCATABLE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "MANUAL_NOTIFICATION",
+                "TIMER_EVENT",
+                "CALLBACK_NOTIFICATION",
+                "STATE_TRIGGER",
+                "TASK_TRANSITION",
+                "TIMELINE_MOMENT",
+                "CALENDAR_EVENT",
+                "DELAY_EVENT",
+                "SYSTEM_NOTIFICATION"
+            ]
+        },
         "name": {
             "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -38,6 +51,7 @@
         }
     },
     "required": [
+        "_type",
         "name",
         "archetype_node_id"
     ],

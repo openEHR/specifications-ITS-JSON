@@ -10,6 +10,27 @@
             "description": "Type representing a keyed table of values. V is the value type, and K the type of the keys. ",
             "$comments": "Defined in Foundation_types IM, inherits from Container",
             "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Hash",
+                        "Hash<String, Hash<String, Hash<String, String>>>",
+                        "Hash<String, Hash<String, String>>",
+                        "Hash<String, String>",
+                        "Hash<String, List<String>>",
+                        "Hash<String, TRANSLATION_DETAILS>",
+                        "Hash<String, RESOURCE_DESCRIPTION_ITEM>",
+                        "Hash<String, ARCHETYPE_TERMINOLOGY>",
+                        "Hash<String, VALUE_SET>",
+                        "Hash<String, Hash<String, ARCHETYPE_TERM>>",
+                        "Hash<String, ARCHETYPE_TERM>",
+                        "Hash<String, Uri>",
+                        "Hash <String, Hash<String, Uri>>",
+                        "Hash<String, AOM_PROPERTY_MAPPING>",
+                        "Hash<String, AOM_TYPE_MAPPING>"
+                    ]
+                }
+            },
             "$inherits": [
                 "#/definitions/Container"
             ],
@@ -285,6 +306,35 @@
             "description": "Abstract ancestor of container types whose items are addressable in some way.",
             "$comments": "Defined in Foundation_types IM, abstract",
             "type": "array",
+            "properties": {
+                "_type": {
+                    "enum": {
+                        "0": "Hash",
+                        "1": "List",
+                        "2": "Set",
+                        "3": "Array",
+                        "4": "Hash<String, Hash<String, Hash<String, String>>>",
+                        "5": "Hash<String, Hash<String, String>>",
+                        "6": "Hash<String, String>",
+                        "7": "Hash<String, List<String>>",
+                        "8": "Hash<String, TRANSLATION_DETAILS>",
+                        "9": "Hash<String, RESOURCE_DESCRIPTION_ITEM>",
+                        "10": "Hash<String, ARCHETYPE_TERMINOLOGY>",
+                        "11": "Hash<String, VALUE_SET>",
+                        "12": "Hash<String, Hash<String, ARCHETYPE_TERM>>",
+                        "13": "Hash<String, ARCHETYPE_TERM>",
+                        "14": "Hash<String, Uri>",
+                        "15": "Hash <String, Hash<String, Uri>>",
+                        "16": "Hash<String, AOM_PROPERTY_MAPPING>",
+                        "17": "Hash<String, AOM_TYPE_MAPPING>",
+                        "19": "List<String>",
+                        "20": "Set<String>"
+                    }
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/Hash",
@@ -326,6 +376,14 @@
             "description": "Ordered container that may contain duplicates.",
             "$comments": "Defined in Foundation_types IM, inherits from Container",
             "type": "array",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "List",
+                        "List<String>"
+                    ]
+                }
+            },
             "$inherits": [
                 "#/definitions/Container"
             ],
@@ -382,6 +440,14 @@
             "description": "Unordered container that may not contain duplicates.",
             "$comments": "Defined in Foundation_types IM, inherits from Container",
             "type": "array",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Set",
+                        "Set<String>"
+                    ]
+                }
+            },
             "$inherits": [
                 "#/definitions/Container"
             ],
@@ -677,6 +743,19 @@
             "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
             "$comments": "Defined in Foundation_types IM, abstract, inherits from Ordered, Numeric",
             "type": "number",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/Ordered",
@@ -885,6 +964,19 @@
             "description": "Abstract notional parent class of numeric types, which are types which have various arithmetic and comparison operators defined.",
             "$comments": "Defined in Foundation_types IM, abstract",
             "type": "number",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/Ordered_Numeric"
@@ -1088,6 +1180,14 @@
             "description": "Strings of characters, as used to represent textual data in any natural or formal language.",
             "$comments": "Defined in Foundation_types IM, inherits from Ordered",
             "type": "string",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "String",
+                        "Uri"
+                    ]
+                }
+            },
             "$inherits": [
                 "#/definitions/Ordered"
             ],
@@ -1287,6 +1387,36 @@
             "title": "Ordered",
             "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
             "$comments": "Defined in Foundation_types IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Octet",
+                        "Character",
+                        "String",
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64",
+                        "Uri",
+                        "Iso8601_date_time",
+                        "Iso8601_duration",
+                        "Iso8601_time",
+                        "Iso8601_timezone",
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE",
+                        "DV_ORDINAL",
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/Ordered_Numeric",
@@ -1384,6 +1514,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_date_time",
+                        "DV_DATE_TIME"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -1708,6 +1844,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_duration",
+                        "DV_DURATION"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -2003,6 +2145,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_time",
+                        "DV_TIME"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -2548,12 +2696,26 @@
             "$comments": "Defined in Foundation_types IM, abstract, inherits from Temporal, Time_Definitions",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_date_time",
+                        "Iso8601_duration",
+                        "Iso8601_time",
+                        "Iso8601_timezone",
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
                 }
             },
             "required": [
+                "_type",
                 "value"
             ],
             "$abstract": true,
@@ -2775,6 +2937,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_date",
+                        "DV_DATE"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -3672,6 +3840,22 @@
             "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using `+12:00`, not `-12:00`.",
             "$comments": "Defined in Foundation_types IM",
             "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Time_Definitions",
+                        "Iso8601_date_time",
+                        "Iso8601_duration",
+                        "Iso8601_time",
+                        "Iso8601_timezone",
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE"
+                    ]
+                }
+            },
             "$children": [
                 "#/definitions/Iso8601_type"
             ],
@@ -3855,6 +4039,24 @@
             "description": "Abstract ancestor of time-related classes.",
             "$comments": "Defined in Foundation_types IM, abstract, inherits from Ordered",
             "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_date_time",
+                        "Iso8601_duration",
+                        "Iso8601_time",
+                        "Iso8601_timezone",
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/Ordered"
@@ -4015,6 +4217,13 @@
             "$comments": "Defined in Foundation_types IM, inherits from Interval",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Proper_interval",
+                        "Proper_interval<Iso8601_date>",
+                        "Multiplicity_interval"
+                    ]
+                },
                 "lower": {
                     "description": "Lower bound.",
                     "$ref": "#/definitions/T"
@@ -4125,6 +4334,28 @@
             "$comments": "Defined in Foundation_types IM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Interval",
+                        "Interval<Iso8601_date>",
+                        "Interval<Iso8601_time>",
+                        "Interval<Iso8601_date_time>",
+                        "Interval<Iso8601_duration>",
+                        "Proper_interval",
+                        "Point_interval",
+                        "Interval<Real>",
+                        "Interval<Integer>",
+                        "DV_INTERVAL",
+                        "Proper_interval<Iso8601_date>",
+                        "Multiplicity_interval",
+                        "Point_interval<Iso8601_date>",
+                        "DV_INTERVAL<DV_DATE_TIME>",
+                        "DV_INTERVAL<DV_DATE>",
+                        "DV_INTERVAL<DV_QUANTITY>",
+                        "DV_INTERVAL<DV_COUNT>",
+                        "DV_INTERVAL<DV_PROPORTION>"
+                    ]
+                },
                 "lower": {
                     "description": "Lower bound.",
                     "$ref": "#/definitions/T"
@@ -4238,6 +4469,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Interval",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Point_interval",
+                        "Point_interval<Iso8601_date>"
+                    ]
+                },
                 "lower": {
                     "description": "Lower bound.",
                     "$ref": "#/definitions/T"

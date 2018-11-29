@@ -6,12 +6,20 @@
     "$comments": "Defined in Base_types IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "UUID",
+                "INTERNET_ID",
+                "ISO_OID"
+            ]
+        },
         "value": {
             "description": "The value of the id.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [
+        "_type",
         "value"
     ],
     "$abstract": true,

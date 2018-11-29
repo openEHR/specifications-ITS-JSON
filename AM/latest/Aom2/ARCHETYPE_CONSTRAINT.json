@@ -6,6 +6,24 @@
     "$comments": "Defined in Aom2 IM, abstract, inherits from ADL_CODE_DEFINITIONS",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "C_ATTRIBUTE",
+                "C_COMPLEX_OBJECT_PROXY",
+                "ARCHETYPE_SLOT",
+                "C_COMPLEX_OBJECT",
+                "C_BOOLEAN",
+                "C_STRING",
+                "C_TERMINOLOGY_CODE",
+                "C_INTEGER",
+                "C_REAL",
+                "C_TIME",
+                "C_DATE",
+                "C_DATE_TIME",
+                "C_DURATION",
+                "C_ARCHETYPE_ROOT"
+            ]
+        },
         "parent": {
             "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
             "$ref": "all.json#/definitions/ARCHETYPE_CONSTRAINT"
@@ -14,6 +32,9 @@
             "$ref": "all.json#/definitions/C_SECOND_ORDER"
         }
     },
+    "required": [
+        "_type"
+    ],
     "$abstract": true,
     "$inherits": [
         "all.json#/definitions/ADL_CODE_DEFINITIONS"

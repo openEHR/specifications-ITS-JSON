@@ -6,6 +6,12 @@
     "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "DV_MULTIMEDIA",
+                "DV_PARSABLE"
+            ]
+        },
         "charset": {
             "description": "Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions. ",
             "$ref": "all.json#/definitions/CODE_PHRASE"
@@ -15,6 +21,9 @@
             "$ref": "all.json#/definitions/CODE_PHRASE"
         }
     },
+    "required": [
+        "_type"
+    ],
     "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DATA_VALUE"

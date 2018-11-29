@@ -4,6 +4,14 @@
     "title": "PROPORTION_KIND",
     "description": "Class of enumeration constants defining types of proportion for the `DV_PROPORTION` class. ",
     "$comments": "Defined in Data_types IM",
+    "properties": {
+        "_type": {
+            "enum": [
+                "PROPORTION_KIND",
+                "DV_PROPORTION"
+            ]
+        }
+    },
     "$children": [
         "all.json#/definitions/DV_PROPORTION"
     ],

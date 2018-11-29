@@ -6,6 +6,16 @@
     "$comments": "Defined in Data_types IM, inherits from DATA_VALUE, Interval",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "DV_INTERVAL",
+                "DV_INTERVAL<DV_DATE_TIME>",
+                "DV_INTERVAL<DV_DATE>",
+                "DV_INTERVAL<DV_QUANTITY>",
+                "DV_INTERVAL<DV_COUNT>",
+                "DV_INTERVAL<DV_PROPORTION>"
+            ]
+        },
         "lower": {
             "description": "Lower bound.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"

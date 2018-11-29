@@ -6,6 +6,13 @@
     "$comments": "Defined in Definition IM, abstract, inherits from CONTEXT_VARIABLE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "EVENT_VARIABLE",
+                "STATE_VARIABLE",
+                "CONTINUOUS_EVENT_VARIABLE"
+            ]
+        },
         "name": {
             "description": "Name of variable, as used in precondition and decision expressions.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -19,6 +26,7 @@
         }
     },
     "required": [
+        "_type",
         "name",
         "type"
     ],

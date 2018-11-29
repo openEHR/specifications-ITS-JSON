@@ -341,6 +341,12 @@
             "$comments": "Defined in Ehr_extract IM, inherits from LOCATABLE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "EXTRACT_CHAPTER",
+                        "EXTRACT_ENTITY_CHAPTER"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -492,6 +498,12 @@
             "$comments": "Defined in Ehr_extract IM, abstract, inherits from EXTRACT_ITEM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "OPENEHR_CONTENT_ITEM",
+                        "GENERIC_CONTENT_ITEM"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -537,6 +549,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id",
                 "is_primary"
@@ -1010,6 +1023,13 @@
             "$comments": "Defined in Ehr_extract IM, abstract, inherits from LOCATABLE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "EXTRACT_FOLDER",
+                        "OPENEHR_CONTENT_ITEM",
+                        "GENERIC_CONTENT_ITEM"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -1039,6 +1059,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id"
             ],
@@ -1635,6 +1656,16 @@
             "$comments": "Defined in Ehr_extract IM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "X_VERSIONED_OBJECT",
+                        "X_VERSIONED_EHR_ACCESS",
+                        "X_VERSIONED_EHR_STATUS",
+                        "X_VERSIONED_COMPOSITION",
+                        "X_VERSIONED_FOLDER",
+                        "X_VERSIONED_PARTY"
+                    ]
+                },
                 "uid": {
                     "description": "Uid of original `VERSIONED_OBJECT`.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
@@ -2300,6 +2331,17 @@
             "title": "MESSAGE_CONTENT",
             "description": "Abstract parent of message payload types.",
             "$comments": "Defined in Ehr_extract IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "SYNC_EXTRACT_REQUEST",
+                        "SYNC_EXTRACT"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/SYNC_EXTRACT_REQUEST",

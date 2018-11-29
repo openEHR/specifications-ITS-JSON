@@ -6,6 +6,14 @@
     "$comments": "Defined in Aom2 IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "AUTHORED_ARCHETYPE",
+                "TEMPLATE_OVERLAY",
+                "TEMPLATE",
+                "OPERATIONAL_TEMPLATE"
+            ]
+        },
         "parent_archetype_id": {
             "description": "Archetype reference of the specialisation par-ent of this archetype, if applicable. May take the form of an archetype interface identifier, i.e. the identifier up to the major version only, or can be deeper.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -32,6 +40,7 @@
         }
     },
     "required": [
+        "_type",
         "archetype_id",
         "is_differential",
         "definition",

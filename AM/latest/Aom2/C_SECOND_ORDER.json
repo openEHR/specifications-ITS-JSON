@@ -6,6 +6,12 @@
     "$comments": "Defined in Aom2 IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "C_ATTRIBUTE_TUPLE",
+                "C_PRIMITIVE_TUPLE"
+            ]
+        },
         "members": {
             "description": "Members of this second order constrainer. Normally redefined in descendants.",
             "type": "array",
@@ -14,6 +20,9 @@
             }
         }
     },
+    "required": [
+        "_type"
+    ],
     "$abstract": true,
     "$children": [
         "all.json#/definitions/C_ATTRIBUTE_TUPLE",

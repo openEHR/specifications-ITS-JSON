@@ -6,6 +6,13 @@
     "$comments": "Defined in P_aom2 IM, inherits from P_ARCHETYPE, P_AUTHORED_RESOURCE, AUTHORED_RESOURCE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "P_AUTHORED_ARCHETYPE",
+                "P_TEMPLATE",
+                "P_OPERATIONAL_TEMPLATE"
+            ]
+        },
         "uid": {
             "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"

@@ -8,6 +8,23 @@
             "title": "P_ARCHETYPE_CONSTRAINT",
             "description": "Archetype equivalent to LOCATABLE class in openEHR Common reference model. Defines common constraints for any inheritor of LOCATABLE in any reference model. ",
             "$comments": "Defined in P_aom2 IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "P_C_ATTRIBUTE",
+                        "P_C_COMPLEX_OBJECT_PROXY",
+                        "P_ARCHETYPE_SLOT",
+                        "P_C_COMPLEX_OBJECT",
+                        "P_C_BOOLEAN",
+                        "P_C_STRING",
+                        "P_C_TERMINOLOGY_CODE",
+                        "P_C_ARCHETYPE_ROOT"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/P_C_OBJECT",
@@ -20,6 +37,17 @@
             "$comments": "Defined in P_aom2 IM, abstract, inherits from P_ARCHETYPE_CONSTRAINT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_C_COMPLEX_OBJECT_PROXY",
+                        "P_ARCHETYPE_SLOT",
+                        "P_C_COMPLEX_OBJECT",
+                        "P_C_BOOLEAN",
+                        "P_C_STRING",
+                        "P_C_TERMINOLOGY_CODE",
+                        "P_C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "rm_type_name": {
                     "description": "Reference model type that this node corresponds to. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -37,6 +65,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id"
             ],
@@ -105,6 +134,15 @@
             "$comments": "Defined in P_aom2 IM, abstract, inherits from P_C_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_C_COMPLEX_OBJECT",
+                        "P_C_BOOLEAN",
+                        "P_C_STRING",
+                        "P_C_TERMINOLOGY_CODE",
+                        "P_C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "rm_type_name": {
                     "description": "Reference model type that this node corresponds to. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -128,6 +166,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id",
                 "default_value"
@@ -245,6 +284,13 @@
             "$comments": "Defined in P_aom2 IM, abstract, inherits from P_C_DEFINED_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_C_BOOLEAN",
+                        "P_C_STRING",
+                        "P_C_TERMINOLOGY_CODE"
+                    ]
+                },
                 "rm_type_name": {
                     "description": "Reference model type that this node corresponds to. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -280,6 +326,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id",
                 "default_value",
@@ -309,6 +356,12 @@
             "$comments": "Defined in P_aom2 IM, inherits from P_C_DEFINED_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_C_COMPLEX_OBJECT",
+                        "P_C_ARCHETYPE_ROOT"
+                    ]
+                },
                 "rm_type_name": {
                     "description": "Reference model type that this node corresponds to. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -837,6 +890,9 @@
             "$comments": "Defined in P_aom2 IM, abstract, inherits from P_C_PRIMITIVE_OBJECT",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": []
+                },
                 "rm_type_name": {
                     "description": "Reference model type that this node corresponds to. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -875,6 +931,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id",
                 "default_value",
@@ -958,6 +1015,9 @@
             "$comments": "Defined in P_aom2 IM, abstract, inherits from P_C_ORDERED",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": []
+                },
                 "rm_type_name": {
                     "description": "Reference model type that this node corresponds to. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -1000,6 +1060,7 @@
                 }
             },
             "required": [
+                "_type",
                 "rm_type_name",
                 "node_id",
                 "default_value",
@@ -1169,6 +1230,13 @@
             "$comments": "Defined in P_aom2 IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_AUTHORED_ARCHETYPE",
+                        "P_TEMPLATE",
+                        "P_OPERATIONAL_TEMPLATE"
+                    ]
+                },
                 "parent_archetype_id": {
                     "description": "Identifier of the specialisation parent of this archetype.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -1195,6 +1263,7 @@
                 }
             },
             "required": [
+                "_type",
                 "archetype_id",
                 "is_differential",
                 "definition",
@@ -1211,6 +1280,13 @@
             "$comments": "Defined in P_aom2 IM, inherits from P_ARCHETYPE, P_AUTHORED_RESOURCE, AUTHORED_RESOURCE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_AUTHORED_ARCHETYPE",
+                        "P_TEMPLATE",
+                        "P_OPERATIONAL_TEMPLATE"
+                    ]
+                },
                 "uid": {
                     "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -1709,6 +1785,13 @@
             "$comments": "Defined in P_aom2 IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "P_AUTHORED_ARCHETYPE",
+                        "P_TEMPLATE",
+                        "P_OPERATIONAL_TEMPLATE"
+                    ]
+                },
                 "original_language": {
                     "description": "Language in which this resource was initially authored. Although there is no language primacy of resources overall, the language of original authoring is required to ensure natural language translations can preserve quality. Language is relevant in both the description and ontology sections. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -1738,6 +1821,7 @@
                 }
             },
             "required": [
+                "_type",
                 "original_language"
             ],
             "$abstract": true,

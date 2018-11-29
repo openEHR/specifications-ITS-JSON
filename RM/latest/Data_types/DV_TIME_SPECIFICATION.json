@@ -6,12 +6,19 @@
     "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "DV_PERIODIC_TIME_SPECIFICATION",
+                "DV_GENERAL_TIME_SPECIFICATION"
+            ]
+        },
         "value": {
             "description": "The specification, in the HL7v3 syntax for `PIVL` or `EIVL` types.",
             "$ref": "all.json#/definitions/DV_PARSABLE"
         }
     },
     "required": [
+        "_type",
         "value"
     ],
     "$abstract": true,

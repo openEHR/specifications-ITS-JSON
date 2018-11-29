@@ -9,6 +9,85 @@
             "title": "PATHABLE",
             "description": "The PATHABLE class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of LOCATABLE. The defining characteristics of PATHABLE objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.",
             "$comments": "Defined in Common IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISM_TRANSITION",
+                        "INSTRUCTION_DETAILS",
+                        "EVENT_CONTEXT",
+                        "FOLDER",
+                        "EHR_ACCESS",
+                        "EHR_STATUS",
+                        "EXTRACT",
+                        "EXTRACT_ACTION_REQUEST",
+                        "EXTRACT_CHAPTER",
+                        "EXTRACT_REQUEST",
+                        "CONTACT",
+                        "ADDRESS",
+                        "PARTY_IDENTITY",
+                        "CAPABILITY",
+                        "PARTY_RELATIONSHIP",
+                        "ACTIVITY",
+                        "COMPOSITION",
+                        "HISTORY",
+                        "ITEM_TREE",
+                        "ITEM_SINGLE",
+                        "ITEM_TABLE",
+                        "ITEM_LIST",
+                        "HISTORY<ITEM_STRUCTURE>",
+                        "CLUSTER",
+                        "ELEMENT",
+                        "POINT_EVENT",
+                        "INTERVAL_EVENT",
+                        "EXTRACT_ENTITY_CHAPTER",
+                        "EXTRACT_FOLDER",
+                        "OPENEHR_CONTENT_ITEM",
+                        "GENERIC_CONTENT_ITEM",
+                        "ROLE",
+                        "AGENT",
+                        "ORGANISATION",
+                        "GROUP",
+                        "PERSON",
+                        "GENERIC_ENTRY",
+                        "SECTION",
+                        "WORK_PLAN",
+                        "TASK_PLAN",
+                        "ADMIN_ENTRY",
+                        "OBSERVATION",
+                        "EVALUATION",
+                        "ACTION",
+                        "INSTRUCTION",
+                        "TASK_GROUP",
+                        "DISPATCHABLE_TASK",
+                        "PERFORMABLE_TASK",
+                        "DECISION_GROUP",
+                        "CONDITION_GROUP",
+                        "EVENT_GROUP",
+                        "ADHOC_GROUP",
+                        "DECISION_BRANCH",
+                        "CONDITION_BRANCH",
+                        "EVENT_BRANCH",
+                        "ADHOC_BRANCH",
+                        "HAND_OFF",
+                        "EXTERNAL_REQUEST",
+                        "SYSTEM_REQUEST",
+                        "SUB_PLAN",
+                        "DEFINED_ACTION",
+                        "MANUAL_NOTIFICATION",
+                        "TIMER_EVENT",
+                        "CALLBACK_NOTIFICATION",
+                        "STATE_TRIGGER",
+                        "TASK_TRANSITION",
+                        "TIMELINE_MOMENT",
+                        "CALENDAR_EVENT",
+                        "DELAY_EVENT",
+                        "SYSTEM_NOTIFICATION"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/LOCATABLE",
@@ -132,6 +211,77 @@
             "$comments": "Defined in Common IM, abstract, inherits from PATHABLE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "FOLDER",
+                        "EHR_ACCESS",
+                        "EHR_STATUS",
+                        "EXTRACT",
+                        "EXTRACT_ACTION_REQUEST",
+                        "EXTRACT_CHAPTER",
+                        "EXTRACT_REQUEST",
+                        "CONTACT",
+                        "ADDRESS",
+                        "PARTY_IDENTITY",
+                        "CAPABILITY",
+                        "PARTY_RELATIONSHIP",
+                        "ACTIVITY",
+                        "COMPOSITION",
+                        "HISTORY",
+                        "ITEM_TREE",
+                        "ITEM_SINGLE",
+                        "ITEM_TABLE",
+                        "ITEM_LIST",
+                        "HISTORY<ITEM_STRUCTURE>",
+                        "CLUSTER",
+                        "ELEMENT",
+                        "POINT_EVENT",
+                        "INTERVAL_EVENT",
+                        "EXTRACT_ENTITY_CHAPTER",
+                        "EXTRACT_FOLDER",
+                        "OPENEHR_CONTENT_ITEM",
+                        "GENERIC_CONTENT_ITEM",
+                        "ROLE",
+                        "AGENT",
+                        "ORGANISATION",
+                        "GROUP",
+                        "PERSON",
+                        "GENERIC_ENTRY",
+                        "SECTION",
+                        "WORK_PLAN",
+                        "TASK_PLAN",
+                        "ADMIN_ENTRY",
+                        "OBSERVATION",
+                        "EVALUATION",
+                        "ACTION",
+                        "INSTRUCTION",
+                        "TASK_GROUP",
+                        "DISPATCHABLE_TASK",
+                        "PERFORMABLE_TASK",
+                        "DECISION_GROUP",
+                        "CONDITION_GROUP",
+                        "EVENT_GROUP",
+                        "ADHOC_GROUP",
+                        "DECISION_BRANCH",
+                        "CONDITION_BRANCH",
+                        "EVENT_BRANCH",
+                        "ADHOC_BRANCH",
+                        "HAND_OFF",
+                        "EXTERNAL_REQUEST",
+                        "SYSTEM_REQUEST",
+                        "SUB_PLAN",
+                        "DEFINED_ACTION",
+                        "MANUAL_NOTIFICATION",
+                        "TIMER_EVENT",
+                        "CALLBACK_NOTIFICATION",
+                        "STATE_TRIGGER",
+                        "TASK_TRANSITION",
+                        "TIMELINE_MOMENT",
+                        "CALENDAR_EVENT",
+                        "DELAY_EVENT",
+                        "SYSTEM_NOTIFICATION"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -161,6 +311,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id"
             ],
@@ -402,6 +553,16 @@
             "$comments": "Defined in Common IM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "VERSIONED_OBJECT",
+                        "VERSIONED_FOLDER",
+                        "VERSIONED_EHR_ACCESS",
+                        "VERSIONED_EHR_STATUS",
+                        "VERSIONED_COMPOSITION",
+                        "VERSIONED_PARTY"
+                    ]
+                },
                 "uid": {
                     "description": "Unique identifier of this version container in the form of a UID with no extension. This id will be the same in all instances of the same container in a distributed environment, meaning that it can be understood as the uid of the  virtual version tree. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
@@ -710,6 +871,12 @@
             "$comments": "Defined in Common IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "IMPORTED_VERSION",
+                        "ORIGINAL_VERSION"
+                    ]
+                },
                 "contribution": {
                     "description": "Contribution in which this version was added. ",
                     "$ref": "#/definitions/CONTRIBUTION"
@@ -724,6 +891,7 @@
                 }
             },
             "required": [
+                "_type",
                 "contribution",
                 "commit_audit"
             ],
@@ -1016,6 +1184,12 @@
             "$comments": "Defined in Common IM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "AUDIT_DETAILS",
+                        "ATTESTATION"
+                    ]
+                },
                 "system_id": {
                     "description": "Identity of the system where the change was committed. Ideally this is a machine- and human-processable identifier, but it may not be. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -1157,11 +1331,21 @@
             "$comments": "Defined in Common IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "PARTY_IDENTIFIED",
+                        "PARTY_SELF",
+                        "PARTY_RELATED"
+                    ]
+                },
                 "external_ref": {
                     "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/PARTY_IDENTIFIED",
@@ -1174,6 +1358,12 @@
             "$comments": "Defined in Common IM, inherits from PARTY_PROXY",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "PARTY_IDENTIFIED",
+                        "PARTY_RELATED"
+                    ]
+                },
                 "external_ref": {
                     "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
@@ -1733,6 +1923,17 @@
             "$comments": "Defined in Common IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "AUTHORED_ARCHETYPE",
+                        "P_AUTHORED_ARCHETYPE",
+                        "WORK_PLAN",
+                        "TEMPLATE",
+                        "OPERATIONAL_TEMPLATE",
+                        "P_TEMPLATE",
+                        "P_OPERATIONAL_TEMPLATE"
+                    ]
+                },
                 "uid": {
                     "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UUID"
@@ -1766,6 +1967,7 @@
                 }
             },
             "required": [
+                "_type",
                 "original_language"
             ],
             "$abstract": true,

@@ -4,6 +4,17 @@
     "title": "MESSAGE_CONTENT",
     "description": "Abstract parent of message payload types.",
     "$comments": "Defined in Ehr_extract IM, abstract",
+    "properties": {
+        "_type": {
+            "enum": [
+                "SYNC_EXTRACT_REQUEST",
+                "SYNC_EXTRACT"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ],
     "$abstract": true,
     "$children": [
         "all.json#/definitions/SYNC_EXTRACT_REQUEST",

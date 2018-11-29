@@ -4,6 +4,14 @@
     "title": "OPENEHR_CODE_SET_IDENTIFIERS",
     "description": "List of identifiers for code sets in the openEHR terminology. ",
     "$comments": "Defined in Support IM",
+    "properties": {
+        "_type": {
+            "enum": [
+                "OPENEHR_CODE_SET_IDENTIFIERS",
+                "TERMINOLOGY_SERVICE"
+            ]
+        }
+    },
     "$children": [
         "all.json#/definitions/TERMINOLOGY_SERVICE"
     ],

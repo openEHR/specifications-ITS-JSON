@@ -6,6 +6,14 @@
     "$comments": "Defined in Aom2 IM, abstract, inherits from C_ORDERED",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "C_TIME",
+                "C_DATE",
+                "C_DATE_TIME",
+                "C_DURATION"
+            ]
+        },
         "parent": {
             "description": "Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an archetype definition.",
             "$ref": "all.json#/definitions/ARCHETYPE_CONSTRAINT"
@@ -58,6 +66,7 @@
         }
     },
     "required": [
+        "_type",
         "rm_type_name",
         "node_id"
     ],

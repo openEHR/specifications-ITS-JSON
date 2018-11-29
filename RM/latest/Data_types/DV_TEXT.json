@@ -6,6 +6,12 @@
     "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "DV_TEXT",
+                "DV_CODED_TEXT"
+            ]
+        },
         "value": {
             "description": "Displayable rendition of the item, regardless of its underlying structure. For `DV_CODED_TEXT`, this is the rubric of the complete term as provided by the terminology service. No carriage returns, line feeds, or other non-printing characters permitted. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"

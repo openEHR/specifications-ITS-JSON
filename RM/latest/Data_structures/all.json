@@ -11,6 +11,16 @@
             "$comments": "Defined in Data_structures IM, abstract, inherits from LOCATABLE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "HISTORY",
+                        "ITEM_TREE",
+                        "ITEM_SINGLE",
+                        "ITEM_TABLE",
+                        "ITEM_LIST",
+                        "HISTORY<ITEM_STRUCTURE>"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -40,6 +50,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id"
             ],
@@ -163,6 +174,14 @@
             "$comments": "Defined in Data_structures IM, abstract, inherits from DATA_STRUCTURE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "ITEM_TREE",
+                        "ITEM_SINGLE",
+                        "ITEM_TABLE",
+                        "ITEM_LIST"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -192,6 +211,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id"
             ],
@@ -1135,6 +1155,12 @@
             "$comments": "Defined in Data_structures IM, abstract, inherits from LOCATABLE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "CLUSTER",
+                        "ELEMENT"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -1164,6 +1190,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id"
             ],
@@ -1589,6 +1616,12 @@
             "$comments": "Defined in Data_structures IM, abstract, inherits from LOCATABLE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "POINT_EVENT",
+                        "INTERVAL_EVENT"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
@@ -1630,6 +1663,7 @@
                 }
             },
             "required": [
+                "_type",
                 "name",
                 "archetype_node_id",
                 "time",
@@ -2105,6 +2139,12 @@
             "$comments": "Defined in Data_structures IM, inherits from DATA_STRUCTURE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "HISTORY",
+                        "HISTORY<ITEM_STRUCTURE>"
+                    ]
+                },
                 "name": {
                     "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"

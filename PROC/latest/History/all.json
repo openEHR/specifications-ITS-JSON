@@ -32,6 +32,12 @@
             "$comments": "Defined in History IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "TASK_PLAN_EVENT_RECORD",
+                        "TASK_EVENT_RECORD"
+                    ]
+                },
                 "time": {
                     "description": "Time the event occurred.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
@@ -42,6 +48,7 @@
                 }
             },
             "required": [
+                "_type",
                 "time"
             ],
             "$abstract": true,

@@ -6,6 +6,12 @@
     "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "DV_URI",
+                "DV_EHR_URI"
+            ]
+        },
         "value": {
             "description": "Value of URI as a String. 'Plain-text' URIs are allowed, enabling better readability, but must be RFC-3986 encoded in use.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"

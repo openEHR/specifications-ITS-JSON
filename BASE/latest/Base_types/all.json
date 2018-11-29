@@ -176,12 +176,23 @@
             "$comments": "Defined in Base_types IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "ARCHETYPE_ID",
+                        "GENERIC_ID",
+                        "TERMINOLOGY_ID",
+                        "TEMPLATE_ID",
+                        "HIER_OBJECT_ID",
+                        "OBJECT_VERSION_ID"
+                    ]
+                },
                 "value": {
                     "description": "The value of the id in the form defined below. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required": [
+                "_type",
                 "value"
             ],
             "$abstract": true,
@@ -199,6 +210,14 @@
             "$comments": "Defined in Base_types IM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "OBJECT_REF",
+                        "LOCATABLE_REF",
+                        "PARTY_REF",
+                        "ACCESS_GROUP_REF"
+                    ]
+                },
                 "namespace": {
                     "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n\n* local\n* unknown\n* [a-zA-Z][a-zA-Z0-9_-:/&+?]*\n",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -407,12 +426,19 @@
             "$comments": "Defined in Base_types IM, abstract, inherits from OBJECT_ID",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "HIER_OBJECT_ID",
+                        "OBJECT_VERSION_ID"
+                    ]
+                },
                 "value": {
                     "description": "The value of the id in the form defined below. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required": [
+                "_type",
                 "value"
             ],
             "$abstract": true,
@@ -495,12 +521,20 @@
             "$comments": "Defined in Base_types IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "UUID",
+                        "INTERNET_ID",
+                        "ISO_OID"
+                    ]
+                },
                 "value": {
                     "description": "The value of the id.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required": [
+                "_type",
                 "value"
             ],
             "$abstract": true,

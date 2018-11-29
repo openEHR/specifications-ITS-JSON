@@ -6,6 +6,12 @@
     "$comments": "Defined in Common IM",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "AUDIT_DETAILS",
+                "ATTESTATION"
+            ]
+        },
         "system_id": {
             "description": "Identity of the system where the change was committed. Ideally this is a machine- and human-processable identifier, but it may not be. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"

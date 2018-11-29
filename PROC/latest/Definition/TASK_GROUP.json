@@ -6,6 +6,19 @@
     "$comments": "Defined in Definition IM, inherits from PLAN_ITEM",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "TASK_GROUP",
+                "DECISION_GROUP",
+                "CONDITION_GROUP",
+                "EVENT_GROUP",
+                "ADHOC_GROUP",
+                "DECISION_BRANCH",
+                "CONDITION_BRANCH",
+                "EVENT_BRANCH",
+                "ADHOC_BRANCH"
+            ]
+        },
         "name": {
             "description": "Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users. \n",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/RM/latest/Data_types/all.json#/definitions/DV_TEXT"

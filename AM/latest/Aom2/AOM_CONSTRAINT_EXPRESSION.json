@@ -6,6 +6,12 @@
     "$comments": "Defined in Aom2 IM, inherits from EL_CONSTRAINT_EXPRESSION",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "AOM_CONSTRAINT_EXPRESSION",
+                "ARCHETYPE_ID_CONSTRAINT"
+            ]
+        },
         "constraint": {
             "description": "Right hand side of the constraint expression, in the form of a defined AOM object constraint.",
             "$ref": "all.json#/definitions/C_DEFINED_OBJECT"

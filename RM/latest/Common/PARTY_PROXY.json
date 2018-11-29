@@ -6,11 +6,21 @@
     "$comments": "Defined in Common IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "PARTY_IDENTIFIED",
+                "PARTY_SELF",
+                "PARTY_RELATED"
+            ]
+        },
         "external_ref": {
             "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/PARTY_REF"
         }
     },
+    "required": [
+        "_type"
+    ],
     "$abstract": true,
     "$children": [
         "all.json#/definitions/PARTY_IDENTIFIED",

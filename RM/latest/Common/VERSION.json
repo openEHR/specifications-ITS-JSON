@@ -6,6 +6,12 @@
     "$comments": "Defined in Common IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "IMPORTED_VERSION",
+                "ORIGINAL_VERSION"
+            ]
+        },
         "contribution": {
             "description": "Contribution in which this version was added. ",
             "$ref": "all.json#/definitions/CONTRIBUTION"
@@ -20,6 +26,7 @@
         }
     },
     "required": [
+        "_type",
         "contribution",
         "commit_audit"
     ],

@@ -6,12 +6,21 @@
     "$comments": "Defined in Materialised IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "M_TASK_GROUP",
+                "M_TASK",
+                "M_EVENT_GROUP",
+                "M_CONDITION_GROUP"
+            ]
+        },
         "definition": {
             "description": "Corresponding item from Task Plan definition. Redefined in descendants to the definition type corresponding to each runtime (RT_XXX) type.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM"
         }
     },
     "required": [
+        "_type",
         "definition"
     ],
     "$abstract": true,

@@ -6,6 +6,17 @@
     "$comments": "Defined in Common IM, abstract",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "AUTHORED_ARCHETYPE",
+                "P_AUTHORED_ARCHETYPE",
+                "WORK_PLAN",
+                "TEMPLATE",
+                "OPERATIONAL_TEMPLATE",
+                "P_TEMPLATE",
+                "P_OPERATIONAL_TEMPLATE"
+            ]
+        },
         "uid": {
             "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UUID"
@@ -39,6 +50,7 @@
         }
     },
     "required": [
+        "_type",
         "original_language"
     ],
     "$abstract": true,

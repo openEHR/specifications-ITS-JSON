@@ -6,6 +6,12 @@
     "$comments": "Defined in P_aom2 IM, inherits from P_C_DEFINED_OBJECT",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "P_C_COMPLEX_OBJECT",
+                "P_C_ARCHETYPE_ROOT"
+            ]
+        },
         "rm_type_name": {
             "description": "Reference model type that this node corresponds to. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"

@@ -6,6 +6,13 @@
     "$comments": "Defined in Aom2 IM, inherits from ARCHETYPE, AUTHORED_RESOURCE",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "AUTHORED_ARCHETYPE",
+                "TEMPLATE",
+                "OPERATIONAL_TEMPLATE"
+            ]
+        },
         "uid": {
             "description": "Unique identifier of the family of archetypes having the same interface identifier (same major version).",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/UUID"

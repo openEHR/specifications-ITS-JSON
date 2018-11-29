@@ -6,6 +6,16 @@
     "$comments": "Defined in Ehr_extract IM",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "X_VERSIONED_OBJECT",
+                "X_VERSIONED_EHR_ACCESS",
+                "X_VERSIONED_EHR_STATUS",
+                "X_VERSIONED_COMPOSITION",
+                "X_VERSIONED_FOLDER",
+                "X_VERSIONED_PARTY"
+            ]
+        },
         "uid": {
             "description": "Uid of original `VERSIONED_OBJECT`.",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"

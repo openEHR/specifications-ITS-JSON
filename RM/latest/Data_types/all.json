@@ -9,6 +9,41 @@
             "title": "DATA_VALUE",
             "description": "Abstract parent of all `DV_` data value types.",
             "$comments": "Defined in Data_types IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_BOOLEAN",
+                        "DV_STATE",
+                        "DV_IDENTIFIER",
+                        "DV_PARAGRAPH",
+                        "DV_TEXT",
+                        "DV_INTERVAL",
+                        "DV_URI",
+                        "DV_MULTIMEDIA",
+                        "DV_PARSABLE",
+                        "DV_CODED_TEXT",
+                        "DV_ORDINAL",
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT",
+                        "DV_DURATION",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME",
+                        "DV_INTERVAL<DV_DATE_TIME>",
+                        "DV_INTERVAL<DV_DATE>",
+                        "DV_INTERVAL<DV_QUANTITY>",
+                        "DV_INTERVAL<DV_COUNT>",
+                        "DV_INTERVAL<DV_PROPORTION>",
+                        "DV_PERIODIC_TIME_SPECIFICATION",
+                        "DV_GENERAL_TIME_SPECIFICATION",
+                        "DV_EHR_URI"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$children": [
                 "#/definitions/DV_BOOLEAN",
@@ -106,6 +141,12 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_MULTIMEDIA",
+                        "DV_PARSABLE"
+                    ]
+                },
                 "charset": {
                     "description": "Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions. ",
                     "$ref": "#/definitions/CODE_PHRASE"
@@ -115,6 +156,9 @@
                     "$ref": "#/definitions/CODE_PHRASE"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_VALUE"
@@ -303,6 +347,12 @@
             "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_TEXT",
+                        "DV_CODED_TEXT"
+                    ]
+                },
                 "value": {
                     "description": "Displayable rendition of the item, regardless of its underlying structure. For `DV_CODED_TEXT`, this is the rubric of the complete term as provided by the terminology service. No carriage returns, line feeds, or other non-printing characters permitted. ",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -499,6 +549,18 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE, Ordered",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_ORDINAL",
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT",
+                        "DV_DURATION",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME"
+                    ]
+                },
                 "normal_status": {
                     "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
                     "$ref": "#/definitions/CODE_PHRASE"
@@ -515,6 +577,9 @@
                     }
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DATA_VALUE",
@@ -581,6 +646,16 @@
             "$comments": "Defined in Data_types IM, inherits from DATA_VALUE, Interval",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_INTERVAL",
+                        "DV_INTERVAL<DV_DATE_TIME>",
+                        "DV_INTERVAL<DV_DATE>",
+                        "DV_INTERVAL<DV_QUANTITY>",
+                        "DV_INTERVAL<DV_COUNT>",
+                        "DV_INTERVAL<DV_PROPORTION>"
+                    ]
+                },
                 "lower": {
                     "description": "Lower bound.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/T"
@@ -694,6 +769,14 @@
             "$comments": "Defined in Data_types IM",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "REFERENCE_RANGE",
+                        "REFERENCE_RANGE<DV_QUANTITY>",
+                        "REFERENCE_RANGE<DV_COUNT>",
+                        "REFERENCE_RANGE<DV_PROPORTION>"
+                    ]
+                },
                 "meaning": {
                     "description": "Term whose value indicates the meaning of this range, e.g.  normal,  critical,  therapeutic  etc.",
                     "$ref": "#/definitions/DV_TEXT"
@@ -738,6 +821,17 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DV_ORDERED",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT",
+                        "DV_DURATION",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME"
+                    ]
+                },
                 "normal_status": {
                     "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
                     "$ref": "#/definitions/CODE_PHRASE"
@@ -762,6 +856,9 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Any"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_ORDERED"
@@ -1065,6 +1162,14 @@
             "title": "PROPORTION_KIND",
             "description": "Class of enumeration constants defining types of proportion for the `DV_PROPORTION` class. ",
             "$comments": "Defined in Data_types IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "PROPORTION_KIND",
+                        "DV_PROPORTION"
+                    ]
+                }
+            },
             "$children": [
                 "#/definitions/DV_PROPORTION"
             ],
@@ -1091,6 +1196,14 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DV_QUANTIFIED",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT",
+                        "DV_DURATION"
+                    ]
+                },
                 "normal_status": {
                     "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
                     "$ref": "#/definitions/CODE_PHRASE"
@@ -1119,6 +1232,9 @@
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_QUANTIFIED"
@@ -1636,6 +1752,13 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DV_QUANTIFIED",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME"
+                    ]
+                },
                 "normal_status": {
                     "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
                     "$ref": "#/definitions/CODE_PHRASE"
@@ -1659,6 +1782,9 @@
                     "$ref": "#/definitions/DV_AMOUNT"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_QUANTIFIED"
@@ -2217,6 +2343,13 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DV_ABSOLUTE_QUANTITY",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME"
+                    ]
+                },
                 "normal_status": {
                     "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
                     "$ref": "#/definitions/CODE_PHRASE"
@@ -2241,6 +2374,9 @@
                     "$ref": "#/definitions/DV_DURATION"
                 }
             },
+            "required": [
+                "_type"
+            ],
             "$abstract": true,
             "$inherits": [
                 "#/definitions/DV_ABSOLUTE_QUANTITY"
@@ -4367,12 +4503,19 @@
             "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_PERIODIC_TIME_SPECIFICATION",
+                        "DV_GENERAL_TIME_SPECIFICATION"
+                    ]
+                },
                 "value": {
                     "description": "The specification, in the HL7v3 syntax for `PIVL` or `EIVL` types.",
                     "$ref": "#/definitions/DV_PARSABLE"
                 }
             },
             "required": [
+                "_type",
                 "value"
             ],
             "$abstract": true,
@@ -4495,6 +4638,12 @@
             "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_URI",
+                        "DV_EHR_URI"
+                    ]
+                },
                 "value": {
                     "description": "Value of URI as a String. 'Plain-text' URIs are allowed, enabling better readability, but must be RFC-3986 encoded in use.",
                     "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/BASE/latest/Foundation_types/all.json#/definitions/String"

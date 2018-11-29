@@ -6,6 +6,12 @@
     "$comments": "Defined in Definition IM, inherits from EVENT_WAIT",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "TIMER_WAIT",
+                "REMINDER"
+            ]
+        },
         "event": {
             "description": "Redefined from `EVENT_WAIT`.",
             "$ref": "all.json#/definitions/TIMER_EVENT"

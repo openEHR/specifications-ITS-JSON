@@ -6,6 +6,18 @@
     "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE, Ordered",
     "type": "object",
     "properties": {
+        "_type": {
+            "enum": [
+                "DV_ORDINAL",
+                "DV_PROPORTION",
+                "DV_QUANTITY",
+                "DV_COUNT",
+                "DV_DURATION",
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DATE_TIME"
+            ]
+        },
         "normal_status": {
             "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
             "$ref": "all.json#/definitions/CODE_PHRASE"
@@ -22,6 +34,9 @@
             }
         }
     },
+    "required": [
+        "_type"
+    ],
     "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DATA_VALUE",
