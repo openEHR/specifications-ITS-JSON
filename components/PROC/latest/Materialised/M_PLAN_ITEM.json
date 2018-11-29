@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/M_PLAN_ITEM.json",
+    "title": "M_PLAN_ITEM",
+    "description": "Abstract parent of materialised run-time types that correspond to design time `PLAN_ITEM` instances.",
+    "$comments": "Defined in Materialised IM, abstract",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "M_TASK_GROUP",
+                "M_TASK",
+                "M_EVENT_GROUP",
+                "M_CONDITION_GROUP"
+            ]
+        },
+        "definition": {
+            "description": "Corresponding item from Task Plan definition. Redefined in descendants to the definition type corresponding to each runtime (RT_XXX) type.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM"
+        }
+    },
+    "required": [
+        "_type",
+        "definition"
+    ],
+    "$abstract": true,
+    "$children": [
+        "all.json#/definitions/M_TASK_GROUP",
+        "all.json#/definitions/M_TASK",
+        "all.json#/definitions/M_EVENT_GROUP",
+        "all.json#/definitions/M_CONDITION_GROUP"
+    ]
+}

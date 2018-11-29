@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/M_WORK_PLAN.json",
+    "title": "M_WORK_PLAN",
+    "description": "Materialised form of `WORK_PLAN`.",
+    "$comments": "Defined in Materialised IM",
+    "type": "object",
+    "properties": {
+        "plans": {
+            "description": "Member Plans.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/M_TASK_PLAN"
+            }
+        },
+        "owner": {
+            "description": "Owning Work Plan definition.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
+        },
+        "timeline": {
+            "description": "Materialised global timeline.",
+            "$ref": "all.json#/definitions/M_TIMELINE"
+        },
+        "calendar": {
+            "description": "Materialised global calendar.",
+            "$ref": "all.json#/definitions/M_CALENDAR"
+        },
+        "context": {
+            "description": "Materialised global context.",
+            "$ref": "all.json#/definitions/M_PLAN_DATA_CONTEXT"
+        }
+    },
+    "required": [
+        "owner",
+        "timeline",
+        "calendar",
+        "context"
+    ]
+}

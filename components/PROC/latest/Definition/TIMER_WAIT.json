@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/TIMER_WAIT.json",
+    "title": "TIMER_WAIT",
+    "description": "Event listener for a Timer event.",
+    "$comments": "Defined in Definition IM, inherits from EVENT_WAIT",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "TIMER_WAIT",
+                "REMINDER"
+            ]
+        },
+        "event": {
+            "description": "Redefined from `EVENT_WAIT`.",
+            "$ref": "all.json#/definitions/TIMER_EVENT"
+        },
+        "success_action": {
+            "description": "Action to perform if any listened-for event returns a success result.",
+            "$ref": "all.json#/definitions/EVENT_ACTION"
+        },
+        "timeout": {
+            "description": "Timeout handler to use if no other Event is received within a certain time.",
+            "$ref": "all.json#/definitions/TIMER_WAIT"
+        }
+    },
+    "required": [
+        "event"
+    ],
+    "$inherits": [
+        "all.json#/definitions/EVENT_WAIT"
+    ],
+    "$children": [
+        "all.json#/definitions/REMINDER"
+    ]
+}

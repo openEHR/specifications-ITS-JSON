@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/RESUME_ACTION.json",
+    "title": "RESUME_ACTION",
+    "description": "Type representing an execution jump to a new location in the current Plan.",
+    "$comments": "Defined in Definition IM",
+    "type": "object",
+    "properties": {
+        "resume_type": {
+            "description": "Procedure to execute when completion notification received, for example, to display a form, notify performer etc.\n\nTODO: determine details."
+        },
+        "resume_location": {
+            "description": "Reference to a resume Task in the current Plan, at which to restart when the request / handoff has completed.\n\nIf not set, the following Task is assumed. It set, is typically an earlier Task, in situations where the current Task(s) are no longer needed once the external action has been completed.",
+            "$ref": "all.json#/definitions/PLAN_ITEM"
+        }
+    },
+    "required": [
+        "resume_type"
+    ]
+}

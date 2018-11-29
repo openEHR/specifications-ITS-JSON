@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/DATASET_SPEC.json",
+    "title": "DATASET_SPEC",
+    "description": "Specification of a related data-set and/or form to use with a Task, usually by means of display and/or data entry screens in an application being used by the principal performer.",
+    "$comments": "Defined in Definition IM",
+    "type": "object",
+    "properties": {
+        "form_id": {
+            "description": "Form identifier.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+        },
+        "template_id": {
+            "description": "Template identifier in String form of an `ARCHETYPE_HRID`. If used with no `_form_id_`, the Execution engine needs to determine how to find a form based on the template identifier.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+        },
+        "other_details": {
+            "description": "Other data-set related details.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+        }
+    }
+}

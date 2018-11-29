@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/P_aom2/P_C_REAL.json",
+    "title": "P_C_REAL",
+    "description": "Constraint on instances of Real.",
+    "$comments": "Defined in P_aom2 IM"
+}

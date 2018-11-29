@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/TASK_PARTICIPATION.json",
+    "title": "TASK_PARTICIPATION",
+    "description": "Class defining a participation in Task(s), minimally in terms of function. Optionally, the role and mode may also be specified. The performer attribute enables a specific actor to be specified.",
+    "$comments": "Defined in Definition IM",
+    "type": "object",
+    "properties": {
+        "function": {
+            "description": "The function of the Party in this participation (note that a given party might participate in more than one way in a particular activity). This attribute should be coded.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
+        },
+        "role": {
+            "description": "Organisational role, i.e. the professional type of participant in the activity. Preferably coded.",
+            "type": "array",
+            "items": {
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
+            }
+        },
+        "mode": {
+            "description": "Optional field for recording the 'mode' of the performer / activity interaction, e.g. present, by telephone, by email etc. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
+        },
+        "performer": {
+            "description": "The id and possibly demographic system link of the party participating in the activity. ",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Common/all.json#/definitions/PARTY_PROXY"
+        },
+        "optionality": {
+            "description": "Condition for participation in the Plan item."
+        }
+    },
+    "required": [
+        "optionality"
+    ]
+}

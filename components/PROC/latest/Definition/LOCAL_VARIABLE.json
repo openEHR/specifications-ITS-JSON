@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/LOCAL_VARIABLE.json",
+    "title": "LOCAL_VARIABLE",
+    "description": "Variable that is used locally within the Work Plan, and can be used to transmit information to sub-plans.",
+    "$comments": "Defined in Definition IM, inherits from CONTEXT_VARIABLE",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of variable, as used in precondition and decision expressions.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+        },
+        "type": {
+            "description": "Type of this variable.",
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/T"
+        }
+    },
+    "required": [
+        "name",
+        "type"
+    ],
+    "$inherits": [
+        "all.json#/definitions/CONTEXT_VARIABLE"
+    ]
+}
