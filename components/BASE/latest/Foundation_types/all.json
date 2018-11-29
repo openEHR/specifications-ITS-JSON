@@ -308,28 +308,28 @@
             "type": "array",
             "properties": {
                 "_type": {
-                    "enum": {
-                        "0": "Hash",
-                        "1": "List",
-                        "2": "Set",
-                        "3": "Array",
-                        "4": "Hash<String, Hash<String, Hash<String, String>>>",
-                        "5": "Hash<String, Hash<String, String>>",
-                        "6": "Hash<String, String>",
-                        "7": "Hash<String, List<String>>",
-                        "8": "Hash<String, TRANSLATION_DETAILS>",
-                        "9": "Hash<String, RESOURCE_DESCRIPTION_ITEM>",
-                        "10": "Hash<String, ARCHETYPE_TERMINOLOGY>",
-                        "11": "Hash<String, VALUE_SET>",
-                        "12": "Hash<String, Hash<String, ARCHETYPE_TERM>>",
-                        "13": "Hash<String, ARCHETYPE_TERM>",
-                        "14": "Hash<String, Uri>",
-                        "15": "Hash <String, Hash<String, Uri>>",
-                        "16": "Hash<String, AOM_PROPERTY_MAPPING>",
-                        "17": "Hash<String, AOM_TYPE_MAPPING>",
-                        "19": "List<String>",
-                        "20": "Set<String>"
-                    }
+                    "enum": [
+                        "Hash",
+                        "List",
+                        "Set",
+                        "Array",
+                        "Hash<String, Hash<String, Hash<String, String>>>",
+                        "Hash<String, Hash<String, String>>",
+                        "Hash<String, String>",
+                        "Hash<String, List<String>>",
+                        "Hash<String, TRANSLATION_DETAILS>",
+                        "Hash<String, RESOURCE_DESCRIPTION_ITEM>",
+                        "Hash<String, ARCHETYPE_TERMINOLOGY>",
+                        "Hash<String, VALUE_SET>",
+                        "Hash<String, Hash<String, ARCHETYPE_TERM>>",
+                        "Hash<String, ARCHETYPE_TERM>",
+                        "Hash<String, Uri>",
+                        "Hash <String, Hash<String, Uri>>",
+                        "Hash<String, AOM_PROPERTY_MAPPING>",
+                        "Hash<String, AOM_TYPE_MAPPING>",
+                        "List<String>",
+                        "Set<String>"
+                    ]
                 }
             },
             "required": [

@@ -6,9 +6,6 @@
     "$comments": "Defined in P_aom2 IM, abstract, inherits from P_C_PRIMITIVE_OBJECT",
     "type": "object",
     "properties": {
-        "_type": {
-            "enum": []
-        },
         "rm_type_name": {
             "description": "Reference model type that this node corresponds to. ",
             "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
@@ -47,7 +44,6 @@
         }
     },
     "required": [
-        "_type",
         "rm_type_name",
         "node_id",
         "default_value",
