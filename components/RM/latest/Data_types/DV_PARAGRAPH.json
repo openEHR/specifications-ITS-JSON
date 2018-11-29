@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/DV_PARAGRAPH.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DV_PARAGRAPH.json",
     "title": "DV_PARAGRAPH",
     "description": "A logical composite text value consisting of a series of `DV_TEXTs`, i.e. plain text (optionally coded) potentially with simple formatting, to form a larger tract of prose, which may be interpreted for display purposes as a paragraph. \n\n`DV_PARAGRAPH` is the standard way for constructing longer text items in summaries, reports and so on. ",
     "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",

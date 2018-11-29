@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Service/I_TASK_PLAN_MATERIALISED.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Service/I_TASK_PLAN_MATERIALISED.json",
     "title": "I_TASK_PLAN_MATERIALISED",
     "description": "Task planning API for materialised Task Plan level.",
     "$comments": "Defined in Service IM",

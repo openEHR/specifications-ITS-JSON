@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/EVENT_ACTION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/EVENT_ACTION.json",
     "title": "EVENT_ACTION",
     "description": "Action(s) to perform on receipt of an event with a particular status. If `_resume_action_` is set, it dictates where execution resumes; if not, the default is to resume at the next Task in normal execution flow.",
     "$comments": "Defined in Definition IM",
@@ -12,7 +12,7 @@
         },
         "message": {
             "description": "Optional message to display to original Task context (i.e. application, form etc) if timer expires.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
         },
         "resume_action": {
             "description": "Optional resume action, used when the intention is to resume in a different location than the default (i.e. next available Task).",

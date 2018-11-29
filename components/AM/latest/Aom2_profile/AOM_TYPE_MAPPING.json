@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2_profile/AOM_TYPE_MAPPING.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2_profile/AOM_TYPE_MAPPING.json",
     "title": "AOM_TYPE_MAPPING",
     "description": "Data object expressing a mapping between two types.",
     "$comments": "Defined in Aom2_profile IM",
@@ -8,11 +8,11 @@
     "properties": {
         "source_class_name": {
             "description": "Name of the AOM type being mapped to an RM type.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "target_class_name": {
             "description": "Name of the RM type in the mapping.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "property_mappings": {
             "description": "List of mappings of properties of this type to another type.",

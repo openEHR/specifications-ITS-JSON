@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/M_TASK.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_TASK.json",
     "title": "M_TASK",
     "description": "Materialised form of `TASK` type and its descendants from a Task Plan definition.",
     "$comments": "Defined in Materialised IM, inherits from M_PLAN_ITEM",
@@ -8,7 +8,7 @@
     "properties": {
         "definition": {
             "description": "Reference to corresponding TASK instance in Task Plan definition.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK"
         },
         "lifecycle_state": {
             "description": "Current lifecycle state of this Task at run-time."
@@ -17,7 +17,7 @@
             "description": "List of references to run-time events that have occurred on this Task.",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/History/all.json#/definitions/TASK_EVENT_RECORD"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/History/all.json#/definitions/TASK_EVENT_RECORD"
             }
         },
         "preconditions": {

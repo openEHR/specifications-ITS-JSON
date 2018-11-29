@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json",
     "title": "Foundation_types IM definitions",
     "description": "The openEHR Base types.",
     "$comments": "Part of BASE component, latest version.",
@@ -39,17 +39,17 @@
                 "#/definitions/Hash_of_String_Hash_of_String_String",
                 "#/definitions/Hash_of_String_String",
                 "#/definitions/Hash_of_String_List_of_String",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Resource/all.json#/definitions/Hash_of_String_TRANSLATION_DETAILS",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Resource/all.json#/definitions/Hash_of_String_RESOURCE_DESCRIPTION_ITEM",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_VALUE_SET",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_ARCHETYPE_TERM",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERM",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Uri",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_Uri",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_PROPERTY_MAPPING",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
+                "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Resource/all.json#/definitions/Hash_of_String_TRANSLATION_DETAILS",
+                "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Resource/all.json#/definitions/Hash_of_String_RESOURCE_DESCRIPTION_ITEM",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_VALUE_SET",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_ARCHETYPE_TERM",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERM",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Uri",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_Uri",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_PROPERTY_MAPPING",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING",
+                "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
             ],
             "$functions": {
                 "has": {
@@ -1424,7 +1424,7 @@
                 "#/definitions/Character",
                 "#/definitions/String",
                 "#/definitions/Temporal",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_ORDERED"
+                "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_ORDERED"
             ],
             "$functions": {
                 "infix <": {
@@ -1532,7 +1532,7 @@
                 "#/definitions/Iso8601_type"
             ],
             "$children": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
+                "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_DATE_TIME"
             ],
             "$functions": {
                 "valid_year": {
@@ -1862,7 +1862,7 @@
                 "#/definitions/Iso8601_type"
             ],
             "$children": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_DURATION"
+                "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_DURATION"
             ],
             "$functions": {
                 "valid_year": {
@@ -2163,7 +2163,7 @@
                 "#/definitions/Iso8601_type"
             ],
             "$children": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_TIME"
+                "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_TIME"
             ],
             "$functions": {
                 "valid_year": {
@@ -2955,7 +2955,7 @@
                 "#/definitions/Iso8601_type"
             ],
             "$children": [
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_DATE"
+                "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_DATE"
             ],
             "$functions": {
                 "valid_year": {
@@ -4396,7 +4396,7 @@
                 "#/definitions/Point_interval",
                 "#/definitions/Interval_of_Real",
                 "#/definitions/Interval_of_Integer",
-                "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_INTERVAL"
+                "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_INTERVAL"
             ],
             "$functions": {
                 "has": {

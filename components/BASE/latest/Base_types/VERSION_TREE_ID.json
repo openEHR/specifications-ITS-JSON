@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Base_types/VERSION_TREE_ID.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/VERSION_TREE_ID.json",
     "title": "VERSION_TREE_ID",
     "description": "Version tree identifier for one version. Lexical form: \n\n`trunk_version [  '.' branch_number  '.' branch_version ]`",
     "$comments": "Defined in Base_types IM",
@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "String form of this identifier.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [
@@ -18,25 +18,25 @@
         "trunk_version": {
             "description": "Trunk version number; numbering starts at 1. ",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         },
         "is_branch": {
             "description": "True if this version identifier represents a branch, i.e. has branch_number and branch_version parts.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "branch_number": {
             "description": "Number of branch from the trunk point; numbering starts at 1. ",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         },
         "branch_version": {
             "description": "Version of the branch; numbering starts at 1. ",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         }
     },

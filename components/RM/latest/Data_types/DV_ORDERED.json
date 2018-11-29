@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/DV_ORDERED.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DV_ORDERED.json",
     "title": "DV_ORDERED",
     "description": "Abstract class defining the concept of ordered values, which includes ordinals as well as true quantities. It defines the functions  `<` and is_strictly_comparable_to, the latter of which must evaluate to `True` for instances being compared with the  `<` function, or used as limits in the `DV_INTERVAL<T>` class. \n\nData value types which are to be used as limits in the `DV_INTERVAL<T>` class must inherit from this class, and implement the function `_is_strictly_comparable_to_` to ensure that instances compare meaningfully. For example, instances of `DV_QUANTITY` can only be compared if they measure the same kind of physical quantity. \n",
     "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE, Ordered",
@@ -40,7 +40,7 @@
     "$abstract": true,
     "$inherits": [
         "all.json#/definitions/DATA_VALUE",
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
+        "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
     ],
     "$children": [
         "all.json#/definitions/DV_QUANTIFIED",
@@ -50,14 +50,14 @@
         "infix <": {
             "parameters": {
                 "other": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
                 }
             },
             "required_parameters": [
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "is_strictly_comparable_to": {
@@ -71,19 +71,19 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "is_simple": {
             "description": "True if this quantity has no reference ranges.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "is_normal": {
             "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     },

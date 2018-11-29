@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/C_PRIMITIVE_TUPLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/C_PRIMITIVE_TUPLE.json",
     "title": "C_PRIMITIVE_TUPLE",
     "description": "Class representing a single object tuple instance in a tuple constraint. Each such instance is a vector of object constraints, where each member (each `C_PRIMITIVE_OBJECT`) corresponds to one of the `C_ATTRIBUTEs` referred to by the owning `C_ATTRIBUTE_TUPLE`.",
     "$comments": "Defined in Aom2 IM, inherits from C_SECOND_ORDER",
@@ -33,7 +33,7 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "c_congruent_to": {
@@ -47,7 +47,7 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     }

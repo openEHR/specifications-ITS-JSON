@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/Interval.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Interval.json",
     "title": "Interval",
     "description": "Interval abstraction, featuring upper and lower limits that may be open or closed, included or not included.",
     "$comments": "Defined in Foundation_types IM",
@@ -68,7 +68,7 @@
         "all.json#/definitions/Point_interval",
         "all.json#/definitions/Interval_of_Real",
         "all.json#/definitions/Interval_of_Integer",
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_INTERVAL"
+        "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_INTERVAL"
     ],
     "$functions": {
         "has": {

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Base_types/UUID.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/UUID.json",
     "title": "UUID",
     "description": "Model of the DCE Universal Unique Identifier or UUID which takes the form of hexadecimal integers separated by hyphens, following the pattern 8-4-4-4-12 as defined by the Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A. Also known as a GUID.",
     "$comments": "Defined in Base_types IM, inherits from UID",
@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "The value of the id.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [

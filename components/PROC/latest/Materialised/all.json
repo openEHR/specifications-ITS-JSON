@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/all.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/all.json",
     "title": "Materialised IM definitions",
     "$comments": "Part of PROC component, latest version.",
     "definitions": {
@@ -20,7 +20,7 @@
                 },
                 "definition": {
                     "description": "Corresponding item from Task Plan definition. Redefined in descendants to the definition type corresponding to each runtime (RT_XXX) type.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM"
                 }
             },
             "required": [
@@ -43,7 +43,7 @@
             "properties": {
                 "definition": {
                     "description": "Reference to corresponding TASK_GROUP instance in Task Plan definition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK_GROUP"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_GROUP"
                 },
                 "members": {
                     "description": "Member run-time items in group, mimicking structure of the corresponding definition group instance.",
@@ -74,7 +74,7 @@
             "properties": {
                 "start_time": {
                     "description": "Nominal start time for the Task Plan as a whole. The timings of individual Tasks may be specified as offsets from this time, via `PLANNED_TIME._relative_offset_`.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
                 },
                 "definition": {
                     "description": "Root of run-time Task Plan Task structure.",
@@ -82,7 +82,7 @@
                 },
                 "owner": {
                     "description": "Owning Task Plan definition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK_PLAN"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_PLAN"
                 },
                 "pending_callbacks": {
                     "description": "Reference list of all wait conditions in the Task Plan, and current status.",
@@ -116,7 +116,7 @@
             "properties": {
                 "definition": {
                     "description": "Reference to corresponding TASK instance in Task Plan definition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK"
                 },
                 "lifecycle_state": {
                     "description": "Current lifecycle state of this Task at run-time."
@@ -125,7 +125,7 @@
                     "description": "List of references to run-time events that have occurred on this Task.",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/History/all.json#/definitions/TASK_EVENT_RECORD"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/History/all.json#/definitions/TASK_EVENT_RECORD"
                     }
                 },
                 "preconditions": {
@@ -149,7 +149,7 @@
             "properties": {
                 "definition": {
                     "description": "Reference to corresponding DECISION_PATH_GROUP instance in Task Plan definition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/EVENT_GROUP"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/EVENT_GROUP"
                 }
             },
             "required": [
@@ -173,7 +173,7 @@
             "properties": {
                 "definition": {
                     "description": "Reference to corresponding DECISION_GROUP instance in Task Plan definition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/CONDITION_GROUP"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/CONDITION_GROUP"
                 }
             },
             "required": [
@@ -195,10 +195,10 @@
                 },
                 "dispatch_info": {
                     "description": "Dispatch object defining actions on receipt of callback.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/DISPATCHABLE_ACTION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/DISPATCHABLE_ACTION"
                 },
                 "other_details": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
                 }
             },
             "required": [
@@ -214,7 +214,7 @@
             "properties": {
                 "definition": {
                     "description": "Definition object for this execution time context.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/PLAN_DATA_CONTEXT"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/PLAN_DATA_CONTEXT"
                 }
             },
             "required": [
@@ -227,13 +227,13 @@
             "type": "object",
             "properties": {
                 "performer": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Common/all.json#/definitions/PARTY_IDENTIFIED"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PARTY_IDENTIFIED"
                 },
                 "connection": {
                     "description": "URI used to connect to performer (e.g. application, messaging channel) for notifications."
                 },
                 "other_details": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
                 }
             },
             "required": [
@@ -264,7 +264,7 @@
                     ]
                 },
                 "definition": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
                 }
             },
             "required": [
@@ -282,7 +282,7 @@
             "type": "object",
             "properties": {
                 "definition": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
                 }
             },
             "required": [
@@ -299,7 +299,7 @@
             "type": "object",
             "properties": {
                 "definition": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
                 },
                 "resources": {
                     "type": "array",
@@ -330,7 +330,7 @@
                 },
                 "owner": {
                     "description": "Owning Work Plan definition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
                 },
                 "timeline": {
                     "description": "Materialised global timeline.",

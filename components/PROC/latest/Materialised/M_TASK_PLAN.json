@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/M_TASK_PLAN.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_TASK_PLAN.json",
     "title": "M_TASK_PLAN",
     "description": "Root object of a materialised Task Plan structure, used in execution.",
     "$comments": "Defined in Materialised IM",
@@ -8,7 +8,7 @@
     "properties": {
         "start_time": {
             "description": "Nominal start time for the Task Plan as a whole. The timings of individual Tasks may be specified as offsets from this time, via `PLANNED_TIME._relative_offset_`.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
         },
         "definition": {
             "description": "Root of run-time Task Plan Task structure.",
@@ -16,7 +16,7 @@
         },
         "owner": {
             "description": "Owning Task Plan definition.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/all.json#/definitions/TASK_PLAN"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_PLAN"
         },
         "pending_callbacks": {
             "description": "Reference list of all wait conditions in the Task Plan, and current status.",

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/DV_STATE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DV_STATE.json",
     "title": "DV_STATE",
     "description": "For representing state values which obey a defined state machine, such as a variable  representing the states of an instruction or care process. \n\nDV_STATE is expressed as a String but its values are driven by archetype-defined  state machines. This provides a powerful way of capturing stateful complex processes  in simple data. \n",
     "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
@@ -12,7 +12,7 @@
         },
         "is_terminal": {
             "description": "Indicates whether this state is a terminal state, such as  \"aborted\",  \"completed\" etc. from which no further transitions are possible.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
         }
     },
     "required": [

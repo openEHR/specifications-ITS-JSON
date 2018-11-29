@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/Aom2/C_SECOND_ORDER.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/C_SECOND_ORDER.json",
     "title": "C_SECOND_ORDER",
     "description": "Abstract parent of classes defining second order constraints.",
     "$comments": "Defined in Aom2 IM, abstract",
@@ -44,7 +44,7 @@
                 "rmcc"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "c_congruent_to": {
@@ -58,7 +58,7 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     }

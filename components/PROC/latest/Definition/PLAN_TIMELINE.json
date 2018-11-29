@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/PLAN_TIMELINE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/PLAN_TIMELINE.json",
     "title": "PLAN_TIMELINE",
     "description": "List of Plan Items that have a wait_condition containing an `AGENDA_MOMENT`, whose times will be converted at Plan activation to fixed times on an execution calendar.",
     "$comments": "Defined in Definition IM",

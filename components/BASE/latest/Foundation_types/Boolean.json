@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/Boolean.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Boolean.json",
     "title": "Boolean",
     "description": "Class representing minimal interface of standard Boolean type.",
     "$comments": "Defined in Foundation_types IM",

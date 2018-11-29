@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/P_aom2/P_ARCHETYPE_CONSTRAINT.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/P_aom2/P_ARCHETYPE_CONSTRAINT.json",
     "title": "P_ARCHETYPE_CONSTRAINT",
     "description": "Archetype equivalent to LOCATABLE class in openEHR Common reference model. Defines common constraints for any inheritor of LOCATABLE in any reference model. ",
     "$comments": "Defined in P_aom2 IM, abstract",

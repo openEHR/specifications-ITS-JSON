@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/AM/latest/P_aom2/P_C_INTEGER.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/P_aom2/P_C_INTEGER.json",
     "title": "P_C_INTEGER",
     "description": "Constraint on instances of Integer.",
     "$comments": "Defined in P_aom2 IM"

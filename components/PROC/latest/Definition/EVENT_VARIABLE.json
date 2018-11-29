@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/EVENT_VARIABLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/EVENT_VARIABLE.json",
     "title": "EVENT_VARIABLE",
     "description": "Variable whose value is required to be the latest; ideally, updating would be implemented by listener model.",
     "$comments": "Defined in Definition IM, inherits from EXTERNAL_VARIABLE",
@@ -14,11 +14,11 @@
         },
         "name": {
             "description": "Name of variable, as used in precondition and decision expressions.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "type": {
             "description": "Type of this variable.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/T"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/T"
         },
         "populating_request": {
             "description": "Optional specification of a system request that would populate a context variable."

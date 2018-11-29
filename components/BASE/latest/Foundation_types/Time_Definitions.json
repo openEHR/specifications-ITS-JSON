@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/Time_Definitions.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Time_Definitions.json",
     "title": "Time_Definitions",
     "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using `+12:00`, not `-12:00`.",
     "$comments": "Defined in Foundation_types IM",

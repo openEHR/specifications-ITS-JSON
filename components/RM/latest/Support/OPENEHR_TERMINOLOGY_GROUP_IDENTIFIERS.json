@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Support/OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Support/OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS.json",
     "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
     "description": "List of identifiers for groups in the openEHR terminology. ",
     "$comments": "Defined in Support IM",
@@ -20,14 +20,14 @@
             "description": "Validity function to test if an identifier is in the set defined by this class. ",
             "parameters": {
                 "an_id": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                 }
             },
             "required_parameters": [
                 "an_id"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     }

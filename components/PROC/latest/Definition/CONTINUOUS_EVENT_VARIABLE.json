@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/CONTINUOUS_EVENT_VARIABLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/CONTINUOUS_EVENT_VARIABLE.json",
     "title": "CONTINUOUS_EVENT_VARIABLE",
     "description": "Dynamically updated variable of any continuous type whose value may change by arbitrarily small amounts. The `_update_variation_` attribute may be used to control updating frequency.",
     "$comments": "Defined in Definition IM, inherits from EVENT_VARIABLE",
@@ -8,18 +8,18 @@
     "properties": {
         "name": {
             "description": "Name of variable, as used in precondition and decision expressions.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "type": {
             "description": "Type of this variable.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/T"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/T"
         },
         "populating_request": {
             "description": "Optional specification of a system request that would populate a context variable."
         },
         "update_variation": {
             "description": "Minimum percentage variation from current value to be considered a change that should cause an update.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Real"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Real"
         }
     },
     "required": [

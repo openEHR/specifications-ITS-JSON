@@ -1,18 +1,18 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/M_PERFORMER_ALLOCATION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_PERFORMER_ALLOCATION.json",
     "title": "M_PERFORMER_ALLOCATION",
     "$comments": "Defined in Materialised IM",
     "type": "object",
     "properties": {
         "performer": {
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Common/all.json#/definitions/PARTY_IDENTIFIED"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PARTY_IDENTIFIED"
         },
         "connection": {
             "description": "URI used to connect to performer (e.g. application, messaging channel) for notifications."
         },
         "other_details": {
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
         }
     },
     "required": [

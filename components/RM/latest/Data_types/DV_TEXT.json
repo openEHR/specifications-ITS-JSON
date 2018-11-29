@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/DV_TEXT.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DV_TEXT.json",
     "title": "DV_TEXT",
     "description": "A text item, which may contain any amount of legal characters arranged as e.g. words, sentences etc (i.e. one `DV_TEXT` may be more than one word). Visual formatting and hyperlinks may be included. \n\nA `DV_TEXT` can be  coded  by adding mappings to it. \n\nFragments of text, whether coded or not are used on their own as values, or to make up larger tracts of text which may be marked up in some way, eventually going to make up paragraphs.",
     "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
@@ -14,7 +14,7 @@
         },
         "value": {
             "description": "Displayable rendition of the item, regardless of its underlying structure. For `DV_CODED_TEXT`, this is the rubric of the complete term as provided by the terminology service. No carriage returns, line feeds, or other non-printing characters permitted. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "hyperlink": {
             "description": "Optional link sitting behind a section of plain text or coded term item. ",
@@ -22,7 +22,7 @@
         },
         "formatting": {
             "description": "A format string of the form `\"name:value; name:value...\"` , e.g. `\"font-weight : bold; font-family : Arial; font-size : 12pt;\"`. \n\nValues taken from W3C CSS2 properties lists  back-ground and font . ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "mappings": {
             "description": "Terms from other terminologies most closely matching this term, typically used where the originator (e.g. pathology lab) of information uses a local terminology but also supplies one or more equivalents from well known terminologies (e.g. LOINC). \n",

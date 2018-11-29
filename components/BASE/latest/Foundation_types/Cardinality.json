@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/Cardinality.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Cardinality.json",
     "title": "Cardinality",
     "description": "Express constraints on the cardinality of container objects which are the values of multiply-valued attributes, including uniqueness and ordering, providing the means to state that a container acts like a logical list, set or bag.",
     "$comments": "Defined in Foundation_types IM",

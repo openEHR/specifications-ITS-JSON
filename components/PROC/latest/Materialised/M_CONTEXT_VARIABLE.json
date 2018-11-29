@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Materialised/M_CONTEXT_VARIABLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_CONTEXT_VARIABLE.json",
     "title": "M_CONTEXT_VARIABLE",
     "$comments": "Defined in Materialised IM"
 }

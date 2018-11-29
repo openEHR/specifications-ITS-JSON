@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/SUBJECT_PRECONDITION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/SUBJECT_PRECONDITION.json",
     "title": "SUBJECT_PRECONDITION",
     "description": "Clinical preconditions expressing when the Task is safely executable with respect to the principal performer and subject.",
     "$comments": "Defined in Definition IM",
@@ -8,7 +8,7 @@
     "properties": {
         "description": {
             "description": "Textual representation of preconditions for this Task to be performed, according to governing protocol. May be displayed as a safety check for human performer.\n\nEvaluated when encountered.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "expression": {
             "description": "A Boolean expression that can be evaluated at runtime to determine availability.",

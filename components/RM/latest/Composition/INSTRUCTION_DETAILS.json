@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Composition/INSTRUCTION_DETAILS.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Composition/INSTRUCTION_DETAILS.json",
     "title": "INSTRUCTION_DETAILS",
     "description": "Used to record details of the Instruction causing an Action. \n",
     "$comments": "Defined in Composition IM, inherits from PATHABLE",
@@ -8,15 +8,15 @@
     "properties": {
         "instruction_id": {
             "description": "Reference to causing Instruction.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Base_types/all.json#/definitions/LOCATABLE_REF"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/LOCATABLE_REF"
         },
         "activity_id": {
             "description": "Identifier of Activity within Instruction, in the form of its archetype path. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "wf_details": {
             "description": "Various workflow engine state details, potentially including such things as:\n\n* condition that fired to cause this Action to be done (with actual variables substituted); \n* list of notifications which actually occurred (with all variables substituted); \n* other workflow engine state. \n\nThis specification does not currently define the actual structure or semantics of this field. \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
         }
     },
     "required": [
@@ -24,34 +24,34 @@
         "activity_id"
     ],
     "$inherits": [
-        "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Common/all.json#/definitions/PATHABLE"
+        "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PATHABLE"
     ],
     "$functions": {
         "parent": {
             "description": "Parent of this node in a compositional hierarchy. \n",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Common/all.json#/definitions/PATHABLE"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PATHABLE"
             }
         },
         "item_at_path": {
             "description": "The item at a path (relative to this item); only valid for unique paths, i.e. paths that resolve to a single item. ",
             "parameters": {
                 "a_path": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required_parameters": [
                 "a_path"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Any"
             }
         },
         "items_at_path": {
             "description": "List of items corresponding to a non-unique path.",
             "parameters": {
                 "a_path": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required_parameters": [
@@ -60,7 +60,7 @@
             "return": {
                 "type": "array",
                 "items": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Any"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Any"
                 }
             }
         },
@@ -68,42 +68,42 @@
             "description": "True if the path exists in the data with respect to the current item. ",
             "parameters": {
                 "a_path": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required_parameters": [
                 "a_path"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "path_unique": {
             "description": "True if the path corresponds to a single item in the data. ",
             "parameters": {
                 "a_path": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required_parameters": [
                 "a_path"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "path_of_item": {
             "description": "The path to an item relative to the root of this archetyped structure.",
             "parameters": {
                 "a_loc": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Common/all.json#/definitions/PATHABLE"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PATHABLE"
                 }
             },
             "required_parameters": [
                 "a_loc"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         }
     },

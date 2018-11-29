@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Security/all.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Security/all.json",
     "title": "Security IM definitions",
     "description": "The Security Information Model defines the semantics of access control and privacy setting for information in the EHR",
     "$comments": "Part of RM component, latest version.",

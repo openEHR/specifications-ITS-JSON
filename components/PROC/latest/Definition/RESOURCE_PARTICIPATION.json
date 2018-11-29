@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/PROC/latest/Definition/RESOURCE_PARTICIPATION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/RESOURCE_PARTICIPATION.json",
     "title": "RESOURCE_PARTICIPATION",
     "description": "Description of a resource with optional external system reference.\n\nTODO: explain external_ref.",
     "$comments": "Defined in Definition IM",
@@ -8,11 +8,11 @@
     "properties": {
         "resource_type": {
             "description": "Text or coded description of resource.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_TEXT"
         },
         "external_ref": {
             "description": "Reference to resource, e.g. in scheduling or other system.\n\nTODO: may need to be a more powerful reference like a `SYSTEM_CALL`.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/Release-1.0.0/components/BASE/latest/Base_types/all.json#/definitions/OBJECT_REF"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/OBJECT_REF"
         }
     },
     "required": [
