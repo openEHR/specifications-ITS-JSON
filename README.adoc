@@ -5,27 +5,27 @@ JSON schemas for use with openEHR systems and tools. See https://www.openehr.org
 **_NOTE_** These schemas are in development and subject to change.
 
 ### Releases and IM Versions
-All schema are generated directly from current specifications of the most relevant openEHR UML models and components.
+All schema are generated from current specifications of the most relevant openEHR UML models and components.
 The repository is structured as follows:
 ----
-/examples				# JSON examples
+/examples                # JSON examples
 /components
-	/BASE				# schemas for BASE component
-		/Release-1.1.0 	# schemas for Release-1.1.0 of BASE
-		...
-		/latest			# schemas for working version of BASE
-	/AM 				# schemas for AM component
-		/Release-2.0.0 	# schemas for Release-2.0.0 of AM
-		...
-		/latest			# schemas for working version of AM
-	/RM				    # schemas for RM component
-		/Release-1.0.4 	# schemas for Release-1.0.4 of RM
-		...
-		/latest			# schemas for working version of RM
-	/PROC				# schemas for PROC component
-		/Release-1.0.0 	# schemas for Release-1.0.0 of PROC
-		/...etc
-		/latest			# schemas for working version of PROC
+    /BASE                # schemas for BASE component
+        /Release-1.1.0   # schemas for Release-1.1.0 of BASE
+        ...
+        /latest          # schemas for working version of BASE
+    /AM                  # schemas for AM component
+        /Release-2.0.0   # schemas for Release-2.0.0 of AM
+        ...
+        /latest          # schemas for working version of AM
+    /RM                  # schemas for RM component
+        /Release-1.0.4   # schemas for Release-1.0.4 of RM
+        ...
+        /latest          # schemas for working version of RM
+    /PROC                # schemas for PROC component
+        /Release-1.0.0   # schemas for Release-1.0.0 of PROC
+        ...
+        /latest          # schemas for working version of PROC
 ----
 
 ### Additional JSON-Schema keywords
