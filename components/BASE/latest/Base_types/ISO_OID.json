@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/ISO_OID.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Base_types/ISO_OID.json",
     "title": "ISO_OID",
     "description": "Model of ISO's Object Identifier (oid) as defined by the standard ISO/IEC 8824. Oids are formed from integers separated by dots. Each non-leaf node in an Oid starting from the left corresponds to an assigning authority, and identifies that authority's namespace, inside which the remaining part of the identifier is locally unique. ",
     "$comments": "Defined in Base_types IM, inherits from UID",
@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "The value of the id.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [

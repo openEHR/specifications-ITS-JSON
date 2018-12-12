@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Interval_of_Iso8601_duration.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/Interval_of_Iso8601_duration.json",
     "title": "Interval<Iso8601_duration>",
     "$comments": "Defined in Foundation_types IM, inherits from Interval",
     "type": "object",

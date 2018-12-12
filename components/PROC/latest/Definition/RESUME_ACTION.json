@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/RESUME_ACTION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/RESUME_ACTION.json",
     "title": "RESUME_ACTION",
     "description": "Type representing an execution jump to a new location in the current Plan.",
     "$comments": "Defined in Definition IM",

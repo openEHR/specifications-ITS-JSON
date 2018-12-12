@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/VERSION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Common/VERSION.json",
     "title": "VERSION",
     "description": "Abstract model of one Version within a Version container, containing data, commit audit trail, and the identifier of its Contribution.",
     "$comments": "Defined in Common IM, abstract",
@@ -18,7 +18,7 @@
         },
         "signature": {
             "description": "OpenPGP digital signature or digest of content committed in this Version. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "commit_audit": {
             "description": "Audit trail corresponding to the committal of this version to the `VERSIONED_OBJECT`.",
@@ -39,43 +39,43 @@
         "uid": {
             "description": "Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id, creating_system_id}` triple, where the `_object_id_` has the same value as the containing `VERSIONED_OBJECT _uid_`.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/OBJECT_VERSION_ID"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Base_types/all.json#/definitions/OBJECT_VERSION_ID"
             }
         },
         "preceding_version_uid": {
             "description": "Unique identifier of the version of which this version is a modification; Void if this is the first version.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/OBJECT_VERSION_ID"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Base_types/all.json#/definitions/OBJECT_VERSION_ID"
             }
         },
         "data": {
             "description": "The data of this Version.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/T"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/T"
             }
         },
         "lifecycle_state": {
             "description": "Lifecycle state of this version; coded by openEHR vocabulary 'version lifecycle state'. ",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/all.json#/definitions/DV_CODED_TEXT"
             }
         },
         "canonical_form": {
             "description": "A canonical serial form of this Version, suitable for generating reliable hashes and signatures.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         },
         "owner_id": {
             "description": "Copy of the owning `VERSIONED_OBJECT._uid_` value; extracted from the local `_uid_` property's `_object_id_`.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Base_types/all.json#/definitions/HIER_OBJECT_ID"
             }
         },
         "is_branch": {
             "description": "True if this Version represents a branch. Derived from `_uid_` attribute. ",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     },

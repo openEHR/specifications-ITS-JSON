@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/CODE_PHRASE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/CODE_PHRASE.json",
     "title": "CODE_PHRASE",
     "description": "A fully coordinated (i.e. all coordination has been performed) term from a terminology service (as distinct from a particular terminology). ",
     "$comments": "Defined in Data_types IM",
@@ -8,11 +8,11 @@
     "properties": {
         "terminology_id": {
             "description": "Identifier of the distinct terminology from which the code_string (or its elements) was extracted.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/TERMINOLOGY_ID"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Base_types/all.json#/definitions/TERMINOLOGY_ID"
         },
         "code_string": {
             "description": "The key used by the terminology service to identify a concept or coordination of concepts. This string is most likely parsable inside the terminology service, but nothing can be assumed about its syntax outside that context. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Container.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/Container.json",
     "title": "Container",
     "description": "Abstract ancestor of container types whose items are addressable in some way.",
     "$comments": "Defined in Foundation_types IM, abstract",

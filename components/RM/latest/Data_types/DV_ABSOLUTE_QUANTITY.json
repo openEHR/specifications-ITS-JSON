@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DV_ABSOLUTE_QUANTITY.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/DV_ABSOLUTE_QUANTITY.json",
     "title": "DV_ABSOLUTE_QUANTITY",
     "description": "Abstract class defining the concept of quantified entities whose values are absolute with respect to an origin. Dates and Times are the main example.",
     "$comments": "Defined in Data_types IM, abstract, inherits from DV_QUANTIFIED",
@@ -30,7 +30,7 @@
         },
         "magnitude_status": {
             "description": "Optional status of magnitude with values: \n\n* `\"=\"`   :   magnitude is a point value \n* `\"<\"`   :   value is < magnitude \n* `\">\"`   :   value is > magnitude \n* `\"<=\"` : value is <= magnitude \n* `\">=\"` : value is >= magnitude \n* `\"~\"`   :   value is approximately magnitude \n\nIf not present, assumed meaning is  `\"=\"` . \n",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "accuracy": {
             "$ref": "all.json#/definitions/DV_AMOUNT"
@@ -50,14 +50,14 @@
         "infix <": {
             "parameters": {
                 "other": {
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
+                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered"
                 }
             },
             "required_parameters": [
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "is_strictly_comparable_to": {
@@ -71,36 +71,36 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "is_simple": {
             "description": "True if this quantity has no reference ranges.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "is_normal": {
             "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "valid_magnitude_status": {
             "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. ",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "magnitude": {
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered_Numeric"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Ordered_Numeric"
             }
         },
         "accuracy_unknown": {
             "description": "True if accuracy is not known, e.g. due to not being recorded or discernable.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "diff": {

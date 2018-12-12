@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Support/all.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Support/all.json",
     "title": "Support IM definitions",
     "description": "The rm.support package describes the most basic concepts, required by all other packages, and is comprised of the Definitions, Identification, Terminology and Measurement packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data. The support package includes the special package assumed_types, describing what basic types are assumed by openEHR in external type systems; this package is a guide for integrating openEHR models proper into the type systems of implementation technologies.",
     "$comments": "Part of RM component, latest version.",
@@ -13,7 +13,7 @@
                 "id": {
                     "description": "External identifier of this code set.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "all_codes": {
@@ -21,7 +21,7 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
                         }
                     }
                 },
@@ -29,28 +29,28 @@
                     "description": "True if code set knows about 'a_lang' .",
                     "parameters": {
                         "a_lang": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "a_lang"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "has_code": {
                     "description": "True if code set knows about  'a_code'.",
                     "parameters": {
                         "a_code": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "a_code"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 }
             }
@@ -63,20 +63,20 @@
                 "id": {
                     "description": "Identification of this Terminology.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "all_codes": {
                     "description": "Return all codes known in this terminology.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
                     }
                 },
                 "codes_for_group_id": {
                     "description": "Return all codes under grouper 'a_group_id' from this terminology.",
                     "parameters": {
                         "a_group_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -85,7 +85,7 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
                         }
                     }
                 },
@@ -93,10 +93,10 @@
                     "description": "Return all codes under grouper whose name in 'a_lang' is 'a_name' from this terminology.",
                     "parameters": {
                         "a_lang": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         },
                         "a_name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -106,28 +106,28 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/all.json#/definitions/CODE_PHRASE"
                         }
                     }
                 },
                 "has_code_for_group_id": {
                     "description": "True if  a_code' is known in group  group_id' in the openEHR terminology.",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "rubric_for_code": {
                     "description": "Return all rubric of code  code' in language  lang'.",
                     "parameters": {
                         "a_code": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "a_code"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                     }
                 }
             }
@@ -147,24 +147,24 @@
                     "description": "True if the units string  units' is a valid string according to the HL7 UCUM specification.",
                     "parameters": {
                         "units": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "units"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "units_equivalent": {
                     "description": "True if two units strings correspond to the same measured property.",
                     "parameters": {
                         "units1": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         },
                         "units2": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -172,42 +172,42 @@
                         "units2"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "valid_code_set_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class.",
                     "parameters": {
                         "an_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "an_id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "valid_terminology_group_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class. ",
                     "parameters": {
                         "an_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                         }
                     },
                     "required_parameters": [
                         "an_id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "terminology": {
                     "description": "Return an interface to the terminology named name. Allowable names include:-\n\n* openehr, \n* centc251,\n* any name from are taken from the US NLM UMLS meta-data list at http://www.nlm.nih.gov/research/umls/metaa1.html ",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -221,7 +221,7 @@
                     "description": "Return an interface to the code_set identified by the external identifier name (e.g.  ISO_639-1). ",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -235,7 +235,7 @@
                     "description": "Return an interface to the code_set identified internally in openEHR by id. \n",
                     "parameters": {
                         "id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -249,28 +249,28 @@
                     "description": "True if terminology named name known by this service. Allowable names include:-\n\n*  openehr  \n* centc251  \n* any name from are taken from the US NLM UMLS meta-data list at       http://www.nlm.nih.gov/research/umls/metaa1.html",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "has_code_set": {
                     "description": "True if code_set linked to internal name (e.g. languages ) is available. ",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "terminology_identifiers": {
@@ -278,14 +278,14 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     }
                 },
                 "openehr_code_sets": {
                     "description": "Set of all code set identifiers known in the terminology service. \n",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
                     }
                 },
                 "code_set_identifiers": {
@@ -293,7 +293,7 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     }
                 }
@@ -331,24 +331,24 @@
                     "description": "True if the units string  units' is a valid string according to the HL7 UCUM specification.",
                     "parameters": {
                         "units": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "units"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "units_equivalent": {
                     "description": "True if two units strings correspond to the same measured property.",
                     "parameters": {
                         "units1": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         },
                         "units2": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -356,7 +356,7 @@
                         "units2"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 }
             }
@@ -381,14 +381,14 @@
                     "description": "Validity function to test if an identifier is in the set defined by this class. ",
                     "parameters": {
                         "an_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                         }
                     },
                     "required_parameters": [
                         "an_id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 }
             }
@@ -413,14 +413,14 @@
                     "description": "Validity function to test if an identifier is in the set defined by this class.",
                     "parameters": {
                         "an_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "an_id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 }
             }
@@ -449,35 +449,35 @@
                     "description": "Validity function to test if an identifier is in the set defined by this class.",
                     "parameters": {
                         "an_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "an_id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "valid_terminology_group_id": {
                     "description": "Validity function to test if an identifier is in the set defined by this class. ",
                     "parameters": {
                         "an_id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                         }
                     },
                     "required_parameters": [
                         "an_id"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "terminology": {
                     "description": "Return an interface to the terminology named name. Allowable names include:-\n\n* openehr, \n* centc251,\n* any name from are taken from the US NLM UMLS meta-data list at http://www.nlm.nih.gov/research/umls/metaa1.html ",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -491,7 +491,7 @@
                     "description": "Return an interface to the code_set identified by the external identifier name (e.g.  ISO_639-1). ",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -505,7 +505,7 @@
                     "description": "Return an interface to the code_set identified internally in openEHR by id. \n",
                     "parameters": {
                         "id": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
@@ -519,28 +519,28 @@
                     "description": "True if terminology named name known by this service. Allowable names include:-\n\n*  openehr  \n* centc251  \n* any name from are taken from the US NLM UMLS meta-data list at       http://www.nlm.nih.gov/research/umls/metaa1.html",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "has_code_set": {
                     "description": "True if code_set linked to internal name (e.g. languages ) is available. ",
                     "parameters": {
                         "name": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     },
                     "required_parameters": [
                         "name"
                     ],
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "terminology_identifiers": {
@@ -548,14 +548,14 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     }
                 },
                 "openehr_code_sets": {
                     "description": "Set of all code set identifiers known in the terminology service. \n",
                     "return": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
                     }
                 },
                 "code_set_identifiers": {
@@ -563,7 +563,7 @@
                     "return": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
                         }
                     }
                 }

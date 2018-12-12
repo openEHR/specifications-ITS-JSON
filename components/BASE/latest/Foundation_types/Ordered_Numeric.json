@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Ordered_Numeric.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/Ordered_Numeric.json",
     "title": "Ordered_Numeric",
     "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
     "$comments": "Defined in Foundation_types IM, abstract, inherits from Ordered, Numeric",

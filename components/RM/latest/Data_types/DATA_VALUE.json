@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DATA_VALUE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/DATA_VALUE.json",
     "title": "DATA_VALUE",
     "description": "Abstract parent of all `DV_` data value types.",
     "$comments": "Defined in Data_types IM, abstract",

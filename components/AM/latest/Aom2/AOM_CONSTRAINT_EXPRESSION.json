@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/AOM_CONSTRAINT_EXPRESSION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/AM/latest/Aom2/AOM_CONSTRAINT_EXPRESSION.json",
     "title": "AOM_CONSTRAINT_EXPRESSION",
     "description": "Constraint expression of the form `<expression> matches <constraint>`, where `<expression>` is any EL expression and `<constraint>` is a `C_DEFINED_OBJECT` instance.",
     "$comments": "Defined in Aom2 IM, inherits from EL_CONSTRAINT_EXPRESSION",

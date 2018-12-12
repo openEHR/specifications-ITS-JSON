@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_WORK_PLAN.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_WORK_PLAN.json",
     "title": "M_WORK_PLAN",
     "description": "Materialised form of `WORK_PLAN`.",
     "$comments": "Defined in Materialised IM",
@@ -15,7 +15,7 @@
         },
         "owner": {
             "description": "Owning Work Plan definition.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
         },
         "timeline": {
             "description": "Materialised global timeline.",

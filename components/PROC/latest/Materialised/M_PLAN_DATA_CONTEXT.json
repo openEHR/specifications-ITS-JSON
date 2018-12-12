@@ -1,13 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_PLAN_DATA_CONTEXT.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_PLAN_DATA_CONTEXT.json",
     "title": "M_PLAN_DATA_CONTEXT",
     "$comments": "Defined in Materialised IM",
     "type": "object",
     "properties": {
         "definition": {
             "description": "Definition object for this execution time context.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/PLAN_DATA_CONTEXT"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/PLAN_DATA_CONTEXT"
         }
     },
     "required": [

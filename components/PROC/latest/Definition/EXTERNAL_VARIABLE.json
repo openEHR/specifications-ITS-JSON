@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/EXTERNAL_VARIABLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/EXTERNAL_VARIABLE.json",
     "title": "EXTERNAL_VARIABLE",
     "description": "A variable that carries a value from the external environment, including patient variables, and has a method of being populated. Cannot be written to from within the TP environment.",
     "$comments": "Defined in Definition IM, abstract, inherits from CONTEXT_VARIABLE",
@@ -15,11 +15,11 @@
         },
         "name": {
             "description": "Name of variable, as used in precondition and decision expressions.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "type": {
             "description": "Type of this variable.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/T"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/T"
         },
         "populating_request": {
             "description": "Optional specification of a system request that would populate a context variable."

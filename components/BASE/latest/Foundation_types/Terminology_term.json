@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Terminology_term.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/Terminology_term.json",
     "title": "Terminology_term",
     "description": "Leaf type representing a term from a terminology, which consists of the term text and the code, i.e. a concept reference.",
     "$comments": "Defined in Foundation_types IM",

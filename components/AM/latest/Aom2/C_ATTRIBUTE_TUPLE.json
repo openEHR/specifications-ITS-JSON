@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/C_ATTRIBUTE_TUPLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/AM/latest/Aom2/C_ATTRIBUTE_TUPLE.json",
     "title": "C_ATTRIBUTE_TUPLE",
     "description": "Object representing a constraint on an atttribute tuple, i.e. a group of attributes that are constrained together. Typically used for representing co-varying constraints like {units, range} constraints.",
     "$comments": "Defined in Aom2 IM, inherits from C_SECOND_ORDER",
@@ -36,7 +36,7 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "c_congruent_to": {
@@ -50,7 +50,7 @@
                 "other"
             ],
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     }

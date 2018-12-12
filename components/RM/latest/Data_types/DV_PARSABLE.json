@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/DV_PARSABLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/DV_PARSABLE.json",
     "title": "DV_PARSABLE",
     "description": "Encapsulated data expressed as a parsable String. The internal model of the data item is not described in the openEHR model in common with other encapsulated types, but in this case, the form of the data is assumed to be plaintext, rather than compressed or other types of large binary data. ",
     "$comments": "Defined in Data_types IM, inherits from DV_ENCAPSULATED",
@@ -16,11 +16,11 @@
         },
         "value": {
             "description": "The string, which may validly be empty in some syntaxes.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "formalism": {
             "description": "Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [
@@ -34,7 +34,7 @@
         "size": {
             "description": "Size in bytes of value.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Integer"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Integer"
             }
         }
     },

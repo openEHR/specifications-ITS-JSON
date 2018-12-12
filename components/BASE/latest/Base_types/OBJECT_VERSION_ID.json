@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/OBJECT_VERSION_ID.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Base_types/OBJECT_VERSION_ID.json",
     "title": "OBJECT_VERSION_ID",
     "description": "Globally unique identifier for one version of a versioned object; lexical form: `object_id  '::' creating_system_id  '::' version_tree_id`.",
     "$comments": "Defined in Base_types IM, inherits from UID_BASED_ID",
@@ -8,7 +8,7 @@
     "properties": {
         "value": {
             "description": "The value of the id in the form defined below. ",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [
@@ -27,13 +27,13 @@
         "extension": {
             "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         },
         "has_extension": {
             "description": "True if extension /= Void.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "object_id": {
@@ -57,7 +57,7 @@
         "is_branch": {
             "description": "True if this version identifier represents a branch.",
             "return": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
             }
         }
     },

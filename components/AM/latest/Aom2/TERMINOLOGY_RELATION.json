@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/TERMINOLOGY_RELATION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/AM/latest/Aom2/TERMINOLOGY_RELATION.json",
     "title": "TERMINOLOGY_RELATION",
     "description": "Class whose instances represent any kind of 1:N relationship between a source term and 1-N target terms.",
     "$comments": "Defined in Aom2 IM, abstract",
@@ -13,13 +13,13 @@
         },
         "id": {
             "description": "Code of source term of this relation.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "members": {
             "description": "List of target terms in this relation.",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             },
             "minItems": 1
         }

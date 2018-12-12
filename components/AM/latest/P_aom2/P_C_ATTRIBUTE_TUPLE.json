@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/P_aom2/P_C_ATTRIBUTE_TUPLE.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/AM/latest/P_aom2/P_C_ATTRIBUTE_TUPLE.json",
     "title": "P_C_ATTRIBUTE_TUPLE",
     "description": "Object representing a constraint on an atttribute tuple, i.e. a group of attributes that are constrained together. Typically used for representing co-varying constraints like {units, range} constraints.",
     "$comments": "Defined in P_aom2 IM",
@@ -10,7 +10,7 @@
             "description": "Member attribute constraint objects.",
             "type": "array",
             "items": {
-                "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
             }
         }
     }

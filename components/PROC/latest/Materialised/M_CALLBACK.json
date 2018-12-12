@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_CALLBACK.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_CALLBACK.json",
     "title": "M_CALLBACK",
     "description": "Class representing the runtime tracked form of a callback for currently blocked tasks.",
     "$comments": "Defined in Materialised IM",
@@ -12,10 +12,10 @@
         },
         "dispatch_info": {
             "description": "Dispatch object defining actions on receipt of callback.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/DISPATCHABLE_ACTION"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/DISPATCHABLE_ACTION"
         },
         "other_details": {
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
         }
     },
     "required": [

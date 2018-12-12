@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/BOOLEAN_CONTEXT_EXPRESSION.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/BOOLEAN_CONTEXT_EXPRESSION.json",
     "title": "BOOLEAN_CONTEXT_EXPRESSION",
     "description": "Boolean-valued form of `CONTEXT_EXPRESSION`.",
     "$comments": "Defined in Definition IM, inherits from CONTEXT_EXPRESSION",
@@ -8,14 +8,14 @@
     "properties": {
         "name": {
             "description": "Name of variable, as used in precondition and decision expressions.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         },
         "type": {
             "description": "Type of this variable."
         },
         "expression": {
             "description": "Expression, in openEHR Expression syntax.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/all.json#/definitions/String"
         }
     },
     "required": [

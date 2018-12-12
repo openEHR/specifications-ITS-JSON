@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_PLAN_ITEM.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_PLAN_ITEM.json",
     "title": "M_PLAN_ITEM",
     "description": "Abstract parent of materialised run-time types that correspond to design time `PLAN_ITEM` instances.",
     "$comments": "Defined in Materialised IM, abstract",
@@ -16,7 +16,7 @@
         },
         "definition": {
             "description": "Corresponding item from Task Plan definition. Redefined in descendants to the definition type corresponding to each runtime (RT_XXX) type.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM"
+            "$ref": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/PLAN_ITEM"
         }
     },
     "required": [

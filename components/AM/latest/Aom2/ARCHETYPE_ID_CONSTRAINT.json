@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/AM/latest/Aom2/ARCHETYPE_ID_CONSTRAINT.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/AM/latest/Aom2/ARCHETYPE_ID_CONSTRAINT.json",
     "title": "ARCHETYPE_ID_CONSTRAINT",
     "description": "Constraint expression representing a regex constraint on an archetype identifier.",
     "$comments": "Defined in Aom2 IM, inherits from AOM_CONSTRAINT_EXPRESSION",

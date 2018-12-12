@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/TASK_WAIT.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/TASK_WAIT.json",
     "title": "TASK_WAIT",
     "description": "Object representing time of a Task to be performed in terms of a related event. The `_start_window_` is used to add an 'acceptable delay' time within which the Task should be started with respect to the intended start time. The `_timeout_` attribute can be used for non-deterministic Events.\n\n* clock time: event = `TIMELINE_MOMENT`, `CALENDAR_EVENT`;\n* notification-based: event = `MANUAL_NOTIFICATION`, `CALLBACK_NOTIFICATION` or `SYSTEM_NOTIFICATION`;\n* task-linked: event = `TASK_TRANSITION`, e.g. 1hr after previous Task done;\n* state-linked: event = `STATE_TRIGGER`, e.g. 'when systolic BP > 165';\n* any event with added delay: `DELAY_EVENT`.",
     "$comments": "Defined in Definition IM",

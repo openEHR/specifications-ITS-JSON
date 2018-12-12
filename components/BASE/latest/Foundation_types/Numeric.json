@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Numeric.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/Numeric.json",
     "title": "Numeric",
     "description": "Abstract notional parent class of numeric types, which are types which have various arithmetic and comparison operators defined.",
     "$comments": "Defined in Foundation_types IM, abstract",

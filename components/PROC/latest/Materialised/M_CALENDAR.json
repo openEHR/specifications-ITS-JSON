@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_CALENDAR.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_CALENDAR.json",
     "title": "M_CALENDAR",
     "$comments": "Defined in Materialised IM"
 }

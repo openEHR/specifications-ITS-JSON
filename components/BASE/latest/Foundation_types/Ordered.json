@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/Ordered.json",
+    "$id": "https://www.openEHR.org/releases/ITS-JSON/latest/components/BASE/latest/Foundation_types/Ordered.json",
     "title": "Ordered",
     "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
     "$comments": "Defined in Foundation_types IM, abstract",
@@ -41,7 +41,7 @@
         "all.json#/definitions/Character",
         "all.json#/definitions/String",
         "all.json#/definitions/Temporal",
-        "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Data_types/all.json#/definitions/DV_ORDERED"
+        "https://www.openEHR.org/releases/ITS-JSON/latest/components/RM/latest/Data_types/all.json#/definitions/DV_ORDERED"
     ],
     "$functions": {
         "infix <": {
