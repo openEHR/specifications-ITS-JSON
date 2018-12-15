@@ -1,12 +1,14 @@
-# specifications-ITS-JSON
+= specifications-ITS-JSON
 
 JSON schemas for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
 
-**_NOTE_** These schemas are in development and subject to change.
+NOTE: These schemas are in development and subject to change.
 
-### Releases and IM Versions
+== Releases and IM Versions
+
 All schema are generated from current specifications of the most relevant openEHR UML models and components.
 The repository is structured as follows:
+
 ----
 /examples                # JSON examples
 /components
@@ -28,12 +30,15 @@ The repository is structured as follows:
         /latest          # schemas for working version of PROC
 ----
 
-### Additional JSON-Schema keywords
+== Additional JSON-Schema keywords
+
 Schema format is based on https://json-schema.org/specification.html[draft-07 of JSON-Schema specifications].
+
 A few other keywords are used to support openEHR metadata: 
 `$abstract`, `$inherits`, `$children`, `$functions`, `$invariants`, `$version` and `$component`.
 These keywords don't have to be supported by JSON-Schema validators, their purpose is only informational.   
 
-### Acknowledgements
+== Acknowledgements
+
 JSON schema were initially authored by https://www.code24.nl[Code24]. 
 
