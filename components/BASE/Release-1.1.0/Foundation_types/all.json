@@ -41,15 +41,14 @@
                 "#/definitions/Hash_of_String_List_of_String",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/all.json#/definitions/Hash_of_String_TRANSLATION_DETAILS",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/all.json#/definitions/Hash_of_String_RESOURCE_DESCRIPTION_ITEM",
-                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_VALUE_SET",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_ARCHETYPE_TERM",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERM",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_Uri",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_Uri",
                 "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_PROPERTY_MAPPING",
-                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING",
-                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING"
             ],
             "$functions": {
                 "has": {
@@ -1402,7 +1401,15 @@
                         "Iso8601_duration",
                         "Iso8601_time",
                         "Iso8601_timezone",
-                        "Iso8601_date"
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE",
+                        "DV_ORDINAL",
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT"
                     ]
                 }
             },
@@ -1415,7 +1422,8 @@
                 "#/definitions/Octet",
                 "#/definitions/Character",
                 "#/definitions/String",
-                "#/definitions/Temporal"
+                "#/definitions/Temporal",
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_ORDERED"
             ],
             "$functions": {
                 "infix <": {
@@ -1505,6 +1513,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_date_time",
+                        "DV_DATE_TIME"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -1515,6 +1529,9 @@
             ],
             "$inherits": [
                 "#/definitions/Iso8601_type"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_DATE_TIME"
             ],
             "$functions": {
                 "valid_year": {
@@ -1826,6 +1843,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_duration",
+                        "DV_DURATION"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -1836,6 +1859,9 @@
             ],
             "$inherits": [
                 "#/definitions/Iso8601_type"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_DURATION"
             ],
             "$functions": {
                 "valid_year": {
@@ -2118,6 +2144,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_time",
+                        "DV_TIME"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -2128,6 +2160,9 @@
             ],
             "$inherits": [
                 "#/definitions/Iso8601_type"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_TIME"
             ],
             "$functions": {
                 "valid_year": {
@@ -2666,7 +2701,11 @@
                         "Iso8601_duration",
                         "Iso8601_time",
                         "Iso8601_timezone",
-                        "Iso8601_date"
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE"
                     ]
                 },
                 "value": {
@@ -2897,6 +2936,12 @@
             "$comments": "Defined in Foundation_types IM, inherits from Iso8601_type",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "Iso8601_date",
+                        "DV_DATE"
+                    ]
+                },
                 "value": {
                     "description": "Representation of all descendants is a single String.",
                     "$ref": "#/definitions/String"
@@ -2907,6 +2952,9 @@
             ],
             "$inherits": [
                 "#/definitions/Iso8601_type"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_DATE"
             ],
             "$functions": {
                 "valid_year": {
@@ -3799,7 +3847,11 @@
                         "Iso8601_duration",
                         "Iso8601_time",
                         "Iso8601_timezone",
-                        "Iso8601_date"
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE"
                     ]
                 }
             },
@@ -3993,7 +4045,11 @@
                         "Iso8601_duration",
                         "Iso8601_time",
                         "Iso8601_timezone",
-                        "Iso8601_date"
+                        "Iso8601_date",
+                        "DV_DATE_TIME",
+                        "DV_DURATION",
+                        "DV_TIME",
+                        "DV_DATE"
                     ]
                 }
             },
@@ -4288,9 +4344,15 @@
                         "Point_interval",
                         "Interval<Real>",
                         "Interval<Integer>",
+                        "DV_INTERVAL",
                         "Proper_interval<Iso8601_date>",
                         "Multiplicity_interval",
-                        "Point_interval<Iso8601_date>"
+                        "Point_interval<Iso8601_date>",
+                        "DV_INTERVAL<DV_DATE_TIME>",
+                        "DV_INTERVAL<DV_DATE>",
+                        "DV_INTERVAL<DV_QUANTITY>",
+                        "DV_INTERVAL<DV_COUNT>",
+                        "DV_INTERVAL<DV_PROPORTION>"
                     ]
                 },
                 "lower": {
@@ -4332,7 +4394,8 @@
                 "#/definitions/Proper_interval",
                 "#/definitions/Point_interval",
                 "#/definitions/Interval_of_Real",
-                "#/definitions/Interval_of_Integer"
+                "#/definitions/Interval_of_Integer",
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_INTERVAL"
             ],
             "$functions": {
                 "has": {

@@ -36,15 +36,14 @@
         "all.json#/definitions/Hash_of_String_List_of_String",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/all.json#/definitions/Hash_of_String_TRANSLATION_DETAILS",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/all.json#/definitions/Hash_of_String_RESOURCE_DESCRIPTION_ITEM",
-        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_VALUE_SET",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_ARCHETYPE_TERM",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERM",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_Uri",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/Hash_of_String_Hash_of_String_Uri",
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_PROPERTY_MAPPING",
-        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING",
-        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2_profile/all.json#/definitions/Hash_of_String_AOM_TYPE_MAPPING"
     ],
     "$functions": {
         "has": {

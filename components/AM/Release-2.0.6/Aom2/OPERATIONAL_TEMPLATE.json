@@ -78,7 +78,7 @@
         },
         "component_terminologies": {
             "description": "Compendium of flattened terminologies of archetypes externally referenced from this archetype, keyed by archetype identifier. This will almost always be present in a template.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
+            "$ref": "all.json#/definitions/Hash_of_String_ARCHETYPE_TERMINOLOGY"
         },
         "terminology_extracts": {
             "description": "Directory of term definitions as a two-level  table. The outer hash keys are term codes,  e.g. \"at4\", and the inner hash key are term  attribute names, e.g. \"text\", \"description\" etc.",

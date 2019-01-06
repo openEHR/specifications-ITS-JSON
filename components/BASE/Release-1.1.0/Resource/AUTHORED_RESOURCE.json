@@ -10,6 +10,7 @@
             "enum": [
                 "AUTHORED_ARCHETYPE",
                 "P_AUTHORED_ARCHETYPE",
+                "WORK_PLAN",
                 "TEMPLATE",
                 "OPERATIONAL_TEMPLATE",
                 "P_TEMPLATE",
@@ -51,7 +52,8 @@
     "$abstract": true,
     "$children": [
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/all.json#/definitions/AUTHORED_ARCHETYPE",
-        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/P_AUTHORED_ARCHETYPE"
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/all.json#/definitions/P_AUTHORED_ARCHETYPE",
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/WORK_PLAN"
     ],
     "$functions": {
         "current_revision": {
