@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/PLAN_CALENDAR.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/PLAN_CALENDAR.json",
     "title": "PLAN_CALENDAR",
     "description": "Work Plan global calendar in which all absolute-time Calendar Events are recorded.",
     "$comments": "Defined in Definition IM",

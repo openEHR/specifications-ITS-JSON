@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/EVENT_WAIT.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/EVENT_WAIT.json",
     "title": "EVENT_WAIT",
     "description": "Wait state for any kind of Event, with a success Action and an optional separate timeout Event Wait state.",
     "$comments": "Defined in Definition IM",

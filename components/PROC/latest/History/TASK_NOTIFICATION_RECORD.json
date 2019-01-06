@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/History/TASK_NOTIFICATION_RECORD.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/History/TASK_NOTIFICATION_RECORD.json",
     "title": "TASK_NOTIFICATION_RECORD",
     "description": "Record of a notification to another party (i.e. performer).",
     "$comments": "Defined in History IM",
@@ -8,15 +8,15 @@
     "properties": {
         "reciever": {
             "description": "Identification of the receiver party",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PARTY_PROXY"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/PARTY_PROXY"
         },
         "receiver_task_plan": {
             "description": "Identifier of receiving Task Plan.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
         },
         "details": {
             "description": "Other details as a name/value list.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Hash_of_String_String"
         }
     },
     "required": [

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/History/TASK_PLAN_EXECUTION_HISTORY.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/History/TASK_PLAN_EXECUTION_HISTORY.json",
     "title": "TASK_PLAN_EXECUTION_HISTORY",
     "description": "History of Task Plan execution events and notifications. May be used by a workflow application to record all events during execution.\n\nMay be persisted in the EHR in partial or complete form, or not at all.",
     "$comments": "Defined in History IM",

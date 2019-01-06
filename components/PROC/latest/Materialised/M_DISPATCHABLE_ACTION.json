@@ -1,13 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_DISPATCHABLE_ACTION.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_DISPATCHABLE_ACTION.json",
     "title": "M_DISPATCHABLE_ACTION",
     "description": "Materialised form of `DISPATCHABLE_ACTION`.",
     "$comments": "Defined in Materialised IM, inherits from M_TASK_ACTION",
     "type": "object",
     "properties": {
         "definition": {
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/TASK_ACTION"
         }
     },
     "required": [

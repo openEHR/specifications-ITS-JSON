@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/History/all.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/History/all.json",
     "title": "History IM definitions",
     "$comments": "Part of PROC component, latest version.",
     "definitions": {
@@ -40,11 +40,11 @@
                 },
                 "time": {
                     "description": "Time the event occurred.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Iso8601_date_time"
                 },
                 "description": {
                     "description": "Optional description associated with the event. Would typically be populated for Cancel and Abort events.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required": [
@@ -65,15 +65,15 @@
             "properties": {
                 "reciever": {
                     "description": "Identification of the receiver party",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/RM/latest/Common/all.json#/definitions/PARTY_PROXY"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/PARTY_PROXY"
                 },
                 "receiver_task_plan": {
                     "description": "Identifier of receiving Task Plan.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "details": {
                     "description": "Other details as a name/value list.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Hash_of_String_String"
                 }
             },
             "required": [
@@ -90,15 +90,15 @@
             "properties": {
                 "time": {
                     "description": "Time the event occurred.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Iso8601_date_time"
                 },
                 "description": {
                     "description": "Optional description associated with the event. Would typically be populated for Cancel and Abort events.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "details": {
                     "description": "Other details as a name/value list.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Hash_of_String_String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Hash_of_String_String"
                 }
             },
             "required": [
@@ -117,15 +117,15 @@
             "properties": {
                 "time": {
                     "description": "Time the event occurred.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Iso8601_date_time"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Iso8601_date_time"
                 },
                 "description": {
                     "description": "Optional description associated with the event. Would typically be populated for Cancel and Abort events.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "task_id": {
                     "description": "Identification of Task in the Task Plan structre using a path of the form `/task_group_id/task_group_id`.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "lifecycle_state": {
                     "description": "The lifecycle state that was reached due to this event."
@@ -141,20 +141,20 @@
                     "description": "Forward references to Entry (e.g. `ACTION`, `OBSERVATION` etc) that was recorded as a result of this Task being performed. If this is set, it indicates that the planned Task is 'done' i.e. checked off the plan.",
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Base_types/all.json#/definitions/LOCATABLE_REF"
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Base_types/all.json#/definitions/LOCATABLE_REF"
                     }
                 },
                 "preconditions_satisfied": {
                     "description": "Set to True if all preconditions defined on the corresponding Task were satisfied at runtime. If set to False, and there were preconditions, this means that preconditions were overridden by the user at runtime.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "wait_conditions_satisfied": {
                     "description": "Set to True if all wait_conditions for the corresponding Task were satisfied when it was performed. If False, and there were wait_conditions, wait_conditions were overridden by the user at runtime.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/Boolean"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "lifecycle_transition_reason": {
                     "description": "Optional reason for lifecycle transition.",
-                    "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/BASE/latest/Foundation_types/all.json#/definitions/String"
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 }
             },
             "required": [

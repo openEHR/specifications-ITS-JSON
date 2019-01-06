@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/P_aom2/Hash_of_String_ARCHETYPE_TERMINOLOGY.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/AM/Release-2.0.6/Aom2/Hash_of_String_ARCHETYPE_TERMINOLOGY.json",
     "title": "Hash<String, ARCHETYPE_TERMINOLOGY>",
-    "$comments": "Defined in P_aom2 IM, inherits from Hash",
+    "$comments": "Defined in Aom2 IM, inherits from Hash",
     "type": "object",
     "$inherits": [
         "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Hash"

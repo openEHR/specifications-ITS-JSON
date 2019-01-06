@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_EVENT_GROUP.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_EVENT_GROUP.json",
     "title": "M_EVENT_GROUP",
     "description": "Materialised run-time homologue of DECISION_PATH_GROUP from a Task Plan definition.",
     "$comments": "Defined in Materialised IM, inherits from M_PLAN_ITEM",
@@ -8,7 +8,7 @@
     "properties": {
         "definition": {
             "description": "Reference to corresponding DECISION_PATH_GROUP instance in Task Plan definition.",
-            "$ref": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/all.json#/definitions/EVENT_GROUP"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/all.json#/definitions/EVENT_GROUP"
         }
     },
     "required": [

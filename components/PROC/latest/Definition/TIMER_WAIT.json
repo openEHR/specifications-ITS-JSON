@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/TIMER_WAIT.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/TIMER_WAIT.json",
     "title": "TIMER_WAIT",
     "description": "Event listener for a Timer event.",
     "$comments": "Defined in Definition IM, inherits from EVENT_WAIT",

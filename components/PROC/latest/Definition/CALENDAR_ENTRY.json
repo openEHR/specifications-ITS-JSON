@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/CALENDAR_ENTRY.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/CALENDAR_ENTRY.json",
     "title": "CALENDAR_ENTRY",
     "description": "A single calendar entry.",
     "$comments": "Defined in Definition IM"

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Service/I_TASK_PLAN_DEFINITION.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Service/I_TASK_PLAN_DEFINITION.json",
     "title": "I_TASK_PLAN_DEFINITION",
     "description": "Task planning API for definition Task Plan level.",
     "$comments": "Defined in Service IM",

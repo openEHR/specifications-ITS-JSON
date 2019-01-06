@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/TASK_COSTING.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/TASK_COSTING.json",
     "title": "TASK_COSTING",
     "description": "Costing information for a Task.\n\n[.tbd]\nTODO: to be developed.",
     "$comments": "Defined in Definition IM"

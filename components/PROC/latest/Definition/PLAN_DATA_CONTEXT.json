@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Definition/PLAN_DATA_CONTEXT.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/PLAN_DATA_CONTEXT.json",
     "title": "PLAN_DATA_CONTEXT",
     "description": "Container for all variable definitions used in the Task Plan.",
     "$comments": "Defined in Definition IM",

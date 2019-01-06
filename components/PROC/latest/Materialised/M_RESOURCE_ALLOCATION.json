@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://www.openEHR.org/releases/ITS-JSON/components/PROC/latest/Materialised/M_RESOURCE_ALLOCATION.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Materialised/M_RESOURCE_ALLOCATION.json",
     "title": "M_RESOURCE_ALLOCATION",
     "$comments": "Defined in Materialised IM"
 }
