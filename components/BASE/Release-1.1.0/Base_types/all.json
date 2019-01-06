@@ -23,19 +23,19 @@
             ],
             "$functions": {
                 "qualified_rm_entity": {
-                    "description": "Globally qualified reference model entity, e.g.  openehr-composition-OBSERVATION.",
+                    "description": "Globally qualified reference model entity, e.g.  `openehr-EHR-OBSERVATION`.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "domain_concept": {
-                    "description": "Name of the concept represented by this archetype, including specialisation, e.g. \n Biochemistry_result-cholesterol . ",
+                    "description": "Name of the concept represented by this archetype, including specialisation, e.g. `Biochemistry_result-cholesterol`. ",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "rm_originator": {
-                    "description": "Organisation originating the reference model on which this archetype is based, e.g. \n openehr ,  cen ,  hl7 . ",
+                    "description": "Organisation originating the reference model on which this archetype is based, e.g. openehr,  cen,  hl7 . ",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                     }
@@ -114,13 +114,13 @@
                     }
                 },
                 "extension": {
-                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first '::' separator if any, or else any empty String.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "has_extension": {
-                    "description": "True if extension /= Void.",
+                    "description": "True if `_extension_ /= Void`.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                     }
@@ -132,16 +132,16 @@
         },
         "LOCATABLE_REF": {
             "title": "LOCATABLE_REF",
-            "description": "Purpose Reference to a LOCATABLE instance inside the top-level content structure inside a VERSION<T>; the path attribute is applied to the object that VERSION.data points to. ",
+            "description": "Purpose Reference to a `LOCATABLE` instance inside the top-level content structure inside a `VERSION<T>`; the path attribute is applied to the object that `VERSION._data_` points to. ",
             "$comments": "Defined in Base_types IM, inherits from OBJECT_REF",
             "type": "object",
             "properties": {
                 "namespace": {
-                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n\n* local\n* unknown\n* [a-zA-Z][a-zA-Z0-9_-:/&+?]*\n",
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for `_namespace_` are:\n\n* `\"local\"`\n* `\"unknown\"`\n* a string matching the regex `[a-zA-Z][a-zA-Z0-9_-:/&+?]*`\n",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "type": {
-                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g. `PARTY`, `PERSON`,  `GUIDELINE`  etc. These class names are from the relevant reference model. The type name `ANY` can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "id": {
@@ -149,7 +149,7 @@
                     "$ref": "#/definitions/UID_BASED_ID"
                 },
                 "path": {
-                    "description": "The path to an instance in question, as an absolute path with respect to the object found at VERSION.data. An empty path means that the object referred to by id being specified. ",
+                    "description": "The path to an instance in question, as an absolute path with respect to the object found at `VERSION._data_`. An empty path means that the object referred to by id being specified. ",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 }
             },
@@ -172,7 +172,7 @@
         },
         "OBJECT_ID": {
             "title": "OBJECT_ID",
-            "description": "Ancestor class of identifiers of informational objects. Ids may be completely meaningless, in which case their only job is to refer to something, or may carry some information to do with the identified object. \n\nObject ids are used inside an object to identify that object. To identify another object in another service, use an OBJECT_REF, or else use a UID for local objects identified by UID. If none of the subtypes is suitable, direct instances of this class may be used. ",
+            "description": "Ancestor class of identifiers of informational objects. Ids may be completely meaningless, in which case their only job is to refer to something, or may carry some information to do with the identified object. \n\nObject ids are used inside an object to identify that object. To identify another object in another service, use an `OBJECT_REF`, or else use a UID for local objects identified by UID. If none of the subtypes is suitable, direct instances of this class may be used. ",
             "$comments": "Defined in Base_types IM, abstract",
             "type": "object",
             "properties": {
@@ -219,11 +219,11 @@
                     ]
                 },
                 "namespace": {
-                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n\n* local\n* unknown\n* [a-zA-Z][a-zA-Z0-9_-:/&+?]*\n",
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for `_namespace_` are:\n\n* `\"local\"`\n* `\"unknown\"`\n* a string matching the regex `[a-zA-Z][a-zA-Z0-9_-:/&+?]*`\n",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "type": {
-                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g. `PARTY`, `PERSON`,  `GUIDELINE`  etc. These class names are from the relevant reference model. The type name `ANY` can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "id": {
@@ -267,19 +267,19 @@
                     }
                 },
                 "extension": {
-                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first '::' separator if any, or else any empty String.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "has_extension": {
-                    "description": "True if extension /= Void.",
+                    "description": "True if `_extension_ /= Void`.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                     }
                 },
                 "object_id": {
-                    "description": "Unique identifier for logical object of which this identifier identifies one version; normally the object_id will be the unique identifier of the version container containing the version referred to by this OBJECT_VERSION_ID instance. ",
+                    "description": "Unique identifier for logical object of which this identifier identifies one version; normally the `_object_id_` will be the unique identifier of the version container containing the version referred to by this `OBJECT_VERSION_ID` instance. ",
                     "return": {
                         "$ref": "#/definitions/UID"
                     }
@@ -309,16 +309,16 @@
         },
         "PARTY_REF": {
             "title": "PARTY_REF",
-            "description": "Identifier for parties in a demographic or identity service. There are typically a number of subtypes of the PARTY class, including PERSON, ORGANISATION, etc. Abstract supertypes are allowed if the referenced object is of a type not known by the current implementation of this class (in other words, if the demographic model is changed by the addition of a new PARTY or ACTOR subtypes, valid PARTY_REFs can still be constructed to them). ",
+            "description": "Identifier for parties in a demographic or identity service. There are typically a number of subtypes of the `PARTY` class, including `PERSON`, `ORGANISATION`, etc. Abstract supertypes are allowed if the referenced object is of a type not known by the current implementation of this class (in other words, if the demographic model is changed by the addition of a new `PARTY` or `ACTOR` subtypes, valid `PARTY_REFs` can still be constructed to them). ",
             "$comments": "Defined in Base_types IM, inherits from OBJECT_REF",
             "type": "object",
             "properties": {
                 "namespace": {
-                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n\n* local\n* unknown\n* [a-zA-Z][a-zA-Z0-9_-:/&+?]*\n",
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for `_namespace_` are:\n\n* `\"local\"`\n* `\"unknown\"`\n* a string matching the regex `[a-zA-Z][a-zA-Z0-9_-:/&+?]*`\n",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "type": {
-                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g. `PARTY`, `PERSON`,  `GUIDELINE`  etc. These class names are from the relevant reference model. The type name `ANY` can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "id": {
@@ -340,7 +340,7 @@
         },
         "TERMINOLOGY_ID": {
             "title": "TERMINOLOGY_ID",
-            "description": "Identifier for terminologies such as accessed via a terminology query service. In this class, the value attribute identifies the Terminology in the terminology service, e.g.  SNOMED-CT . A terminology is assumed to be in a particular language, which must be explicitly specified.\n\nThe value if the id attribute is the precise terminology id identifier, including actual release (i.e. actual  version), local modifications etc; e.g. ICPC2.\n\nLexical form: `name [  (' version  )' ]`.\n",
+            "description": "Identifier for terminologies such as accessed via a terminology query service. In this class, the value attribute identifies the Terminology in the terminology service, e.g.  SNOMED-CT . A terminology is assumed to be in a particular language, which must be explicitly specified.\n\nThe value if the id attribute is the precise terminology id identifier, including actual release (i.e. actual  version), local modifications etc; e.g. ICPC2.\n\nLexical form: `name [  '(' version  ')' ]`.\n",
             "$comments": "Defined in Base_types IM, inherits from OBJECT_ID",
             "type": "object",
             "properties": {
@@ -457,13 +457,13 @@
                     }
                 },
                 "extension": {
-                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+                    "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first '::' separator if any, or else any empty String.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                     }
                 },
                 "has_extension": {
-                    "description": "True if extension /= Void.",
+                    "description": "True if `_extension_ /= Void`.",
                     "return": {
                         "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                     }
@@ -496,7 +496,7 @@
         },
         "INTERNET_ID": {
             "title": "INTERNET_ID",
-            "description": "Model of a reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by IETF RFC 1034 (http://www.ietf.org/rfc/rfc1034.txt). ",
+            "description": "Model of a reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by http://www.ietf.org/rfc/rfc1034.txt[IETF RFC 1034^]. ",
             "$comments": "Defined in Base_types IM, inherits from UID",
             "type": "object",
             "properties": {
@@ -593,11 +593,11 @@
             "type": "object",
             "properties": {
                 "namespace": {
-                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n\n* local\n* unknown\n* [a-zA-Z][a-zA-Z0-9_-:/&+?]*\n",
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for `_namespace_` are:\n\n* `\"local\"`\n* `\"unknown\"`\n* a string matching the regex `[a-zA-Z][a-zA-Z0-9_-:/&+?]*`\n",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "type": {
-                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g. `PARTY`, `PERSON`,  `GUIDELINE`  etc. These class names are from the relevant reference model. The type name `ANY` can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
                 },
                 "id": {

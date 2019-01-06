@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_structures/HISTORY.json",
     "title": "HISTORY",
-    "description": "Root object of a linear history, i.e. time series structure. For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the `EVENT.|_offset_` must be a multiple of period for each Event. Missing events in a period History are however allowed. ",
+    "description": "Root object of a linear history, i.e. time series structure. For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the `EVENT._offset_` must be a multiple of period for each Event. Missing events in a period History are however allowed. ",
     "$comments": "Defined in Data_structures IM, inherits from DATA_STRUCTURE",
     "type": "object",
     "properties": {

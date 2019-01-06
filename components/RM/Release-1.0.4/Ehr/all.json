@@ -1093,7 +1093,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "is_modifiable": {
-                    "description": "True if this EHR is allowed to be written to. Note that the `EHR_STATUS` object is special and can always be written to.",
+                    "description": "True if the EHR, other than the `EHR_STATUS` object, is allowed to be written to. The `EHR_STATUS` object itself can always be written to.",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
                 },
                 "other_details": {

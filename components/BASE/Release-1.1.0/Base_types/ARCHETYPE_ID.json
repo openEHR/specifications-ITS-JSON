@@ -19,19 +19,19 @@
     ],
     "$functions": {
         "qualified_rm_entity": {
-            "description": "Globally qualified reference model entity, e.g.  openehr-composition-OBSERVATION.",
+            "description": "Globally qualified reference model entity, e.g.  `openehr-EHR-OBSERVATION`.",
             "return": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
             }
         },
         "domain_concept": {
-            "description": "Name of the concept represented by this archetype, including specialisation, e.g. \n Biochemistry_result-cholesterol . ",
+            "description": "Name of the concept represented by this archetype, including specialisation, e.g. `Biochemistry_result-cholesterol`. ",
             "return": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
             }
         },
         "rm_originator": {
-            "description": "Organisation originating the reference model on which this archetype is based, e.g. \n openehr ,  cen ,  hl7 . ",
+            "description": "Organisation originating the reference model on which this archetype is based, e.g. openehr,  cen,  hl7 . ",
             "return": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
             }

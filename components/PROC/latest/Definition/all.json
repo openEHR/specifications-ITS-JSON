@@ -43,8 +43,8 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Terminology_code"
                 },
                 "description": {
-                    "description": "Human-understandable description of the Task Plan, which may be specific to the work items and patient.",
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_TEXT"
+                    "description": "Description and lifecycle information of the resource.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/all.json#/definitions/RESOURCE_DESCRIPTION"
                 },
                 "is_controlled": {
                     "description": "True if this resource is under any kind of change control (even file copying), in which case revision history is created. ",
@@ -122,7 +122,6 @@
                 "name",
                 "archetype_node_id",
                 "original_language",
-                "description",
                 "plans",
                 "calendar",
                 "timeline"
@@ -317,7 +316,7 @@
                     }
                 },
                 "target": {
-                    "description": "UID of target `TASK_PLAN` object.",
+                    "description": "Reference to target `TASK_PLAN` object.",
                     "$ref": "#/definitions/TASK_PLAN"
                 }
             },
@@ -466,9 +465,15 @@
         "DATASET_SPEC": {
             "title": "DATASET_SPEC",
             "description": "Specification of a related data-set and/or form to use with a Task, usually by means of display and/or data entry screens in an application being used by the principal performer.",
-            "$comments": "Defined in Definition IM",
+            "$comments": "Defined in Definition IM, abstract",
             "type": "object",
             "properties": {
+                "_type": {
+                    "enum": [
+                        "CAPTURE_DATASET_SPEC",
+                        "REVIEW_DATASET_SPEC"
+                    ]
+                },
                 "form_id": {
                     "description": "Form identifier.",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
@@ -481,7 +486,15 @@
                     "description": "Other data-set related details.",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
                 }
-            }
+            },
+            "required": [
+                "_type"
+            ],
+            "$abstract": true,
+            "$children": [
+                "#/definitions/CAPTURE_DATASET_SPEC",
+                "#/definitions/REVIEW_DATASET_SPEC"
+            ]
         },
         "DISPATCHABLE_ACTION": {
             "title": "DISPATCHABLE_ACTION",
@@ -702,7 +715,7 @@
                     "$ref": "#/definitions/TASK_COSTING"
                 },
                 "target": {
-                    "description": "UID of target `TASK_PLAN` object.",
+                    "description": "Reference to target `TASK_PLAN` object.",
                     "$ref": "#/definitions/TASK_PLAN"
                 }
             },
@@ -874,7 +887,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "action": {
@@ -1399,7 +1412,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -1640,7 +1653,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -1790,7 +1803,7 @@
                     ]
                 },
                 "target": {
-                    "description": "UID of target `TASK_PLAN` object.",
+                    "description": "Reference to target `TASK_PLAN` object.",
                     "$ref": "#/definitions/TASK_PLAN"
                 }
             },
@@ -1917,7 +1930,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 }
             },
@@ -3612,7 +3625,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -3808,7 +3821,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -3995,7 +4008,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -4686,7 +4699,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -4878,7 +4891,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -5868,7 +5881,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "action": {
@@ -6046,7 +6059,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "action": {
@@ -6056,7 +6069,7 @@
                     "description": "Associated data-set template and/or form via which data to be captured during this Task will actually be entered.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/CAPTURE_DATASET_SPEC"
                     }
                 }
             },
@@ -6230,7 +6243,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -6435,7 +6448,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -6628,7 +6641,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -6822,7 +6835,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -7015,7 +7028,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -7221,7 +7234,7 @@
                     "description": "Optional data-set to review prior to / as part of performing the Plan element.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DATASET_SPEC"
+                        "$ref": "#/definitions/REVIEW_DATASET_SPEC"
                     }
                 },
                 "members": {
@@ -7359,6 +7372,60 @@
                 "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
                 "Archetype_node_id_valid": "not archetype_node_id.is_empty"
             }
+        },
+        "CAPTURE_DATASET_SPEC": {
+            "title": "CAPTURE_DATASET_SPEC",
+            "description": "Specification of a related data capture data-set and/or form to use with a Task, usually by means data entry screens in an application being used by the principal performer.",
+            "$comments": "Defined in Definition IM, inherits from DATASET_SPEC",
+            "type": "object",
+            "properties": {
+                "form_id": {
+                    "description": "Form identifier.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
+                },
+                "template_id": {
+                    "description": "Template identifier in String form of an `ARCHETYPE_HRID`. If used with no `_form_id_`, the Execution engine needs to determine how to find a form based on the template identifier.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
+                },
+                "other_details": {
+                    "description": "Other data-set related details.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+                }
+            },
+            "$inherits": [
+                "#/definitions/DATASET_SPEC"
+            ]
+        },
+        "REVIEW_DATASET_SPEC": {
+            "title": "REVIEW_DATASET_SPEC",
+            "description": "Specification of a related data display data-set and/or form to use with a Task, usually by means display screens in an application being used by the principal performer.",
+            "$comments": "Defined in Definition IM, inherits from DATASET_SPEC",
+            "type": "object",
+            "properties": {
+                "form_id": {
+                    "description": "Form identifier.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
+                },
+                "template_id": {
+                    "description": "Template identifier in String form of an `ARCHETYPE_HRID`. If used with no `_form_id_`, the Execution engine needs to determine how to find a form based on the template identifier.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
+                },
+                "other_details": {
+                    "description": "Other data-set related details.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+                },
+                "populating_call": [],
+                "capture_datasets": {
+                    "description": "Capture data-sets (forms etc) used to obtain the data displayed in this Review data-set.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CAPTURE_DATASET_SPEC"
+                    }
+                }
+            },
+            "$inherits": [
+                "#/definitions/DATASET_SPEC"
+            ]
         }
     },
     "$component": "PROC",

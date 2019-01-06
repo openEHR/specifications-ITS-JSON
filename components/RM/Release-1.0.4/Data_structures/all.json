@@ -365,7 +365,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "items": {
-                    "description": "The items comprising the ITEM_TREE. Can include 0 or more CLUSTERs and/or 0 or more individual ELEMENTs.",
+                    "description": "The items comprising the `ITEM_TREE`. Can include 0 or more `CLUSTERs` and/or 0 or more individual `ELEMENTs`.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ITEM"
@@ -651,7 +651,7 @@
                     }
                 },
                 "as_hierarchy": {
-                    "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single ELEMENT.",
+                    "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single `ELEMENT`.",
                     "return": {
                         "$ref": "#/definitions/ELEMENT"
                     }
@@ -698,7 +698,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "rows": {
-                    "description": "Physical representation of the table as a list of CLUSTERs, each containing the data of one row of the table. ",
+                    "description": "Physical representation of the table as a list of `CLUSTERs`, each containing the data of one row of the table. ",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/CLUSTER"
@@ -985,7 +985,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "items": {
-                    "description": "Physical representation of the list. \n",
+                    "description": "Physical representation of the list. ",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ELEMENT"
@@ -1092,7 +1092,7 @@
                     }
                 },
                 "as_hierarchy": {
-                    "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single CLUSTER containing the ELEMENTs of this list.",
+                    "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single `CLUSTER` containing the `ELEMENTs` of this list.",
                     "return": {
                         "$ref": "#/definitions/CLUSTER"
                     }
@@ -1336,7 +1336,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/FEEDER_AUDIT"
                 },
                 "items": {
-                    "description": "Ordered list of items - CLUSTER or ELEMENT objects - under this CLUSTER. ",
+                    "description": "Ordered list of items - `CLUSTER` or `ELEMENT` objects - under this `CLUSTER`. ",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ITEM"
@@ -1490,7 +1490,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_CODED_TEXT"
                 },
                 "value": {
-                    "description": "Property representing leaf value object of ELEMENT. In real data, any concrete subtype of DATA_VALUE can be used.",
+                    "description": "Property representing leaf value object of `ELEMENT`. In real data, any concrete subtype of `DATA_VALUE` can be used.",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DATA_VALUE"
                 }
             },
@@ -1994,7 +1994,7 @@
                     "$ref": "#/definitions/ITEM_STRUCTURE"
                 },
                 "width": {
-                    "description": "Length of the interval during which the state was true. Void if an instantaneous event.",
+                    "description": "Duration of the time interval during which the values recorded under `data` are true and, if set, the values recorded under `state` are true. Void if an instantaneous event.",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_DURATION"
                 },
                 "sample_count": {
@@ -2002,7 +2002,7 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Integer"
                 },
                 "math_function": {
-                    "description": "Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using openEHR Terminology group `event math function`.",
+                    "description": "Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml[openEHR vocabulary `event math function`]. Default value `640|actual|`, meaning 'actual value'.",
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_CODED_TEXT"
                 }
             },
@@ -2135,7 +2135,7 @@
         },
         "HISTORY": {
             "title": "HISTORY",
-            "description": "Root object of a linear history, i.e. time series structure. For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the `EVENT.|_offset_` must be a multiple of period for each Event. Missing events in a period History are however allowed. ",
+            "description": "Root object of a linear history, i.e. time series structure. For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the `EVENT._offset_` must be a multiple of period for each Event. Missing events in a period History are however allowed. ",
             "$comments": "Defined in Data_structures IM, inherits from DATA_STRUCTURE",
             "type": "object",
             "properties": {

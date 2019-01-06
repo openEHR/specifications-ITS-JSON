@@ -1470,7 +1470,7 @@
                 "Links_valid": "links /= Void implies not links.is_empty",
                 "Archetyped_valid": "is_archetype_root xor archetype_details = Void",
                 "Archetype_node_id_valid": "not archetype_node_id.is_empty",
-                "Action_archteype_id_valid": "not action_archetype_ids.is_empty"
+                "Action_archetype_id_valid": "not action_archetype_ids.is_empty"
             }
         },
         "ISM_TRANSITION": {

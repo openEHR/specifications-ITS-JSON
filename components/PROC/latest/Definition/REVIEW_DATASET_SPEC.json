@@ -1,17 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/DATASET_SPEC.json",
-    "title": "DATASET_SPEC",
-    "description": "Specification of a related data-set and/or form to use with a Task, usually by means of display and/or data entry screens in an application being used by the principal performer.",
-    "$comments": "Defined in Definition IM, abstract",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/PROC/latest/Definition/REVIEW_DATASET_SPEC.json",
+    "title": "REVIEW_DATASET_SPEC",
+    "description": "Specification of a related data display data-set and/or form to use with a Task, usually by means display screens in an application being used by the principal performer.",
+    "$comments": "Defined in Definition IM, inherits from DATASET_SPEC",
     "type": "object",
     "properties": {
-        "_type": {
-            "enum": [
-                "CAPTURE_DATASET_SPEC",
-                "REVIEW_DATASET_SPEC"
-            ]
-        },
         "form_id": {
             "description": "Form identifier.",
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
@@ -23,14 +17,17 @@
         "other_details": {
             "description": "Other data-set related details.",
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+        },
+        "populating_call": [],
+        "capture_datasets": {
+            "description": "Capture data-sets (forms etc) used to obtain the data displayed in this Review data-set.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/CAPTURE_DATASET_SPEC"
+            }
         }
     },
-    "required": [
-        "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/CAPTURE_DATASET_SPEC",
-        "all.json#/definitions/REVIEW_DATASET_SPEC"
+    "$inherits": [
+        "all.json#/definitions/DATASET_SPEC"
     ]
 }

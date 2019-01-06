@@ -25,19 +25,19 @@
             }
         },
         "extension": {
-            "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first  ::' separator if any, or else any empty String.",
+            "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first '::' separator if any, or else any empty String.",
             "return": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
             }
         },
         "has_extension": {
-            "description": "True if extension /= Void.",
+            "description": "True if `_extension_ /= Void`.",
             "return": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
             }
         },
         "object_id": {
-            "description": "Unique identifier for logical object of which this identifier identifies one version; normally the object_id will be the unique identifier of the version container containing the version referred to by this OBJECT_VERSION_ID instance. ",
+            "description": "Unique identifier for logical object of which this identifier identifies one version; normally the `_object_id_` will be the unique identifier of the version container containing the version referred to by this `OBJECT_VERSION_ID` instance. ",
             "return": {
                 "$ref": "all.json#/definitions/UID"
             }

@@ -53,7 +53,7 @@
             "description": "Optional data-set to review prior to / as part of performing the Plan element.",
             "type": "array",
             "items": {
-                "$ref": "all.json#/definitions/DATASET_SPEC"
+                "$ref": "all.json#/definitions/REVIEW_DATASET_SPEC"
             }
         },
         "action": {
@@ -63,7 +63,7 @@
             "description": "Associated data-set template and/or form via which data to be captured during this Task will actually be entered.",
             "type": "array",
             "items": {
-                "$ref": "all.json#/definitions/DATASET_SPEC"
+                "$ref": "all.json#/definitions/CAPTURE_DATASET_SPEC"
             }
         }
     },

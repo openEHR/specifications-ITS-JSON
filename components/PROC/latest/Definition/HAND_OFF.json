@@ -49,7 +49,7 @@
             "$ref": "all.json#/definitions/TASK_COSTING"
         },
         "target": {
-            "description": "UID of target `TASK_PLAN` object.",
+            "description": "Reference to target `TASK_PLAN` object.",
             "$ref": "all.json#/definitions/TASK_PLAN"
         }
     },

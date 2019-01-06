@@ -38,7 +38,7 @@
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_CODED_TEXT"
         },
         "value": {
-            "description": "Property representing leaf value object of ELEMENT. In real data, any concrete subtype of DATA_VALUE can be used.",
+            "description": "Property representing leaf value object of `ELEMENT`. In real data, any concrete subtype of `DATA_VALUE` can be used.",
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DATA_VALUE"
         }
     },

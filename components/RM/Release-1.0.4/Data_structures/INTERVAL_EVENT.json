@@ -46,7 +46,7 @@
             "$ref": "all.json#/definitions/ITEM_STRUCTURE"
         },
         "width": {
-            "description": "Length of the interval during which the state was true. Void if an instantaneous event.",
+            "description": "Duration of the time interval during which the values recorded under `data` are true and, if set, the values recorded under `state` are true. Void if an instantaneous event.",
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_DURATION"
         },
         "sample_count": {
@@ -54,7 +54,7 @@
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Integer"
         },
         "math_function": {
-            "description": "Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using openEHR Terminology group `event math function`.",
+            "description": "Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml[openEHR vocabulary `event math function`]. Default value `640|actual|`, meaning 'actual value'.",
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_CODED_TEXT"
         }
     },

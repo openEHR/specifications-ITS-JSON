@@ -34,7 +34,7 @@
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/FEEDER_AUDIT"
         },
         "items": {
-            "description": "Physical representation of the list. \n",
+            "description": "Physical representation of the list. ",
             "type": "array",
             "items": {
                 "$ref": "all.json#/definitions/ELEMENT"
@@ -141,7 +141,7 @@
             }
         },
         "as_hierarchy": {
-            "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single CLUSTER containing the ELEMENTs of this list.",
+            "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single `CLUSTER` containing the `ELEMENTs` of this list.",
             "return": {
                 "$ref": "all.json#/definitions/CLUSTER"
             }

@@ -34,7 +34,7 @@
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Common/all.json#/definitions/FEEDER_AUDIT"
         },
         "items": {
-            "description": "Ordered list of items - CLUSTER or ELEMENT objects - under this CLUSTER. ",
+            "description": "Ordered list of items - `CLUSTER` or `ELEMENT` objects - under this `CLUSTER`. ",
             "type": "array",
             "items": {
                 "$ref": "all.json#/definitions/ITEM"

@@ -39,7 +39,10 @@
         },
         "integrity_check": {
             "description": "Binary cryptographic integrity checksum.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Character"
+            "type": "array",
+            "items": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Character"
+            }
         },
         "integrity_check_algorithm": {
             "description": "Type of integrity check, a coded value from the openEHR `Integrity check` code set. ",

@@ -138,7 +138,7 @@
             }
         },
         "as_hierarchy": {
-            "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single ELEMENT.",
+            "description": "Generate a CEN EN13606-compatible hierarchy consisting of a single `ELEMENT`.",
             "return": {
                 "$ref": "all.json#/definitions/ELEMENT"
             }

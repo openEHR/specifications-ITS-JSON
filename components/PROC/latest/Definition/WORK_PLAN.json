@@ -38,8 +38,8 @@
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Terminology_code"
         },
         "description": {
-            "description": "Human-understandable description of the Task Plan, which may be specific to the work items and patient.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_TEXT"
+            "description": "Description and lifecycle information of the resource.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/all.json#/definitions/RESOURCE_DESCRIPTION"
         },
         "is_controlled": {
             "description": "True if this resource is under any kind of change control (even file copying), in which case revision history is created. ",
@@ -117,7 +117,6 @@
         "name",
         "archetype_node_id",
         "original_language",
-        "description",
         "plans",
         "calendar",
         "timeline"
