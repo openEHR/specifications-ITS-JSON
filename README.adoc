@@ -1,12 +1,11 @@
 = specifications-ITS-JSON
 
-JSON schemas for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
-
-NOTE: These schemas are in development and subject to change.
+JSON schemas for use with openEHR systems and tools. See https://specifications.openehr.org/[working baseline] of current specifications.
 
 == Releases and IM Versions
 
-All schema are generated from current specifications of the most relevant openEHR UML models and components.
+NOTE: These schemas are in DEVELOPMENT state and subject to change.
+
 The repository is structured as follows:
 
 ----
