@@ -1,0 +1,43 @@
+{
+    "id": "ITS-JSON",
+    "title": "JSON Schema",
+    "description": "openEHR JSON Schemas",
+    "keywords": "openEHR, JSON Schema, JSON",
+    "specifications": [
+        {
+            "id": "ITS-JSON",
+            "title": "JSON Schemas",
+            "title_short": "JSON Schemas",
+            "description": "openEHR JSON Schemas",
+            "summary": "openEHR JSON Schemas",
+            "micro_summary": "JSON Schemas",
+            "link": "latest/components/",
+            "copyright_year": "2019",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "json schema, json, schema, its, openehr"
+        }
+    ],
+    "expressions": [
+        {
+            "id": "ITS-JSON src",
+            "type": "url",
+            "title": "ITS-JSON on github",
+            "description": "openEHR JSON Schemas on github.",
+            "link": "https://github.com/openEHR/specifications-ITS-JSON/"
+        }
+    ],
+    "jira": {
+        "open_issues": "11160",
+        "roadmap": "SPECITS"
+    },
+    "releases": [
+        {
+            "id": "1.0.0",
+            "date": "",
+            "jira": {
+                "crs": "SPECITS/versions/12522",
+                "prs": "SPECPR/versions/12544"
+            }
+        }
+    ]
+}
