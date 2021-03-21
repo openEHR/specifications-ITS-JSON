@@ -1,6 +1,6 @@
 {
     "id": "ITS-JSON",
-    "title": "JSON Schema",
+    "title": "JSON Schemas",
     "description": "openEHR JSON Schemas",
     "keywords": "openEHR, JSON Schema, JSON",
     "specifications": [
@@ -9,9 +9,9 @@
             "title": "JSON Schemas",
             "title_short": "JSON Schemas",
             "description": "openEHR JSON Schemas",
-            "summary": "openEHR JSON Schemas",
-            "micro_summary": "JSON Schemas",
-            "link": "latest/components/",
+            "summary": "All openEHR JSON Schemas",
+            "micro_summary": "All JSON Schemas",
+            "link": "components/",
             "copyright_year": "2019",
             "spec_status": "DEVELOPMENT",
             "keywords": "json schema, json, schema, its, openehr"
