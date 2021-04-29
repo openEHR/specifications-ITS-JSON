@@ -18,14 +18,6 @@
                 "Hash<String, List<String>>",
                 "Hash<String, TRANSLATION_DETAILS>",
                 "Hash<String, RESOURCE_DESCRIPTION_ITEM>",
-                "Hash<String, ARCHETYPE_TERMINOLOGY>",
-                "Hash<String, VALUE_SET>",
-                "Hash<String, Hash<String, ARCHETYPE_TERM>>",
-                "Hash<String, ARCHETYPE_TERM>",
-                "Hash<String, Uri>",
-                "Hash <String, Hash<String, Uri>>",
-                "Hash<String, AOM_PROPERTY_MAPPING>",
-                "Hash<String, AOM_TYPE_MAPPING>",
                 "List<String>",
                 "Set<String>"
             ]
