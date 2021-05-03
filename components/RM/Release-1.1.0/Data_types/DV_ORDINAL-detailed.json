@@ -1,0 +1,136 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_ORDINAL-detailed.json",
+    "title": "DV_ORDINAL",
+    "description": "A data type that represents integral score values, e.g. pain, Apgar values, etc, where there is:\n\na) implied ordering, \nb) no implication that the distance between each value is constant, and \nc) the total number of values is finite;\nd) integer values only.\n\nNote that although the term 'ordinal' in mathematics means natural numbers only, here any integer is allowed, since negative and zero values are often used by medical professionals for values around a neutral point. Examples of sets of ordinal values: \n\n*   -3, -2, -1, 0, 1, 2, 3  -- reflex response values \n*    0, 1, 2                  -- Apgar values \n\nThis class is used for recording any clinical datum which is customarily recorded using symbolic values. Example: the results on a urinalysis strip, e.g. `{neg, trace, +, ++, +++}` are used for leucocytes, protein, nitrites etc; for non-haemolysed blood `{neg, trace, moderate}`; for haemolysed blood `{small, moderate, large}`.\n\nFor scores or scales that include Real numbers (or might in the future, i.e. not fixed for all time, such as Apgar), use `DV_SCALE`. `DV_SCALE` may also be used in future for representing purely Integer-based scales, however, the `DV_ORDINAL` type should continue to be supported in software implementations in order to accommodate existing data that are instances of this type.",
+    "$comments": "Defined in Data_types IM, inherits from DV_ORDERED",
+    "type": "object",
+    "properties": {
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
+            "$ref": "all-detailed.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all-detailed.json#/definitions/DV_INTERVAL"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all-detailed.json#/definitions/REFERENCE_RANGE"
+            }
+        },
+        "symbol": {
+            "description": "Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  `mild`, `moderate`, `severe`, or even the same number series as the values, e.g. 1, 2, 3.",
+            "$ref": "all-detailed.json#/definitions/DV_CODED_TEXT"
+        },
+        "value": {
+            "description": "Value in ordered enumeration of values. Any integer value can be used. \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Integer"
+        }
+    },
+    "required": [
+        "symbol",
+        "value"
+    ],
+    "$inherits": [
+        "all-detailed.json#/definitions/DV_ORDERED"
+    ],
+    "$functions": {
+        "less_than": {
+            "description": "True if this Ordinal value is less than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_ORDINAL"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "less_than_or_equal": {
+            "description": "True if current object less than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than": {
+            "description": "True if current object greater than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than_or_equal": {
+            "description": "True if current object greater than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_strictly_comparable_to": {
+            "description": "Test if this Ordinal is strictly comparable to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_ORDINAL"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_simple": {
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_normal": {
+            "description": "Value is in the normal range, determined by comparison of the value to `_normal_range_` if present, or by the `_normal_status_` marker if present. \n",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Post_result": "Result = (other <= self)",
+        "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+        "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+        "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+        "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+        "Pre": "normal_range /= Void or normal_status /= Void",
+        "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+        "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+        "Limits_valid": "limits.meaning.is_equal (\u201climits\u201d)",
+        "Reference_range_valid": "other_reference_ranges.has (limits)"
+    }
+}

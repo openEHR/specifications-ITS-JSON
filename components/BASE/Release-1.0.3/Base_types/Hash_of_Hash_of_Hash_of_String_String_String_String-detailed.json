@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Hash_of_Hash_of_Hash_of_String_String_String_String-detailed.json",
+    "title": "Hash<Hash<Hash<String, String>, String>, String>",
+    "$comments": "Defined in Base_types IM, inherits from Hash",
+    "type": "object",
+    "$inherits": [
+        "all-detailed.json#/definitions/Hash"
+    ],
+    "$functions": {
+        "has": {
+            "description": "Test for membership of a value.",
+            "parameters": {
+                "v": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                }
+            },
+            "required_parameters": [
+                "v"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "count": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "is_empty": {
+            "description": "True if container is empty.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "has_key": {
+            "description": "Test for membership of a key.",
+            "parameters": {
+                "a_key": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                }
+            },
+            "required_parameters": [
+                "a_key"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "item": {
+            "description": "Return item for key  a_key'. Equivalent to ISO 11404 fetch operation.",
+            "parameters": {
+                "a_key": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                }
+            },
+            "required_parameters": [
+                "a_key"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/V"
+            }
+        }
+    }
+}

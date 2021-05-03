@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/Hash.json",
+    "title": "Hash",
+    "description": "Type representing a keyed table of values. V is the value type, and K the type of the keys. ",
+    "$comments": "Defined in Foundation_types IM, inherits from Container",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "Hash",
+                "Hash<String, Hash<String, Hash<String, String>>>",
+                "Hash<String, Hash<String, String>>",
+                "Hash<String, String>",
+                "Hash<String, List<String>>",
+                "Hash<String, TRANSLATION_DETAILS>",
+                "Hash<String, RESOURCE_DESCRIPTION_ITEM>"
+            ]
+        }
+    }
+}

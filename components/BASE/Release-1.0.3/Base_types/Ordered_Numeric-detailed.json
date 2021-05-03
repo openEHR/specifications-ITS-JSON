@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Ordered_Numeric-detailed.json",
+    "title": "Ordered_Numeric",
+    "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
+    "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, Numeric",
+    "type": "number",
+    "properties": {
+        "_type": {
+            "enum": [
+                "Integer",
+                "Double",
+                "Real",
+                "Integer64"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ],
+    "$abstract": true,
+    "$inherits": [
+        "all-detailed.json#/definitions/Ordered",
+        "all-detailed.json#/definitions/Numeric"
+    ],
+    "$children": [
+        "all-detailed.json#/definitions/Integer",
+        "all-detailed.json#/definitions/Double",
+        "all-detailed.json#/definitions/Real",
+        "all-detailed.json#/definitions/Integer64"
+    ],
+    "$functions": {
+        "infix *": {
+            "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Numeric"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "infix +": {
+            "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Numeric"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "infix -": {
+            "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Numeric"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "infix <": {
+            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        }
+    }
+}

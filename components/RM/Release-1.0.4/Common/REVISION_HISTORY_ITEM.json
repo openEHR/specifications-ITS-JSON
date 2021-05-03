@@ -22,8 +22,5 @@
     "required": [
         "version_id",
         "audits"
-    ],
-    "$invariants": {
-        "Audit_valid": "not audits.is_empty"
-    }
+    ]
 }

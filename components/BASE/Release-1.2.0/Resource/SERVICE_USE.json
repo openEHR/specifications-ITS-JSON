@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Resource/SERVICE_USE.json",
+    "title": "SERVICE_USE",
+    "$comments": "Defined in Resource IM, inherits from RESOURCE_USE",
+    "type": "object",
+    "properties": {
+        "cost_data": {
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+        },
+        "identifier": {
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/all.json#/definitions/GENERIC_ID"
+        },
+        "start_time": {
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Iso8601_date_time"
+        },
+        "duration": {
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Iso8601_duration"
+        }
+    }
+}

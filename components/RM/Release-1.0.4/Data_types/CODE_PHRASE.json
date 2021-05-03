@@ -18,8 +18,5 @@
     "required": [
         "terminology_id",
         "code_string"
-    ],
-    "$invariants": {
-        "Code_string_valid": "not code_string.is_empty"
-    }
+    ]
 }

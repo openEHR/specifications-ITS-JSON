@@ -26,22 +26,5 @@
     "required": [
         "value",
         "formalism"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DV_ENCAPSULATED"
-    ],
-    "$functions": {
-        "size": {
-            "description": "Size in bytes of value.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Integer"
-            }
-        }
-    },
-    "$invariants": {
-        "Size_valid": "size >= 0",
-        "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
-        "Charset_valid": "charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)",
-        "Formalism_valid": "not formalism.is_empty"
-    }
+    ]
 }

@@ -1,0 +1,217 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/ISO8601_DATE-detailed.json",
+    "title": "ISO8601_DATE",
+    "description": "Represents an absolute point in time, as measured on the Gregorian calendar, and specified only to the day.",
+    "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "ISO8601_DATE",
+                "DV_DATE"
+            ]
+        }
+    },
+    "$inherits": [
+        "all-detailed.json#/definitions/ISO8601_TYPE"
+    ],
+    "$children": [
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_DATE"
+    ],
+    "$functions": {
+        "valid_year": {
+            "parameters": {
+                "y": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_month": {
+            "parameters": {
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_day": {
+            "description": "True if d >= 1 and d <= days_in_month (m, y)",
+            "parameters": {
+                "y": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                },
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                },
+                "d": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y",
+                "m",
+                "d"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_hour": {
+            "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+            "parameters": {
+                "h": {
+                    "$ref": "all-detailed.json#/definitions/Any"
+                },
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Any"
+                },
+                "s": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "h",
+                "m",
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_minute": {
+            "description": "True if m >= 0 and m < Minutes_in_hour.",
+            "parameters": {
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_second": {
+            "description": "True if s >= 0 and s < Seconds_in_minute .",
+            "parameters": {
+                "s": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_fractional_second": {
+            "description": "True if fs >= 0.0 and fs < 1.0 .",
+            "parameters": {
+                "fs": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "fs"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "infix <": {
+            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_partial": {
+            "description": "True if this date is partial, i.e. if day or more is missing.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_extended": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "year": {
+            "description": "Year.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "month": {
+            "description": "Month in year.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "day": {
+            "description": "Day in month.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "month_unknown": {
+            "description": "Indicates whether month in year is unknown. If so, the date is of the form \u201cYYYY\u201d.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "day_unknown": {
+            "description": "Indicates whether day in month is unknown. If so, and month is known, the date is of the form \u201cYYYY-MM\u201d or \u201cYYYYMM\u201d.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "as_string": {
+            "description": "ISO8601 string for date, in format YYYYMMDD or YYYY-MM-DD, or a partial invariant. See valid_iso8601_date for validity.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/String"
+            }
+        },
+        "is_expanded": {
+            "description": "True if this date uses \u2018-\u2019 separators.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_iso8601_date": {
+            "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* YYYYMMDD or the extended form:\n* YYYY-MM-DD or one of the partial forms:\n* YYYYMM\n* YYYY\n\nor the equivalent extended form:\n\n* YYYY-MM\n\nWhere:\n\n* YYYY is the string form of any positive number in the range \u201c0000\u201d - \u201c9999\u201d (zero-filled to four digits)\n* MM is \u201c01\u201d - \u201c12\u201d (zero-filled to two digits)\n* DD is \u201c01\u201d - \u201c31\u201d (zero-filled to two digits)\n\nThe combinations of YYYY, MM, DD numbers must be correct with respect to the Gregorian calendar.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Year_valid": "valid_year (year)",
+        "Month_valid": "not month_unknown implies valid_month (month)",
+        "Day_valid": "not day_unknown implies valid_day (year, month, day)",
+        "Partial_validity": "month_unknown implies day_unknown",
+        "Pre": "not month_unknown"
+    }
+}

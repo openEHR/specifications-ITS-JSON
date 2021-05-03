@@ -38,18 +38,5 @@
     },
     "required": [
         "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/DV_BOOLEAN",
-        "all.json#/definitions/DV_STATE",
-        "all.json#/definitions/DV_IDENTIFIER",
-        "all.json#/definitions/DV_ENCAPSULATED",
-        "all.json#/definitions/DV_PARAGRAPH",
-        "all.json#/definitions/DV_TEXT",
-        "all.json#/definitions/DV_ORDERED",
-        "all.json#/definitions/DV_INTERVAL",
-        "all.json#/definitions/DV_TIME_SPECIFICATION",
-        "all.json#/definitions/DV_URI"
     ]
 }

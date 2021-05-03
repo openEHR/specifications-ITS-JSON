@@ -25,14 +25,5 @@
     },
     "required": [
         "id"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DATA_VALUE"
-    ],
-    "$invariants": {
-        "Issuer_valid": "not issuer.is_empty",
-        "Assigner_valid": "not assigner.is_empty",
-        "Id_valid": "not id.is_empty",
-        "Type_valid": "not type.is_empty"
-    }
+    ]
 }

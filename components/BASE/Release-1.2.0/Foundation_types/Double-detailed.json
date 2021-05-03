@@ -1,0 +1,184 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/Double-detailed.json",
+    "title": "Double",
+    "description": "Type used to represent double-precision decimal numbers. Corresponds to a double-precision floating point value in most languages.",
+    "$comments": "Defined in Foundation_types IM, inherits from Ordered_Numeric",
+    "type": "number",
+    "$inherits": [
+        "all-detailed.json#/definitions/Ordered_Numeric"
+    ],
+    "$functions": {
+        "add": {
+            "description": "Double-precision real number addition.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Double"
+            }
+        },
+        "subtract": {
+            "description": "Double-precision real number subtraction.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Double"
+            }
+        },
+        "multiply": {
+            "description": "Double-precision real number multiplication.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Double"
+            }
+        },
+        "divide": {
+            "description": "Double-precision real number division.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Double"
+            }
+        },
+        "exponent": {
+            "description": "Double-precision real number exponentiation.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Double"
+            }
+        },
+        "negative": {
+            "description": "Generate negative of current Double value.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Double"
+            }
+        },
+        "less_than": {
+            "description": "Returns True if current Double is less than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "less_than_or_equal": {
+            "description": "True if current object less than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than": {
+            "description": "True if current object greater than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than_or_equal": {
+            "description": "True if current object greater than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "floor": {
+            "description": "Return the greatest integer no greater than the value of this object.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "is_equal": {
+            "description": "Value equality: return True if `this` and `_other_` are attached to objects considered to be equal in value.",
+            "parameters": {
+                "other": {
+                    "description": "Other object for comparison.",
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "equal": {
+            "description": "Reference equality for reference types, value equality for value types.",
+            "parameters": {
+                "other": {
+                    "description": "Other object for comparison.",
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Post_result": "Result = (other <= self)"
+    }
+}

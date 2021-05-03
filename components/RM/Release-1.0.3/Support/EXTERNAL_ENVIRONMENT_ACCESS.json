@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/EXTERNAL_ENVIRONMENT_ACCESS.json",
+    "title": "EXTERNAL_ENVIRONMENT_ACCESS",
+    "description": "A mixin class providing access to services in the external environment.",
+    "$comments": "Defined in Support IM, abstract, inherits from TERMINOLOGY_SERVICE, MEASUREMENT_SERVICE",
+    "type": "object"
+}

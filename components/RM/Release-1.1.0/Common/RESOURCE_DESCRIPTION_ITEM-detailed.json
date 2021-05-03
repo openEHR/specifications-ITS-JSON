@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/RESOURCE_DESCRIPTION_ITEM-detailed.json",
+    "title": "RESOURCE_DESCRIPTION_ITEM",
+    "description": "Language-specific detail of resource description. When a resource is translated for use in another language environment, each `RESOURCE_DESCRIPTION_ITEM` needs to be copied and translated into the new language.",
+    "$comments": "Defined in Common IM",
+    "type": "object",
+    "properties": {
+        "language": {
+            "description": "The localised language in which the items in this description item are written. Coded from openEHR code set `languages`.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all-detailed.json#/definitions/CODE_PHRASE"
+        },
+        "purpose": {
+            "description": "Purpose of the resource.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "keywords": {
+            "description": "Keywords which characterise this resource, used e.g. for indexing and searching. ",
+            "type": "array",
+            "items": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+            }
+        },
+        "use": {
+            "description": "Description of the uses of the resource, i.e. contexts in which it could be used. \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "misuse": {
+            "description": "Description of any misuses of the resource, i.e. contexts in which it should not be used.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "copyright": {
+            "description": "Optional copyright statement for the resource as a knowledge resource. \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "original_resource_uri": {
+            "description": "URIs of original clinical document(s) or description of which resource is a formalisation, in the language of this description item; keyed by meaning. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Hash_of_String_String"
+        },
+        "other_details": {
+            "description": "Additional language-senstive resource metadata, as a list of name/value pairs. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Hash_of_String_String"
+        }
+    },
+    "required": [
+        "language",
+        "purpose"
+    ],
+    "$invariants": {
+        "Language_valid": "code_set (Code_set_id_languages).has_code (language)",
+        "Purpose_valid": "not purpose.is_empty",
+        "Use_valid": "use /= Void implies not use.is_empty",
+        "misuse_valid": "misuse /= Void implies not misuse.is_empty",
+        "copyright_valid": "copyright /= Void implies not copyright.is_empty"
+    }
+}

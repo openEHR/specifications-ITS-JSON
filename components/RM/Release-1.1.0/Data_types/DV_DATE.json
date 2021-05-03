@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_DATE.json",
+    "title": "DV_DATE",
+    "description": "Represents an absolute point in time, as measured on the Gregorian calendar, and specified only to the day. Semantics defined by ISO 8601. Used for recording dates in real world time. The partial form is used for approximate birth dates, dates of death, etc.\n",
+    "$comments": "Defined in Data_types IM, inherits from DV_TEMPORAL, Iso8601_date",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "ISO8601 date string.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all.json#/definitions/DV_INTERVAL"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/REFERENCE_RANGE"
+            }
+        },
+        "magnitude_status": {
+            "description": "Optional status of magnitude with values: \n\n* `\"=\"`   :   magnitude is a point value \n* `\"<\"`   :   value is < magnitude \n* `\">\"`   :   value is > magnitude \n* `\"<=\"` : value is <= magnitude \n* `\">=\"` : value is >= magnitude \n* `\"~\"`   :   value is approximately magnitude \n\nIf not present, assumed meaning is  `\"=\"` . \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "accuracy": {
+            "description": "Time accuracy, expressed as a duration.",
+            "$ref": "all.json#/definitions/DV_DURATION"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

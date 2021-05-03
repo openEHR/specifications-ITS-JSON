@@ -19,8 +19,5 @@
     },
     "required": [
         "specification"
-    ],
-    "$inherits": [
-        "all.json#/definitions/MESSAGE_CONTENT"
     ]
 }

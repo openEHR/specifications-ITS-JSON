@@ -20,10 +20,5 @@
     },
     "required": [
         "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/PARTY_IDENTIFIED",
-        "all.json#/definitions/PARTY_SELF"
     ]
 }

@@ -44,8 +44,5 @@
         "time_created",
         "total_version_count",
         "extract_version_count"
-    ],
-    "$inherits": [
-        "all.json#/definitions/X_VERSIONED_OBJECT"
     ]
 }

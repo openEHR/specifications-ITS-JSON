@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/DV_AMOUNT.json",
+    "title": "DV_AMOUNT",
+    "description": "Abstract class defining the concept of relative quantified  amounts'. For relative quantities, the  +' and  -' operators are defined (unlike descendants of DV_ABSOLUTE_QUANTITY, such as the date/time types). \n",
+    "$comments": "Defined in Data_types IM, abstract, inherits from DV_QUANTIFIED",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "DV_PROPORTION",
+                "DV_QUANTITY",
+                "DV_COUNT",
+                "DV_DURATION"
+            ]
+        },
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  normal status . ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all.json#/definitions/DV_INTERVAL"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/REFERENCE_RANGE"
+            }
+        },
+        "magnitude_status": {
+            "description": "Optional status of magnitude with values: \n\n* =   :   magnitude is a point value \n* <   :   value is < magnitude \n* >   :   value is > magnitude \n* \\<= : value is <= magnitude \n* >= : value is >= magnitude \n* ~   :   value is approximately magnitude \n\nIf not present, meaning is  = . \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        },
+        "accuracy": {
+            "description": "Accuracy of measurement, expressed either as a half-range percent value (accuracy_is_percent = True) or a half-range quantity. A value of 0 means that accuracy is 100%, i.e. no error.\n\nA value of unknown_accuracy_value means that accuracy was not recorded.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Real"
+        },
+        "accuracy_is_percent": {
+            "description": "If True, indicates that when this object was created, accuracy was recorded as a percent value; if False, as an absolute quantity value.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Boolean"
+        }
+    },
+    "required": [
+        "_type"
+    ]
+}

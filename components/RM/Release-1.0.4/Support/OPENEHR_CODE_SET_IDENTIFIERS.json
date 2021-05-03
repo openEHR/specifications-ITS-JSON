@@ -11,24 +11,5 @@
                 "TERMINOLOGY_SERVICE"
             ]
         }
-    },
-    "$children": [
-        "all.json#/definitions/TERMINOLOGY_SERVICE"
-    ],
-    "$functions": {
-        "valid_code_set_id": {
-            "description": "Validity function to test if an identifier is in the set defined by this class.",
-            "parameters": {
-                "an_id": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-                }
-            },
-            "required_parameters": [
-                "an_id"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
     }
 }

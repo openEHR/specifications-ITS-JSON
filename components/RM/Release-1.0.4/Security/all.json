@@ -8,10 +8,7 @@
         "ACCESS_CONTROL_SETTINGS": {
             "title": "ACCESS_CONTROL_SETTINGS",
             "description": "Access Control Settings for the EHR and components. Intended to support multiple access control schemes. Currently implementation dependent.",
-            "$comments": "Defined in Security IM, abstract",
-            "$abstract": true
+            "$comments": "Defined in Security IM, abstract"
         }
-    },
-    "$component": "RM",
-    "$version": "Release-1.0.4"
+    }
 }

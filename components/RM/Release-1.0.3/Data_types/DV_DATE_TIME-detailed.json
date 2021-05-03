@@ -1,0 +1,408 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/DV_DATE_TIME-detailed.json",
+    "title": "DV_DATE_TIME",
+    "description": "Represents an absolute point in time, specified to the second. Semantics defined by ISO 8601. \n\nUsed for recording a precise point in real world time, and for approximate time stamps, e.g. the origin of a HISTORY in an OBSERVATION which is only partially known. \n",
+    "$comments": "Defined in Data_types IM, inherits from DV_TEMPORAL, ISO8601_DATE_TIME",
+    "type": "object",
+    "properties": {
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  normal status . ",
+            "$ref": "all-detailed.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all-detailed.json#/definitions/DV_INTERVAL"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all-detailed.json#/definitions/REFERENCE_RANGE"
+            }
+        },
+        "magnitude_status": {
+            "description": "Optional status of magnitude with values: \n\n* =   :   magnitude is a point value \n* <   :   value is < magnitude \n* >   :   value is > magnitude \n* \\<= : value is <= magnitude \n* >= : value is >= magnitude \n* ~   :   value is approximately magnitude \n\nIf not present, meaning is  = . \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+        },
+        "accuracy": {
+            "$ref": "all-detailed.json#/definitions/DV_DURATION"
+        },
+        "value": {
+            "description": "ISO8601 date/time string.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+        }
+    },
+    "required": [
+        "value"
+    ],
+    "$inherits": [
+        "all-detailed.json#/definitions/DV_TEMPORAL",
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/ISO8601_DATE_TIME"
+    ],
+    "$functions": {
+        "valid_year": {
+            "parameters": {
+                "y": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_month": {
+            "parameters": {
+                "m": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_day": {
+            "description": "True if d >= 1 and d <= days_in_month (m, y)",
+            "parameters": {
+                "y": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                },
+                "m": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                },
+                "d": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y",
+                "m",
+                "d"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_hour": {
+            "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+            "parameters": {
+                "h": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Any"
+                },
+                "m": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Any"
+                },
+                "s": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "h",
+                "m",
+                "s"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_minute": {
+            "description": "True if m >= 0 and m < Minutes_in_hour.",
+            "parameters": {
+                "m": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_second": {
+            "description": "True if s >= 0 and s < Seconds_in_minute .",
+            "parameters": {
+                "s": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "s"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_fractional_second": {
+            "description": "True if fs >= 0.0 and fs < 1.0 .",
+            "parameters": {
+                "fs": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "fs"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "infix <": {
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_partial": {
+            "description": "True if this date time is partial, i.e. if seconds or more is missing.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_extended": {
+            "description": "True if this date/time uses \u2018-\u2019, \u2018:\u2019 separators.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "year": {
+            "description": "Year.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+            }
+        },
+        "month": {
+            "description": "Month in year.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+            }
+        },
+        "day": {
+            "description": "Day in month.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+            }
+        },
+        "month_unknown": {
+            "description": "Indicates whether month in year is unknown.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "day_unknown": {
+            "description": "Indicates whether day in month is unknown.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "hour": {
+            "description": "Hour in day.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+            }
+        },
+        "minute": {
+            "description": "Minute in hour.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+            }
+        },
+        "second": {
+            "description": "Second in minute.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Integer"
+            }
+        },
+        "fractional_second": {
+            "description": "Fractional seconds.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Real"
+            }
+        },
+        "has_fractional_second": {
+            "description": "True if the fractional_second part is signficant (i.e. even if = 0.0).",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "minute_unknown": {
+            "description": "Indicates whether minute in hour is known.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "second_unknown": {
+            "description": "Indicates whether minute in hour is known.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_decimal_sign_comma": {
+            "description": "True if this time has a decimal part indicated by \u2018,\u2019 (comma) rather than \u2018.\u2019 (period).",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "timezone": {
+            "description": "Timezone; may be Void.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/ISO8601_TIMEZONE"
+            }
+        },
+        "as_string": {
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+            }
+        },
+        "valid_iso8601_date_time": {
+            "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* YYYYMMDDThhmmss[,sss][Z | \uf0b1hh[mm]]\n\nor the extended form:\n\n* YYYY-MM-DDThh:mm:ss[,sss][Z | \uf0b1hh[mm]]\n\nor one of the partial forms:\n\n* YYYYMMDDThhmm\n* YYYYMMDDThh\n\nor the equivalent extended forms:\n\n* YYYY-MM-DDThh:mm\n* YYYY-MM-DDThh\n\n(meanings as in DV_DATE, DV_TIME) and the values in each field are valid.",
+            "parameters": {
+                "s": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "s"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_strictly_comparable_to": {
+            "description": "Test if two instances are strictly comparable.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_simple": {
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_normal": {
+            "description": "Value is in the normal range, determined by comparison of the value to the normal_range if present, or by the normal_status marker if present. \n",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_magnitude_status": {
+            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. ",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "magnitude": {
+            "description": "Numeric value of the date/time as seconds since the calendar origin date/time 0001-01-01T00:00:00Z. \n",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Double"
+            }
+        },
+        "accuracy_unknown": {
+            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "diff": {
+            "description": "Difference of two quantities.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_ABSOLUTE_QUANTITY"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_AMOUNT"
+            }
+        },
+        "add": {
+            "description": "Add a time period to this date_time.",
+            "parameters": {
+                "a_diff": {
+                    "$ref": "all-detailed.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "a_diff"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_ABSOLUTE_QUANTITY"
+            }
+        },
+        "subtract": {
+            "description": "Subtract a time period from this date_time.",
+            "parameters": {
+                "a_diif": {
+                    "$ref": "all-detailed.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "a_diif"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_ABSOLUTE_QUANTITY"
+            }
+        },
+        "operator=": {
+            "parameters": {
+                "source": {
+                    "$ref": "all-detailed.json#/definitions/DV_DATE_TIME"
+                }
+            },
+            "required_parameters": [
+                "source"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_DATE_TIME"
+            }
+        }
+    },
+    "$invariants": {
+        "Post": "Result = s.is_equal (\u201c=\u201d) or s.is_equal (\u201c<\u201d) or s.is_equal (\u201c>\u201d) or s.is_equal (\u201c<=\u201d) or s.is_equal (\u201c>=\u201d) or s.is_equal (\u201c~\u201d)",
+        "Year_valid": "valid_year (year)",
+        "Month_valid": "valid_month (month)",
+        "Day_valid": "valid_day(year, month, day)",
+        "Hour_valid": "valid_hour (hour, minute, second)",
+        "Minute_valid": "not minute_unknown implies valid_minute(minute)",
+        "Second_valid": "not second_unknown implies valid_second (second)",
+        "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+        "Partial_validity_year": "not month_unknown",
+        "Partial_validity_month": "not month_unknown",
+        "Partial_validity_day": "not day_unknown",
+        "Partial_validity_hour": "not hour_unknown",
+        "Partial_validity_minute": "minute_unknown implies second_unknown",
+        "Pre": "normal_range /= Void or normal_status /= Void",
+        "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+        "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+        "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+        "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+        "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+        "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+        "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+        "Value_valid": "valid_iso8601_date_time (value)"
+    }
+}

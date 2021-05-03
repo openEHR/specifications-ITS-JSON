@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Aggregate-detailed.json",
+    "title": "Aggregate",
+    "description": "Number of items in container.",
+    "$comments": "Defined in Base_types IM, abstract",
+    "properties": {
+        "_type": {
+            "enum": [
+                "Hash",
+                "List",
+                "Set",
+                "Array",
+                "Hash<Hash<Hash<String, String>, String>, String>",
+                "Hash<Hash<String, String>, String>",
+                "Hash<String, String>",
+                "Set <String>"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ],
+    "$abstract": true,
+    "$children": [
+        "all-detailed.json#/definitions/Hash",
+        "all-detailed.json#/definitions/List",
+        "all-detailed.json#/definitions/Set",
+        "all-detailed.json#/definitions/Array"
+    ],
+    "$functions": {
+        "has": {
+            "description": "Test for membership of a value.",
+            "parameters": {
+                "v": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                }
+            },
+            "required_parameters": [
+                "v"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "count": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "is_empty": {
+            "description": "True if container is empty.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        }
+    }
+}

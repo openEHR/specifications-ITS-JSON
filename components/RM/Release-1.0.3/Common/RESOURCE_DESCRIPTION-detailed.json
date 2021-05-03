@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/RESOURCE_DESCRIPTION-detailed.json",
+    "title": "RESOURCE_DESCRIPTION",
+    "description": "Defines the descriptive meta-data of a resource.",
+    "$comments": "Defined in Common IM",
+    "type": "object",
+    "properties": {
+        "original_author": {
+            "description": "Original author of this resource, with all relevant details, including organisation.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Hash_of_String_String"
+        },
+        "other_contributors": {
+            "description": "Other contributors to the resource, probably listed in  name <email>  form. ",
+            "type": "array",
+            "items": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+            }
+        },
+        "lifecycle_state": {
+            "description": "Lifecycle state of the resource, typically including states such as: initial, submitted, experimental, awaiting_approval, approved, superseded, obsolete. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+        },
+        "resource_package_uri": {
+            "description": "URI of package to which this resource belongs.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/String"
+        },
+        "other_details": {
+            "description": "Additional non language-senstive resource meta-data, as a list of name/value pairs. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Hash_of_String_String"
+        },
+        "parent_resource": {
+            "description": "Reference to owning resource. ",
+            "$ref": "all-detailed.json#/definitions/AUTHORED_RESOURCE",
+            "default": "0..1"
+        },
+        "details": {
+            "description": "Details of all parts of resource description that are natural language-dependent, keyed by language code. ",
+            "type": "array",
+            "items": {
+                "$ref": "all-detailed.json#/definitions/RESOURCE_DESCRIPTION_ITEM"
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "original_author",
+        "lifecycle_state",
+        "parent_resource",
+        "details"
+    ],
+    "$invariants": {
+        "Original_author_valid": "not original_author.is_empty",
+        "Lifecycle_state_valid": "not lifecycle_state.is_empty",
+        "Details_valid": "not details.is_empty",
+        "Language_valid": "parent_resource /= Void implies details.for_all (d | parent_resource.languages_available.has (d.language.code_string))",
+        "Parent_resource_valid": "parent_resource /= Void implies parent_resource.description = self"
+    }
+}

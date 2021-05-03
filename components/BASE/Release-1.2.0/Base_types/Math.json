@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/Math.json",
+    "title": "Math",
+    "description": "Mathematical computation.",
+    "$comments": "Defined in Base_types IM"
+}

@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_MULTIMEDIA.json",
+    "title": "DV_MULTIMEDIA",
+    "description": "A specialisation of `DV_ENCAPSULATED` for audiovisual and bio-signal types. Includes further metadata relating to multimedia types which are not applicable to other subtypes of `DV_ENCAPSULATED`.",
+    "$comments": "Defined in Data_types IM, inherits from DV_ENCAPSULATED",
+    "type": "object",
+    "properties": {
+        "charset": {
+            "description": "Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions. ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "language": {
+            "description": "Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set `languages`.",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "alternate_text": {
+            "description": "Text to display in lieu of multimedia display/replay.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "uri": {
+            "description": "URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference. \n",
+            "$ref": "all.json#/definitions/DV_URI"
+        },
+        "data": {
+            "description": "The actual data found at `_uri_`, if supplied inline.",
+            "type": "array",
+            "items": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Character"
+            }
+        },
+        "media_type": {
+            "description": "Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set). \n",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "compression_algorithm": {
+            "description": "Compression type, a coded value from the openEHR Integrity check code set. Void means no compression. ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "integrity_check": {
+            "description": "Binary cryptographic integrity checksum.",
+            "type": "array",
+            "items": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Character"
+            }
+        },
+        "integrity_check_algorithm": {
+            "description": "Type of integrity check, a coded value from the openEHR `Integrity check` code set. ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "thumbnail": {
+            "description": "The thumbnail for this item, if one exists; mainly for graphics formats.",
+            "$ref": "all.json#/definitions/DV_MULTIMEDIA"
+        },
+        "size": {
+            "description": "Original size in bytes of unencoded encapsulated data. I.e. encodings such as base64, hexadecimal etc do not change the value of this attribute.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Integer"
+        }
+    },
+    "required": [
+        "media_type",
+        "size"
+    ]
+}

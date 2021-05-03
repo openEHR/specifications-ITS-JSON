@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/Ordered-detailed.json",
+    "title": "Ordered",
+    "description": "Abstract parent class of ordered types i.e. types on which the '<' operator is defined.",
+    "$comments": "Defined in Foundation_types IM, abstract",
+    "properties": {
+        "_type": {
+            "enum": [
+                "Octet",
+                "Character",
+                "String",
+                "DV_ORDINAL",
+                "DV_SCALE",
+                "DV_PROPORTION",
+                "DV_QUANTITY",
+                "DV_COUNT",
+                "DV_DURATION",
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DATE_TIME",
+                "Integer",
+                "Double",
+                "Real",
+                "Integer64",
+                "Uri",
+                "Iso8601_date_time",
+                "Iso8601_duration",
+                "Iso8601_time",
+                "Iso8601_timezone",
+                "Iso8601_date"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ],
+    "$abstract": true,
+    "$children": [
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all-detailed.json#/definitions/DV_ORDERED",
+        "all-detailed.json#/definitions/Ordered_Numeric",
+        "all-detailed.json#/definitions/Octet",
+        "all-detailed.json#/definitions/Character",
+        "all-detailed.json#/definitions/String",
+        "all-detailed.json#/definitions/Temporal"
+    ],
+    "$functions": {
+        "less_than": {
+            "description": "Arithmetic value comparison. Returns True if current object is less than `_other_`. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.\n\nIn conjunction with `=`, enables the definition of the related functions `_greater_than_()` etc.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "less_than_or_equal": {
+            "description": "True if current object less than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than": {
+            "description": "True if current object greater than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than_or_equal": {
+            "description": "True if current object greater than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Post_result": "Result = (other <= self)"
+    }
+}

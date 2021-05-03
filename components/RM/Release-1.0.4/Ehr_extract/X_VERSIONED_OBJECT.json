@@ -54,12 +54,5 @@
         "time_created",
         "total_version_count",
         "extract_version_count"
-    ],
-    "$children": [
-        "all.json#/definitions/X_VERSIONED_EHR_ACCESS",
-        "all.json#/definitions/X_VERSIONED_EHR_STATUS",
-        "all.json#/definitions/X_VERSIONED_COMPOSITION",
-        "all.json#/definitions/X_VERSIONED_FOLDER",
-        "all.json#/definitions/X_VERSIONED_PARTY"
     ]
 }

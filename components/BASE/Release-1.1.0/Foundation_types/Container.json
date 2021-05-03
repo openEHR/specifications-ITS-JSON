@@ -25,40 +25,5 @@
     },
     "required": [
         "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/Hash",
-        "all.json#/definitions/List",
-        "all.json#/definitions/Set",
-        "all.json#/definitions/Array"
-    ],
-    "$functions": {
-        "has": {
-            "description": "Test for membership of a value.",
-            "parameters": {
-                "v": {
-                    "$ref": "all.json#/definitions/T"
-                }
-            },
-            "required_parameters": [
-                "v"
-            ],
-            "return": {
-                "$ref": "all.json#/definitions/Boolean"
-            }
-        },
-        "count": {
-            "description": "Number of items in container.",
-            "return": {
-                "$ref": "all.json#/definitions/Integer"
-            }
-        },
-        "is_empty": {
-            "description": "True if container is empty.",
-            "return": {
-                "$ref": "all.json#/definitions/Boolean"
-            }
-        }
-    }
+    ]
 }

@@ -1,0 +1,262 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_QUANTITY-detailed.json",
+    "title": "DV_QUANTITY",
+    "description": "Quantitified type representing  scientific  quantities, i.e. quantities expressed as a magnitude and units. Units are expressed in the UCUM syntax (http://unitsofmeasure.org/ucum.html[Unified Code for Units of Measure (UCUM)], by Gunther Schadow and Clement J. McDonald of The Regenstrief Institute)  (case-sensitive form) by default, or another system if `_units_system_` is set. \n\nCan also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, `DV_DURATION` may be used).",
+    "$comments": "Defined in Data_types IM, inherits from DV_AMOUNT",
+    "type": "object",
+    "properties": {
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
+            "$ref": "all-detailed.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all-detailed.json#/definitions/DV_INTERVAL_of_DV_QUANTITY"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all-detailed.json#/definitions/REFERENCE_RANGE_of_DV_QUANTITY"
+            }
+        },
+        "magnitude_status": {
+            "description": "Optional status of magnitude with values: \n\n* `\"=\"`   :   magnitude is a point value \n* `\"<\"`   :   value is < magnitude \n* `\">\"`   :   value is > magnitude \n* `\"<=\"` : value is <= magnitude \n* `\">=\"` : value is >= magnitude \n* `\"~\"`   :   value is approximately magnitude \n\nIf not present, assumed meaning is  `\"=\"` . \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "accuracy": {
+            "description": "Accuracy of measurement, expressed either as a half-range percent value (`_accuracy_is_percent_` = `True`) or a half-range quantity. A value of `0` means that accuracy is 100%, i.e. no error.\n\nA value of `_unknown_accuracy_value_` means that accuracy was not recorded.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Real"
+        },
+        "accuracy_is_percent": {
+            "description": "If `True`, indicates that when this object was created, `_accuracy_` was recorded as a percent value; if `False`, as an absolute quantity value.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+        },
+        "magnitude": {
+            "description": "Numeric magnitude of the quantity.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Real"
+        },
+        "precision": {
+            "description": "Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.\nThe value -1 implies no limit, i.e. any number of decimal places.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Integer"
+        },
+        "units": {
+            "description": "Quantity units, expressed as a code or syntax string from either UCUM (the default) or the units system specified in `_units_system_`, when set.\n\nIn either case, the value is the code or syntax - normally formed of standard ASCII - which is in principal not the same as the display string, although in simple cases such as 'm' (for meters) it will be.\n\nIf the `_units_display_name_` field is set, this may be used for display. If not, the implementations must effect the resolution of the `_units_` value to a display form locally, e.g. by lookup of reference tables, request to a terminology service etc.\n\nExample values from UCUM: \"kg/m^2\", \u201cmm[Hg]\", \"ms-1\", \"km/h\".",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "units_system": {
+            "description": "Optional field used to specify a units system from which codes in `_units_` are defined. Value is a URI identifying a terminology containing units concepts from the  (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).\n\nIf not set, the UCUM standard (case-sensitive codes) is assumed as the units system.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "units_display_name": {
+            "description": "Optional field containing the displayable form of the `_units_` field, e.g. `'\u00b0C'`.\n\nIf not set, the application environment needs to determine the displayable form.\n\nNOTE: The display name may be language-dependent for various older and non-systematic units. For this reason, it is not recommended to add unit display names to archetypes, only to templates (for localisation purposes).",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        }
+    },
+    "required": [
+        "magnitude",
+        "units"
+    ],
+    "$inherits": [
+        "all-detailed.json#/definitions/DV_AMOUNT"
+    ],
+    "$functions": {
+        "less_than": {
+            "description": "True if this Quantified object is less than `_other_`. Based on comparison of `_magnitude_`. Only valid if `_is_strictly_comparable_to()_` is True.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_QUANTITY"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "less_than_or_equal": {
+            "description": "True if current object less than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than": {
+            "description": "True if current object greater than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than_or_equal": {
+            "description": "True if current object greater than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_strictly_comparable_to": {
+            "description": "True if this quantity and `_other_` have the same `_units_` and also `_units_system_` if it exists.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_simple": {
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_normal": {
+            "description": "Value is in the normal range, determined by comparison of the value to `_normal_range_` if present, or by the `_normal_status_` marker if present. \n",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_magnitude_status": {
+            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. ",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "magnitude": {
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered_Numeric"
+            }
+        },
+        "accuracy_unknown": {
+            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_equal": {
+            "description": "Return True if this `DV_AMOUNT` is considered equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_AMOUNT"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_percentage": {
+            "description": "Test whether a number is a valid percentage, i.e. between 0 and 100. ",
+            "parameters": {
+                "number": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered_Numeric"
+                }
+            },
+            "required_parameters": [
+                "number"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "add": {
+            "description": "Sum of this `DV_QUANTITY` and `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_QUANTITY"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_QUANTITY"
+            }
+        },
+        "subtract": {
+            "description": "Difference of this `DV_QUANTITY` and `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_QUANTITY"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_QUANTITY"
+            }
+        },
+        "multiply": {
+            "description": "Product of this `DV_QUANTITY` and `_factor_`.",
+            "parameters": {
+                "factor": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Real"
+                }
+            },
+            "required_parameters": [
+                "factor"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_QUANTITY"
+            }
+        },
+        "negative": {
+            "description": "Negated version of current object, such as used for representing a difference, e.g. a weight loss.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_AMOUNT"
+            }
+        },
+        "is_integral": {
+            "description": "True if `_precision_` = 0, meaning that the `_magnitude_` is a whole number.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Post_result": "Result = magnitude < other.magnitude",
+        "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+        "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+        "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+        "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+        "Pre": "normal_range /= Void or normal_status /= Void",
+        "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+        "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+        "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+        "Post": "Result = s in {\"=\", \"<\", \">\", \"<=\", \">=\", \"~\"}",
+        "Pre_comparable": "is_strictly_comparable()",
+        "Accuracy_is_percent_validity": "accuracy = 0 implies not accuracy_is_percent",
+        "Accuracy_validity": "accuracy_is_percent implies valid_percentage (accuracy)"
+    }
+}

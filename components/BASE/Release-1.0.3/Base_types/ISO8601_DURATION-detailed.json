@@ -1,0 +1,250 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/ISO8601_DURATION-detailed.json",
+    "title": "ISO8601_DURATION",
+    "description": "Represents a period of time corresponding to a difference between two timepoints.",
+    "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "ISO8601_DURATION",
+                "DV_DURATION"
+            ]
+        }
+    },
+    "$inherits": [
+        "all-detailed.json#/definitions/ISO8601_TYPE"
+    ],
+    "$children": [
+        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_DURATION"
+    ],
+    "$functions": {
+        "valid_year": {
+            "parameters": {
+                "y": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_month": {
+            "parameters": {
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_day": {
+            "description": "True if d >= 1 and d <= days_in_month (m, y)",
+            "parameters": {
+                "y": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                },
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                },
+                "d": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y",
+                "m",
+                "d"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_hour": {
+            "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+            "parameters": {
+                "h": {
+                    "$ref": "all-detailed.json#/definitions/Any"
+                },
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Any"
+                },
+                "s": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "h",
+                "m",
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_minute": {
+            "description": "True if m >= 0 and m < Minutes_in_hour.",
+            "parameters": {
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_second": {
+            "description": "True if s >= 0 and s < Seconds_in_minute .",
+            "parameters": {
+                "s": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_fractional_second": {
+            "description": "True if fs >= 0.0 and fs < 1.0 .",
+            "parameters": {
+                "fs": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "fs"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "infix <": {
+            "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_partial": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_extended": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "years": {
+            "description": "Number of years of nominal 365-day length.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "months": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "days": {
+            "description": "Number of 24 hour days.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "hours": {
+            "description": "Number of 60 minute hours.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "minutes": {
+            "description": "Number of 60 second minutes.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "seconds": {
+            "description": "Number of seconds.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "fractional_seconds": {
+            "description": "Fractional seconds.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Real"
+            }
+        },
+        "is_decminal_sign_comma": {
+            "description": "True if this time has a decimal part indicated by ',' (comma) rather than '.' (period).",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "weeks": {
+            "description": "Number of 7 day weeks.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "as_string": {
+            "description": "ISO8601 string for duration, in format\n\n* P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/String"
+            }
+        },
+        "valid_iso8601_duration": {
+            "parameters": {
+                "s": {
+                    "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7- day weeks.\n\nNOTE: allowing the W designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration).",
+                    "$ref": "all-detailed.json#/definitions/String"
+                }
+            },
+            "required_parameters": [
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "to_seconds": {
+            "description": "Total number of seconds equivalent (including fractional) of entire duration.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        }
+    },
+    "$invariants": {
+        "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+        "Years_valid": "years >= 0",
+        "Months_valid": "months >= 0",
+        "Weeks_valid": "weeks >= 0",
+        "Days_valid": "days >= 0",
+        "Hours_valid": "hours >= 0",
+        "Minutes_valid": "minutes >= 0",
+        "Seconds_valid": "seconds >= 0",
+        "Fractional_second_valid": "fractional_second >= 0.0 and fractional_second < 1.0"
+    }
+}

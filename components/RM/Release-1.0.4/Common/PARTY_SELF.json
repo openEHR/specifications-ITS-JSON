@@ -10,8 +10,5 @@
             "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
             "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Base_types/all.json#/definitions/PARTY_REF"
         }
-    },
-    "$inherits": [
-        "all.json#/definitions/PARTY_PROXY"
-    ]
+    }
 }

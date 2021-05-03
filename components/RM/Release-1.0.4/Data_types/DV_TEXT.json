@@ -42,18 +42,5 @@
     },
     "required": [
         "value"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DATA_VALUE"
-    ],
-    "$children": [
-        "all.json#/definitions/DV_CODED_TEXT"
-    ],
-    "$invariants": {
-        "Valid_value": "not value.is_empty",
-        "Language_valid": "language /= Void implies code_set (Code_set_id_languages).has_code (language)",
-        "Encoding_valid": "encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)",
-        "Mappings_valid": "mappings /= void implies not mappings.is_empty",
-        "Formatting_valid": "formatting /= void implies not formatting.is_empty"
-    }
+    ]
 }

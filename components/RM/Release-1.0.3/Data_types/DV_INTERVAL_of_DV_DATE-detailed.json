@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/DV_INTERVAL_of_DV_DATE-detailed.json",
+    "title": "DV_INTERVAL<DV_DATE>",
+    "$comments": "Defined in Data_types IM, inherits from DV_INTERVAL",
+    "type": "object",
+    "properties": {
+        "lower": {
+            "description": "lower bound.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+        },
+        "upper": {
+            "description": "Upper bound.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+        },
+        "lower_unbounded": {
+            "description": "lower boundary open (i.e. = -infinity)",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+        },
+        "upper_unbounded": {
+            "description": "upper boundary open (i.e. = +infinity)",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+        },
+        "lower_included": {
+            "description": "lower boundary value included in range if not lower_unbounded.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+        },
+        "upper_included": {
+            "description": "upper boundary value included in range if not upper_unbounded.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+        }
+    },
+    "required": [
+        "lower_unbounded",
+        "upper_unbounded",
+        "lower_included",
+        "upper_included"
+    ],
+    "$inherits": [
+        "all-detailed.json#/definitions/DV_INTERVAL"
+    ],
+    "$functions": {
+        "has": {
+            "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+            "parameters": {
+                "e": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Any"
+                }
+            },
+            "required_parameters": [
+                "e"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Lower_included_valid": "lower_unbounded implies not lower_included",
+        "Upper_included_valid": "upper_unbounded implies not upper_included",
+        "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies (lower.is_strictly_comparable_to(upper) and lower <= upper)",
+        "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+    }
+}

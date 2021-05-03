@@ -33,8 +33,5 @@
     },
     "required": [
         "system_id"
-    ],
-    "$invariants": {
-        "System_id_valid": "not system_id.is_empty"
-    }
+    ]
 }

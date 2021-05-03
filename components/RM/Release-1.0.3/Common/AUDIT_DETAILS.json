@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/AUDIT_DETAILS.json",
+    "title": "AUDIT_DETAILS",
+    "description": "The set of attributes required to document the committal of an information item to a repository. ",
+    "$comments": "Defined in Common IM",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "AUDIT_DETAILS",
+                "ATTESTATION"
+            ]
+        },
+        "system_id": {
+            "description": "Identity of the system where the change was committed. Ideally this is a machine- and human-processable identifier, but it may not be. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        },
+        "time_committed": {
+            "description": "Time of committal of the item. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all.json#/definitions/DV_DATE_TIME"
+        },
+        "change_type": {
+            "description": "Type of change. Coded using the openEHR Terminology  audit change type  group.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all.json#/definitions/DV_CODED_TEXT"
+        },
+        "description": {
+            "description": "Reason for committal.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all.json#/definitions/DV_TEXT"
+        },
+        "committer": {
+            "description": "Identity and optional reference into identity management service, of user who committed the item. ",
+            "$ref": "all.json#/definitions/PARTY_PROXY"
+        }
+    },
+    "required": [
+        "system_id",
+        "time_committed",
+        "change_type",
+        "committer"
+    ]
+}

@@ -22,9 +22,5 @@
     "required": [
         "archetype_id",
         "rm_version"
-    ],
-    "$invariants": {
-        "rm_version_valid": "not rm_version.is_empty",
-        "Rm_version_valid": "not rm_version.is_empty"
-    }
+    ]
 }

@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/DV_QUANTITY.json",
+    "title": "DV_QUANTITY",
+    "description": "Quantitified type representing  scientific  quantities, i.e. quantities expressed as a magnitude and units.  Units were inspired by the Unified Code for Units of Measure (UCUM), developed by Gunther Schadow and Clement J. McDonald of The Regenstrief Institute. \n\nCan also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years. ",
+    "$comments": "Defined in Data_types IM, inherits from DV_AMOUNT",
+    "type": "object",
+    "properties": {
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  normal status . ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all.json#/definitions/DV_INTERVAL_of_DV_QUANTITY"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/REFERENCE_RANGE_of_DV_QUANTITY"
+            }
+        },
+        "magnitude_status": {
+            "description": "Optional status of magnitude with values: \n\n* =   :   magnitude is a point value \n* <   :   value is < magnitude \n* >   :   value is > magnitude \n* \\<= : value is <= magnitude \n* >= : value is >= magnitude \n* ~   :   value is approximately magnitude \n\nIf not present, meaning is  = . \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        },
+        "accuracy": {
+            "description": "Accuracy of measurement, expressed either as a half-range percent value (accuracy_is_percent = True) or a half-range quantity. A value of 0 means that accuracy is 100%, i.e. no error.\n\nA value of unknown_accuracy_value means that accuracy was not recorded.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Real"
+        },
+        "accuracy_is_percent": {
+            "description": "If True, indicates that when this object was created, accuracy was recorded as a percent value; if False, as an absolute quantity value.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Boolean"
+        },
+        "magnitude": {
+            "description": "Numeric magnitude of the quantity.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Real"
+        },
+        "precision": {
+            "description": "Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.\nThe value -1 implies no limit, i.e. any number of decimal places.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Integer"
+        },
+        "units": {
+            "description": "Stringified units, expressed in UCUM unit syntax, e.g. \"kg/m2\", \u201cmm[Hg]\", \"ms-1\", \"km/h\". Implemented accordingly in subtypes.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        }
+    },
+    "required": [
+        "magnitude",
+        "units"
+    ]
+}

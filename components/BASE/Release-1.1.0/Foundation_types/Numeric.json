@@ -17,53 +17,5 @@
     },
     "required": [
         "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/Ordered_Numeric"
-    ],
-    "$functions": {
-        "infix *": {
-            "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
-            "parameters": {
-                "other": {
-                    "$ref": "all.json#/definitions/Numeric"
-                }
-            },
-            "required_parameters": [
-                "other"
-            ],
-            "return": {
-                "$ref": "all.json#/definitions/Numeric"
-            }
-        },
-        "infix +": {
-            "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
-            "parameters": {
-                "other": {
-                    "$ref": "all.json#/definitions/Numeric"
-                }
-            },
-            "required_parameters": [
-                "other"
-            ],
-            "return": {
-                "$ref": "all.json#/definitions/Numeric"
-            }
-        },
-        "infix -": {
-            "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
-            "parameters": {
-                "other": {
-                    "$ref": "all.json#/definitions/Numeric"
-                }
-            },
-            "required_parameters": [
-                "other"
-            ],
-            "return": {
-                "$ref": "all.json#/definitions/Numeric"
-            }
-        }
-    }
+    ]
 }

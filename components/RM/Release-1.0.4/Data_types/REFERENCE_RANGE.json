@@ -26,29 +26,5 @@
     "required": [
         "meaning",
         "range"
-    ],
-    "$children": [
-        "all.json#/definitions/REFERENCE_RANGE_of_DV_QUANTITY",
-        "all.json#/definitions/REFERENCE_RANGE_of_DV_COUNT",
-        "all.json#/definitions/REFERENCE_RANGE_of_DV_PROPORTION"
-    ],
-    "$functions": {
-        "is_in_range": {
-            "description": "Indicates if the value  val' is inside the range.\n",
-            "parameters": {
-                "v": {
-                    "$ref": "all.json#/definitions/DV_ORDERED"
-                }
-            },
-            "required_parameters": [
-                "v"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
-    },
-    "$invariants": {
-        "Range_is_simple": "(range.lower_unbounded or else range.lower.is_simple) and (range.upper_unbounded or else range.upper.is_simple)"
-    }
+    ]
 }

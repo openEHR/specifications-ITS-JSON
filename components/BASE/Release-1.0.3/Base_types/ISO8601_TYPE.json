@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/ISO8601_TYPE.json",
+    "title": "ISO8601_TYPE",
+    "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, TIME_DEFINITIONS",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "ISO8601_DATE_TIME",
+                "ISO8601_DATE",
+                "ISO8601_TIME",
+                "ISO8601_DURATION",
+                "DV_DATE_TIME",
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DURATION"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ]
+}

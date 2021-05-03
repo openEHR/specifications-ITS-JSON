@@ -1,0 +1,144 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/TIME_DEFINITIONS-detailed.json",
+    "title": "TIME_DEFINITIONS",
+    "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using +12:00, not -12:00.",
+    "$comments": "Defined in Base_types IM",
+    "properties": {
+        "_type": {
+            "enum": [
+                "TIME_DEFINITIONS",
+                "ISO8601_TIMEZONE",
+                "ISO8601_DATE_TIME",
+                "ISO8601_DATE",
+                "ISO8601_TIME",
+                "ISO8601_DURATION",
+                "DV_DATE_TIME",
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DURATION"
+            ]
+        }
+    },
+    "$children": [
+        "all-detailed.json#/definitions/ISO8601_TYPE",
+        "all-detailed.json#/definitions/ISO8601_TIMEZONE"
+    ],
+    "$functions": {
+        "valid_year": {
+            "parameters": {
+                "y": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_month": {
+            "parameters": {
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_day": {
+            "description": "True if d >= 1 and d <= days_in_month (m, y)",
+            "parameters": {
+                "y": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                },
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                },
+                "d": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "y",
+                "m",
+                "d"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_hour": {
+            "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+            "parameters": {
+                "h": {
+                    "$ref": "all-detailed.json#/definitions/Any"
+                },
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Any"
+                },
+                "s": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "h",
+                "m",
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_minute": {
+            "description": "True if m >= 0 and m < Minutes_in_hour.",
+            "parameters": {
+                "m": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "m"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_second": {
+            "description": "True if s >= 0 and s < Seconds_in_minute .",
+            "parameters": {
+                "s": {
+                    "$ref": "all-detailed.json#/definitions/Integer"
+                }
+            },
+            "required_parameters": [
+                "s"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_fractional_second": {
+            "description": "True if fs >= 0.0 and fs < 1.0 .",
+            "parameters": {
+                "fs": {
+                    "$ref": "all-detailed.json#/definitions/Double"
+                }
+            },
+            "required_parameters": [
+                "fs"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        }
+    },
+    "$invariants": {
+        "Post": "Result = fs >= 0.0 and fs < 1.0 ."
+    }
+}

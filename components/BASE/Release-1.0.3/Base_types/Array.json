@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Array.json",
+    "title": "Array",
+    "description": "Container whose storage is assumed to be contiguous.",
+    "$comments": "Defined in Base_types IM, inherits from Aggregate",
+    "type": "array"
+}

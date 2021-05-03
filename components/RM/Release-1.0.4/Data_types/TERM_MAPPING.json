@@ -22,50 +22,5 @@
     "required": [
         "match",
         "target"
-    ],
-    "$functions": {
-        "narrower": {
-            "description": "The mapping is to a narrower term.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "broader": {
-            "description": "The mapping is to a broader term.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "equivalent": {
-            "description": "The mapping is to an equivalent term.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "unknown": {
-            "description": "The kind of mapping is unknown.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "is_valid_match_code": {
-            "description": "True if match valid.",
-            "parameters": {
-                "c": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Character"
-                }
-            },
-            "required_parameters": [
-                "c"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
-    },
-    "$invariants": {
-        "Purpose_valid": "purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)",
-        "Match_valid": "is_valid_match_code (match)",
-        "Post": "Result := c = \u2018>\u2019 or c = \u2018=\u2019 or c = \u2018<\u2019 or c = \u2018?\u2019"
-    }
+    ]
 }

@@ -1,0 +1,2959 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all-detailed.json",
+    "title": "Base_types IM definitions",
+    "description": "The openEHR Base types.",
+    "$comments": "Part of BASE component, Release-1.0.3 version.",
+    "definitions": {
+        "ISO8601_DATE_TIME": {
+            "title": "ISO8601_DATE_TIME",
+            "description": "Represents an absolute point in time, specified to the second.\n\nNote that this class includes 2 deviations from ISO 8601:2004:\n\n* for partial date/times, any part of the date/time up to the month may be missing, not just seconds and minutes as in the standard;\n* the time 24:00:00 is not allowed, since it would mean the date was really on the next day.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DATE_TIME",
+                        "DV_DATE_TIME"
+                    ]
+                }
+            },
+            "$inherits": [
+                "#/definitions/ISO8601_TYPE"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_DATE_TIME"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_partial": {
+                    "description": "True if this date time is partial, i.e. if seconds or more is missing.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_extended": {
+                    "description": "True if this date/time uses \u2018-\u2019, \u2018:\u2019 separators.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "year": {
+                    "description": "Year.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "month": {
+                    "description": "Month in year.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "day": {
+                    "description": "Day in month.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "month_unknown": {
+                    "description": "Indicates whether month in year is unknown.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "day_unknown": {
+                    "description": "Indicates whether day in month is unknown.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "hour": {
+                    "description": "Hour in day.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "minute": {
+                    "description": "Minute in hour.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "second": {
+                    "description": "Second in minute.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "fractional_second": {
+                    "description": "Fractional seconds.",
+                    "return": {
+                        "$ref": "#/definitions/Real"
+                    }
+                },
+                "has_fractional_second": {
+                    "description": "True if the fractional_second part is signficant (i.e. even if = 0.0).",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "minute_unknown": {
+                    "description": "Indicates whether minute in hour is known.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "second_unknown": {
+                    "description": "Indicates whether minute in hour is known.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_decimal_sign_comma": {
+                    "description": "True if this time has a decimal part indicated by \u2018,\u2019 (comma) rather than \u2018.\u2019 (period).",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "timezone": {
+                    "description": "Timezone; may be Void.",
+                    "return": {
+                        "$ref": "#/definitions/ISO8601_TIMEZONE"
+                    }
+                },
+                "as_string": {
+                    "description": "ISO8601 string for date/time, in format `YYYYMMDDThhmmss[,sss][Z | \u00b1hh[mm]]` or in extended format `YYYY-MM-DDThh:mm:ss[,sss][Z | \u00b1hh[mm]]` or a partial variant; see valid_iso8601_date_time() below.",
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                },
+                "valid_iso8601_date_time": {
+                    "description": "String is a valid ISO 8601 date-time, i.e. takes the form:\n\n* YYYYMMDDThhmmss[,sss][Z | \uf0b1hh[mm]]\n\nor the extended form:\n\n* YYYY-MM-DDThh:mm:ss[,sss][Z | \uf0b1hh[mm]]\n\nor one of the partial forms:\n\n* YYYYMMDDThhmm\n* YYYYMMDDThh\n\nor the equivalent extended forms:\n\n* YYYY-MM-DDThh:mm\n* YYYY-MM-DDThh\n\n(meanings as in DV_DATE, DV_TIME) and the values in each field are valid.",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/String"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Year_valid": "valid_year (year)",
+                "Month_valid": "valid_month (month)",
+                "Day_valid": "valid_day(year, month, day)",
+                "Hour_valid": "valid_hour (hour, minute, second)",
+                "Minute_valid": "not minute_unknown implies valid_minute(minute)",
+                "Second_valid": "not second_unknown implies valid_second (second)",
+                "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+                "Partial_validity_year": "not month_unknown",
+                "Partial_validity_month": "not month_unknown",
+                "Partial_validity_day": "not day_unknown",
+                "Partial_validity_hour": "not hour_unknown",
+                "Partial_validity_minute": "minute_unknown implies second_unknown",
+                "Pre": "not second_unknown"
+            }
+        },
+        "ISO8601_DATE": {
+            "title": "ISO8601_DATE",
+            "description": "Represents an absolute point in time, as measured on the Gregorian calendar, and specified only to the day.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DATE",
+                        "DV_DATE"
+                    ]
+                }
+            },
+            "$inherits": [
+                "#/definitions/ISO8601_TYPE"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_DATE"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_partial": {
+                    "description": "True if this date is partial, i.e. if day or more is missing.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_extended": {
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "year": {
+                    "description": "Year.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "month": {
+                    "description": "Month in year.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "day": {
+                    "description": "Day in month.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "month_unknown": {
+                    "description": "Indicates whether month in year is unknown. If so, the date is of the form \u201cYYYY\u201d.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "day_unknown": {
+                    "description": "Indicates whether day in month is unknown. If so, and month is known, the date is of the form \u201cYYYY-MM\u201d or \u201cYYYYMM\u201d.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "as_string": {
+                    "description": "ISO8601 string for date, in format YYYYMMDD or YYYY-MM-DD, or a partial invariant. See valid_iso8601_date for validity.",
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                },
+                "is_expanded": {
+                    "description": "True if this date uses \u2018-\u2019 separators.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_iso8601_date": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the complete form:\n\n* YYYYMMDD or the extended form:\n* YYYY-MM-DD or one of the partial forms:\n* YYYYMM\n* YYYY\n\nor the equivalent extended form:\n\n* YYYY-MM\n\nWhere:\n\n* YYYY is the string form of any positive number in the range \u201c0000\u201d - \u201c9999\u201d (zero-filled to four digits)\n* MM is \u201c01\u201d - \u201c12\u201d (zero-filled to two digits)\n* DD is \u201c01\u201d - \u201c31\u201d (zero-filled to two digits)\n\nThe combinations of YYYY, MM, DD numbers must be correct with respect to the Gregorian calendar.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Year_valid": "valid_year (year)",
+                "Month_valid": "not month_unknown implies valid_month (month)",
+                "Day_valid": "not day_unknown implies valid_day (year, month, day)",
+                "Partial_validity": "month_unknown implies day_unknown",
+                "Pre": "not month_unknown"
+            }
+        },
+        "ISO8601_TIME": {
+            "title": "ISO8601_TIME",
+            "description": "Represents an absolute point in time from an origin usually interpreted as meaning the start of the current day, specified to the second.\n\nNOTE: A small deviation to the ISO 8601:2004 standard in this class is that the time 24:00:00 is not allowed, for consistency with ISO8601_DATE_TIME.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_TIME",
+                        "DV_TIME"
+                    ]
+                }
+            },
+            "$inherits": [
+                "#/definitions/ISO8601_TYPE"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_TIME"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_partial": {
+                    "description": "True if this time is partial, i.e. if seconds or more is missing.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_extended": {
+                    "description": "True if this time uses \u2018:\u2019 separators.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "hour": {
+                    "description": "Hour in day, in 24-hour time.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "minute": {
+                    "description": "Minute in hour.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "second": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "fractional_second": {
+                    "description": "Fractional seconds.",
+                    "return": {
+                        "$ref": "#/definitions/Real"
+                    }
+                },
+                "has_fractional_second": {
+                    "description": "True if the fractional_second part is signficant (i.e. even if = 0.0).",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "minute_unknown": {
+                    "description": "Indicates whether minute is unknown. If so, the time is of the form \u201chh\u201d.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "second_unknown": {
+                    "description": "Indicates whether second is unknown. If so and month is known, the time is of the form \u201chh:mm\u201d or \u201chhmm\u201d.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_decimal_sign_comma": {
+                    "description": "True if this time has a decimal part indicated by \u2018,\u2019 (comma) rather than \u2018.\u2019 (period).",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "timezone": {
+                    "return": {
+                        "$ref": "#/definitions/ISO8601_TIMEZONE"
+                    }
+                },
+                "as_string": {
+                    "description": "ISO8601 string for time, i.e. in form: hhmmss[,sss][Z|\uf0b1hh[mm]] or the extended form: hh:mm:ss[,sss][Z|\uf0b1hh[mm]], or a partial invariant. See valid_iso8601_time for validity.",
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                },
+                "valid_iso8601_time": {
+                    "description": "String is a valid ISO 8601 date, i.e. takes the form:\n\n* hhmmss[,sss][Z | \uf0b1hh[mm]]\n\nor the extended form:\n\n* hh:mm:ss[,sss][Z | \u00b1hh[mm]]\n\nor one of the partial forms:\n\n* hhmm or hh \n\nor the extended form:\n\n* hh:mm\n\nwith an additional optional timezone indicator of:\n* Z or \uf0b1hh[mm]\n\nWhere:\n\n* hh is \u201c00\u201d - \u201c23\u201d (0-filled to two digits)\n* mm is \u201c00\u201d - \u201c59\u201d (0-filled to two digits)\n* ss is \u201c00\u201d - \u201c60\u201d (0-filled to two digits)\n* sss is any numeric string, representing an optional fractional second\n* Z is a literal meaning UTC (modern replacement for GMT), i.e. timezone +0000\n* \uf0b1hh[mm], i.e. +hhmm, +hh, -hhmm, -hh indicating the timezone ",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Hour_valid": "valid_hour(hour, minute, second)",
+                "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+                "Second_valid": "not second_unknown implies valid_second (second)",
+                "Fractional_second_valid": "has_fractional_second implies (not second_unknown and valid_fractional_second (fractional_second))",
+                "Partial_validity": "minute_unknown implies second_unknown",
+                "Pre": "not second_unknown"
+            }
+        },
+        "ISO8601_DURATION": {
+            "title": "ISO8601_DURATION",
+            "description": "Represents a period of time corresponding to a difference between two timepoints.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DURATION",
+                        "DV_DURATION"
+                    ]
+                }
+            },
+            "$inherits": [
+                "#/definitions/ISO8601_TYPE"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_DURATION"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_partial": {
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_extended": {
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "years": {
+                    "description": "Number of years of nominal 365-day length.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "months": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "days": {
+                    "description": "Number of 24 hour days.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "hours": {
+                    "description": "Number of 60 minute hours.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "minutes": {
+                    "description": "Number of 60 second minutes.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "seconds": {
+                    "description": "Number of seconds.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "fractional_seconds": {
+                    "description": "Fractional seconds.",
+                    "return": {
+                        "$ref": "#/definitions/Real"
+                    }
+                },
+                "is_decminal_sign_comma": {
+                    "description": "True if this time has a decimal part indicated by ',' (comma) rather than '.' (period).",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "weeks": {
+                    "description": "Number of 7 day weeks.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "as_string": {
+                    "description": "ISO8601 string for duration, in format\n\n* P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]",
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                },
+                "valid_iso8601_duration": {
+                    "parameters": {
+                        "s": {
+                            "description": "String is a valid ISO 8601 duration, i.e. takes the form:\n\n* P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]\n\nWhere each nn represents a number of years, months, etc. nnW represents a number of 7- day weeks.\n\nNOTE: allowing the W designator in the same expression as other designators is an exception to the published standard, but necessary in clinical information (typically for representing pregnancy duration).",
+                            "$ref": "#/definitions/String"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "to_seconds": {
+                    "description": "Total number of seconds equivalent (including fractional) of entire duration.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Years_valid": "years >= 0",
+                "Months_valid": "months >= 0",
+                "Weeks_valid": "weeks >= 0",
+                "Days_valid": "days >= 0",
+                "Hours_valid": "hours >= 0",
+                "Minutes_valid": "minutes >= 0",
+                "Seconds_valid": "seconds >= 0",
+                "Fractional_second_valid": "fractional_second >= 0.0 and fractional_second < 1.0"
+            }
+        },
+        "ISO8601_TYPE": {
+            "title": "ISO8601_TYPE",
+            "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, TIME_DEFINITIONS",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DATE_TIME",
+                        "ISO8601_DATE",
+                        "ISO8601_TIME",
+                        "ISO8601_DURATION",
+                        "DV_DATE_TIME",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DURATION"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
+            "$abstract": true,
+            "$inherits": [
+                "#/definitions/Ordered",
+                "#/definitions/TIME_DEFINITIONS"
+            ],
+            "$children": [
+                "#/definitions/ISO8601_DATE_TIME",
+                "#/definitions/ISO8601_DATE",
+                "#/definitions/ISO8601_TIME",
+                "#/definitions/ISO8601_DURATION"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_partial": {
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_extended": {
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 ."
+            }
+        },
+        "ISO8601_TIMEZONE": {
+            "title": "ISO8601_TIMEZONE",
+            "description": "Represents a timezone as used in ISO 8601.",
+            "$comments": "Defined in Base_types IM, inherits from TIME_DEFINITIONS",
+            "type": "object",
+            "$inherits": [
+                "#/definitions/TIME_DEFINITIONS"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "hour": {
+                    "description": "Hour part of timezone - in the range 00 - 13.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "minute": {
+                    "description": "Minute part of timezone. Generally 00 or 30.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_gmt": {
+                    "description": "True if timezone is UTC, i.e. +0000.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "sign": {
+                    "description": "Direction of timezone expresssed as +1 or -1.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "minute_unknown": {
+                    "description": "Indicates whether minute part known.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "as_string": {
+                    "description": "ISO8601 timezone string, in format:\n\n* Z | \uf0b1hh[mm]\n\nwhere:\n\n* hh is \u201c00\u201d - \u201c23\u201d (0-filled to two digits)\n* mm is \u201c00\u201d - \u201c59\u201d (0-filled to two digits)\n* Z is a literal meaning UTC (modern replacement for GMT), i.e. timezone +0000",
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 .",
+                "Min_hour_valid": "sign = -1 implies hour > 0 and hour <= Min_timezone_hour",
+                "Max_hour_valid": "sign = 1 implies hour > 0 and hour <= Max_timezone_hour",
+                "Minute_valid": "not minute_unknown implies valid_minute (minute)",
+                "Sign_valid": "sign = 1 or sign = -1"
+            }
+        },
+        "TIME_DEFINITIONS": {
+            "title": "TIME_DEFINITIONS",
+            "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using +12:00, not -12:00.",
+            "$comments": "Defined in Base_types IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "TIME_DEFINITIONS",
+                        "ISO8601_TIMEZONE",
+                        "ISO8601_DATE_TIME",
+                        "ISO8601_DATE",
+                        "ISO8601_TIME",
+                        "ISO8601_DURATION",
+                        "DV_DATE_TIME",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DURATION"
+                    ]
+                }
+            },
+            "$children": [
+                "#/definitions/ISO8601_TYPE",
+                "#/definitions/ISO8601_TIMEZONE"
+            ],
+            "$functions": {
+                "valid_year": {
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_month": {
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_day": {
+                    "description": "True if d >= 1 and d <= days_in_month (m, y)",
+                    "parameters": {
+                        "y": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        "d": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "y",
+                        "m",
+                        "d"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_hour": {
+                    "description": "True if (h >= 0 and h < Hours_in_day) or (h = Hours_in_day and m = 0 and s = 0)",
+                    "parameters": {
+                        "h": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "m": {
+                            "$ref": "#/definitions/Any"
+                        },
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "h",
+                        "m",
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_minute": {
+                    "description": "True if m >= 0 and m < Minutes_in_hour.",
+                    "parameters": {
+                        "m": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "m"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_second": {
+                    "description": "True if s >= 0 and s < Seconds_in_minute .",
+                    "parameters": {
+                        "s": {
+                            "$ref": "#/definitions/Integer"
+                        }
+                    },
+                    "required_parameters": [
+                        "s"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "valid_fractional_second": {
+                    "description": "True if fs >= 0.0 and fs < 1.0 .",
+                    "parameters": {
+                        "fs": {
+                            "$ref": "#/definitions/Double"
+                        }
+                    },
+                    "required_parameters": [
+                        "fs"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Post": "Result = fs >= 0.0 and fs < 1.0 ."
+            }
+        },
+        "MULTIPLICITY_INTERVAL": {
+            "title": "MULTIPLICITY_INTERVAL",
+            "$comments": "Defined in Base_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#/definitions/Interval"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+                    "parameters": {
+                        "e": {
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "e"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+            }
+        },
+        "Interval<Integer>": {
+            "title": "Interval<Integer>",
+            "$comments": "Defined in Base_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#/definitions/Interval"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+                    "parameters": {
+                        "e": {
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "e"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+            }
+        },
+        "Interval": {
+            "title": "Interval",
+            "description": "Interval of ordered items.",
+            "$comments": "Defined in Base_types IM",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Interval",
+                        "DV_INTERVAL",
+                        "MULTIPLICITY_INTERVAL",
+                        "Interval<Integer>",
+                        "Interval<Real>",
+                        "DV_INTERVAL<DV_DATE_TIME>",
+                        "DV_INTERVAL<DV_DATE>",
+                        "DV_INTERVAL<DV_QUANTITY>",
+                        "DV_INTERVAL<DV_COUNT>",
+                        "DV_INTERVAL<DV_PROPORTION>"
+                    ]
+                },
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_INTERVAL",
+                "#/definitions/MULTIPLICITY_INTERVAL",
+                "#/definitions/Interval_of_Integer",
+                "#/definitions/Interval_of_Real"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+                    "parameters": {
+                        "e": {
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "e"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+            }
+        },
+        "Interval<Real>": {
+            "title": "Interval<Real>",
+            "$comments": "Defined in Base_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "#/definitions/Real"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "#/definitions/Real"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "$inherits": [
+                "#/definitions/Interval"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "True if (lower_unbounded or \n((lower_included and v >= lower) or \nv > lower)) and \n(upper_unbounded or \n((upper_included and v <= upper or v \n< upper)))",
+                    "parameters": {
+                        "e": {
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "e"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Lower_included_valid": "lower_unbounded implies not lower_included",
+                "Upper_included_valid": "upper_unbounded implies not upper_included",
+                "Limits_consistent": "(not upper_unbounded and not lower_unbounded) implies lower <= upper",
+                "Limits_comparable": "(not upper_unbounded and not lower_unbounded) implies lower.strictly_comparable_to (upper)"
+            }
+        },
+        "Hash": {
+            "title": "Hash",
+            "description": "Type representing a keyed table of values. T is the value type, and U the type of the keys. ",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Hash",
+                        "Hash<Hash<Hash<String, String>, String>, String>",
+                        "Hash<Hash<String, String>, String>",
+                        "Hash<String, String>"
+                    ]
+                }
+            },
+            "$inherits": [
+                "#/definitions/Aggregate"
+            ],
+            "$children": [
+                "#/definitions/Hash_of_Hash_of_Hash_of_String_String_String_String",
+                "#/definitions/Hash_of_Hash_of_String_String_String",
+                "#/definitions/Hash_of_String_String"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "has_key": {
+                    "description": "Test for membership of a key.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "item": {
+                    "description": "Return item for key  a_key'. Equivalent to ISO 11404 fetch operation.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/V"
+                    }
+                }
+            }
+        },
+        "Hash<Hash<Hash<String, String>, String>, String>": {
+            "title": "Hash<Hash<Hash<String, String>, String>, String>",
+            "$comments": "Defined in Base_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#/definitions/Hash"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "has_key": {
+                    "description": "Test for membership of a key.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "item": {
+                    "description": "Return item for key  a_key'. Equivalent to ISO 11404 fetch operation.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/V"
+                    }
+                }
+            }
+        },
+        "Hash<Hash<String, String>, String>": {
+            "title": "Hash<Hash<String, String>, String>",
+            "description": "Two-level hash map structure, typically used for two levels of keyed tables, e.g. with outer keys = language (\"en\", \"zh\" etc) and inner keys = some tag or id or path.",
+            "$comments": "Defined in Base_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#/definitions/Hash"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "has_key": {
+                    "description": "Test for membership of a key.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "item": {
+                    "description": "Return item for key  a_key'. Equivalent to ISO 11404 fetch operation.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/V"
+                    }
+                }
+            }
+        },
+        "Hash<String, String>": {
+            "title": "Hash<String, String>",
+            "$comments": "Defined in Base_types IM, inherits from Hash",
+            "type": "object",
+            "$inherits": [
+                "#/definitions/Hash"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "has_key": {
+                    "description": "Test for membership of a key.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "item": {
+                    "description": "Return item for key  a_key'. Equivalent to ISO 11404 fetch operation.",
+                    "parameters": {
+                        "a_key": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/K"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_key"
+                    ],
+                    "return": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/V"
+                    }
+                }
+            }
+        },
+        "Aggregate": {
+            "title": "Aggregate",
+            "description": "Number of items in container.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Hash",
+                        "List",
+                        "Set",
+                        "Array",
+                        "Hash<Hash<Hash<String, String>, String>, String>",
+                        "Hash<Hash<String, String>, String>",
+                        "Hash<String, String>",
+                        "Set <String>"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
+            "$abstract": true,
+            "$children": [
+                "#/definitions/Hash",
+                "#/definitions/List",
+                "#/definitions/Set",
+                "#/definitions/Array"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "List": {
+            "title": "List",
+            "description": "Ordered container that may contain duplicates.",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "array",
+            "$inherits": [
+                "#/definitions/Aggregate"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "first": {
+                    "description": "Return first element.",
+                    "return": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                    }
+                },
+                "last": {
+                    "description": "Return last element.",
+                    "return": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                    }
+                }
+            },
+            "$invariants": {
+                "First_validity": "not is_empty implies first /= Void",
+                "Last_validity": "not is_empty implies last /= Void"
+            }
+        },
+        "Set": {
+            "title": "Set",
+            "description": "Unordered container that may not contain duplicates.",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "array",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Set",
+                        "Set <String>"
+                    ]
+                }
+            },
+            "$inherits": [
+                "#/definitions/Aggregate"
+            ],
+            "$children": [
+                "#/definitions/Set_of_String"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Array": {
+            "title": "Array",
+            "description": "Container whose storage is assumed to be contiguous.",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "array",
+            "$inherits": [
+                "#/definitions/Aggregate"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Set <String>": {
+            "title": "Set <String>",
+            "$comments": "Defined in Base_types IM, inherits from Set",
+            "type": "object",
+            "$inherits": [
+                "#/definitions/Set"
+            ],
+            "$functions": {
+                "has": {
+                    "description": "Test for membership of a value.",
+                    "parameters": {
+                        "v": {
+                            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                        }
+                    },
+                    "required_parameters": [
+                        "v"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "count": {
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if container is empty.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Any": {
+            "title": "Any",
+            "description": "Abstract supertype. Usually maps to a type like \u201cAny\u201d or \u201cObject\u201d in an object system. Defined here to provide the value and reference equality semantics.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "$abstract": true,
+            "$functions": {
+                "is_equal": {
+                    "description": "Value equality.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix =": {
+                    "parameters": {
+                        "other": {
+                            "description": "Reference equality.",
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "instance_of": {
+                    "description": "Create new instance of a type.",
+                    "parameters": {
+                        "a_type": {
+                            "$ref": "#/definitions/String"
+                        }
+                    },
+                    "required_parameters": [
+                        "a_type"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Any"
+                    }
+                },
+                "type_of": {
+                    "parameters": {
+                        "an_object": {
+                            "$ref": "#/definitions/Any"
+                        }
+                    },
+                    "required_parameters": [
+                        "an_object"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                }
+            }
+        },
+        "Ordered": {
+            "title": "Ordered",
+            "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_ORDINAL",
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT",
+                        "DV_DURATION",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME",
+                        "ISO8601_DATE_TIME",
+                        "ISO8601_DATE",
+                        "ISO8601_TIME",
+                        "ISO8601_DURATION",
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
+            "$abstract": true,
+            "$children": [
+                "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all-detailed.json#/definitions/DV_ORDERED",
+                "#/definitions/ISO8601_TYPE",
+                "#/definitions/Ordered_Numeric"
+            ],
+            "$functions": {
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Uri": {
+            "title": "Uri",
+            "$comments": "Defined in Base_types IM",
+            "type": "string"
+        },
+        "Comparable": {
+            "title": "Comparable",
+            "$comments": "Defined in Base_types IM, abstract",
+            "$abstract": true
+        },
+        "Ordered_Numeric": {
+            "title": "Ordered_Numeric",
+            "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
+            "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, Numeric",
+            "type": "number",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
+            "$abstract": true,
+            "$inherits": [
+                "#/definitions/Ordered",
+                "#/definitions/Numeric"
+            ],
+            "$children": [
+                "#/definitions/Integer",
+                "#/definitions/Double",
+                "#/definitions/Real",
+                "#/definitions/Integer64"
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Integer": {
+            "title": "Integer",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "integer",
+            "$inherits": [
+                "#/definitions/Ordered_Numeric"
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Double": {
+            "title": "Double",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "number",
+            "$inherits": [
+                "#/definitions/Ordered_Numeric"
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "Numeric": {
+            "title": "Numeric",
+            "description": "Abstract notional parent class of numeric types, which are types which have various arithmetic and comparison operators defined.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "type": "number",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ],
+            "$abstract": true,
+            "$children": [
+                "#/definitions/Ordered_Numeric"
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                }
+            }
+        },
+        "Octet": {
+            "title": "Octet",
+            "$comments": "Defined in Base_types IM",
+            "type": "integer"
+        },
+        "Character": {
+            "title": "Character",
+            "$comments": "Defined in Base_types IM",
+            "type": "string"
+        },
+        "Boolean": {
+            "title": "Boolean",
+            "$comments": "Defined in Base_types IM",
+            "type": "boolean",
+            "$functions": {
+                "infix and": {
+                    "description": "Logical conjunction",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Boolean"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix and_then": {
+                    "description": "Boolean semi-strict conjunction with other",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Boolean"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix or": {
+                    "description": "Boolean disjunction with other.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Boolean"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix or_else": {
+                    "description": "Boolean semi-strict disjunction with `other'.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Boolean"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix xor": {
+                    "description": "Boolean exclusive or with `other'.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Boolean"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "infix implies": {
+                    "description": "Boolean implication of `other' (semi-strict)",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Boolean"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            },
+            "$invariants": {
+                "Involutive_negation": "is_equal (not (not self))",
+                "Non_contradiction": "not (self and (not self))",
+                "Completeness": "self or else (not self)",
+                "Post_de_Morgan": "Result = not (not self and then not other)",
+                "Post_commutative": "Result = (other or Current)",
+                "Post_consistent_with_semi_strict": "Result implies (self or else other)",
+                "Post_definition": "Result = (not self or else other)"
+            }
+        },
+        "String": {
+            "title": "String",
+            "description": "Strings of characters, as used to represent textual data in any natural or formal language.",
+            "$comments": "Defined in Base_types IM",
+            "type": "string",
+            "$functions": {
+                "infix +": {
+                    "description": "Concatenation operator - causes \u2018other\u2019 to be appended to this string.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/String"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/String"
+                    }
+                },
+                "is_empty": {
+                    "description": "True if string is empty, i.e. equal to \"\".",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "is_integer": {
+                    "description": "True if string can be parsed as an integer.",
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "as_integer": {
+                    "description": "Return the integer corresponding to the integer value represented in this string.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                }
+            }
+        },
+        "Real": {
+            "title": "Real",
+            "description": "Type used to represent decimal numbers. Corresponds to a single-precision floating point value in most languages.",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "number",
+            "$inherits": [
+                "#/definitions/Ordered_Numeric"
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                },
+                "floor": {
+                    "description": "Return the greatest integer no greater than the value of this object.",
+                    "return": {
+                        "$ref": "#/definitions/Integer"
+                    }
+                }
+            }
+        },
+        "Integer64": {
+            "title": "Integer64",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "integer",
+            "$inherits": [
+                "#/definitions/Ordered_Numeric"
+            ],
+            "$functions": {
+                "infix *": {
+                    "description": "Product by `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix +": {
+                    "description": "Sum with `other' (commutative). Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix -": {
+                    "description": "Result of subtracting `other'. Actual type of result depends on arithmetic balancing rules.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Numeric"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Numeric"
+                    }
+                },
+                "infix <": {
+                    "description": "Arithmetic comparison. In conjunction with \u2018=\u2019, enables the definition of the operators \u2018>\u2019, \u2018>=\u2019, \u2018<=\u2019, \u2018<>\u2019. In real type systems, this operator might be defined on another class for comparability.",
+                    "parameters": {
+                        "other": {
+                            "$ref": "#/definitions/Ordered"
+                        }
+                    },
+                    "required_parameters": [
+                        "other"
+                    ],
+                    "return": {
+                        "$ref": "#/definitions/Boolean"
+                    }
+                }
+            }
+        },
+        "TERMINOLOGY_CODE": {
+            "title": "TERMINOLOGY_CODE",
+            "description": "Logically primitive type representing a reference to a terminology concept, in the form of a terminology identifier, optional version, and a code or code string from the terminology.",
+            "$comments": "Defined in Base_types IM",
+            "type": "object",
+            "properties": {
+                "terminology_id": {
+                    "description": "The archetype environment namespace identifier used to identify a terminology. Typically a value like \"snomed_ct\" that is mapped elsewhere to the full URI identifying the terminology.",
+                    "$ref": "#/definitions/String"
+                },
+                "terminology_version": {
+                    "description": "Optional string value representing terminology version, typically a date or dotted numeric.",
+                    "$ref": "#/definitions/String"
+                },
+                "code_string": {
+                    "description": "A terminology code or post-coordinated code expression, if supported by the terminology.",
+                    "$ref": "#/definitions/String"
+                },
+                "uri": {
+                    "description": "The URI equivalent of the other three attributes.",
+                    "$ref": "#/definitions/Uri"
+                }
+            },
+            "required": [
+                "terminology_id",
+                "code_string"
+            ]
+        }
+    },
+    "$component": "BASE",
+    "$version": "Release-1.0.3"
+}

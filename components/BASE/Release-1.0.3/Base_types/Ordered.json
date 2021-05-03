@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Ordered.json",
+    "title": "Ordered",
+    "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
+    "$comments": "Defined in Base_types IM, abstract",
+    "properties": {
+        "_type": {
+            "enum": [
+                "DV_ORDINAL",
+                "DV_PROPORTION",
+                "DV_QUANTITY",
+                "DV_COUNT",
+                "DV_DURATION",
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DATE_TIME",
+                "ISO8601_DATE_TIME",
+                "ISO8601_DATE",
+                "ISO8601_TIME",
+                "ISO8601_DURATION",
+                "Integer",
+                "Double",
+                "Real",
+                "Integer64"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ]
+}

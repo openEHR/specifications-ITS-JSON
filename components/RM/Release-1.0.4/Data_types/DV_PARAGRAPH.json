@@ -17,11 +17,5 @@
     },
     "required": [
         "items"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DATA_VALUE"
-    ],
-    "$invariants": {
-        "Items_valid": "not items.is_empty"
-    }
+    ]
 }

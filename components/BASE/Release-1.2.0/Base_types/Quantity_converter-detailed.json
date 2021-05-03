@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/Quantity_converter-detailed.json",
+    "title": "Quantity_converter",
+    "description": "Quantity conversion.",
+    "$comments": "Defined in Base_types IM",
+    "$functions": {
+        "convert_value": {
+            "description": "Convert `_value_` of physical property type (e.g. 'pressure' etc) from one units to another.",
+            "parameters": {
+                "value": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Real"
+                },
+                "from_units": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+                },
+                "to_units": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+                },
+                "property": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Terminology_code"
+                }
+            },
+            "required_parameters": [
+                "value",
+                "from_units",
+                "to_units",
+                "property"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Real"
+            }
+        }
+    }
+}

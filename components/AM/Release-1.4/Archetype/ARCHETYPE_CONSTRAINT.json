@@ -19,55 +19,5 @@
     },
     "required": [
         "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/C_OBJECT",
-        "all.json#/definitions/C_ATTRIBUTE"
-    ],
-    "$functions": {
-        "is_subset_of": {
-            "description": "True if constraints represented by this node, ignoring any sub-parts, are narrower or the same as other. \nTypically used during validation of special-ised archetype nodes.",
-            "parameters": {
-                "other": {
-                    "$ref": "all.json#/definitions/ARCHETYPE_CONSTRAINT"
-                }
-            },
-            "required_parameters": [
-                "other"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "is_valid": {
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "path": {
-            "description": "Path of this node relative to root of archetype.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "has_path": {
-            "description": "True if the relative path a_path exists at this node.",
-            "parameters": {
-                "a_path": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-                }
-            },
-            "required_parameters": [
-                "a_path"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
-    },
-    "$invariants": {
-        "Post": "Result = soc_parent /= Void or parent.soc_parent /= Void",
-        "Path_exists": "path /= Void"
-    }
+    ]
 }

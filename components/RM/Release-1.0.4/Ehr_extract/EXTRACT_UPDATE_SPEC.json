@@ -29,10 +29,5 @@
     "required": [
         "persist_in_server",
         "update_method"
-    ],
-    "$invariants": {
-        "Overall_validity": "repeat_period /= Void or trigger_events /= Void",
-        "Trigger_events_validity": "trigger_events /= Void implies not trigger_events.is_empty",
-        "Send_changes_only_validity": "send_changes_only implies persist_in_server"
-    }
+    ]
 }

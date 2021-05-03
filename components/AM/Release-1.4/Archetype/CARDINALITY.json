@@ -8,40 +8,20 @@
     "properties": {
         "interval": {
             "description": "The interval of this cardinality. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Interval_of_Integer"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Interval_of_Integer"
         },
         "is_ordered": {
             "description": "True if the members of the container attribute to which this cardinality refers are ordered. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Boolean"
         },
         "is_unique": {
             "description": "True if the members of the container attribute to which this cardinality refers are unique.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Boolean"
         }
     },
     "required": [
         "interval",
         "is_ordered",
         "is_unique"
-    ],
-    "$functions": {
-        "is_bag": {
-            "description": "True if the semantics of this cardinality represent a bag, i.e. unordered, non-unique membership.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "is_list": {
-            "description": "True if the semantics of this cardinality represent a list, i.e. ordered, non-unique membership.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "is_set": {
-            "description": "True if the semantics of this cardinality represent a bag, i.e. unordered, non-unique membership.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
-    }
+    ]
 }

@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Identification/all-detailed.json",
+    "title": "Identification IM definitions",
+    "description": "The rm.support.identification package describes a model of references and identifiers for information entities.",
+    "$comments": "Part of BASE component, Release-1.0.3 version.",
+    "$component": "BASE",
+    "$version": "Release-1.0.3"
+}

@@ -23,11 +23,5 @@
         "namespace",
         "type",
         "id"
-    ],
-    "$inherits": [
-        "all.json#/definitions/OBJECT_REF"
-    ],
-    "$invariants": {
-        "Type_validity": "type.is_equal(\u201cPERSON\u201d) or type.is_equal(\u201cORGANISATION\u201d) or type.is_equal(\u201cGROUP\u201d) or type.is_equal(\u201cAGENT\u201d)or type.is_equal(\u201cROLE\u201d) or type.is_equal(\u201cPARTY\u201d) or type.is_equal(\u201cACTOR\u201d)"
-    }
+    ]
 }

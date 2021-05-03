@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_ORDERED.json",
+    "title": "DV_ORDERED",
+    "description": "Abstract class defining the concept of ordered values, which includes ordinals as well as true quantities. It defines the functions  `<` and `_is_strictly_comparable_to()_`, the latter of which must evaluate to `True` for instances being compared with the  `<` function, or used as limits in the `DV_INTERVAL<T>` class. \n\nData value types which are to be used as limits in the `DV_INTERVAL<T>` class must inherit from this class, and implement the function `_is_strictly_comparable_to()_` to ensure that instances compare meaningfully. For example, instances of `DV_QUANTITY` can only be compared if they measure the same kind of physical quantity. \n",
+    "$comments": "Defined in Data_types IM, abstract, inherits from DATA_VALUE, Ordered",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "DV_ORDINAL",
+                "DV_SCALE",
+                "DV_PROPORTION",
+                "DV_QUANTITY",
+                "DV_COUNT",
+                "DV_DURATION",
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DATE_TIME"
+            ]
+        },
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
+            "$ref": "all.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all.json#/definitions/DV_INTERVAL"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all.json#/definitions/REFERENCE_RANGE"
+            }
+        }
+    },
+    "required": [
+        "_type"
+    ]
+}

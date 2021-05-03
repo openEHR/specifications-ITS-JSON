@@ -1,0 +1,424 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/all.json",
+    "title": "Support IM definitions",
+    "description": "The rm.support package describes the most basic concepts, required by all other packages, and is comprised of the Definitions, Identification, Terminology and Measurement packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data. The support package includes the special package assumed_types, describing what basic types are assumed by openEHR in external type systems; this package is a guide for integrating openEHR models proper into the type systems of implementation technologies.",
+    "$comments": "Part of RM component, Release-1.0.3 version.",
+    "definitions": {
+        "CODE_SET_ACCESS": {
+            "title": "CODE_SET_ACCESS",
+            "description": "Defines an object providing proxy access to a code_set.",
+            "$comments": "Defined in Support IM"
+        },
+        "TERMINOLOGY_ACCESS": {
+            "title": "TERMINOLOGY_ACCESS",
+            "description": "Defines an object providing proxy access to a terminology. ",
+            "$comments": "Defined in Support IM"
+        },
+        "EXTERNAL_ENVIRONMENT_ACCESS": {
+            "title": "EXTERNAL_ENVIRONMENT_ACCESS",
+            "description": "A mixin class providing access to services in the external environment.",
+            "$comments": "Defined in Support IM, abstract, inherits from TERMINOLOGY_SERVICE, MEASUREMENT_SERVICE",
+            "type": "object"
+        },
+        "OPENEHR_DEFINITIONS": {
+            "title": "OPENEHR_DEFINITIONS",
+            "description": "Inheritance class to provide access to constants defined in other packages.",
+            "$comments": "Defined in Support IM"
+        },
+        "BASIC_DEFINITIONS": {
+            "title": "BASIC_DEFINITIONS",
+            "description": "Defines globally used constant values.",
+            "$comments": "Defined in Support IM"
+        },
+        "OBJECT_REF": {
+            "title": "OBJECT_REF",
+            "description": "Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. Services are usually external, e.g. available in a LAN (including on the same host) or the internet via Corba, SOAP, or some other distributed protocol. However, in small systems they may be part of the same executable as the data containing the Id. ",
+            "$comments": "Defined in Support IM",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "OBJECT_REF",
+                        "ACCESS_GROUP_REF",
+                        "PARTY_REF",
+                        "LOCATABLE_REF"
+                    ]
+                },
+                "id_namespace": {
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n    local  |  unknown  |  [a-zA-Z][a-zA-Z0-9_-:/&+?]* \n",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "type": {
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "id": {
+                    "description": "Globally unique id of an object, regardless of where it is stored.",
+                    "$ref": "#/definitions/OBJECT_ID"
+                }
+            },
+            "required": [
+                "id_namespace",
+                "type",
+                "id"
+            ]
+        },
+        "OBJECT_ID": {
+            "title": "OBJECT_ID",
+            "description": "Ancestor class of identifiers of informational objects. Ids may be completely meaningless, in which case their only job is to refer to something, or may carry some information to do with the identified object. \n\nObject ids are used inside an object to identify that object. To identify another object in another service, use an `OBJECT_REF`, or else use a UID for local objects identified by UID. If none of the subtypes is suitable, direct instances of this class may be used. ",
+            "$comments": "Defined in Support IM, abstract",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "TERMINOLOGY_ID",
+                        "GENERIC_ID",
+                        "ARCHETYPE_ID",
+                        "TEMPLATE_ID",
+                        "OBJECT_VERSION_ID",
+                        "HIER_OBJECT_ID"
+                    ]
+                },
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "_type",
+                "value"
+            ]
+        },
+        "UID": {
+            "title": "UID",
+            "description": "Abstract parent of classes representing unique identifiers which identify information entities in a durable way. UIDs only ever identify one IE in time or space and are never re-used.",
+            "$comments": "Defined in Support IM, abstract",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "INTERNET_ID",
+                        "UUID",
+                        "ISO_OID"
+                    ]
+                },
+                "value": {
+                    "description": "The value of the id.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "_type",
+                "value"
+            ]
+        },
+        "ACCESS_GROUP_REF": {
+            "title": "ACCESS_GROUP_REF",
+            "description": "Reference to access group in an access control service.",
+            "$comments": "Defined in Support IM, inherits from OBJECT_REF",
+            "type": "object",
+            "properties": {
+                "id_namespace": {
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n    local  |  unknown  |  [a-zA-Z][a-zA-Z0-9_-:/&+?]* \n",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "type": {
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "id": {
+                    "description": "Globally unique id of an object, regardless of where it is stored.",
+                    "$ref": "#/definitions/OBJECT_ID"
+                }
+            },
+            "required": [
+                "id_namespace",
+                "type",
+                "id"
+            ]
+        },
+        "PARTY_REF": {
+            "title": "PARTY_REF",
+            "description": "Identifier for parties in a demographic or identity service. There are typically a number of subtypes of the `PARTY` class, including `PERSON`, `ORGANISATION`, etc. Abstract supertypes are allowed if the referenced object is of a type not known by the current implementation of this class (in other words, if the demographic model is changed by the addition of a new `PARTY` or `ACTOR` subtypes, valid `PARTY_REFs` can still be constructed to them). ",
+            "$comments": "Defined in Support IM, inherits from OBJECT_REF",
+            "type": "object",
+            "properties": {
+                "id_namespace": {
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n    local  |  unknown  |  [a-zA-Z][a-zA-Z0-9_-:/&+?]* \n",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "type": {
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "id": {
+                    "description": "Globally unique id of an object, regardless of where it is stored.",
+                    "$ref": "#/definitions/OBJECT_ID"
+                }
+            },
+            "required": [
+                "id_namespace",
+                "type",
+                "id"
+            ]
+        },
+        "LOCATABLE_REF": {
+            "title": "LOCATABLE_REF",
+            "description": "Purpose Reference to a `LOCATABLE` instance inside the top-level content structure inside a `VERSION<T>`; the path attribute is applied to the object that `_VERSION.data_` points to. ",
+            "$comments": "Defined in Support IM, inherits from OBJECT_REF",
+            "type": "object",
+            "properties": {
+                "id_namespace": {
+                    "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n    local  |  unknown  |  [a-zA-Z][a-zA-Z0-9_-:/&+?]* \n",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "type": {
+                    "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "id": {
+                    "description": "The identifier of the Version. ",
+                    "$ref": "#/definitions/UID_BASED_ID"
+                },
+                "path": {
+                    "description": "The path to an instance in question, as an absolute path with respect to the object found at `_VERSION.data_`. An empty path means that the object referred to by id being specified. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "id_namespace",
+                "type",
+                "id"
+            ]
+        },
+        "INTERNET_ID": {
+            "title": "INTERNET_ID",
+            "description": "Model of a reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by IETF RFC 1034 (http://www.ietf.org/rfc/rfc1034.txt). ",
+            "$comments": "Defined in Support IM, inherits from UID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "UUID": {
+            "title": "UUID",
+            "description": "Model of the DCE Universal Unique Identifier or UUID which takes the form of hexadecimal integers separated by hyphens, following the pattern 8-4-4-4-12 as defined by the Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A. Also known as a GUID.",
+            "$comments": "Defined in Support IM, inherits from UID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "ISO_OID": {
+            "title": "ISO_OID",
+            "description": "Model of ISO's Object Identifier (oid) as defined by the standard ISO/IEC 8824. Oids are formed from integers separated by dots. Each non-leaf node in an Oid starting from the left corresponds to an assigning authority, and identifies that authority's namespace, inside which the remaining part of the identifier is locally unique. ",
+            "$comments": "Defined in Support IM, inherits from UID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "TERMINOLOGY_ID": {
+            "title": "TERMINOLOGY_ID",
+            "description": "Identifier for terminologies such as accessed via a terminology query service. In this class, the value attribute identifies the Terminology in the terminology service, e.g.  SNOMED-CT . A terminology is assumed to be in a particular language, which must be explicitly specified.\n\nThe value if the id attribute is the precise terminology id identifier, including actual release (i.e. actual version), local modifications etc; e.g. ICPC2.\n\nLexical form: `name [ '(' version ')' ]`.\n",
+            "$comments": "Defined in Support IM, inherits from OBJECT_ID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "UID_BASED_ID": {
+            "title": "UID_BASED_ID",
+            "description": "Abstract model of UID-based identifiers consisting of a root part and an optional extension. Lexical form: `root '::' extension`.",
+            "$comments": "Defined in Support IM, abstract, inherits from OBJECT_ID",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "OBJECT_VERSION_ID",
+                        "HIER_OBJECT_ID"
+                    ]
+                },
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "_type",
+                "value"
+            ]
+        },
+        "GENERIC_ID": {
+            "title": "GENERIC_ID",
+            "description": "Generic identifier type for identifiers whose format is otherwise unknown to openEHR. Includes an attribute for naming the identification scheme (which may well be local). ",
+            "$comments": "Defined in Support IM, inherits from OBJECT_ID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                },
+                "scheme": {
+                    "description": "Name of the scheme to which this identifier conforms. Ideally this name will be recognisable globally but realistically it may be a local ad hoc scheme whose name is not controlled or standardised in any way. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value",
+                "scheme"
+            ]
+        },
+        "ARCHETYPE_ID": {
+            "title": "ARCHETYPE_ID",
+            "description": "Identifier for archetypes. Ideally these would identify globally unique archetypes.\n\nLexical form: `rm_originator  '-' rm_name '-' rm_entity '.' concept_name {  '-' specialisation }*  '.v' number`.",
+            "$comments": "Defined in Support IM, inherits from OBJECT_ID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "TEMPLATE_ID": {
+            "title": "TEMPLATE_ID",
+            "description": "Identifier for templates. Lexical form to be determined.",
+            "$comments": "Defined in Support IM, inherits from OBJECT_ID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "OBJECT_VERSION_ID": {
+            "title": "OBJECT_VERSION_ID",
+            "description": "Globally unique identifier for one version of a versioned object; lexical form: `object_id  '::' creating_system_id  '::' version_tree_id`.",
+            "$comments": "Defined in Support IM, inherits from UID_BASED_ID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "HIER_OBJECT_ID": {
+            "title": "HIER_OBJECT_ID",
+            "description": "Concrete type corresponding to hierarchical identifiers of the form defined by `UID_BASED_ID`. ",
+            "$comments": "Defined in Support IM, inherits from UID_BASED_ID",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The value of the id in the form defined below. ",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "VERSION_TREE_ID": {
+            "title": "VERSION_TREE_ID",
+            "description": "Version tree identifier for one version. Lexical form: \n\n`trunk_version [ '.' branch_number '.' branch_version ]`",
+            "$comments": "Defined in Support IM",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "String form of this identifier.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "MEASUREMENT_SERVICE": {
+            "title": "MEASUREMENT_SERVICE",
+            "description": "Defines an object providing proxy access to a measurement information service.",
+            "$comments": "Defined in Support IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "MEASUREMENT_SERVICE"
+                    ]
+                }
+            }
+        },
+        "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS": {
+            "title": "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+            "description": "List of identifiers for groups in the openEHR terminology. ",
+            "$comments": "Defined in Support IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS",
+                        "TERMINOLOGY_SERVICE"
+                    ]
+                }
+            }
+        },
+        "OPENEHR_CODE_SET_IDENTIFIERS": {
+            "title": "OPENEHR_CODE_SET_IDENTIFIERS",
+            "description": "List of identifiers for code sets in the openEHR terminology. ",
+            "$comments": "Defined in Support IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "OPENEHR_CODE_SET_IDENTIFIERS",
+                        "TERMINOLOGY_SERVICE"
+                    ]
+                }
+            }
+        },
+        "TERMINOLOGY_SERVICE": {
+            "title": "TERMINOLOGY_SERVICE",
+            "description": "Defines an object providing proxy access to a terminology service. ",
+            "$comments": "Defined in Support IM, inherits from OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS, OPENEHR_CODE_SET_IDENTIFIERS",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "TERMINOLOGY_SERVICE"
+                    ]
+                }
+            }
+        }
+    }
+}

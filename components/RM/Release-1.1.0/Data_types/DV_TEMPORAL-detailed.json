@@ -1,0 +1,222 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_TEMPORAL-detailed.json",
+    "title": "DV_TEMPORAL",
+    "description": "Specialised temporal variant of `DV_ABSOLUTE_QUANTITY` whose diff type is `DV_DURATION`. ",
+    "$comments": "Defined in Data_types IM, abstract, inherits from DV_ABSOLUTE_QUANTITY",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "DV_DATE",
+                "DV_TIME",
+                "DV_DATE_TIME"
+            ]
+        },
+        "normal_status": {
+            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
+            "$ref": "all-detailed.json#/definitions/CODE_PHRASE"
+        },
+        "normal_range": {
+            "description": "Optional normal range. ",
+            "$ref": "all-detailed.json#/definitions/DV_INTERVAL"
+        },
+        "other_reference_ranges": {
+            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
+            "type": "array",
+            "items": {
+                "$ref": "all-detailed.json#/definitions/REFERENCE_RANGE"
+            }
+        },
+        "magnitude_status": {
+            "description": "Optional status of magnitude with values: \n\n* `\"=\"`   :   magnitude is a point value \n* `\"<\"`   :   value is < magnitude \n* `\">\"`   :   value is > magnitude \n* `\"<=\"` : value is <= magnitude \n* `\">=\"` : value is >= magnitude \n* `\"~\"`   :   value is approximately magnitude \n\nIf not present, assumed meaning is  `\"=\"` . \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/String"
+        },
+        "accuracy": {
+            "description": "Time accuracy, expressed as a duration.",
+            "$ref": "all-detailed.json#/definitions/DV_DURATION"
+        }
+    },
+    "required": [
+        "_type"
+    ],
+    "$abstract": true,
+    "$inherits": [
+        "all-detailed.json#/definitions/DV_ABSOLUTE_QUANTITY"
+    ],
+    "$children": [
+        "all-detailed.json#/definitions/DV_DATE",
+        "all-detailed.json#/definitions/DV_TIME",
+        "all-detailed.json#/definitions/DV_DATE_TIME"
+    ],
+    "$functions": {
+        "less_than": {
+            "description": "True if `_other_` is less than this Quantified object. Based on comparison of `_magnitude_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_QUANTIFIED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "less_than_or_equal": {
+            "description": "True if current object less than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than": {
+            "description": "True if current object greater than `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "greater_than_or_equal": {
+            "description": "True if current object greater than or equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_strictly_comparable_to": {
+            "description": "Test if two instances are strictly comparable. Effected in descendants.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_ORDERED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_simple": {
+            "description": "True if this quantity has no reference ranges.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_normal": {
+            "description": "Value is in the normal range, determined by comparison of the value to `_normal_range_` if present, or by the `_normal_status_` marker if present. \n",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "valid_magnitude_status": {
+            "description": "Test whether a string value is one of the valid values for the magnitude_status attribute. ",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "magnitude": {
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Ordered_Numeric"
+            }
+        },
+        "accuracy_unknown": {
+            "description": "True if accuracy is not known, e.g. due to not being recorded or discernable.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "is_equal": {
+            "description": "Return True if this `DV_QUANTIFIED` is considered equal to `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_QUANTIFIED"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "add": {
+            "description": "Addition of a Duration to this temporal entity.",
+            "parameters": {
+                "a_diff": {
+                    "$ref": "all-detailed.json#/definitions/DV_DURATION"
+                }
+            },
+            "required_parameters": [
+                "a_diff"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_TEMPORAL"
+            }
+        },
+        "subtract": {
+            "description": "Subtract a Duration from this temporal entity.",
+            "parameters": {
+                "a_diff": {
+                    "$ref": "all-detailed.json#/definitions/DV_DURATION"
+                }
+            },
+            "required_parameters": [
+                "a_diff"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_TEMPORAL"
+            }
+        },
+        "diff": {
+            "description": "Difference between this temporal entity and `_other_`.",
+            "parameters": {
+                "other": {
+                    "$ref": "all-detailed.json#/definitions/DV_TEMPORAL"
+                }
+            },
+            "required_parameters": [
+                "other"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/DV_DURATION"
+            }
+        }
+    },
+    "$invariants": {
+        "Post_result": "Result = magnitude < other.magnitude",
+        "Other_reference_ranges_validity": "other_reference_ranges /= Void implies not other_reference_ranges.is_empty",
+        "Is_simple_validity": "(normal_range = Void and other_reference_ranges = Void) implies is_simple",
+        "Normal_status_validity": "normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)",
+        "Normal_range_and_status_consistency": "(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (\u201cN\u201d) xor not normal_range.has (self))",
+        "Pre": "normal_range /= Void or normal_status /= Void",
+        "Post_range": "normal_range /= Void implies Result = normal_range.has (self)",
+        "Post_status": "normal_status /= Void implies normal_status.code_string.is_equal (\u201cN\u201d)",
+        "Magnitude_status_valid": "magnitude_status /= Void implies valid_magnitude_status (magnitude_status)",
+        "Post": "Result = s in {\"=\", \"<\", \">\", \"<=\", \">=\", \"~\"}",
+        "Pre_comparable": "is_strictly_comparable()"
+    }
+}

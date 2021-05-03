@@ -13,28 +13,5 @@
     },
     "required": [
         "value"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DV_TIME_SPECIFICATION"
-    ],
-    "$functions": {
-        "calendar_alignment": {
-            "description": "Calendar alignment extracted from value.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "event_alignment": {
-            "description": "Event alignment extracted from value. ",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "institution_specified": {
-            "description": "Extracted from value.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
-    }
+    ]
 }

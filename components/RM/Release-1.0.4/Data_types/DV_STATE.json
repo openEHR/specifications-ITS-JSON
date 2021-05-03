@@ -18,8 +18,5 @@
     "required": [
         "value",
         "is_terminal"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DATA_VALUE"
     ]
 }

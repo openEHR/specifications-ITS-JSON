@@ -13,8 +13,5 @@
     },
     "required": [
         "value"
-    ],
-    "$inherits": [
-        "all.json#/definitions/OBJECT_ID"
     ]
 }

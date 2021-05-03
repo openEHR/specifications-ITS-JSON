@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/CODE_SET_ACCESS.json",
+    "title": "CODE_SET_ACCESS",
+    "description": "Defines an object providing proxy access to a code_set.",
+    "$comments": "Defined in Support IM"
+}

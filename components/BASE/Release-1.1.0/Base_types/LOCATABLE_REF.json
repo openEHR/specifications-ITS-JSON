@@ -27,16 +27,5 @@
         "namespace",
         "type",
         "id"
-    ],
-    "$inherits": [
-        "all.json#/definitions/OBJECT_REF"
-    ],
-    "$functions": {
-        "as_uri": {
-            "description": "A URI form of the reference, created by concatenating the following: `ehr://  + id.value +  /  + path`.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        }
-    }
+    ]
 }

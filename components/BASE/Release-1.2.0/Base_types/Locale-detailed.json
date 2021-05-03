@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/Locale-detailed.json",
+    "title": "Locale",
+    "description": "Class representing current Locale.",
+    "$comments": "Defined in Base_types IM",
+    "$functions": {
+        "primary_language": {
+            "description": "Primary language of the current locale.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Terminology_code"
+            }
+        }
+    }
+}

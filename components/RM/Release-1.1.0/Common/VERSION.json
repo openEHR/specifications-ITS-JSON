@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/VERSION.json",
+    "title": "VERSION",
+    "description": "Abstract model of one Version within a Version container, containing data, commit audit trail, and the identifier of its Contribution.",
+    "$comments": "Defined in Common IM, abstract",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "IMPORTED_VERSION",
+                "ORIGINAL_VERSION"
+            ]
+        },
+        "contribution": {
+            "description": "Contribution in which this version was added. ",
+            "$ref": "all.json#/definitions/CONTRIBUTION"
+        },
+        "signature": {
+            "description": "OpenPGP digital signature or digest of content committed in this Version. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "commit_audit": {
+            "description": "Audit trail corresponding to the committal of this version to the `VERSIONED_OBJECT`.",
+            "$ref": "all.json#/definitions/AUDIT_DETAILS"
+        }
+    },
+    "required": [
+        "_type",
+        "contribution",
+        "commit_audit"
+    ]
+}

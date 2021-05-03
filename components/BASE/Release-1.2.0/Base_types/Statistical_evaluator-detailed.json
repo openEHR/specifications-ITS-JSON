@@ -1,0 +1,135 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/Statistical_evaluator-detailed.json",
+    "title": "Statistical_evaluator",
+    "description": "A basic statistical evaluator class providing common functions on collections of numbers.",
+    "$comments": "Defined in Base_types IM",
+    "$functions": {
+        "sum": {
+            "description": "Sum of a container of values.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Double"
+            }
+        },
+        "avg": {
+            "description": "Synonym for `_mean()_`.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Double"
+            }
+        },
+        "mean": {
+            "description": "Mean (arithmetic average) of a container of values.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Double"
+            }
+        },
+        "median": {
+            "description": "Return numerically centre value in ordered form of container contents.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "mode": {
+            "description": "Mode (most frequent) of a container of values.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "max": {
+            "description": "Maximum of a container of values.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "min": {
+            "description": "Minimum of a container of values.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "count": {
+            "description": "Return the number of items in `_vals_`, i.e. `_vals.count_`.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Numeric"
+            }
+        },
+        "std_dev": {
+            "description": "Compute standard deviation of a container of values.",
+            "parameters": {
+                "vals": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Container_of_Numeric"
+                }
+            },
+            "required_parameters": [
+                "vals"
+            ],
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all-detailed.json#/definitions/Double"
+            }
+        }
+    }
+}

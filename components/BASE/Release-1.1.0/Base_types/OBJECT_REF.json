@@ -31,10 +31,5 @@
         "namespace",
         "type",
         "id"
-    ],
-    "$children": [
-        "all.json#/definitions/LOCATABLE_REF",
-        "all.json#/definitions/PARTY_REF",
-        "all.json#/definitions/ACCESS_GROUP_REF"
     ]
 }

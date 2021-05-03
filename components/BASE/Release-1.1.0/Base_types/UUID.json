@@ -13,11 +13,5 @@
     },
     "required": [
         "value"
-    ],
-    "$inherits": [
-        "all.json#/definitions/UID"
-    ],
-    "$invariants": {
-        "Value_valid": "not value.empty"
-    }
+    ]
 }

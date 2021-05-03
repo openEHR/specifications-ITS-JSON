@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/UID.json",
+    "title": "UID",
+    "description": "Abstract parent of classes representing unique identifiers which identify information entities in a durable way. UIDs only ever identify one IE in time or space and are never re-used.",
+    "$comments": "Defined in Support IM, abstract",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "enum": [
+                "INTERNET_ID",
+                "UUID",
+                "ISO_OID"
+            ]
+        },
+        "value": {
+            "description": "The value of the id.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        }
+    },
+    "required": [
+        "_type",
+        "value"
+    ]
+}

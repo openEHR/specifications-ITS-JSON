@@ -18,8 +18,5 @@
     "required": [
         "value",
         "scheme"
-    ],
-    "$inherits": [
-        "all.json#/definitions/OBJECT_ID"
     ]
 }

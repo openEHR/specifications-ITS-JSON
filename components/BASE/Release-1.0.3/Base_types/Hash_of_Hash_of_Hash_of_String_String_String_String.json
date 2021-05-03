@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Hash_of_Hash_of_Hash_of_String_String_String_String.json",
+    "title": "Hash<Hash<Hash<String, String>, String>, String>",
+    "$comments": "Defined in Base_types IM, inherits from Hash",
+    "type": "object"
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/LOCATABLE_REF.json",
+    "title": "LOCATABLE_REF",
+    "description": "Purpose Reference to a `LOCATABLE` instance inside the top-level content structure inside a `VERSION<T>`; the path attribute is applied to the object that `_VERSION.data_` points to. ",
+    "$comments": "Defined in Support IM, inherits from OBJECT_REF",
+    "type": "object",
+    "properties": {
+        "id_namespace": {
+            "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n    local  |  unknown  |  [a-zA-Z][a-zA-Z0-9_-:/&+?]* \n",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        },
+        "type": {
+            "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        },
+        "id": {
+            "description": "The identifier of the Version. ",
+            "$ref": "all.json#/definitions/UID_BASED_ID"
+        },
+        "path": {
+            "description": "The path to an instance in question, as an absolute path with respect to the object found at `_VERSION.data_`. An empty path means that the object referred to by id being specified. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        }
+    },
+    "required": [
+        "id_namespace",
+        "type",
+        "id"
+    ]
+}

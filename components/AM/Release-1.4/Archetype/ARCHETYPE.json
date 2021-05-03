@@ -6,33 +6,34 @@
     "$comments": "Defined in Archetype IM, inherits from AUTHORED_RESOURCE",
     "type": "object",
     "properties": {
-        "uid": {
-            "description": "OID identifier of this archetype.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Base_types/all.json#/definitions/HIER_OBJECT_ID"
-        },
         "original_language": {
             "description": "Language in which this resource was initially authored. Although there is no language primacy of resources overall, the language of original authoring is required to ensure natural language translations can preserve quality. Language is relevant in both the description and ontology sections. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Terminology_code"
-        },
-        "description": {
-            "description": "Description and lifecycle information of the resource.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Resource/all.json#/definitions/RESOURCE_DESCRIPTION"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/TERMINOLOGY_CODE"
         },
         "is_controlled": {
             "description": "True if this resource is under any kind of change control (even file copying), in which case revision history is created. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Boolean"
+        },
+        "translations": {
+            "description": "List of details for each natural translation made of this resource, keyed by language. For each translation listed here, there must be corresponding sections in all language-dependent parts of the resource. The original_language does not appear in this list.",
+            "type": "array",
+            "items": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Resource/all.json#/definitions/TRANSLATION_DETAILS"
+            }
+        },
+        "description": {
+            "description": "Description and lifecycle information of the resource.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Resource/all.json#/definitions/RESOURCE_DESCRIPTION"
+        },
+        "uid": {
+            "description": "OID identifier of this archetype.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/all.json#/definitions/HIER_OBJECT_ID"
         },
         "annotations": {
             "description": "Annotations on individual items within the resource, keyed by path. The inner table takes the form of a Hash table of String values keyed by String tags.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Resource/all.json#/definitions/RESOURCE_ANNOTATIONS"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Resource/all.json#/definitions/RESOURCE_ANNOTATIONS"
         },
-        "translations": {
-            "description": "List of details for each natural translation made of this resource, keyed by language code. For each translation listed here, there must be corresponding sections in all language-dependent parts of the resource. The `_original_language_` does not appear in this list.",
-            "type": "array",
-            "items": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Resource/all.json#/definitions/TRANSLATION_DETAILS"
-            }
-        },
+        "revision_history": [],
         "definition": {
             "description": "Root node of the definition of this archetype.",
             "$ref": "all.json#/definitions/C_COMPLEX_OBJECT"
@@ -43,19 +44,19 @@
         },
         "adl_version": {
             "description": "ADL version if archetype was read in from an ADL sharable archetype.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
         },
         "archetype_id": {
             "description": "Multi-axial identifier of this archetype in archetype space.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Base_types/all.json#/definitions/ARCHETYPE_ID"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/all.json#/definitions/ARCHETYPE_ID"
         },
         "concept": {
             "description": "The normative meaning of the archetype as a whole, expressed as a local archetype code, typically \u201cat0000\u201d.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
         },
         "parent_archetype_id": {
             "description": "Identifier of the specialisation parent of this archetype.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Base_types/all.json#/definitions/ARCHETYPE_ID"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/all.json#/definitions/ARCHETYPE_ID"
         },
         "invariants": {
             "description": "Invariant statements about this object. Statements are expressed in first order predicate logic, and usually refer to at least two attributes.",
@@ -71,138 +72,5 @@
         "ontology",
         "archetype_id",
         "concept"
-    ],
-    "$inherits": [
-        "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Resource/all.json#/definitions/AUTHORED_RESOURCE"
-    ],
-    "$functions": {
-        "current_revision": {
-            "description": "Most recent revision in revision_history if is_controlled else  (uncontrolled) . ",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "languages_available": {
-            "description": "Total list of languages available in this resource, derived from original_language and translations. ",
-            "return": {
-                "type": "array",
-                "items": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-                },
-                "minItems": 1
-            }
-        },
-        "concept_name": {
-            "description": "The concept name of the archetype in language a_lang; corresponds to the term definition of the concept attribute in the archetype ontology.",
-            "parameters": {
-                "a_lang": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-                }
-            },
-            "required_parameters": [
-                "a_lang"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "physical_paths": {
-            "description": "Set of language-independent paths extracted from archetype. Paths obey Xpath-like syntax and are formed from alternations of C_OBJECT.node_id and C_ATTRIBUTE.rm_attribute_name values. ",
-            "return": {
-                "type": "array",
-                "items": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-                },
-                "minItems": 1
-            }
-        },
-        "logical_paths": {
-            "description": "Set of language-dependent paths extracted from archetype. Paths obey the same syntax as physical_paths, but with node_ids replaced by their meanings from the ontology. ",
-            "parameters": {
-                "lang": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-                }
-            },
-            "required_parameters": [
-                "lang"
-            ],
-            "return": {
-                "type": "array",
-                "items": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-                },
-                "minItems": 1
-            }
-        },
-        "specialisation_depth": {
-            "description": "Specialisation depth of this archetype; larger than 0 if this archetype has a parent. Derived from terminology.specialisation_depth.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Integer"
-            }
-        },
-        "is_specialised": {
-            "description": "True if this archetype is a specialisation of another. ",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "is_valid": {
-            "description": "True if the archetype is valid overall; various tests should be used, including checks on node_ids, internal references, and constraint references.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "node_ids_valid": {
-            "description": "True if every node_id found on a C_OBJECT node is found in ontology.term_codes.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "previous_version": {
-            "description": "Version of predecessor archetype of this archetype, if any.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "internal_references_valid": {
-            "description": "True if every ARCHETYPE_INTERNAL_REF. target_path refers to a legitimate node in the archetype definition.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "constraint_references_valid": {
-            "description": "True if every CONSTRAINT_REF.reference found on a C_OBJECT node in the archetype definition is found in ontology.constraint_codes.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "short_concept_name": {
-            "description": "The short concept name of the archetype extracted from the archetype_id.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "version": {
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
-            }
-        }
-    },
-    "$invariants": {
-        "Original_language_valid": "code_set (Code_set_id_languages).has_code (original_language.as_string)",
-        "Current_revision_valid": "(current_revision /= Void and not is_controlled) implies current_revision.is_equal (\"(uncontrolled)\")",
-        "Translations_valid": "translations /= Void implies (not translations.is_empty and not translations.has (orginal_language.code_string))",
-        "Description_valid": "translations /= Void implies (description.details.for_all (d &#124;\ntranslations.has_key (d.language.code_string)))",
-        "Languages_available_valid": "languages_available.has (original_language)",
-        "Revision_history_valid": "is_controlled xor revision_history = Void",
-        "Post": "not (node_ids_valid and internal_references_valid and constraint_references_valid) implies not Result",
-        "Inv_concept_valid": "ontology.has_term_code (concept_code)",
-        "Inv_specialisation_validity": "is_specialised implies specialisation_depth > 0",
-        "Inv_invariants_valid": "invariants /= Void implies not invariants.is_empty",
-        "Inv_uid_validity": "uid /= Void implies not uid.is_empty",
-        "Inv_version_validity": "version /= Void and then version.is_equal(archetype_id.version_id)",
-        "Inv_description_valid": "description /= Void",
-        "Inv_original_language_valid": "original_language /= void and then language /= Void",
-        "post-condition": "Result implies parent_archetype_id /= Void"
-    }
+    ]
 }

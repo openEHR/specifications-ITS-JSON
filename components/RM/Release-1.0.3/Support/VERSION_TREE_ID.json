@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/VERSION_TREE_ID.json",
+    "title": "VERSION_TREE_ID",
+    "description": "Version tree identifier for one version. Lexical form: \n\n`trunk_version [ '.' branch_number '.' branch_version ]`",
+    "$comments": "Defined in Support IM",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "String form of this identifier.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

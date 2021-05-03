@@ -13,37 +13,5 @@
     },
     "required": [
         "value"
-    ],
-    "$inherits": [
-        "all.json#/definitions/DV_TIME_SPECIFICATION"
-    ],
-    "$functions": {
-        "calendar_alignment": {
-            "description": "Calendar alignment extracted from value. ",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "event_alignment": {
-            "description": "Event alignment extracted from value. ",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "institution_specified": {
-            "description": "Extracted from value.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        },
-        "period": {
-            "description": "The period of the repetition, computationally derived from the syntax representation. Extracted from the  value' attribute.",
-            "return": {
-                "$ref": "all.json#/definitions/DV_DURATION"
-            }
-        }
-    },
-    "$invariants": {
-        "Value_valid": "value.formalism.is_equal (\u201cHL7:PIVL\u201d) or value.formalism. is_equal (\u201cHL7:EIVL\u201d)"
-    }
+    ]
 }

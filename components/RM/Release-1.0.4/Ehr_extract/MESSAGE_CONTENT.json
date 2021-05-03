@@ -14,10 +14,5 @@
     },
     "required": [
         "_type"
-    ],
-    "$abstract": true,
-    "$children": [
-        "all.json#/definitions/SYNC_EXTRACT_REQUEST",
-        "all.json#/definitions/SYNC_EXTRACT"
     ]
 }

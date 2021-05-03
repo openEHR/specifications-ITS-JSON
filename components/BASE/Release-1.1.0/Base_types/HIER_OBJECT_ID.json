@@ -13,31 +13,5 @@
     },
     "required": [
         "value"
-    ],
-    "$inherits": [
-        "all.json#/definitions/UID_BASED_ID"
-    ],
-    "$functions": {
-        "root": {
-            "description": "The identifier of the conceptual namespace in which the object exists, within the identification scheme. Returns the part to the left of the first '::' separator, if any, or else the whole string. ",
-            "return": {
-                "$ref": "all.json#/definitions/UID"
-            }
-        },
-        "extension": {
-            "description": "Optional local identifier of the object within the context of the root identifier. Returns the part to the right of the first '::' separator if any, or else any empty String.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "has_extension": {
-            "description": "True if `_extension_ /= Void`.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
-    },
-    "$invariants": {
-        "Has_extension_valid": "extension.is_empty xor has_extension"
-    }
+    ]
 }

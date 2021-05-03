@@ -15,6 +15,18 @@
             "copyright_year": "2019",
             "spec_status": "DEVELOPMENT",
             "keywords": "json schema, json, schema, its, openehr"
+        },
+        {
+            "id": "ITS-JSON-Overview",
+            "title": "JSON Schemas Overview",
+            "title_short": "JSON Schemas Overview",
+            "description": "openEHR JSON Schemas",
+            "summary": "JSON Schemas Overview",
+            "micro_summary": "JSON Schemas Overview",
+            "link": "https://github.com/openEHR/specifications-ITS-JSON/blob/master/README.adoc",
+            "copyright_year": "2019",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "json schema, json, schema, its, openehr"
         }
     ],
     "expressions": [
@@ -24,6 +36,13 @@
             "title": "ITS-JSON on github",
             "description": "openEHR JSON Schemas on github.",
             "link": "https://github.com/openEHR/specifications-ITS-JSON/"
+        },
+        {
+            "id": "Archie JSON Gist",
+            "type": "url",
+            "title": "JSON Schema alternative for RM 1.1",
+            "description": "A github gist of Archie JSON Schema alternative for RM 1.1.",
+            "link": "https://gist.github.com/pieterbos/ff8a9c67fd3d346b423a8cd69befe67a"
         }
     ],
     "jira": {

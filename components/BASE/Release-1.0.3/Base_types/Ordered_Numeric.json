@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Ordered_Numeric.json",
+    "title": "Ordered_Numeric",
+    "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
+    "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, Numeric",
+    "type": "number",
+    "properties": {
+        "_type": {
+            "enum": [
+                "Integer",
+                "Double",
+                "Real",
+                "Integer64"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ]
+}

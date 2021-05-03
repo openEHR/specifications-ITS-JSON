@@ -1,0 +1,514 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json",
+    "title": "Base_types IM definitions",
+    "description": "The openEHR Base types.",
+    "$comments": "Part of BASE component, Release-1.0.3 version.",
+    "definitions": {
+        "ISO8601_DATE_TIME": {
+            "title": "ISO8601_DATE_TIME",
+            "description": "Represents an absolute point in time, specified to the second.\n\nNote that this class includes 2 deviations from ISO 8601:2004:\n\n* for partial date/times, any part of the date/time up to the month may be missing, not just seconds and minutes as in the standard;\n* the time 24:00:00 is not allowed, since it would mean the date was really on the next day.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DATE_TIME",
+                        "DV_DATE_TIME"
+                    ]
+                }
+            }
+        },
+        "ISO8601_DATE": {
+            "title": "ISO8601_DATE",
+            "description": "Represents an absolute point in time, as measured on the Gregorian calendar, and specified only to the day.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DATE",
+                        "DV_DATE"
+                    ]
+                }
+            }
+        },
+        "ISO8601_TIME": {
+            "title": "ISO8601_TIME",
+            "description": "Represents an absolute point in time from an origin usually interpreted as meaning the start of the current day, specified to the second.\n\nNOTE: A small deviation to the ISO 8601:2004 standard in this class is that the time 24:00:00 is not allowed, for consistency with ISO8601_DATE_TIME.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_TIME",
+                        "DV_TIME"
+                    ]
+                }
+            }
+        },
+        "ISO8601_DURATION": {
+            "title": "ISO8601_DURATION",
+            "description": "Represents a period of time corresponding to a difference between two timepoints.",
+            "$comments": "Defined in Base_types IM, inherits from ISO8601_TYPE",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DURATION",
+                        "DV_DURATION"
+                    ]
+                }
+            }
+        },
+        "ISO8601_TYPE": {
+            "title": "ISO8601_TYPE",
+            "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, TIME_DEFINITIONS",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "ISO8601_DATE_TIME",
+                        "ISO8601_DATE",
+                        "ISO8601_TIME",
+                        "ISO8601_DURATION",
+                        "DV_DATE_TIME",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DURATION"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ]
+        },
+        "ISO8601_TIMEZONE": {
+            "title": "ISO8601_TIMEZONE",
+            "description": "Represents a timezone as used in ISO 8601.",
+            "$comments": "Defined in Base_types IM, inherits from TIME_DEFINITIONS",
+            "type": "object"
+        },
+        "TIME_DEFINITIONS": {
+            "title": "TIME_DEFINITIONS",
+            "description": "Definitions for date/time classes. Note that the timezone limits are set by where the international dateline is. Thus, time in New Zealand is quoted using +12:00, not -12:00.",
+            "$comments": "Defined in Base_types IM",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "TIME_DEFINITIONS",
+                        "ISO8601_TIMEZONE",
+                        "ISO8601_DATE_TIME",
+                        "ISO8601_DATE",
+                        "ISO8601_TIME",
+                        "ISO8601_DURATION",
+                        "DV_DATE_TIME",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DURATION"
+                    ]
+                }
+            }
+        },
+        "MULTIPLICITY_INTERVAL": {
+            "title": "MULTIPLICITY_INTERVAL",
+            "$comments": "Defined in Base_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ]
+        },
+        "Interval<Integer>": {
+            "title": "Interval<Integer>",
+            "$comments": "Defined in Base_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "#/definitions/Integer"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ]
+        },
+        "Interval": {
+            "title": "Interval",
+            "description": "Interval of ordered items.",
+            "$comments": "Defined in Base_types IM",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Interval",
+                        "DV_INTERVAL",
+                        "MULTIPLICITY_INTERVAL",
+                        "Interval<Integer>",
+                        "Interval<Real>",
+                        "DV_INTERVAL<DV_DATE_TIME>",
+                        "DV_INTERVAL<DV_DATE>",
+                        "DV_INTERVAL<DV_QUANTITY>",
+                        "DV_INTERVAL<DV_COUNT>",
+                        "DV_INTERVAL<DV_PROPORTION>"
+                    ]
+                },
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all.json#/definitions/T"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all.json#/definitions/T"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ]
+        },
+        "Interval<Real>": {
+            "title": "Interval<Real>",
+            "$comments": "Defined in Base_types IM, inherits from Interval",
+            "type": "object",
+            "properties": {
+                "lower": {
+                    "description": "lower bound.",
+                    "$ref": "#/definitions/Real"
+                },
+                "upper": {
+                    "description": "Upper bound.",
+                    "$ref": "#/definitions/Real"
+                },
+                "lower_unbounded": {
+                    "description": "lower boundary open (i.e. = -infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_unbounded": {
+                    "description": "upper boundary open (i.e. = +infinity)",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "lower_included": {
+                    "description": "lower boundary value included in range if not lower_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                },
+                "upper_included": {
+                    "description": "upper boundary value included in range if not upper_unbounded.",
+                    "$ref": "#/definitions/Boolean"
+                }
+            },
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ]
+        },
+        "Hash": {
+            "title": "Hash",
+            "description": "Type representing a keyed table of values. T is the value type, and U the type of the keys. ",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Hash",
+                        "Hash<Hash<Hash<String, String>, String>, String>",
+                        "Hash<Hash<String, String>, String>",
+                        "Hash<String, String>"
+                    ]
+                }
+            }
+        },
+        "Hash<Hash<Hash<String, String>, String>, String>": {
+            "title": "Hash<Hash<Hash<String, String>, String>, String>",
+            "$comments": "Defined in Base_types IM, inherits from Hash",
+            "type": "object"
+        },
+        "Hash<Hash<String, String>, String>": {
+            "title": "Hash<Hash<String, String>, String>",
+            "description": "Two-level hash map structure, typically used for two levels of keyed tables, e.g. with outer keys = language (\"en\", \"zh\" etc) and inner keys = some tag or id or path.",
+            "$comments": "Defined in Base_types IM, inherits from Hash",
+            "type": "object"
+        },
+        "Hash<String, String>": {
+            "title": "Hash<String, String>",
+            "$comments": "Defined in Base_types IM, inherits from Hash",
+            "type": "object"
+        },
+        "Aggregate": {
+            "title": "Aggregate",
+            "description": "Number of items in container.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Hash",
+                        "List",
+                        "Set",
+                        "Array",
+                        "Hash<Hash<Hash<String, String>, String>, String>",
+                        "Hash<Hash<String, String>, String>",
+                        "Hash<String, String>",
+                        "Set <String>"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ]
+        },
+        "List": {
+            "title": "List",
+            "description": "Ordered container that may contain duplicates.",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "array"
+        },
+        "Set": {
+            "title": "Set",
+            "description": "Unordered container that may not contain duplicates.",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "array",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Set",
+                        "Set <String>"
+                    ]
+                }
+            }
+        },
+        "Array": {
+            "title": "Array",
+            "description": "Container whose storage is assumed to be contiguous.",
+            "$comments": "Defined in Base_types IM, inherits from Aggregate",
+            "type": "array"
+        },
+        "Set <String>": {
+            "title": "Set <String>",
+            "$comments": "Defined in Base_types IM, inherits from Set",
+            "type": "object"
+        },
+        "Any": {
+            "title": "Any",
+            "description": "Abstract supertype. Usually maps to a type like \u201cAny\u201d or \u201cObject\u201d in an object system. Defined here to provide the value and reference equality semantics.",
+            "$comments": "Defined in Base_types IM, abstract"
+        },
+        "Ordered": {
+            "title": "Ordered",
+            "description": "Abstract notional parent class of ordered, types i.e. types on which the \u2018<\u2018 operator is defined.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "DV_ORDINAL",
+                        "DV_PROPORTION",
+                        "DV_QUANTITY",
+                        "DV_COUNT",
+                        "DV_DURATION",
+                        "DV_DATE",
+                        "DV_TIME",
+                        "DV_DATE_TIME",
+                        "ISO8601_DATE_TIME",
+                        "ISO8601_DATE",
+                        "ISO8601_TIME",
+                        "ISO8601_DURATION",
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ]
+        },
+        "Uri": {
+            "title": "Uri",
+            "$comments": "Defined in Base_types IM",
+            "type": "string"
+        },
+        "Comparable": {
+            "title": "Comparable",
+            "$comments": "Defined in Base_types IM, abstract"
+        },
+        "Ordered_Numeric": {
+            "title": "Ordered_Numeric",
+            "description": "Abstract notional parent class of ordered, numeric types, which are types with \u2018<\u2018 and arithmetic operators defined.",
+            "$comments": "Defined in Base_types IM, abstract, inherits from Ordered, Numeric",
+            "type": "number",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ]
+        },
+        "Integer": {
+            "title": "Integer",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "integer"
+        },
+        "Double": {
+            "title": "Double",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "number"
+        },
+        "Numeric": {
+            "title": "Numeric",
+            "description": "Abstract notional parent class of numeric types, which are types which have various arithmetic and comparison operators defined.",
+            "$comments": "Defined in Base_types IM, abstract",
+            "type": "number",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "Integer",
+                        "Double",
+                        "Real",
+                        "Integer64"
+                    ]
+                }
+            },
+            "required": [
+                "_type"
+            ]
+        },
+        "Octet": {
+            "title": "Octet",
+            "$comments": "Defined in Base_types IM",
+            "type": "integer"
+        },
+        "Character": {
+            "title": "Character",
+            "$comments": "Defined in Base_types IM",
+            "type": "string"
+        },
+        "Boolean": {
+            "title": "Boolean",
+            "$comments": "Defined in Base_types IM",
+            "type": "boolean"
+        },
+        "String": {
+            "title": "String",
+            "description": "Strings of characters, as used to represent textual data in any natural or formal language.",
+            "$comments": "Defined in Base_types IM",
+            "type": "string"
+        },
+        "Real": {
+            "title": "Real",
+            "description": "Type used to represent decimal numbers. Corresponds to a single-precision floating point value in most languages.",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "number"
+        },
+        "Integer64": {
+            "title": "Integer64",
+            "$comments": "Defined in Base_types IM, inherits from Ordered_Numeric",
+            "type": "integer"
+        },
+        "TERMINOLOGY_CODE": {
+            "title": "TERMINOLOGY_CODE",
+            "description": "Logically primitive type representing a reference to a terminology concept, in the form of a terminology identifier, optional version, and a code or code string from the terminology.",
+            "$comments": "Defined in Base_types IM",
+            "type": "object",
+            "properties": {
+                "terminology_id": {
+                    "description": "The archetype environment namespace identifier used to identify a terminology. Typically a value like \"snomed_ct\" that is mapped elsewhere to the full URI identifying the terminology.",
+                    "$ref": "#/definitions/String"
+                },
+                "terminology_version": {
+                    "description": "Optional string value representing terminology version, typically a date or dotted numeric.",
+                    "$ref": "#/definitions/String"
+                },
+                "code_string": {
+                    "description": "A terminology code or post-coordinated code expression, if supported by the terminology.",
+                    "$ref": "#/definitions/String"
+                },
+                "uri": {
+                    "description": "The URI equivalent of the other three attributes.",
+                    "$ref": "#/definitions/Uri"
+                }
+            },
+            "required": [
+                "terminology_id",
+                "code_string"
+            ]
+        }
+    }
+}

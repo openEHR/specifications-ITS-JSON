@@ -27,16 +27,5 @@
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/all.json#/definitions/DV_IDENTIFIER"
             }
         }
-    },
-    "$inherits": [
-        "all.json#/definitions/PARTY_PROXY"
-    ],
-    "$children": [
-        "all.json#/definitions/PARTY_RELATED"
-    ],
-    "$invariants": {
-        "Basic_validity": "name /= Void or identifiers /= Void or external_ref /= Void",
-        "Name_valid": "name /= Void implies not name.is_empty",
-        "Identifiers_valid": "identifiers /= Void implies not identifiers.is_empty"
     }
 }

@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/List-detailed.json",
+    "title": "List",
+    "description": "Ordered container that may contain duplicates.",
+    "$comments": "Defined in Base_types IM, inherits from Aggregate",
+    "type": "array",
+    "$inherits": [
+        "all-detailed.json#/definitions/Aggregate"
+    ],
+    "$functions": {
+        "has": {
+            "description": "Test for membership of a value.",
+            "parameters": {
+                "v": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+                }
+            },
+            "required_parameters": [
+                "v"
+            ],
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "count": {
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Integer"
+            }
+        },
+        "is_empty": {
+            "description": "True if container is empty.",
+            "return": {
+                "$ref": "all-detailed.json#/definitions/Boolean"
+            }
+        },
+        "first": {
+            "description": "Return first element.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+            }
+        },
+        "last": {
+            "description": "Return last element.",
+            "return": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components///Foundation_types/all-detailed.json#/definitions/T"
+            }
+        }
+    },
+    "$invariants": {
+        "First_validity": "not is_empty implies first /= Void",
+        "Last_validity": "not is_empty implies last /= Void"
+    }
+}

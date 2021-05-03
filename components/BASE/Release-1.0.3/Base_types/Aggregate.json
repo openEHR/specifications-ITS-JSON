@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/Aggregate.json",
+    "title": "Aggregate",
+    "description": "Number of items in container.",
+    "$comments": "Defined in Base_types IM, abstract",
+    "properties": {
+        "_type": {
+            "enum": [
+                "Hash",
+                "List",
+                "Set",
+                "Array",
+                "Hash<Hash<Hash<String, String>, String>, String>",
+                "Hash<Hash<String, String>, String>",
+                "Hash<String, String>",
+                "Set <String>"
+            ]
+        }
+    },
+    "required": [
+        "_type"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/ITEM_TAG.json",
+    "title": "ITEM_TAG",
+    "description": "A tag with optional value that is associated with a target information entity identified by a UID.",
+    "$comments": "Defined in Common IM",
+    "type": "object",
+    "properties": {
+        "target": {
+            "description": "Identifier of target, which may be a `VERSIONED_OBJECT<T>` or a `VERSION<T>`.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/all.json#/definitions/UID_BASED_ID"
+        },
+        "target_path": {
+            "description": "Optional archetype (i.e. AQL) or RM path within `_target_`, in order to tag a fine-grained element.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "key": {
+            "description": "The tag key. May not be empty or contain leading or trailing whitespace.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "value": {
+            "description": "The value. If set, may not be empty.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        },
+        "owner_id": {
+            "description": "Identifier of owner object, such as EHR.",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/all.json#/definitions/OBJECT_REF"
+        }
+    },
+    "required": [
+        "target",
+        "key",
+        "owner_id"
+    ]
+}

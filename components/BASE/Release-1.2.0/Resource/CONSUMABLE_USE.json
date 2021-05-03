@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Resource/CONSUMABLE_USE.json",
+    "title": "CONSUMABLE_USE",
+    "$comments": "Defined in Resource IM, inherits from RESOURCE_USE",
+    "type": "object",
+    "properties": {
+        "cost_data": {
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+        },
+        "amount": {
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all.json#/definitions/DATA_VALUE"
+        }
+    }
+}

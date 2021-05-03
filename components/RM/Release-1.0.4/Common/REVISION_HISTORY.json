@@ -17,22 +17,5 @@
     },
     "required": [
         "items"
-    ],
-    "$functions": {
-        "most_recent_version": {
-            "description": "The version id of the most recent item, as a String.",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        },
-        "most_recent_version_time_committed": {
-            "description": "The commit date/time of the most recent item, as a String. ",
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
-            }
-        }
-    },
-    "$invariants": {
-        "Post": "Result.is_equal (items.last.audits.first. time_committed.value)"
-    }
+    ]
 }

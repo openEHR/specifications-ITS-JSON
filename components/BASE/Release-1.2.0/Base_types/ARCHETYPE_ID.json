@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/ARCHETYPE_ID.json",
+    "title": "ARCHETYPE_ID",
+    "description": "Identifier for archetypes. Ideally these would identify globally unique archetypes.\n\nLexical form: `rm_originator  '-' rm_name  '-' rm_entity  '.' concept_name {  '-' specialisation }*  '.v' number`.",
+    "$comments": "Defined in Base_types IM, inherits from OBJECT_ID",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "The value of the id in the form defined below. ",
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

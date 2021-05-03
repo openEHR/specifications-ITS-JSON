@@ -11,24 +11,5 @@
                 "DV_PROPORTION"
             ]
         }
-    },
-    "$children": [
-        "all.json#/definitions/DV_PROPORTION"
-    ],
-    "$functions": {
-        "valid_proportion_kind": {
-            "description": "True if n is one of the defined types. ",
-            "parameters": {
-                "nq": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Integer"
-                }
-            },
-            "required_parameters": [
-                "nq"
-            ],
-            "return": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/Boolean"
-            }
-        }
     }
 }

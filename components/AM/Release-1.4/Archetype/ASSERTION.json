@@ -8,11 +8,11 @@
     "properties": {
         "tag": {
             "description": "Expression tag, used for differentiating multiple assertions.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
         },
         "string_expression": {
             "description": "String form of expression, in case an expression evaluator taking String expressions is used for evaluation. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.2/Foundation_types/all.json#/definitions/String"
+            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
         },
         "expression": {
             "description": "Root of expression tree.",
@@ -28,9 +28,5 @@
     },
     "required": [
         "expression"
-    ],
-    "$invariants": {
-        "Tag_valid": "tag /= Void implies not tag.is_empty",
-        "Expression_valid": "expression /= Void and then expression.type.is_equal(\u201cBOOLEAN\u201d)"
-    }
+    ]
 }

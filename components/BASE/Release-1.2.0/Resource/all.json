@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Resource/all.json",
+    "title": "Resource IM definitions",
+    "description": "The rm.common.resource package defines the structure and semantics of the general notion of an online resource which has been created by a human author, and consequently for which natural language is a factor.",
+    "$comments": "Part of BASE component, Release-1.2.0 version.",
+    "definitions": {
+        "SERVICE_USE": {
+            "title": "SERVICE_USE",
+            "$comments": "Defined in Resource IM, inherits from RESOURCE_USE",
+            "type": "object",
+            "properties": {
+                "cost_data": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+                },
+                "identifier": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/all.json#/definitions/GENERIC_ID"
+                },
+                "start_time": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Iso8601_date_time"
+                },
+                "duration": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Iso8601_duration"
+                }
+            }
+        },
+        "RESOURCE_USE": {
+            "title": "RESOURCE_USE",
+            "$comments": "Defined in Resource IM, abstract",
+            "type": "object",
+            "properties": {
+                "_type": {
+                    "enum": [
+                        "SERVICE_USE",
+                        "CONSUMABLE_USE"
+                    ]
+                },
+                "cost_data": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+                }
+            },
+            "required": [
+                "_type"
+            ]
+        },
+        "CONSUMABLE_USE": {
+            "title": "CONSUMABLE_USE",
+            "$comments": "Defined in Resource IM, inherits from RESOURCE_USE",
+            "type": "object",
+            "properties": {
+                "cost_data": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_structures/all.json#/definitions/ITEM_STRUCTURE"
+                },
+                "amount": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all.json#/definitions/DATA_VALUE"
+                }
+            }
+        },
+        "RESOURCE_USAGE": {
+            "title": "RESOURCE_USAGE",
+            "$comments": "Defined in Resource IM",
+            "type": "object",
+            "properties": {
+                "prospective": {
+                    "$ref": "#/definitions/RESOURCE_USE"
+                },
+                "actual": {
+                    "$ref": "#/definitions/RESOURCE_USE"
+                },
+                "type": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all.json#/definitions/DV_TEXT"
+                },
+                "description": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
+                },
+                "reference": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Any"
+                }
+            },
+            "required": [
+                "prospective",
+                "actual",
+                "type"
+            ]
+        },
+        "RESOURCE_ANNOTATIONS": {
+            "title": "RESOURCE_ANNOTATIONS",
+            "description": "Object representing annotations on an archetype. These can be of various forms, with a documentation form defined so far, which has a multi-level tabular structure [ [ [String value, String key], path key], language key]. Example instance, showing the documentation structure.\n\n--------\n    documentation = <\n        [\"en\"] = <\n           [\"/data[id2]\"] = <\n               [\"ui\"] = <\"passthrough\">\n           >\n           [\"/data[id2]/items[id3]\"] = <\n               [\"design note\"] = <\"this is a design note on Statement\">\n               [\"requirements note\"] = <\"this is a requirements note on Statement\">\n               [\"medline ref\"] = <\"this is a medline ref on Statement\">\n           >\n        >\n    >\n--------\n\nOther sub-structures might have different keys, e.g.  based on programming languages, UI toolkits etc.\n",
+            "$comments": "Defined in Resource IM",
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "description": "Documentary annotations in a multi-level keyed structure.",
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Hash_of_String_Hash_of_String_Hash_of_String_String"
+                }
+            },
+            "required": [
+                "documentation"
+            ]
+        },
+        "Hash<String, TRANSLATION_DETAILS>": {
+            "title": "Hash<String, TRANSLATION_DETAILS>",
+            "$comments": "Defined in Resource IM, inherits from Hash",
+            "type": "object"
+        },
+        "Hash<String, RESOURCE_DESCRIPTION_ITEM>": {
+            "title": "Hash<String, RESOURCE_DESCRIPTION_ITEM>",
+            "$comments": "Defined in Resource IM, inherits from Hash",
+            "type": "object"
+        }
+    }
+}

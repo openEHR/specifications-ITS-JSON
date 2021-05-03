@@ -27,8 +27,5 @@
         "include_all_versions",
         "include_revision_history",
         "include_data"
-    ],
-    "$invariants": {
-        "Includes_revision_history_valid": "not include_data implies include_revision_history"
-    }
+    ]
 }
