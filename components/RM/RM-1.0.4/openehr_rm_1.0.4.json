@@ -1,0 +1,278 @@
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/openehr_rm_1.0.4.json",
+    "allOf": [
+        {
+            "required": [
+                "_type"
+            ]
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "COMPOSITION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/COMPOSITION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "OBSERVATION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/OBSERVATION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "EVALUATION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/EVALUATION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ACTIVITY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/ACTIVITY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ACTION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/ACTION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "SECTION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/SECTION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "INSTRUCTION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/INSTRUCTION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "INSTRUCTION_DETAILS"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/INSTRUCTION_DETAILS"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ADMIN_ENTRY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/ADMIN_ENTRY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "CLUSTER"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_structures_1.0.4.json#/definitions/CLUSTER"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "CAPABILITY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_demographic_1.0.4.json#/definitions/CAPABILITY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "PERSON"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_demographic_1.0.4.json#/definitions/PERSON"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ADDRESS"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_demographic_1.0.4.json#/definitions/ADDRESS"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ROLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_demographic_1.0.4.json#/definitions/ROLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ORGANISATION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_demographic_1.0.4.json#/definitions/ORGANISATION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "PARTY_IDENTITY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_demographic_1.0.4.json#/definitions/PARTY_IDENTITY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TREE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_structures_1.0.4.json#/definitions/ITEM_TREE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "CONTRIBUTION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_structures_1.0.4.json#/definitions/CONTRIBUTION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "EHR"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/EHR"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "EHR_STATUS"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_ehr_1.0.4.json#/definitions/EHR_STATUS"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ORIGINAL_VERSION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_structures_1.0.4.json#/definitions/ORIGINAL_VERSION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "IMPORTED_VERSION"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "openehr_rm_structures_1.0.4.json#/definitions/IMPORTED_VERSION"
+            }
+        }
+    ],
+    "definitions": {
+    }
+}

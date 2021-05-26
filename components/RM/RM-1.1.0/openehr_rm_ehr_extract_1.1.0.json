@@ -1,0 +1,3754 @@
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/openehr_rm_ehr_extract_1.1.0.json",
+    "definitions": {
+        "SYNC_EXTRACT_SPEC": {
+            "type": "object",
+            "required": [
+                "includes_versions"
+            ],
+            "properties": {
+                "includes_versions": {
+                    "type": "boolean"
+                },
+                "contribution_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                    }
+                },
+                "contributions_since": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "all_contributions": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^SYNC_EXTRACT_SPEC"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_MANIFEST": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "entities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/EXTRACT_ENTITY_MANIFEST"
+                    },
+                    "minItems": 1
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_MANIFEST"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_VERSION_SPEC": {
+            "type": "object",
+            "required": [
+                "include_all_versions",
+                "include_revision_history",
+                "include_data"
+            ],
+            "properties": {
+                "include_all_versions": {
+                    "type": "boolean"
+                },
+                "commit_time_interval": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_INTERVAL"
+                },
+                "include_revision_history": {
+                    "type": "boolean"
+                },
+                "include_data": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_VERSION_SPEC"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_PARTICIPATION": {
+            "type": "object",
+            "required": [
+                "performer",
+                "function"
+            ],
+            "properties": {
+                "performer": {
+                    "type": "string"
+                },
+                "function": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "mode": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                },
+                "time": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_INTERVAL"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_PARTICIPATION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_FOLDER": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "required": [
+                                    "_type"
+                                ],
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "EXTRACT_FOLDER",
+                                            "GENERIC_CONTENT_ITEM",
+                                            "OPENEHR_CONTENT_ITEM"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "EXTRACT_FOLDER"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/EXTRACT_FOLDER"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "GENERIC_CONTENT_ITEM"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/GENERIC_CONTENT_ITEM"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "OPENEHR_CONTENT_ITEM"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/OPENEHR_CONTENT_ITEM"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_FOLDER"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_CHAPTER": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "required": [
+                                    "_type"
+                                ],
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "EXTRACT_FOLDER",
+                                            "GENERIC_CONTENT_ITEM",
+                                            "OPENEHR_CONTENT_ITEM"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "EXTRACT_FOLDER"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/EXTRACT_FOLDER"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "GENERIC_CONTENT_ITEM"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/GENERIC_CONTENT_ITEM"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "OPENEHR_CONTENT_ITEM"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/OPENEHR_CONTENT_ITEM"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_CHAPTER"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_VERSIONED_PARTY": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_VERSIONED_PARTY"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_REQUEST": {
+            "type": "object",
+            "required": [
+                "uid",
+                "archetype_node_id",
+                "name",
+                "extract_spec"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "extract_spec": {
+                    "$ref": "#/definitions/EXTRACT_SPEC"
+                },
+                "update_spec": {
+                    "$ref": "#/definitions/EXTRACT_UPDATE_SPEC"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_REQUEST"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_VERSIONED_COMPOSITION": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_VERSIONED_COMPOSITION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_VERSIONED_FOLDER": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_VERSIONED_FOLDER"
+                }
+            },
+            "additionalProperties": false
+        },
+        "SYNC_EXTRACT": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name",
+                "specification"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "specification": {
+                    "$ref": "#/definitions/SYNC_EXTRACT_SPEC"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/X_CONTRIBUTION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^SYNC_EXTRACT"
+                }
+            },
+            "additionalProperties": false
+        },
+        "MESSAGE": {
+            "type": "object",
+            "required": [
+                "author",
+                "audit",
+                "content"
+            ],
+            "properties": {
+                "author": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "PARTY_SELF",
+                                        "PARTY_IDENTIFIED",
+                                        "PARTY_RELATED"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_SELF"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/PARTY_SELF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_IDENTIFIED"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/PARTY_IDENTIFIED"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_RELATED"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/PARTY_RELATED"
+                            }
+                        }
+                    ]
+                },
+                "audit": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "ATTESTATION",
+                                        "AUDIT_DETAILS"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ATTESTATION"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ATTESTATION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "AUDIT_DETAILS"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/AUDIT_DETAILS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/AUDIT_DETAILS"
+                            }
+                        }
+                    ]
+                },
+                "content": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "SYNC_EXTRACT",
+                                        "SYNC_EXTRACT_REQUEST"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "SYNC_EXTRACT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/SYNC_EXTRACT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "SYNC_EXTRACT_REQUEST"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/SYNC_EXTRACT_REQUEST"
+                            }
+                        }
+                    ]
+                },
+                "signature": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^MESSAGE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_ENTITY_MANIFEST": {
+            "type": "object",
+            "required": [
+                "extract_id_key"
+            ],
+            "properties": {
+                "extract_id_key": {
+                    "type": "string"
+                },
+                "ehr_id": {
+                    "type": "string"
+                },
+                "subject_id": {
+                    "type": "string"
+                },
+                "other_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "item_list": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "LOCATABLE_REF",
+                                            "PARTY_REF",
+                                            "ACCESS_GROUP_REF",
+                                            "OBJECT_REF"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "LOCATABLE_REF"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "PARTY_REF"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "ACCESS_GROUP_REF"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "OBJECT_REF"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "not": {
+                                        "required": [
+                                            "_type"
+                                        ]
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_ENTITY_MANIFEST"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_ACTION_REQUEST": {
+            "type": "object",
+            "required": [
+                "uid",
+                "archetype_node_id",
+                "name",
+                "request_id",
+                "action"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "request_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "action": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_ACTION_REQUEST"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_CONTRIBUTION": {
+            "type": "object",
+            "required": [
+                "uid",
+                "audit"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "audit": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "ATTESTATION",
+                                        "AUDIT_DETAILS"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ATTESTATION"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ATTESTATION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "AUDIT_DETAILS"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/AUDIT_DETAILS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/AUDIT_DETAILS"
+                            }
+                        }
+                    ]
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "ORIGINAL_VERSION"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "IMPORTED_VERSION"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/IMPORTED_VERSION"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_CONTRIBUTION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_VERSIONED_EHR_ACCESS": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_VERSIONED_EHR_ACCESS"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_SPEC": {
+            "type": "object",
+            "required": [
+                "extract_type",
+                "include_multimedia",
+                "priority",
+                "link_depth",
+                "manifest"
+            ],
+            "properties": {
+                "extract_type": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                },
+                "include_multimedia": {
+                    "type": "boolean"
+                },
+                "priority": {
+                    "type": "integer"
+                },
+                "link_depth": {
+                    "type": "integer"
+                },
+                "criteria": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_PARSABLE"
+                    }
+                },
+                "manifest": {
+                    "$ref": "#/definitions/EXTRACT_MANIFEST"
+                },
+                "version_spec": {
+                    "$ref": "#/definitions/EXTRACT_VERSION_SPEC"
+                },
+                "other_details": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "ITEM_SINGLE",
+                                        "ITEM_TREE",
+                                        "ITEM_LIST",
+                                        "ITEM_TABLE"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_SINGLE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_SINGLE"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_TREE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_TREE"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_LIST"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_LIST"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_TABLE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_TABLE"
+                            }
+                        }
+                    ]
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_SPEC"
+                }
+            },
+            "additionalProperties": false
+        },
+        "SYNC_EXTRACT_REQUEST": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name",
+                "specification"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "specification": {
+                    "$ref": "#/definitions/SYNC_EXTRACT_SPEC"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^SYNC_EXTRACT_REQUEST"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_UPDATE_SPEC": {
+            "type": "object",
+            "required": [
+                "persist_in_server",
+                "update_method"
+            ],
+            "properties": {
+                "persist_in_server": {
+                    "type": "boolean"
+                },
+                "trigger_events": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                    },
+                    "minItems": 1
+                },
+                "repeat_period": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DURATION"
+                },
+                "update_method": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/CODE_PHRASE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_UPDATE_SPEC"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_VERSIONED_OBJECT": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_VERSIONED_OBJECT"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ADDRESSED_MESSAGE": {
+            "type": "object",
+            "required": [
+                "sender",
+                "sender_reference"
+            ],
+            "properties": {
+                "sender": {
+                    "type": "string"
+                },
+                "sender_reference": {
+                    "type": "string"
+                },
+                "addressees": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "urgency": {
+                    "type": "integer"
+                },
+                "message": {
+                    "$ref": "#/definitions/MESSAGE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ADDRESSED_MESSAGE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "X_VERSIONED_EHR_STATUS": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^X_VERSIONED_EHR_STATUS"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name",
+                "time_created",
+                "system_id",
+                "sequence_nr"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "request_id": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "time_created": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_DATE_TIME"
+                },
+                "system_id": {
+                    "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                },
+                "sequence_nr": {
+                    "type": "integer"
+                },
+                "specification": {
+                    "$ref": "#/definitions/EXTRACT_SPEC"
+                },
+                "chapters": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "EXTRACT_ENTITY_CHAPTER",
+                                            "EXTRACT_CHAPTER"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "EXTRACT_ENTITY_CHAPTER"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/EXTRACT_ENTITY_CHAPTER"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "EXTRACT_CHAPTER"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/EXTRACT_CHAPTER"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "not": {
+                                        "required": [
+                                            "_type"
+                                        ]
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/EXTRACT_CHAPTER"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "participations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/EXTRACT_PARTICIPATION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT"
+                }
+            },
+            "additionalProperties": false
+        },
+        "GENERIC_CONTENT_ITEM": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name",
+                "is_primary"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "is_primary": {
+                    "type": "boolean"
+                },
+                "is_changed": {
+                    "type": "boolean"
+                },
+                "is_masked": {
+                    "type": "boolean"
+                },
+                "item": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ]
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_IDENTITY"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/PARTY_IDENTITY"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EXTRACT_CHAPTER"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/EXTRACT_CHAPTER"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EXTRACT_ENTITY_CHAPTER"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/EXTRACT_ENTITY_CHAPTER"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "CAPABILITY"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/CAPABILITY"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "CLUSTER"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/CLUSTER"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ELEMENT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ELEMENT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EXTRACT_REQUEST"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/EXTRACT_REQUEST"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ROLE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/ROLE"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PERSON"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/PERSON"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "AGENT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/AGENT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GROUP"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/GROUP"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ORGANISATION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/ORGANISATION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "INSTRUCTION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/INSTRUCTION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EVALUATION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/EVALUATION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBSERVATION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/OBSERVATION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACTION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/ACTION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ADMIN_ENTRY"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/ADMIN_ENTRY"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ENTRY"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/GENERIC_ENTRY"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "SECTION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/SECTION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EXTRACT_ACTION_REQUEST"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/EXTRACT_ACTION_REQUEST"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HISTORY"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/HISTORY"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_SINGLE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_SINGLE"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_TREE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_TREE"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_LIST"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_LIST"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ITEM_TABLE"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ITEM_TABLE"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "CONTACT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/CONTACT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "POINT_EVENT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/POINT_EVENT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "INTERVAL_EVENT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/INTERVAL_EVENT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EXTRACT_FOLDER"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/EXTRACT_FOLDER"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_CONTENT_ITEM"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_CONTENT_ITEM"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OPENEHR_CONTENT_ITEM"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OPENEHR_CONTENT_ITEM"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "FOLDER"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FOLDER"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EXTRACT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/EXTRACT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ADDRESS"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/ADDRESS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_RELATIONSHIP"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_demographic_1.1.0.json#/definitions/PARTY_RELATIONSHIP"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EHR_ACCESS"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/EHR_ACCESS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "SYNC_EXTRACT"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/SYNC_EXTRACT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "SYNC_EXTRACT_REQUEST"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/SYNC_EXTRACT_REQUEST"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "COMPOSITION"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/COMPOSITION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "EHR_STATUS"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/EHR_STATUS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACTIVITY"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_ehr_1.1.0.json#/definitions/ACTIVITY"
+                            }
+                        }
+                    ]
+                },
+                "item_type": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                },
+                "item_type_version": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "string"
+                },
+                "creation_time": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "authoriser": {
+                    "type": "string"
+                },
+                "authorisation_time": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "item_status": {
+                    "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                },
+                "version_id": {
+                    "type": "string"
+                },
+                "version_set_id": {
+                    "type": "string"
+                },
+                "system_id": {
+                    "type": "string"
+                },
+                "other_details": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^GENERIC_CONTENT_ITEM"
+                }
+            },
+            "additionalProperties": false
+        },
+        "OPENEHR_CONTENT_ITEM": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name",
+                "is_primary"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "is_primary": {
+                    "type": "boolean"
+                },
+                "is_changed": {
+                    "type": "boolean"
+                },
+                "is_masked": {
+                    "type": "boolean"
+                },
+                "item": {
+                    "allOf": [
+                        {
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "X_VERSIONED_PARTY"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_PARTY"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "X_VERSIONED_COMPOSITION"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_COMPOSITION"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "X_VERSIONED_FOLDER"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_FOLDER"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "X_VERSIONED_EHR_ACCESS"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_EHR_ACCESS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "X_VERSIONED_EHR_STATUS"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_EHR_STATUS"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "X_VERSIONED_OBJECT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_OBJECT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/X_VERSIONED_OBJECT"
+                            }
+                        }
+                    ]
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^OPENEHR_CONTENT_ITEM"
+                }
+            },
+            "additionalProperties": false
+        },
+        "EXTRACT_ENTITY_CHAPTER": {
+            "type": "object",
+            "required": [
+                "archetype_node_id",
+                "name",
+                "extract_id_key"
+            ],
+            "properties": {
+                "uid": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_base_1.1.0.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "archetype_node_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "openehr_rm_data_types_1.1.0.json#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "archetype_details": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/ARCHETYPED"
+                },
+                "feeder_audit": {
+                    "$ref": "openehr_rm_structures_1.1.0.json#/definitions/FEEDER_AUDIT"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "openehr_rm_structures_1.1.0.json#/definitions/LINK"
+                    },
+                    "minItems": 1
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "required": [
+                                    "_type"
+                                ],
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "EXTRACT_FOLDER",
+                                            "GENERIC_CONTENT_ITEM",
+                                            "OPENEHR_CONTENT_ITEM"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "EXTRACT_FOLDER"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/EXTRACT_FOLDER"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "GENERIC_CONTENT_ITEM"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/GENERIC_CONTENT_ITEM"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "OPENEHR_CONTENT_ITEM"
+                                        }
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/OPENEHR_CONTENT_ITEM"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "extract_id_key": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^EXTRACT_ENTITY_CHAPTER"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

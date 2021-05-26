@@ -1,0 +1,1553 @@
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/openehr_basic_types_1.0.3.json",
+    "definitions": {
+        "TERMINOLOGY_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TERMINOLOGY_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_TIME": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "$ref": "#/definitions/DV_DURATION"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_TIME"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_PARSABLE": {
+            "type": "object",
+            "required": [
+                "value",
+                "formalism"
+            ],
+            "properties": {
+                "charset": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "language": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "formalism": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_PARSABLE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_COUNT": {
+            "type": "object",
+            "required": [
+                "magnitude"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    }
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "type": "number"
+                },
+                "accuracy_is_percent": {
+                    "type": "boolean"
+                },
+                "magnitude": {
+                    "type": "integer"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_COUNT"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_DATE_TIME": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "$ref": "#/definitions/DV_DURATION"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_DATE_TIME"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_DURATION": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "type": "number"
+                },
+                "accuracy_is_percent": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_DURATION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ISO_OID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ISO_OID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "GENERIC_ID": {
+            "type": "object",
+            "required": [
+                "value",
+                "scheme"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "scheme": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^GENERIC_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "CODE_PHRASE": {
+            "type": "object",
+            "required": [
+                "terminology_id",
+                "code_string"
+            ],
+            "properties": {
+                "terminology_id": {
+                    "$ref": "#/definitions/TERMINOLOGY_ID"
+                },
+                "code_string": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^CODE_PHRASE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_PROPORTION": {
+            "type": "object",
+            "required": [
+                "numerator",
+                "denominator",
+                "type"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "type": "number"
+                },
+                "accuracy_is_percent": {
+                    "type": "boolean"
+                },
+                "numerator": {
+                    "type": "number"
+                },
+                "denominator": {
+                    "type": "number"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "precision": {
+                    "type": "integer"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_PROPORTION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_QUANTITY": {
+            "type": "object",
+            "required": [
+                "magnitude",
+                "property",
+                "units"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    }
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "type": "number"
+                },
+                "accuracy_is_percent": {
+                    "type": "boolean"
+                },
+                "magnitude": {
+                    "type": "number"
+                },
+                "property": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "units": {
+                    "type": "string"
+                },
+                "precision": {
+                    "type": "integer"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_QUANTITY"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_ORDINAL": {
+            "type": "object",
+            "required": [
+                "value",
+                "symbol"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "symbol": {
+                    "$ref": "#/definitions/DV_CODED_TEXT"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_ORDINAL"
+                }
+            },
+            "additionalProperties": false
+        },
+        "INTERNET_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^INTERNET_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_MULTIMEDIA": {
+            "type": "object",
+            "required": [
+                "media_type",
+                "size"
+            ],
+            "properties": {
+                "charset": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "language": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "alternate_text": {
+                    "type": "string"
+                },
+                "uri": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_EHR_URI",
+                                        "DV_URI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_EHR_URI"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_EHR_URI"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_URI"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_URI"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_URI"
+                            }
+                        }
+                    ]
+                },
+                "data": {
+                    "type": "string",
+                    "contentEncoding": "base64"
+                },
+                "media_type": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "compression_algorithm": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "integrity_check": {
+                    "type": "string",
+                    "contentEncoding": "base64"
+                },
+                "integrity_check_algorithm": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "thumbnail": {
+                    "$ref": "#/definitions/DV_MULTIMEDIA"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_MULTIMEDIA"
+                }
+            },
+            "additionalProperties": false
+        },
+        "VERSION_TREE_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^VERSION_TREE_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_PARAGRAPH": {
+            "type": "object",
+            "required": [
+                "items"
+            ],
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "DV_CODED_TEXT",
+                                            "DV_TEXT"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "DV_CODED_TEXT"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/DV_CODED_TEXT"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "DV_TEXT"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/DV_TEXT"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "not": {
+                                        "required": [
+                                            "_type"
+                                        ]
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "#/definitions/DV_TEXT"
+                                }
+                            }
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_PARAGRAPH"
+                }
+            },
+            "additionalProperties": false
+        },
+        "REFERENCE_RANGE": {
+            "type": "object",
+            "required": [
+                "range",
+                "meaning"
+            ],
+            "properties": {
+                "range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "meaning": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_CODED_TEXT",
+                                        "DV_TEXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_CODED_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_CODED_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_TEXT"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_TEXT"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_TEXT"
+                            }
+                        }
+                    ]
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^REFERENCE_RANGE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_GENERAL_TIME_SPECIFICATION": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "$ref": "#/definitions/DV_PARSABLE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_GENERAL_TIME_SPECIFICATION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_DATE": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "$ref": "#/definitions/DV_DURATION"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_DATE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_STATE": {
+            "type": "object",
+            "required": [
+                "value",
+                "is_terminal"
+            ],
+            "properties": {
+                "value": {
+                    "$ref": "#/definitions/DV_CODED_TEXT"
+                },
+                "is_terminal": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_STATE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_PERIODIC_TIME_SPECIFICATION": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "$ref": "#/definitions/DV_PARSABLE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_PERIODIC_TIME_SPECIFICATION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "TERM_MAPPING": {
+            "type": "object",
+            "required": [
+                "match",
+                "target"
+            ],
+            "properties": {
+                "match": {
+                    "type": "string"
+                },
+                "purpose": {
+                    "$ref": "#/definitions/DV_CODED_TEXT"
+                },
+                "target": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TERM_MAPPING"
+                }
+            },
+            "additionalProperties": false
+        },
+        "UUID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^UUID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "OBJECT_VERSION_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^OBJECT_VERSION_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_INTERVAL": {
+            "type": "object",
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "properties": {
+                "lower": {
+                    "type": "object"
+                },
+                "upper": {
+                    "type": "object"
+                },
+                "lower_unbounded": {
+                    "type": "boolean"
+                },
+                "upper_unbounded": {
+                    "type": "boolean"
+                },
+                "lower_included": {
+                    "type": "boolean"
+                },
+                "upper_included": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_INTERVAL"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_IDENTIFIER": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "issuer": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "assigner": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_IDENTIFIER"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_CODED_TEXT": {
+            "type": "object",
+            "required": [
+                "value",
+                "defining_code"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "hyperlink": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_EHR_URI",
+                                        "DV_URI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_EHR_URI"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_EHR_URI"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_URI"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_URI"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_URI"
+                            }
+                        }
+                    ]
+                },
+                "language": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "encoding": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "formatting": {
+                    "type": "string"
+                },
+                "mappings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TERM_MAPPING"
+                    },
+                    "minItems": 1
+                },
+                "defining_code": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_CODED_TEXT"
+                }
+            },
+            "additionalProperties": false
+        },
+        "LOCATABLE_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^LOCATABLE_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_EHR_URI": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_EHR_URI"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ARCHETYPE_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ARCHETYPE_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "PARTY_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^PARTY_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "TEMPLATE_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TEMPLATE_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ACCESS_GROUP_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ACCESS_GROUP_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "OBJECT_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^OBJECT_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_BOOLEAN": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_BOOLEAN"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_URI": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_URI"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DV_TEXT": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "hyperlink": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DV_EHR_URI",
+                                        "DV_URI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_EHR_URI"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_EHR_URI"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "DV_URI"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_URI"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/DV_URI"
+                            }
+                        }
+                    ]
+                },
+                "language": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "encoding": {
+                    "$ref": "#/definitions/CODE_PHRASE"
+                },
+                "formatting": {
+                    "type": "string"
+                },
+                "mappings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TERM_MAPPING"
+                    },
+                    "minItems": 1
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DV_TEXT"
+                }
+            },
+            "additionalProperties": false
+        },
+        "HIER_OBJECT_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^HIER_OBJECT_ID"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

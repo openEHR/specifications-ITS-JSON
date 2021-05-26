@@ -1,0 +1,969 @@
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/openehr_base_1.1.0.json",
+    "definitions": {
+        "VERSION_STATUS": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "_type": {
+                    "type": "string",
+                    "pattern": "^VERSION_STATUS"
+                }
+            }
+        },
+        "TERMINOLOGY_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TERMINOLOGY_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ARCHETYPE_HRID": {
+            "type": "object",
+            "required": [
+                "namespace",
+                "rm_publisher",
+                "rm_package",
+                "rm_class",
+                "concept_id",
+                "release_version",
+                "version_status",
+                "build_count"
+            ],
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "rm_publisher": {
+                    "type": "string"
+                },
+                "rm_package": {
+                    "type": "string"
+                },
+                "rm_class": {
+                    "type": "string"
+                },
+                "concept_id": {
+                    "type": "string"
+                },
+                "release_version": {
+                    "type": "string"
+                },
+                "version_status": {
+                    "$ref": "#/definitions/VERSION_STATUS"
+                },
+                "build_count": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ARCHETYPE_HRID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ISO_OID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ISO_OID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "GENERIC_ID": {
+            "type": "object",
+            "required": [
+                "value",
+                "scheme"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "scheme": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^GENERIC_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "RESOURCE_DESCRIPTION": {
+            "type": "object",
+            "required": [
+                "original_author",
+                "lifecycle_state",
+                "parent_resource",
+                "details"
+            ],
+            "properties": {
+                "original_author": {
+                    "type": "object"
+                },
+                "other_contributors": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "lifecycle_state": {
+                    "type": "string"
+                },
+                "resource_package_uri": {
+                    "type": "string"
+                },
+                "other_details": {
+                    "type": "object"
+                },
+                "parent_resource": {
+                    "type": "object"
+                },
+                "details": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RESOURCE_DESCRIPTION_ITEM"
+                    },
+                    "minItems": 1
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^RESOURCE_DESCRIPTION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ISO8601_TYPE": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ISO8601_TYPE"
+                }
+            },
+            "description": "Parent of ISO8601 types.",
+            "additionalProperties": false
+        },
+        "SET": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "_type": {
+                    "type": "string",
+                    "pattern": "^SET"
+                }
+            }
+        },
+        "URI": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "_type": {
+                    "type": "string",
+                    "pattern": "^URI"
+                }
+            }
+        },
+        "TERMINOLOGY_CODE": {
+            "type": "object",
+            "required": [
+                "terminology_id",
+                "code_string",
+                "uri"
+            ],
+            "properties": {
+                "terminology_id": {
+                    "type": "string"
+                },
+                "terminology_version": {
+                    "type": "string"
+                },
+                "code_string": {
+                    "type": "string"
+                },
+                "uri": {
+                    "$ref": "#/definitions/URI"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TERMINOLOGY_CODE"
+                }
+            },
+            "additionalProperties": false
+        },
+        "INTERNET_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^INTERNET_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "INTERVAL": {
+            "type": "object",
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "properties": {
+                "lower": {
+                    "type": "object"
+                },
+                "upper": {
+                    "type": "object"
+                },
+                "lower_unbounded": {
+                    "type": "boolean"
+                },
+                "upper_unbounded": {
+                    "type": "boolean"
+                },
+                "lower_included": {
+                    "type": "boolean"
+                },
+                "upper_included": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^INTERVAL"
+                }
+            },
+            "description": "Type defining an interval of any ordered type.",
+            "additionalProperties": false
+        },
+        "VERSION_TREE_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^VERSION_TREE_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DURATION": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DURATION"
+                }
+            },
+            "description": "Duration type based on IS8601 representation.",
+            "additionalProperties": false
+        },
+        "RESOURCE_DESCRIPTION_ITEM": {
+            "type": "object",
+            "required": [
+                "language",
+                "purpose",
+                "other_details"
+            ],
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/TERMINOLOGY_CODE"
+                },
+                "purpose": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "use": {
+                    "type": "string"
+                },
+                "misuse": {
+                    "type": "string"
+                },
+                "copyright": {
+                    "type": "string"
+                },
+                "original_resource_uri": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "other_details": {
+                    "type": "object"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^RESOURCE_DESCRIPTION_ITEM"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ARRAY": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ARRAY"
+                }
+            }
+        },
+        "UUID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^UUID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "VALIDITY_KIND": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "_type": {
+                    "type": "string",
+                    "pattern": "^VALIDITY_KIND"
+                }
+            }
+        },
+        "OBJECT_VERSION_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^OBJECT_VERSION_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DATE": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DATE"
+                }
+            },
+            "description": "Date type based on IS8601 representation.",
+            "additionalProperties": false
+        },
+        "DATE_TIME": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^DATE_TIME"
+                }
+            },
+            "description": "Date Time type based on IS8601 representation.",
+            "additionalProperties": false
+        },
+        "LOCATABLE_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^LOCATABLE_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "LIST": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "_type": {
+                    "type": "string",
+                    "pattern": "^LIST"
+                }
+            }
+        },
+        "TERMINOLOGY_TERM": {
+            "type": "object",
+            "required": [
+                "text",
+                "concept"
+            ],
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "concept": {
+                    "$ref": "#/definitions/TERMINOLOGY_CODE"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TERMINOLOGY_TERM"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ARCHETYPE_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ARCHETYPE_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "PARTY_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^PARTY_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "TEMPLATE_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TEMPLATE_ID"
+                }
+            },
+            "additionalProperties": false
+        },
+        "TRANSLATION_DETAILS": {
+            "type": "object",
+            "required": [
+                "language",
+                "author"
+            ],
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/TERMINOLOGY_CODE"
+                },
+                "author": {
+                    "type": "object"
+                },
+                "accreditation": {
+                    "type": "string"
+                },
+                "other_details": {
+                    "type": "object"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TRANSLATION_DETAILS"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ACCESS_GROUP_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^ACCESS_GROUP_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "OBJECT_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^OBJECT_REF"
+                }
+            },
+            "additionalProperties": false
+        },
+        "TIME": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^TIME"
+                }
+            },
+            "description": "Time type based on IS8601 representation.",
+            "additionalProperties": false
+        },
+        "HIER_OBJECT_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "pattern": "^HIER_OBJECT_ID"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
