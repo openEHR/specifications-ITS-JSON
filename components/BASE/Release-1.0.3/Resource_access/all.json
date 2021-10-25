@@ -1,7 +1,0 @@
-{
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Resource_access/all.json",
-    "title": "Resource_access IM definitions",
-    "description": "The rm.support package describes the most basic concepts, required by all other packages, and is comprised of the Definitions, Identification, Terminology and Measurement packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data. The support package includes the special package assumed_types, describing what basic types are assumed by openEHR in external type systems; this package is a guide for integrating openEHR models proper into the type systems of implementation technologies.",
-    "$comments": "Part of BASE component, Release-1.0.3 version."
-}

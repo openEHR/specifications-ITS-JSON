@@ -1,17 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Base_types/HIER_OBJECT_ID.json",
-    "title": "HIER_OBJECT_ID",
-    "description": "Concrete type corresponding to hierarchical identifiers of the form defined by UID_BASED_ID. ",
-    "$comments": "Defined in Base_types IM, inherits from UID_BASED_ID",
-    "type": "object",
-    "properties": {
-        "value": {
-            "description": "The value of the id in the form defined below. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
+    "definitions": {
+        "HIER_OBJECT_ID": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "HIER_OBJECT_ID"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "value"
-    ]
+    }
 }
