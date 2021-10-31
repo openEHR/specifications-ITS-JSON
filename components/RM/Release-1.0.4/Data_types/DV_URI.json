@@ -1,23 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.4/Data_types/DV_URI.json",
-    "title": "DV_URI",
-    "description": "A reference to an object which structurally conforms to the Universal Resource Identifier (URI) RFC-3986 standard. The reference is contained in the `_value_` attribute, which is a `String`. So-called 'plain-text URIs' that contain RFC-3986 forbidden characters such as spaces etc, are allowed on the basis that they need to be RFC-3986 encoded prior to use in e.g. REST APIs or other contexts relying on machine-level conformance.",
-    "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
-    "type": "object",
-    "properties": {
-        "_type": {
-            "enum": [
-                "DV_URI",
-                "DV_EHR_URI"
-            ]
-        },
-        "value": {
-            "description": "Value of URI as a String. 'Plain-text' URIs are allowed, enabling better readability, but must be RFC-3986 encoded in use.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/all.json#/definitions/String"
+    "definitions": {
+        "DV_URI": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "DV_URI"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "value"
-    ]
+    }
 }

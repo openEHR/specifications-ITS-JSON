@@ -1,44 +1,44 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_DURATION.json",
-    "title": "DV_DURATION",
-    "description": "Represents a period of time with respect to a notional point in time, which is not specified. A sign may be used to indicate the duration is  backwards  in time rather than forwards. \n\nNOTE: two deviations from ISO 8601 are supported, the first, to allow a negative sign, and the second allowing the 'W' designator to be mixed with other designators. See time types section in the Foundation Types model. \n\nUsed for recording the duration of something in the real world, particularly when there is a need a) to represent the duration in customary format, i.e. days, hours, minutes etc, and b) if it will be used in computational operations with date/time quantities, i.e. additions, subtractions etc. \n\nMisuse: Durations cannot be used to represent points in time, or intervals of time. ",
-    "$comments": "Defined in Data_types IM, inherits from DV_AMOUNT, Iso8601_duration",
-    "type": "object",
-    "properties": {
-        "value": {
-            "description": "ISO8601 duration string, including described deviations to support negative values and weeks.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
-        },
-        "normal_status": {
-            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
-            "$ref": "all.json#/definitions/CODE_PHRASE"
-        },
-        "normal_range": {
-            "description": "Optional normal range. ",
-            "$ref": "all.json#/definitions/DV_INTERVAL"
-        },
-        "other_reference_ranges": {
-            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
-            "type": "array",
-            "items": {
-                "$ref": "all.json#/definitions/REFERENCE_RANGE"
-            }
-        },
-        "magnitude_status": {
-            "description": "Optional status of magnitude with values: \n\n* `\"=\"`   :   magnitude is a point value \n* `\"<\"`   :   value is < magnitude \n* `\">\"`   :   value is > magnitude \n* `\"<=\"` : value is <= magnitude \n* `\">=\"` : value is >= magnitude \n* `\"~\"`   :   value is approximately magnitude \n\nIf not present, assumed meaning is  `\"=\"` . \n",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
-        },
-        "accuracy": {
-            "description": "Accuracy of measurement, expressed either as a half-range percent value (`_accuracy_is_percent_` = `True`) or a half-range quantity. A value of `0` means that accuracy is 100%, i.e. no error.\n\nA value of `_unknown_accuracy_value_` means that accuracy was not recorded.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Real"
-        },
-        "accuracy_is_percent": {
-            "description": "If `True`, indicates that when this object was created, `_accuracy_` was recorded as a percent value; if `False`, as an absolute quantity value.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/Boolean"
+    "definitions": {
+        "DV_DURATION": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/CODE_PHRASE.json#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_INTERVAL.json#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/REFERENCE_RANGE.json#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "type": "number"
+                },
+                "accuracy_is_percent": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "DV_DURATION"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "value"
-    ]
+    }
 }

@@ -1,26 +1,84 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/REVISION_HISTORY_ITEM.json",
-    "title": "REVISION_HISTORY_ITEM",
-    "description": "An entry in a revision history, corresponding to a version from a versioned container. Consists of `AUDIT_DETAILS` instances with revision identifier of the revision to which the `AUDIT_DETAILS` instance belongs. ",
-    "$comments": "Defined in Common IM",
-    "type": "object",
-    "properties": {
-        "version_id": {
-            "description": "Version identifier for this revision. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/all.json#/definitions/OBJECT_VERSION_ID"
-        },
-        "audits": {
-            "description": "The audits for this revision; there will always be at least one commit audit (which may itself be an `ATTESTATION`), there may also be further attestations. ",
-            "type": "array",
-            "items": {
-                "$ref": "all.json#/definitions/AUDIT_DETAILS"
+    "definitions": {
+        "REVISION_HISTORY_ITEM": {
+            "type": "object",
+            "required": [
+                "version_id",
+                "audits"
+            ],
+            "properties": {
+                "version_id": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Base_types/OBJECT_VERSION_ID.json#/definitions/OBJECT_VERSION_ID"
+                },
+                "audits": {
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "ATTESTATION",
+                                            "AUDIT_DETAILS"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "ATTESTATION"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/ATTESTATION.json#/definitions/ATTESTATION"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "properties": {
+                                        "_type": {
+                                            "const": "AUDIT_DETAILS"
+                                        }
+                                    },
+                                    "required": [
+                                        "_type"
+                                    ]
+                                },
+                                "then": {
+                                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/AUDIT_DETAILS.json#/definitions/AUDIT_DETAILS"
+                                }
+                            },
+                            {
+                                "if": {
+                                    "not": {
+                                        "required": [
+                                            "_type"
+                                        ]
+                                    }
+                                },
+                                "then": {
+                                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/AUDIT_DETAILS.json#/definitions/AUDIT_DETAILS"
+                                }
+                            }
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "REVISION_HISTORY_ITEM"
+                }
             },
-            "minItems": 1
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "version_id",
-        "audits"
-    ]
+    }
 }

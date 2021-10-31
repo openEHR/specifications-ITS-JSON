@@ -1,23 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/DV_URI.json",
-    "title": "DV_URI",
-    "description": "A reference to an object which conforms to the Universal Resource Identifier (URI) standard. See \"Universal Resource Identifiers in WWW\" by Tim Berners-Lee at http://www.ietf.org/rfc/rfc3986.txt. This  is  a  World-Wide  Web  RFC for  global identification  of resources. \nSee http://www.w3.org/Addressing for a starting point on URIs. \n",
-    "$comments": "Defined in Data_types IM, inherits from DATA_VALUE",
-    "type": "object",
-    "properties": {
-        "_type": {
-            "enum": [
-                "DV_URI",
-                "DV_EHR_URI"
-            ]
-        },
-        "value": {
-            "description": "Value of URI as a String. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
+    "definitions": {
+        "DV_URI": {
+            "type": "object",
+            "required": [
+            ],
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "DV_URI"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "value"
-    ]
+    }
 }

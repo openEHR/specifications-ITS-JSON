@@ -1,32 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Common/PARTY_RELATED.json",
-    "title": "PARTY_RELATED",
-    "description": "Proxy type for identifying a party and its relationship to the subject of the record. Use where the relationship between the party and the subject of the record must be known. ",
-    "$comments": "Defined in Common IM, inherits from PARTY_IDENTIFIED",
-    "type": "object",
-    "properties": {
-        "external_ref": {
-            "description": "Optional reference to more detailed demographic or identification information for this party, in an external system. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Base_types/all.json#/definitions/PARTY_REF"
-        },
-        "name": {
-            "description": "Optional human-readable name (in String form).",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
-        },
-        "identifiers": {
-            "description": "One or more formal identifiers (possibly computable). \n",
-            "type": "array",
-            "items": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all.json#/definitions/DV_IDENTIFIER"
-            }
-        },
-        "relationship": {
-            "description": "Relationship of subject of this ENTRY to the subject of the record. May be coded. If it is the patient, coded as  self. ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/all.json#/definitions/DV_CODED_TEXT"
+    "definitions": {
+        "PARTY_RELATED": {
+            "type": "object",
+            "required": [
+                "relationship"
+            ],
+            "properties": {
+                "external_ref": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Base_types/PARTY_REF.json#/definitions/PARTY_REF"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "identifiers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_IDENTIFIER.json#/definitions/DV_IDENTIFIER"
+                    },
+                    "minItems": 1
+                },
+                "relationship": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_CODED_TEXT.json#/definitions/DV_CODED_TEXT"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "PARTY_RELATED"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "relationship"
-    ]
+    }
 }

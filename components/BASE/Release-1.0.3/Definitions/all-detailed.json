@@ -1,9 +1,0 @@
-{
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Definitions/all-detailed.json",
-    "title": "Definitions IM definitions",
-    "description": "The rm.support.definition package defines symbolic definitions used by the openEHR models. Only a small number are currently defined.",
-    "$comments": "Part of BASE component, Release-1.0.3 version.",
-    "$component": "BASE",
-    "$version": "Release-1.0.3"
-}

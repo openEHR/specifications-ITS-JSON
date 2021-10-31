@@ -1,40 +1,41 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_DATE_TIME.json",
-    "title": "DV_DATE_TIME",
-    "description": "Represents an absolute point in time, specified to the second. Semantics defined by ISO 8601. \n\nUsed for recording a precise point in real world time, and for approximate time stamps, e.g. the origin of a `HISTORY` in an `OBSERVATION` which is only partially known. \n",
-    "$comments": "Defined in Data_types IM, inherits from DV_TEMPORAL, Iso8601_date_time",
-    "type": "object",
-    "properties": {
-        "value": {
-            "description": "ISO8601 date/time string.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
-        },
-        "normal_status": {
-            "description": "Optional normal status indicator of value with respect to normal range for this value. Often included by lab, even if the normal range itself is not included. Coded by ordinals in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group  `normal_status`. ",
-            "$ref": "all.json#/definitions/CODE_PHRASE"
-        },
-        "normal_range": {
-            "description": "Optional normal range. ",
-            "$ref": "all.json#/definitions/DV_INTERVAL"
-        },
-        "other_reference_ranges": {
-            "description": "Optional tagged other reference ranges for this value in its particular measurement context.",
-            "type": "array",
-            "items": {
-                "$ref": "all.json#/definitions/REFERENCE_RANGE"
-            }
-        },
-        "magnitude_status": {
-            "description": "Optional status of magnitude with values: \n\n* `\"=\"`   :   magnitude is a point value \n* `\"<\"`   :   value is < magnitude \n* `\">\"`   :   value is > magnitude \n* `\"<=\"` : value is <= magnitude \n* `\">=\"` : value is >= magnitude \n* `\"~\"`   :   value is approximately magnitude \n\nIf not present, assumed meaning is  `\"=\"` . \n",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.2.0/Foundation_types/all.json#/definitions/String"
-        },
-        "accuracy": {
-            "description": "Time accuracy, expressed as a duration.",
-            "$ref": "all.json#/definitions/DV_DURATION"
+    "definitions": {
+        "DV_DATE_TIME": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "normal_status": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/CODE_PHRASE.json#/definitions/CODE_PHRASE"
+                },
+                "normal_range": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_INTERVAL.json#/definitions/DV_INTERVAL"
+                },
+                "other_reference_ranges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/REFERENCE_RANGE.json#/definitions/REFERENCE_RANGE"
+                    },
+                    "minItems": 1
+                },
+                "magnitude_status": {
+                    "type": "string"
+                },
+                "accuracy": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.1.0/Data_types/DV_DURATION.json#/definitions/DV_DURATION"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "DV_DATE_TIME"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "value"
-    ]
+    }
 }

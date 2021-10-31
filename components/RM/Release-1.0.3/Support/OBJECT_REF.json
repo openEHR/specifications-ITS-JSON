@@ -1,35 +1,121 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/OBJECT_REF.json",
-    "title": "OBJECT_REF",
-    "description": "Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. Services are usually external, e.g. available in a LAN (including on the same host) or the internet via Corba, SOAP, or some other distributed protocol. However, in small systems they may be part of the same executable as the data containing the Id. ",
-    "$comments": "Defined in Support IM",
-    "type": "object",
-    "properties": {
-        "_type": {
-            "enum": [
-                "OBJECT_REF",
-                "ACCESS_GROUP_REF",
-                "PARTY_REF",
-                "LOCATABLE_REF"
-            ]
-        },
-        "id_namespace": {
-            "description": "Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for the namespace are:\n    local  |  unknown  |  [a-zA-Z][a-zA-Z0-9_-:/&+?]* \n",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
-        },
-        "type": {
-            "description": "Name of the  class (concrete or abstract) of object to which this identifier type refers, e.g.  PARTY ,  PERSON ,  GUIDELINE  etc. These class names are from the relevant reference model. The type name  ANY  can be used to indicate that any type is accepted (e.g. if the type is unknown). ",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/String"
-        },
-        "id": {
-            "description": "Globally unique id of an object, regardless of where it is stored.",
-            "$ref": "all.json#/definitions/OBJECT_ID"
+    "definitions": {
+        "OBJECT_REF": {
+            "type": "object",
+            "required": [
+                "id",
+                "namespace",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "required": [
+                                "_type"
+                            ],
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TERMINOLOGY_ID",
+                                        "GENERIC_ID",
+                                        "OBJECT_VERSION_ID",
+                                        "HIER_OBJECT_ID",
+                                        "ARCHETYPE_ID",
+                                        "TEMPLATE_ID"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TERMINOLOGY_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/TERMINOLOGY_ID.json#/definitions/TERMINOLOGY_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "GENERIC_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/GENERIC_ID.json#/definitions/GENERIC_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_VERSION_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/OBJECT_VERSION_ID.json#/definitions/OBJECT_VERSION_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "HIER_OBJECT_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/HIER_OBJECT_ID.json#/definitions/HIER_OBJECT_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ARCHETYPE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/ARCHETYPE_ID.json#/definitions/ARCHETYPE_ID"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "TEMPLATE_ID"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/TEMPLATE_ID.json#/definitions/TEMPLATE_ID"
+                            }
+                        }
+                    ]
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "OBJECT_REF"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "id_namespace",
-        "type",
-        "id"
-    ]
+    }
 }

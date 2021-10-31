@@ -1,48 +1,133 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Ehr_extract/X_VERSIONED_PARTY.json",
-    "title": "X_VERSIONED_PARTY",
-    "description": "Form of X_VERSIONED_OBJECT for PARTY demographic object.",
-    "$comments": "Defined in Ehr_extract IM, inherits from X_VERSIONED_OBJECT",
-    "type": "object",
-    "properties": {
-        "uid": {
-            "description": "Uid of original VERSIONED_OBJECT.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/all.json#/definitions/HIER_OBJECT_ID"
-        },
-        "owner_id": {
-            "description": "Owner_id from original VERSIONED_OBJECT, which identifies source EHR.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/all.json#/definitions/OBJECT_REF"
-        },
-        "time_created": {
-            "description": "Creation time of original VERSIONED_OBJECT.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/all.json#/definitions/DV_DATE_TIME"
-        },
-        "total_version_count": {
-            "description": "Total number of versions in original VERSIONED_OBJECT at time of creation of this X_VERSIONED_OBJECT.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Integer"
-        },
-        "extract_version_count": {
-            "description": "The number of Versions in this extract for this Versioned object, i.e. the count of items in the versions attribute. May be 0 if only revision history is requested.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.0.3/Base_types/all.json#/definitions/Integer"
-        },
-        "revision_history": {
-            "description": "Optional revision history of the original VERSIONED_OBJECT. If included, it is the complete revision history.",
-            "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/all.json#/definitions/REVISION_HISTORY"
-        },
-        "versions": {
-            "description": "0 or more Versions from the original VERSIONED_OBJECT, according to the Extract specification.",
-            "type": "array",
-            "items": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/all.json#/definitions/ORIGINAL_VERSION"
-            }
+    "definitions": {
+        "X_VERSIONED_PARTY": {
+            "type": "object",
+            "required": [
+                "uid",
+                "owner_id",
+                "time_created",
+                "total_version_count",
+                "extract_version_count"
+            ],
+            "properties": {
+                "uid": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/HIER_OBJECT_ID.json#/definitions/HIER_OBJECT_ID"
+                },
+                "owner_id": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCATABLE_REF",
+                                        "PARTY_REF",
+                                        "ACCESS_GROUP_REF",
+                                        "OBJECT_REF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "LOCATABLE_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/LOCATABLE_REF.json#/definitions/LOCATABLE_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "PARTY_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/PARTY_REF.json#/definitions/PARTY_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "ACCESS_GROUP_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/ACCESS_GROUP_REF.json#/definitions/ACCESS_GROUP_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "_type": {
+                                        "const": "OBJECT_REF"
+                                    }
+                                },
+                                "required": [
+                                    "_type"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/OBJECT_REF.json#/definitions/OBJECT_REF"
+                            }
+                        },
+                        {
+                            "if": {
+                                "not": {
+                                    "required": [
+                                        "_type"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Support/OBJECT_REF.json#/definitions/OBJECT_REF"
+                            }
+                        }
+                    ]
+                },
+                "time_created": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/DV_DATE_TIME.json#/definitions/DV_DATE_TIME"
+                },
+                "total_version_count": {
+                    "type": "integer"
+                },
+                "extract_version_count": {
+                    "type": "integer"
+                },
+                "revision_history": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/REVISION_HISTORY.json#/definitions/REVISION_HISTORY"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/ORIGINAL_VERSION.json#/definitions/ORIGINAL_VERSION"
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "X_VERSIONED_PARTY"
+                }
+            },
+            "additionalProperties": false
         }
-    },
-    "required": [
-        "uid",
-        "owner_id",
-        "time_created",
-        "total_version_count",
-        "extract_version_count"
-    ]
+    }
 }
