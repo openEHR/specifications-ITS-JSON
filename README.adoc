@@ -52,7 +52,7 @@ Schemas are generated (close-source code) from openEHR UML files. There are howe
 
 In practice the current schemas cannot be used for validation, because it does not implement the openEHR polymorphism including the `_type` column to discriminate types. As an example, if validations encounters a `CLUSTER` in a place where the model says `ITEM`, the items attribute of the cluster plus any of its content will not be checked at all.
 
-A longer discussion about this subject can be found at https://discourse.openehr.org/[openEHR forum].
+A longer discussion about this subject can be found at https://discourse.openehr.org/t/json-schema-and-openapi-current-state-and-how-to-progress/1385[openEHR forum].
 
 === OpenAPI
 
