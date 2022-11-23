@@ -7,7 +7,8 @@
             "required": [
                 "archetype_node_id",
                 "name",
-                "description"
+                "description",
+                "action_archetype_id"
             ],
             "properties": {
                 "uid": {

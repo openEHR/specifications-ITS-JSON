@@ -6,7 +6,6 @@
             "type": "object",
             "required": [
                 "magnitude",
-                "property",
                 "units"
             ],
             "properties": {

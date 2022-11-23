@@ -18,6 +18,9 @@
                 "accreditation": {
                     "type": "string"
                 },
+                "version_last_translated": {
+                    "type": "string"
+                },
                 "other_details": {
                     "type": "object"
                 },

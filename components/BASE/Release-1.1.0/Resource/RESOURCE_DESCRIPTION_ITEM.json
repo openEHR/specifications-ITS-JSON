@@ -6,8 +6,7 @@
             "type": "object",
             "required": [
                 "language",
-                "purpose",
-                "other_details"
+                "purpose"
             ],
             "properties": {
                 "language": {
@@ -26,9 +25,6 @@
                     "type": "string"
                 },
                 "misuse": {
-                    "type": "string"
-                },
-                "copyright": {
                     "type": "string"
                 },
                 "original_resource_uri": {

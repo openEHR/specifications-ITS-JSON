@@ -5415,7 +5415,6 @@
             "type": "object",
             "required": [
                 "magnitude",
-                "property",
                 "units"
             ],
             "properties": {
@@ -9043,8 +9042,7 @@
             "type": "object",
             "required": [
                 "language",
-                "purpose",
-                "other_details"
+                "purpose"
             ],
             "properties": {
                 "language": {
@@ -16473,7 +16471,8 @@
                 "archetype_node_id",
                 "name",
                 "description",
-                "timing"
+                "timing",
+                "action_archetype_id"
             ],
             "properties": {
                 "uid": {

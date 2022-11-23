@@ -1075,50 +1075,6 @@
             },
             "additionalProperties": false
         },
-        "ARCHETYPE_HRID": {
-            "type": "object",
-            "required": [
-                "namespace",
-                "rm_publisher",
-                "rm_package",
-                "rm_class",
-                "concept_id",
-                "release_version",
-                "version_status",
-                "build_count"
-            ],
-            "properties": {
-                "namespace": {
-                    "type": "string"
-                },
-                "rm_publisher": {
-                    "type": "string"
-                },
-                "rm_package": {
-                    "type": "string"
-                },
-                "rm_class": {
-                    "type": "string"
-                },
-                "concept_id": {
-                    "type": "string"
-                },
-                "release_version": {
-                    "type": "string"
-                },
-                "version_status": {
-                    "$ref": "#/definitions/VERSION_STATUS"
-                },
-                "build_count": {
-                    "type": "string"
-                },
-                "_type": {
-                    "type": "string",
-                    "const": "ARCHETYPE_HRID"
-                }
-            },
-            "additionalProperties": false
-        },
         "PARTY_IDENTITY": {
             "type": "object",
             "required": [
@@ -3046,12 +3002,14 @@
             "required": [
                 "original_author",
                 "lifecycle_state",
-                "parent_resource",
-                "details"
+                "parent_resource"
             ],
             "properties": {
                 "original_author": {
                     "type": "object"
+                },
+                "original_namespace": {
+                    "type": "string"
                 },
                 "other_contributors": {
                     "type": "array",
@@ -3059,11 +3017,32 @@
                         "type": "string"
                     }
                 },
+                "custodian_namespace": {
+                    "type": "string"
+                },
+                "custodian_organisation": {
+                    "type": "string"
+                },
+                "copyright": {
+                    "type": "string"
+                },
+                "licence": {
+                    "type": "string"
+                },
                 "lifecycle_state": {
                     "type": "string"
                 },
                 "resource_package_uri": {
                     "type": "string"
+                },
+                "ip_acknowledgements": {
+                    "type": "object"
+                },
+                "references": {
+                    "type": "object"
+                },
+                "conversion_details": {
+                    "type": "object"
                 },
                 "other_details": {
                     "type": "object"
@@ -3072,15 +3051,27 @@
                     "type": "object"
                 },
                 "details": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/RESOURCE_DESCRIPTION_ITEM"
-                    },
-                    "minItems": 1
+                    "type": "object"
                 },
                 "_type": {
                     "type": "string",
                     "const": "RESOURCE_DESCRIPTION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "RESOURCE_ANNOTATIONS": {
+            "type": "object",
+            "required": [
+                "documentation"
+            ],
+            "properties": {
+                "documentation": {
+                    "type": "object"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "RESOURCE_ANNOTATIONS"
                 }
             },
             "additionalProperties": false
@@ -3853,22 +3844,6 @@
                     "const": "CAPABILITY"
                 }
             },
-            "additionalProperties": false
-        },
-        "ISO8601_TYPE": {
-            "type": "object",
-            "required": [
-            ],
-            "properties": {
-                "value": {
-                    "type": "string"
-                },
-                "_type": {
-                    "type": "string",
-                    "const": "ISO8601_TYPE"
-                }
-            },
-            "description": "Parent of ISO8601 types.",
             "additionalProperties": false
         },
         "CONTRIBUTION": {
@@ -5958,8 +5933,7 @@
             "type": "object",
             "required": [
                 "terminology_id",
-                "code_string",
-                "uri"
+                "code_string"
             ],
             "properties": {
                 "terminology_id": {
@@ -7016,10 +6990,7 @@
                     "type": "string"
                 },
                 "other_ids": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "object"
                 },
                 "item_list": {
                     "type": "array",
@@ -8744,6 +8715,7 @@
         "DURATION": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -9293,8 +9265,7 @@
             "type": "object",
             "required": [
                 "language",
-                "purpose",
-                "other_details"
+                "purpose"
             ],
             "properties": {
                 "language": {
@@ -9313,9 +9284,6 @@
                     "type": "string"
                 },
                 "misuse": {
-                    "type": "string"
-                },
-                "copyright": {
                     "type": "string"
                 },
                 "original_resource_uri": {
@@ -10644,74 +10612,6 @@
                         ]
                     }
                 },
-                "details": {
-                    "allOf": [
-                        {
-                            "required": [
-                                "_type"
-                            ],
-                            "properties": {
-                                "_type": {
-                                    "type": "string",
-                                    "enum": [
-                                        "ITEM_SINGLE",
-                                        "ITEM_TREE",
-                                        "ITEM_LIST",
-                                        "ITEM_TABLE"
-                                    ]
-                                }
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_SINGLE"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_SINGLE"
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_TREE"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_TREE"
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_LIST"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_LIST"
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_TABLE"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_TABLE"
-                            }
-                        }
-                    ]
-                },
                 "_type": {
                     "type": "string",
                     "const": "FOLDER"
@@ -11398,6 +11298,40 @@
             },
             "additionalProperties": false
         },
+        "MULTIPLICITY_INTERVAL": {
+            "type": "object",
+            "required": [
+                "lower_unbounded",
+                "upper_unbounded",
+                "lower_included",
+                "upper_included"
+            ],
+            "properties": {
+                "lower": {
+                    "type": "object"
+                },
+                "upper": {
+                    "type": "object"
+                },
+                "lower_unbounded": {
+                    "type": "boolean"
+                },
+                "upper_unbounded": {
+                    "type": "boolean"
+                },
+                "lower_included": {
+                    "type": "boolean"
+                },
+                "upper_included": {
+                    "type": "boolean"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "MULTIPLICITY_INTERVAL"
+                }
+            },
+            "additionalProperties": false
+        },
         "GENERIC_CONTENT_ITEM": {
             "type": "object",
             "required": [
@@ -12064,10 +11998,7 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "object"
                 },
                 "_type": {
                     "type": "string",
@@ -12079,6 +12010,7 @@
         "DATE": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -13057,6 +12989,7 @@
         "DATE_TIME": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -15006,6 +14939,30 @@
             },
             "additionalProperties": false
         },
+        "CARDINALITY": {
+            "type": "object",
+            "required": [
+                "is_ordered",
+                "is_unique",
+                "interval"
+            ],
+            "properties": {
+                "is_ordered": {
+                    "type": "boolean"
+                },
+                "is_unique": {
+                    "type": "boolean"
+                },
+                "interval": {
+                    "$ref": "#/definitions/MULTIPLICITY_INTERVAL"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "CARDINALITY"
+                }
+            },
+            "additionalProperties": false
+        },
         "TRANSLATION_DETAILS": {
             "type": "object",
             "required": [
@@ -15020,6 +14977,9 @@
                     "type": "object"
                 },
                 "accreditation": {
+                    "type": "string"
+                },
+                "version_last_translated": {
                     "type": "string"
                 },
                 "other_details": {
@@ -15398,6 +15358,7 @@
         "TIME": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -16731,7 +16692,8 @@
             "required": [
                 "archetype_node_id",
                 "name",
-                "description"
+                "description",
+                "action_archetype_id"
             ],
             "properties": {
                 "uid": {

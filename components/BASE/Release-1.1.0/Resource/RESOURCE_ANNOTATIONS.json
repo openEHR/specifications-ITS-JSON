@@ -1,22 +1,21 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/Time.json",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/RESOURCE_ANNOTATIONS.json",
     "definitions": {
-        "TIME": {
+        "RESOURCE_ANNOTATIONS": {
             "type": "object",
             "required": [
-                "value"
+                "documentation"
             ],
             "properties": {
-                "value": {
-                    "type": "string"
+                "documentation": {
+                    "type": "object"
                 },
                 "_type": {
                     "type": "string",
-                    "const": "TIME"
+                    "const": "RESOURCE_ANNOTATIONS"
                 }
             },
-            "description": "Time type based on IS8601 representation.",
             "additionalProperties": false
         }
     }

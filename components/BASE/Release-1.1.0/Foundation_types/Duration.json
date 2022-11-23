@@ -5,6 +5,7 @@
         "DURATION": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
