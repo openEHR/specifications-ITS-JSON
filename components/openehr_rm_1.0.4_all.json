@@ -5572,9 +5572,6 @@
                 "magnitude": {
                     "type": "number"
                 },
-                "property": {
-                    "$ref": "#/definitions/CODE_PHRASE"
-                },
                 "units": {
                     "type": "string"
                 },
