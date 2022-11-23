@@ -155,18 +155,6 @@
             "if": {
                 "properties": {
                     "_type": {
-                        "const": "ADDRESS"
-                    }
-                }
-            },
-            "then": {
-                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Demographic/ADDRESS.json#/definitions/ADDRESS"
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "_type": {
                         "const": "ROLE"
                     }
                 }
@@ -185,6 +173,30 @@
             },
             "then": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Demographic/ORGANISATION.json#/definitions/ORGANISATION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "AGENT"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Demographic/AGENT.json#/definitions/AGENT"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "GROUP"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Demographic/GROUP.json#/definitions/GROUP"
             }
         },
         {
@@ -269,6 +281,90 @@
             },
             "then": {
                 "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Common/IMPORTED_VERSION.json#/definitions/IMPORTED_VERSION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "HISTORY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/HISTORY.json#/definitions/HISTORY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TABLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/ITEM_TABLE.json#/definitions/ITEM_TABLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_LIST"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/ITEM_LIST.json#/definitions/ITEM_LIST"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TREE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/ITEM_TREE.json#/definitions/ITEM_TREE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_SINGLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/ITEM_SINGLE.json#/definitions/ITEM_SINGLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TABLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/ITEM_TABLE.json#/definitions/ITEM_TABLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ELEMENT"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_structures/ELEMENT.json#/definitions/ELEMENT"
             }
         }
     ],

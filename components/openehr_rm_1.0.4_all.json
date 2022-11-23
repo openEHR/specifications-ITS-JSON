@@ -155,18 +155,6 @@
             "if": {
                 "properties": {
                     "_type": {
-                        "const": "ADDRESS"
-                    }
-                }
-            },
-            "then": {
-                "$ref": "#/definitions/ADDRESS"
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "_type": {
                         "const": "ROLE"
                     }
                 }
@@ -185,6 +173,30 @@
             },
             "then": {
                 "$ref": "#/definitions/ORGANISATION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "AGENT"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/AGENT"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "GROUP"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/GROUP"
             }
         },
         {
@@ -269,6 +281,90 @@
             },
             "then": {
                 "$ref": "#/definitions/IMPORTED_VERSION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "HISTORY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/HISTORY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TABLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_TABLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_LIST"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_LIST"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TREE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_TREE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_SINGLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_SINGLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TABLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_TABLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ELEMENT"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ELEMENT"
             }
         }
     ],
