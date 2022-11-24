@@ -5,6 +5,7 @@
         "DV_EHR_URI": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
