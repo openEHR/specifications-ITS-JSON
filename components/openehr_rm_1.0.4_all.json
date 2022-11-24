@@ -5899,17 +5899,6 @@
             },
             "additionalProperties": false
         },
-        "URI": {
-            "type": "object",
-            "required": [
-            ],
-            "properties": {
-                "_type": {
-                    "type": "string",
-                    "const": "URI"
-                }
-            }
-        },
         "SYNC_EXTRACT": {
             "type": "object",
             "required": [
@@ -6066,7 +6055,8 @@
                     "type": "string"
                 },
                 "uri": {
-                    "$ref": "#/definitions/URI"
+                    "type": "string",
+                    "format": "uri-reference"
                 },
                 "_type": {
                     "type": "string",
