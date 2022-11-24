@@ -11,7 +11,10 @@
             ],
             "properties": {
                 "original_author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "original_namespace": {
                     "type": "string"
@@ -41,22 +44,37 @@
                     "type": "string"
                 },
                 "ip_acknowledgements": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "references": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "conversion_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "parent_resource": {
                     "type": "object"
                 },
                 "details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Resource/RESOURCE_DESCRIPTION_ITEM.json#/definitions/RESOURCE_DESCRIPTION_ITEM"
+                    }
                 },
                 "_type": {
                     "type": "string",

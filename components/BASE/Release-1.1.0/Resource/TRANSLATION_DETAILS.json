@@ -13,7 +13,10 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/Terminology_code.json#/definitions/TERMINOLOGY_CODE"
                 },
                 "author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "accreditation": {
                     "type": "string"
@@ -22,7 +25,10 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",

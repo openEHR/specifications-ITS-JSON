@@ -3073,7 +3073,10 @@
             ],
             "properties": {
                 "original_author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "other_contributors": {
                     "type": "array",
@@ -3088,7 +3091,10 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "parent_resource": {
                     "type": "object"
@@ -7016,7 +7022,10 @@
                     "type": "string"
                 },
                 "other_ids": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "item_list": {
                     "type": "array",
@@ -9162,11 +9171,17 @@
                 "original_resource_uri": {
                     "type": "array",
                     "items": {
-                        "type": "object"
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
                     }
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -11967,7 +11982,10 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -14865,13 +14883,19 @@
                     "$ref": "#/definitions/CODE_PHRASE"
                 },
                 "author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "accreditation": {
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",

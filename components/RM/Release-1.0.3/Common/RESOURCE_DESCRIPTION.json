@@ -12,7 +12,10 @@
             ],
             "properties": {
                 "original_author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "other_contributors": {
                     "type": "array",
@@ -27,7 +30,10 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "parent_resource": {
                     "type": "object"

@@ -18,7 +18,10 @@
                     "type": "string"
                 },
                 "other_ids": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "item_list": {
                     "type": "array",

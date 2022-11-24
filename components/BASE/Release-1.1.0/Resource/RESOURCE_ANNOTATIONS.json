@@ -9,7 +9,16 @@
             ],
             "properties": {
                 "documentation": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
                 "_type": {
                     "type": "string",

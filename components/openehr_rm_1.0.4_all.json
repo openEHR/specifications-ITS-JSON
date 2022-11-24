@@ -3102,7 +3102,10 @@
             ],
             "properties": {
                 "original_author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "original_namespace": {
                     "type": "string"
@@ -3132,22 +3135,37 @@
                     "type": "string"
                 },
                 "ip_acknowledgements": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "references": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "conversion_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "parent_resource": {
                     "type": "object"
                 },
                 "details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/RESOURCE_DESCRIPTION_ITEM"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -3163,7 +3181,16 @@
             ],
             "properties": {
                 "documentation": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -7083,7 +7110,10 @@
                     "type": "string"
                 },
                 "other_ids": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "item_list": {
                     "type": "array",
@@ -9382,11 +9412,17 @@
                 "original_resource_uri": {
                     "type": "array",
                     "items": {
-                        "type": "object"
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
                     }
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -12091,7 +12127,10 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -15067,7 +15106,10 @@
                     "$ref": "#/definitions/TERMINOLOGY_CODE"
                 },
                 "author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "accreditation": {
                     "type": "string"
@@ -15076,7 +15118,10 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
