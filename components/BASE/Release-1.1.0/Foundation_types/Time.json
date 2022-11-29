@@ -5,6 +5,7 @@
         "TIME": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {

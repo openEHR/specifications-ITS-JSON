@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/Cardinality.json",
+    "definitions": {
+        "CARDINALITY": {
+            "type": "object",
+            "required": [
+                "is_ordered",
+                "is_unique",
+                "interval"
+            ],
+            "properties": {
+                "is_ordered": {
+                    "type": "boolean"
+                },
+                "is_unique": {
+                    "type": "boolean"
+                },
+                "interval": {
+                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/Multiplicity_interval.json#/definitions/MULTIPLICITY_INTERVAL"
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "CARDINALITY"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

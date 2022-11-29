@@ -5,6 +5,7 @@
         "DATE": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {

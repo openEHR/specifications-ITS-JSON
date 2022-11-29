@@ -6,8 +6,7 @@
             "type": "object",
             "required": [
                 "terminology_id",
-                "code_string",
-                "uri"
+                "code_string"
             ],
             "properties": {
                 "terminology_id": {
@@ -20,7 +19,8 @@
                     "type": "string"
                 },
                 "uri": {
-                    "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/BASE/Release-1.1.0/Foundation_types/Uri.json#/definitions/URI"
+                    "type": "string",
+                    "format": "uri-reference"
                 },
                 "_type": {
                     "type": "string",

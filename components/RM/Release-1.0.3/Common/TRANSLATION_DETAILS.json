@@ -13,13 +13,19 @@
                     "$ref": "https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM/Release-1.0.3/Data_types/CODE_PHRASE.json#/definitions/CODE_PHRASE"
                 },
                 "author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "accreditation": {
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",

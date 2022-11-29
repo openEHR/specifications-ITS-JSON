@@ -6,8 +6,7 @@
             "type": "object",
             "required": [
                 "language",
-                "purpose",
-                "other_details"
+                "purpose"
             ],
             "properties": {
                 "language": {
@@ -34,11 +33,17 @@
                 "original_resource_uri": {
                     "type": "array",
                     "items": {
-                        "type": "object"
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
                     }
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",

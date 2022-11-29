@@ -155,18 +155,6 @@
             "if": {
                 "properties": {
                     "_type": {
-                        "const": "ADDRESS"
-                    }
-                }
-            },
-            "then": {
-                "$ref": "#/definitions/ADDRESS"
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "_type": {
                         "const": "ROLE"
                     }
                 }
@@ -185,6 +173,30 @@
             },
             "then": {
                 "$ref": "#/definitions/ORGANISATION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "AGENT"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/AGENT"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "GROUP"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/GROUP"
             }
         },
         {
@@ -269,6 +281,90 @@
             },
             "then": {
                 "$ref": "#/definitions/IMPORTED_VERSION"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "HISTORY"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/HISTORY"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TABLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_TABLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_LIST"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_LIST"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TREE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_TREE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_SINGLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_SINGLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ITEM_TABLE"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ITEM_TABLE"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "_type": {
+                        "const": "ELEMENT"
+                    }
+                }
+            },
+            "then": {
+                "$ref": "#/definitions/ELEMENT"
             }
         }
     ],
@@ -1071,50 +1167,6 @@
                 "_type": {
                     "type": "string",
                     "const": "REVISION_HISTORY_ITEM"
-                }
-            },
-            "additionalProperties": false
-        },
-        "ARCHETYPE_HRID": {
-            "type": "object",
-            "required": [
-                "namespace",
-                "rm_publisher",
-                "rm_package",
-                "rm_class",
-                "concept_id",
-                "release_version",
-                "version_status",
-                "build_count"
-            ],
-            "properties": {
-                "namespace": {
-                    "type": "string"
-                },
-                "rm_publisher": {
-                    "type": "string"
-                },
-                "rm_package": {
-                    "type": "string"
-                },
-                "rm_class": {
-                    "type": "string"
-                },
-                "concept_id": {
-                    "type": "string"
-                },
-                "release_version": {
-                    "type": "string"
-                },
-                "version_status": {
-                    "$ref": "#/definitions/VERSION_STATUS"
-                },
-                "build_count": {
-                    "type": "string"
-                },
-                "_type": {
-                    "type": "string",
-                    "const": "ARCHETYPE_HRID"
                 }
             },
             "additionalProperties": false
@@ -3045,13 +3097,17 @@
             "type": "object",
             "required": [
                 "original_author",
-                "lifecycle_state",
-                "parent_resource",
-                "details"
+                "lifecycle_state"
             ],
             "properties": {
                 "original_author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "original_namespace": {
+                    "type": "string"
                 },
                 "other_contributors": {
                     "type": "array",
@@ -3059,28 +3115,82 @@
                         "type": "string"
                     }
                 },
+                "custodian_namespace": {
+                    "type": "string"
+                },
+                "custodian_organisation": {
+                    "type": "string"
+                },
+                "copyright": {
+                    "type": "string"
+                },
+                "licence": {
+                    "type": "string"
+                },
                 "lifecycle_state": {
                     "type": "string"
                 },
                 "resource_package_uri": {
                     "type": "string"
                 },
-                "other_details": {
-                    "type": "object"
+                "ip_acknowledgements": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
-                "parent_resource": {
-                    "type": "object"
+                "references": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "conversion_details": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "other_details": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "details": {
-                    "type": "array",
-                    "items": {
+                    "type": "object",
+                    "additionalProperties": {
                         "$ref": "#/definitions/RESOURCE_DESCRIPTION_ITEM"
-                    },
-                    "minItems": 1
+                    }
                 },
                 "_type": {
                     "type": "string",
                     "const": "RESOURCE_DESCRIPTION"
+                }
+            },
+            "additionalProperties": false
+        },
+        "RESOURCE_ANNOTATIONS": {
+            "type": "object",
+            "required": [
+                "documentation"
+            ],
+            "properties": {
+                "documentation": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "_type": {
+                    "type": "string",
+                    "const": "RESOURCE_ANNOTATIONS"
                 }
             },
             "additionalProperties": false
@@ -3853,22 +3963,6 @@
                     "const": "CAPABILITY"
                 }
             },
-            "additionalProperties": false
-        },
-        "ISO8601_TYPE": {
-            "type": "object",
-            "required": [
-            ],
-            "properties": {
-                "value": {
-                    "type": "string"
-                },
-                "_type": {
-                    "type": "string",
-                    "const": "ISO8601_TYPE"
-                }
-            },
-            "description": "Parent of ISO8601 types.",
             "additionalProperties": false
         },
         "CONTRIBUTION": {
@@ -5501,9 +5595,6 @@
                 "magnitude": {
                     "type": "number"
                 },
-                "property": {
-                    "$ref": "#/definitions/CODE_PHRASE"
-                },
                 "units": {
                     "type": "string"
                 },
@@ -5804,17 +5895,6 @@
             },
             "additionalProperties": false
         },
-        "URI": {
-            "type": "object",
-            "required": [
-            ],
-            "properties": {
-                "_type": {
-                    "type": "string",
-                    "const": "URI"
-                }
-            }
-        },
         "SYNC_EXTRACT": {
             "type": "object",
             "required": [
@@ -5958,8 +6038,7 @@
             "type": "object",
             "required": [
                 "terminology_id",
-                "code_string",
-                "uri"
+                "code_string"
             ],
             "properties": {
                 "terminology_id": {
@@ -5972,7 +6051,8 @@
                     "type": "string"
                 },
                 "uri": {
-                    "$ref": "#/definitions/URI"
+                    "type": "string",
+                    "format": "uri-reference"
                 },
                 "_type": {
                     "type": "string",
@@ -8744,6 +8824,7 @@
         "DURATION": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -9293,8 +9374,7 @@
             "type": "object",
             "required": [
                 "language",
-                "purpose",
-                "other_details"
+                "purpose"
             ],
             "properties": {
                 "language": {
@@ -9315,17 +9395,20 @@
                 "misuse": {
                     "type": "string"
                 },
-                "copyright": {
-                    "type": "string"
-                },
                 "original_resource_uri": {
                     "type": "array",
                     "items": {
-                        "type": "object"
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
                     }
                 },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -10643,74 +10726,6 @@
                             }
                         ]
                     }
-                },
-                "details": {
-                    "allOf": [
-                        {
-                            "required": [
-                                "_type"
-                            ],
-                            "properties": {
-                                "_type": {
-                                    "type": "string",
-                                    "enum": [
-                                        "ITEM_SINGLE",
-                                        "ITEM_TREE",
-                                        "ITEM_LIST",
-                                        "ITEM_TABLE"
-                                    ]
-                                }
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_SINGLE"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_SINGLE"
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_TREE"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_TREE"
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_LIST"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_LIST"
-                            }
-                        },
-                        {
-                            "if": {
-                                "properties": {
-                                    "_type": {
-                                        "const": "ITEM_TABLE"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/ITEM_TABLE"
-                            }
-                        }
-                    ]
                 },
                 "_type": {
                     "type": "string",
@@ -12064,8 +12079,8 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "array",
-                    "items": {
+                    "type": "object",
+                    "additionalProperties": {
                         "type": "string"
                     }
                 },
@@ -12079,6 +12094,7 @@
         "DATE": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -13057,6 +13073,7 @@
         "DATE_TIME": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -13490,6 +13507,7 @@
         "DV_EHR_URI": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -15017,13 +15035,22 @@
                     "$ref": "#/definitions/TERMINOLOGY_CODE"
                 },
                 "author": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "accreditation": {
                     "type": "string"
                 },
+                "version_last_translated": {
+                    "type": "string"
+                },
                 "other_details": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "_type": {
                     "type": "string",
@@ -15398,6 +15425,7 @@
         "TIME": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -15597,6 +15625,7 @@
         "DV_URI": {
             "type": "object",
             "required": [
+                "value"
             ],
             "properties": {
                 "value": {
@@ -16731,7 +16760,8 @@
             "required": [
                 "archetype_node_id",
                 "name",
-                "description"
+                "description",
+                "action_archetype_id"
             ],
             "properties": {
                 "uid": {

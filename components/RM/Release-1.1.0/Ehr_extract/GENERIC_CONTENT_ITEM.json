@@ -668,8 +668,8 @@
                     "type": "string"
                 },
                 "other_details": {
-                    "type": "array",
-                    "items": {
+                    "type": "object",
+                    "additionalProperties": {
                         "type": "string"
                     }
                 },
