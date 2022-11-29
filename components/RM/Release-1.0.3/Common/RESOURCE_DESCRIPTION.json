@@ -7,7 +7,6 @@
             "required": [
                 "original_author",
                 "lifecycle_state",
-                "parent_resource",
                 "details"
             ],
             "properties": {
@@ -34,9 +33,6 @@
                     "additionalProperties": {
                         "type": "string"
                     }
-                },
-                "parent_resource": {
-                    "type": "object"
                 },
                 "details": {
                     "type": "array",

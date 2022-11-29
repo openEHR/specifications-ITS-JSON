@@ -3189,8 +3189,7 @@
             "type": "object",
             "required": [
                 "original_author",
-                "lifecycle_state",
-                "parent_resource"
+                "lifecycle_state"
             ],
             "properties": {
                 "original_author": {
@@ -3249,9 +3248,6 @@
                     "additionalProperties": {
                         "type": "string"
                     }
-                },
-                "parent_resource": {
-                    "type": "object"
                 },
                 "details": {
                     "type": "object",
