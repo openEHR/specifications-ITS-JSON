@@ -11417,40 +11417,6 @@
             },
             "additionalProperties": false
         },
-        "MULTIPLICITY_INTERVAL": {
-            "type": "object",
-            "required": [
-                "lower_unbounded",
-                "upper_unbounded",
-                "lower_included",
-                "upper_included"
-            ],
-            "properties": {
-                "lower": {
-                    "type": "object"
-                },
-                "upper": {
-                    "type": "object"
-                },
-                "lower_unbounded": {
-                    "type": "boolean"
-                },
-                "upper_unbounded": {
-                    "type": "boolean"
-                },
-                "lower_included": {
-                    "type": "boolean"
-                },
-                "upper_included": {
-                    "type": "boolean"
-                },
-                "_type": {
-                    "type": "string",
-                    "const": "MULTIPLICITY_INTERVAL"
-                }
-            },
-            "additionalProperties": false
-        },
         "GENERIC_CONTENT_ITEM": {
             "type": "object",
             "required": [
@@ -15058,30 +15024,6 @@
                 "_type": {
                     "type": "string",
                     "const": "LINK"
-                }
-            },
-            "additionalProperties": false
-        },
-        "CARDINALITY": {
-            "type": "object",
-            "required": [
-                "is_ordered",
-                "is_unique",
-                "interval"
-            ],
-            "properties": {
-                "is_ordered": {
-                    "type": "boolean"
-                },
-                "is_unique": {
-                    "type": "boolean"
-                },
-                "interval": {
-                    "$ref": "#/definitions/MULTIPLICITY_INTERVAL"
-                },
-                "_type": {
-                    "type": "string",
-                    "const": "CARDINALITY"
                 }
             },
             "additionalProperties": false
