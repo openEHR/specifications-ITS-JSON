@@ -1,6 +1,6 @@
 {
   "template_set": "openehr-specs/scaffold",
-  "revision": 2,
+  "revision": 4,
   "variables": {
     "component": "ITS-JSON",
     "repo_name": "specifications-ITS-JSON",
@@ -14,11 +14,10 @@
     "default_branch": "master",
     "license": "apache-2.0",
     "bmm_schema_id": "",
-    "base_bmm_schema_id": "",
+    "bmm_dependencies": "",
     "documents": "`ITS-JSON`, `ITS-JSON-Overview`"
   },
   "defaulted": [
-    "base_bmm_schema_id",
     "bmm_schema_id",
     "first_release",
     "published_url"
